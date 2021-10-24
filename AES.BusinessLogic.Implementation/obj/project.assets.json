@@ -1,0 +1,132 @@
+{
+  "version": 3,
+  "targets": {
+    "net5.0": {
+      "AES.BusinessLogic/1.0.0": {
+        "type": "project",
+        "framework": ".NETCoreApp,Version=v5.0",
+        "dependencies": {
+          "AES.Domain": "1.0.0"
+        },
+        "compile": {
+          "bin/placeholder/AES.BusinessLogic.dll": {}
+        },
+        "runtime": {
+          "bin/placeholder/AES.BusinessLogic.dll": {}
+        }
+      },
+      "AES.Domain/1.0.0": {
+        "type": "project",
+        "framework": ".NETCoreApp,Version=v5.0",
+        "compile": {
+          "bin/placeholder/AES.Domain.dll": {}
+        },
+        "runtime": {
+          "bin/placeholder/AES.Domain.dll": {}
+        }
+      },
+      "AES.Infrastructure/1.0.0": {
+        "type": "project",
+        "framework": ".NETCoreApp,Version=v5.0",
+        "dependencies": {
+          "AES.Domain": "1.0.0"
+        },
+        "compile": {
+          "bin/placeholder/AES.Infrastructure.dll": {}
+        },
+        "runtime": {
+          "bin/placeholder/AES.Infrastructure.dll": {}
+        }
+      }
+    }
+  },
+  "libraries": {
+    "AES.BusinessLogic/1.0.0": {
+      "type": "project",
+      "path": "../AES.BusinessLogic/AES.BusinessLogic.csproj",
+      "msbuildProject": "../AES.BusinessLogic/AES.BusinessLogic.csproj"
+    },
+    "AES.Domain/1.0.0": {
+      "type": "project",
+      "path": "../AES.Domain/AES.Domain.csproj",
+      "msbuildProject": "../AES.Domain/AES.Domain.csproj"
+    },
+    "AES.Infrastructure/1.0.0": {
+      "type": "project",
+      "path": "../AES.Infrastructure/AES.Infrastructure.csproj",
+      "msbuildProject": "../AES.Infrastructure/AES.Infrastructure.csproj"
+    }
+  },
+  "projectFileDependencyGroups": {
+    "net5.0": [
+      "AES.BusinessLogic >= 1.0.0",
+      "AES.Domain >= 1.0.0",
+      "AES.Infrastructure >= 1.0.0"
+    ]
+  },
+  "packageFolders": {
+    "C:\\Users\\lean\\.nuget\\packages\\": {}
+  },
+  "project": {
+    "version": "1.0.0",
+    "restore": {
+      "projectUniqueName": "D:\\Yandex\\YandexDisk\\Документы\\GitHub\\AES\\AES.BusinessLogic.Implementation\\AES.BusinessLogic.Implementation.csproj",
+      "projectName": "AES.BusinessLogic.Implementation",
+      "projectPath": "D:\\Yandex\\YandexDisk\\Документы\\GitHub\\AES\\AES.BusinessLogic.Implementation\\AES.BusinessLogic.Implementation.csproj",
+      "packagesPath": "C:\\Users\\lean\\.nuget\\packages\\",
+      "outputPath": "D:\\Yandex\\YandexDisk\\Документы\\GitHub\\AES\\AES.BusinessLogic.Implementation\\obj\\",
+      "projectStyle": "PackageReference",
+      "configFilePaths": [
+        "C:\\Users\\lean\\AppData\\Roaming\\NuGet\\NuGet.Config"
+      ],
+      "originalTargetFrameworks": [
+        "net5.0"
+      ],
+      "sources": {
+        "https://api.nuget.org/v3/index.json": {}
+      },
+      "frameworks": {
+        "net5.0": {
+          "targetAlias": "net5.0",
+          "projectReferences": {
+            "D:\\Yandex\\YandexDisk\\Документы\\GitHub\\AES\\AES.BusinessLogic\\AES.BusinessLogic.csproj": {
+              "projectPath": "D:\\Yandex\\YandexDisk\\Документы\\GitHub\\AES\\AES.BusinessLogic\\AES.BusinessLogic.csproj"
+            },
+            "D:\\Yandex\\YandexDisk\\Документы\\GitHub\\AES\\AES.Domain\\AES.Domain.csproj": {
+              "projectPath": "D:\\Yandex\\YandexDisk\\Документы\\GitHub\\AES\\AES.Domain\\AES.Domain.csproj"
+            },
+            "D:\\Yandex\\YandexDisk\\Документы\\GitHub\\AES\\AES.Infrastructure\\AES.Infrastructure.csproj": {
+              "projectPath": "D:\\Yandex\\YandexDisk\\Документы\\GitHub\\AES\\AES.Infrastructure\\AES.Infrastructure.csproj"
+            }
+          }
+        }
+      },
+      "warningProperties": {
+        "warnAsError": [
+          "NU1605"
+        ]
+      }
+    },
+    "frameworks": {
+      "net5.0": {
+        "targetAlias": "net5.0",
+        "imports": [
+          "net461",
+          "net462",
+          "net47",
+          "net471",
+          "net472",
+          "net48"
+        ],
+        "assetTargetFallback": true,
+        "warn": true,
+        "frameworkReferences": {
+          "Microsoft.NETCore.App": {
+            "privateAssets": "all"
+          }
+        },
+        "runtimeIdentifierGraphPath": "C:\\Program Files\\dotnet\\sdk\\5.0.400\\RuntimeIdentifierGraph.json"
+      }
+    }
+  }
+}

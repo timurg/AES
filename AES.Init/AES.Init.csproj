@@ -1,0 +1,30 @@
+<Project Sdk="Microsoft.NET.Sdk">
+
+    <PropertyGroup>
+        <OutputType>Exe</OutputType>
+        <TargetFramework>net5.0</TargetFramework>
+    </PropertyGroup>
+
+    <ItemGroup>
+      <ProjectReference Include="..\AES.BusinessLogic.Implementation\AES.BusinessLogic.Implementation.csproj" />
+      <ProjectReference Include="..\AES.BusinessLogic\AES.BusinessLogic.csproj" />
+      <ProjectReference Include="..\AES.Domain\AES.Domain.csproj" />
+      <ProjectReference Include="..\AES.Infrastructure.EntityFrameworkCore.PostgreSql\AES.Infrastructure.EntityFrameworkCore.PostgreSql.csproj" />
+      <ProjectReference Include="..\AES.Infrastructure.EntityFrameworkCore\AES.Infrastructure.EntityFrameworkCore.csproj" />
+      <ProjectReference Include="..\AES.Infrastructure\AES.Infrastructure.csproj" />
+    </ItemGroup>
+
+    <ItemGroup>
+      <PackageReference Include="Autofac" Version="6.3.0" />
+      <PackageReference Include="Autofac.Configuration" Version="6.0.0" />
+      <PackageReference Include="Autofac.Extensions.DependencyInjection" Version="7.1.0" />
+      <PackageReference Include="Microsoft.Extensions.Configuration.Json" Version="5.0.0" />
+    </ItemGroup>
+
+    <ItemGroup>
+      <None Update="appsettings.json">
+        <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
+      </None>
+    </ItemGroup>
+
+</Project>
