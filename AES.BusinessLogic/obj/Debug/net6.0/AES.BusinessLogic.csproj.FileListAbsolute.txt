@@ -1,0 +1,15 @@
+D:\Yandex\YandexDisk\Документы\GitHub\AES\AES.BusinessLogic\bin\Debug\net6.0\AES.BusinessLogic.deps.json
+D:\Yandex\YandexDisk\Документы\GitHub\AES\AES.BusinessLogic\bin\Debug\net6.0\AES.BusinessLogic.dll
+D:\Yandex\YandexDisk\Документы\GitHub\AES\AES.BusinessLogic\bin\Debug\net6.0\AES.BusinessLogic.pdb
+D:\Yandex\YandexDisk\Документы\GitHub\AES\AES.BusinessLogic\bin\Debug\net6.0\AES.Domain.dll
+D:\Yandex\YandexDisk\Документы\GitHub\AES\AES.BusinessLogic\bin\Debug\net6.0\AES.Domain.pdb
+D:\Yandex\YandexDisk\Документы\GitHub\AES\AES.BusinessLogic\obj\Debug\net6.0\AES.BusinessLogic.csproj.AssemblyReference.cache
+D:\Yandex\YandexDisk\Документы\GitHub\AES\AES.BusinessLogic\obj\Debug\net6.0\AES.BusinessLogic.GeneratedMSBuildEditorConfig.editorconfig
+D:\Yandex\YandexDisk\Документы\GitHub\AES\AES.BusinessLogic\obj\Debug\net6.0\AES.BusinessLogic.AssemblyInfoInputs.cache
+D:\Yandex\YandexDisk\Документы\GitHub\AES\AES.BusinessLogic\obj\Debug\net6.0\AES.BusinessLogic.AssemblyInfo.cs
+D:\Yandex\YandexDisk\Документы\GitHub\AES\AES.BusinessLogic\obj\Debug\net6.0\AES.BusinessLogic.csproj.CoreCompileInputs.cache
+D:\Yandex\YandexDisk\Документы\GitHub\AES\AES.BusinessLogic\obj\Debug\net6.0\AES.BusinessLogic.csproj.CopyComplete
+D:\Yandex\YandexDisk\Документы\GitHub\AES\AES.BusinessLogic\obj\Debug\net6.0\AES.BusinessLogic.dll
+D:\Yandex\YandexDisk\Документы\GitHub\AES\AES.BusinessLogic\obj\Debug\net6.0\refint\AES.BusinessLogic.dll
+D:\Yandex\YandexDisk\Документы\GitHub\AES\AES.BusinessLogic\obj\Debug\net6.0\AES.BusinessLogic.pdb
+D:\Yandex\YandexDisk\Документы\GitHub\AES\AES.BusinessLogic\obj\Debug\net6.0\ref\AES.BusinessLogic.dll

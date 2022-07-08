@@ -12,3 +12,4 @@ namespace AES.Infrastructure
         IQueryable<FormEducation> GetQuery();
     }
 }
+

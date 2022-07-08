@@ -8,9 +8,9 @@ namespace AES.BusinessLogic.Implementation
     /// <summary>
     /// Класс для поиска пользователей
     /// </summary>
-    public class UserFinderBO : BusinessObject, IUserFinder
+    public class UserFinder : BusinessObject, IUserFinder
     {
-        public UserFinderBO(IUnitOfWork UnitOfWork) : base(UnitOfWork)
+        public UserFinder(IUnitOfWork unitOfWork) : base(unitOfWork)
         {
         }
 

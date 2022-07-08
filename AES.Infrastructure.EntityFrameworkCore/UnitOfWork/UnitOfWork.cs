@@ -34,6 +34,11 @@ namespace AES.Infrastructure.EntityFrameworkCore
             TypeTestingRepository = new TypeTestingRepository(context);
         }
 
+        public T getRepositorty<T>() where T : DomainObject
+        {
+            throw new NotImplementedException();
+        }
+
         public IPersonRepository PersonRepository { get; private set; }
 
         public IDirectionRepository DirectionRepository { get; private set; }

@@ -44,12 +44,12 @@
             Curriculum curriculum = new Curriculum()
             {
                 Id = student.Id,
-                DateOfAppointment = DateTime.Now,
+                DateOfAppointment = DateTime.UtcNow,
                 Student = student,
                 tag = "default"
                 
             };
-            curriculum.DateOfAppointment = DateTime.Now;
+            curriculum.DateOfAppointment = DateTime.UtcNow;
             Module module = new SubjectCycle()
             {
                 Id = Guid.NewGuid(),
@@ -549,7 +549,7 @@
                     timur = new Person(timur_id);
 
                     timur.Active = true;
-                    timur.Birthday = new DateTime(1984, 9, 25);
+                    timur.Birthday = new DateTime(1984, 9, 25).ToUniversalTime();
                     timur.Email = "lean@live.ru";
                     timur.LastActivityDateTime = null;
                     timur.LastName = "Гирфанов";
@@ -581,7 +581,7 @@
                     pushkin = new Person(pushkinId);
 
                     pushkin.Active = true;
-                    pushkin.Birthday = new DateTime(1984, 9, 25);
+                    pushkin.Birthday = new DateTime(1984, 9, 25).ToUniversalTime();
                     pushkin.Email = "timbox17@yandex.ru";
                     pushkin.LastActivityDateTime = null;
                     pushkin.LastName = "Пушкин";
@@ -595,7 +595,7 @@
                     pushkin.Student = new Student(pushkinId, pushkin)
                     {
                         ActiveAgreement = true,
-                        AgreementDate = new DateTime(2015, 9, 1),
+                        AgreementDate = new DateTime(2015, 9, 1).ToUniversalTime(),
                         AgreementNumber = "12313321123",
                         AgreementComment = "",
                         BaseRateEducation = unitOfWork.RateEducationRepository.Get(new Guid("142DA5BD-636F-4B96-B508-8CA934E022C7")),
@@ -608,7 +608,7 @@
                         Semester = 1,
                         Specialization = unitOfWork.SpecializationRepository.Get(new Guid("DFBD0E3F-FC84-4EB1-8C40-E540A655ADFB")),
                         StudiedLanguage = unitOfWork.LanguageRepository.Get(new Guid("758D2489-2F7C-4F15-ADFF-052685BDD877")),
-                        WhenSemesterBegin = new DateTime(2015, 9, 1),
+                        WhenSemesterBegin = new DateTime(2015, 9, 1).ToUniversalTime(),
                         Subdivision = org.Subdivisions.First()
                     };
                     pushkin.Roles.Add(unitOfWork.RoleRepository.Get(new Guid("97007f30-864f-41a1-bc0b-f15706435661")));
@@ -617,7 +617,7 @@
                 
                 if (pushkin.Student.Curriculum == null)
                 {
-                    pushkin.Student.Curriculum = createCurriculum(pushkin.Student, new dymmuCurriculum[]
+                    pushkin.Student.Curriculum = createCurriculum(pushkin.Student, new []
                     {
                         new dymmuCurriculum(){Semester = 1, SubjectName = "Паттерны проектирования", TypeTesting = "Зачёт" },
                         new dymmuCurriculum(){Semester = 1, SubjectName = "Иностранный язык", TypeTesting = "Зачёт" },

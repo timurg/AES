@@ -46,10 +46,10 @@ namespace AES.Init
             var factory = serviceProvider.GetService(typeof(IUnitOfWorkFactory)) as IUnitOfWorkFactory;
 
 
-            //AES.Init.Initializer.InitDictionary(factory);
+            AES.Init.Initializer.InitDictionary(factory);
             using (var unitOfWork = factory.Create())
             {
-                IUserFinder userFinder = new UserFinderBO(unitOfWork);
+                IUserFinder userFinder = new UserFinder(unitOfWork);
                 var pushkin = userFinder.findByLogin("pushkin");
                 if (pushkin != null)
                 {

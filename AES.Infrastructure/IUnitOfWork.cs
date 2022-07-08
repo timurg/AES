@@ -1,4 +1,5 @@
 ﻿using System;
+using AES.Domain;
 
 namespace AES.Infrastructure
 {
@@ -8,6 +9,9 @@ namespace AES.Infrastructure
         /// Необходимо вызывать для фиксации
         ///</summary>
         void Commit();
+
+        T getRepositorty<T>()  where T:DomainObject; 
+        
         IPersonRepository PersonRepository { get; }
         IDirectionRepository DirectionRepository { get; }
         IDurationRepository DurationRepository { get; }

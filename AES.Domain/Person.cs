@@ -147,9 +147,6 @@ namespace AES.Domain
         /// <summary>
         /// Полное имя персоны
         /// </summary>
-        public string FullName
-        {
-            get { return string.Format("{0} {1} {2}", LastName, Name, Patronymic); }
-        }
+        public string FullName => $"{LastName} {Name} {Patronymic}";
     }
 }
