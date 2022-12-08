@@ -54,3 +54,6 @@ D:\Yandex\YandexDisk\Документы\GitHub\AES\AES.Init\obj\Debug\net6.0\ref
 D:\Yandex\YandexDisk\Документы\GitHub\AES\AES.Init\obj\Debug\net6.0\AES.Init.pdb
 D:\Yandex\YandexDisk\Документы\GitHub\AES\AES.Init\obj\Debug\net6.0\AES.Init.genruntimeconfig.cache
 D:\Yandex\YandexDisk\Документы\GitHub\AES\AES.Init\obj\Debug\net6.0\ref\AES.Init.dll
+D:\yandex\YandexDisk\Документы\GitHub\AES\AES.Init\bin\Debug\net6.0\System.Text.Encodings.Web.dll
+D:\yandex\YandexDisk\Документы\GitHub\AES\AES.Init\bin\Debug\net6.0\System.Text.Json.dll
+D:\yandex\YandexDisk\Документы\GitHub\AES\AES.Init\bin\Debug\net6.0\runtimes\browser\lib\net6.0\System.Text.Encodings.Web.dll

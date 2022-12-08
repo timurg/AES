@@ -8,10 +8,11 @@ namespace AES.BusinessLogic.Implementation
     /// </summary>
     public abstract class BusinessObject
     {
-        public IUnitOfWork UnitOfWork { get; private set; }
-        public BusinessObject(IUnitOfWork UnitOfWork)
+        protected IUnitOfWork UnitOfWork { get; private set; }
+
+        protected BusinessObject(IUnitOfWork unitOfWork)
         {
-            this.UnitOfWork = UnitOfWork;
+            this.UnitOfWork = unitOfWork;
         }
     }
 }

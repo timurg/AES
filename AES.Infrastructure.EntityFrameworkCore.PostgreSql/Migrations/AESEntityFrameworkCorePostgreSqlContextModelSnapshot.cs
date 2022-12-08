@@ -6,6 +6,8 @@ using Microsoft.EntityFrameworkCore.Infrastructure;
 using Microsoft.EntityFrameworkCore.Storage.ValueConversion;
 using Npgsql.EntityFrameworkCore.PostgreSQL.Metadata;
 
+#nullable disable
+
 namespace AES.Infrastructure.EntityFrameworkCore.PostgreSql.Migrations
 {
     [DbContext(typeof(AESEntityFrameworkCorePostgreSqlContext))]
@@ -15,9 +17,10 @@ namespace AES.Infrastructure.EntityFrameworkCore.PostgreSql.Migrations
         {
 #pragma warning disable 612, 618
             modelBuilder
-                .HasAnnotation("Relational:MaxIdentifierLength", 63)
-                .HasAnnotation("ProductVersion", "5.0.11")
-                .HasAnnotation("Npgsql:ValueGenerationStrategy", NpgsqlValueGenerationStrategy.IdentityByDefaultColumn);
+                .HasAnnotation("ProductVersion", "7.0.0")
+                .HasAnnotation("Relational:MaxIdentifierLength", 63);
+
+            NpgsqlModelBuilderExtensions.UseIdentityByDefaultColumns(modelBuilder);
 
             modelBuilder.Entity("AES.Domain.Curator", b =>
                 {
@@ -26,7 +29,7 @@ namespace AES.Infrastructure.EntityFrameworkCore.PostgreSql.Migrations
 
                     b.HasKey("Id");
 
-                    b.ToTable("Curators");
+                    b.ToTable("Curators", (string)null);
                 });
 
             modelBuilder.Entity("AES.Domain.CuratorDescription", b =>
@@ -66,7 +69,7 @@ namespace AES.Infrastructure.EntityFrameworkCore.PostgreSql.Migrations
                         .HasColumnType("uuid");
 
                     b.Property<DateTime>("DateOfAppointment")
-                        .HasColumnType("timestamp without time zone");
+                        .HasColumnType("timestamp with time zone");
 
                     b.Property<string>("tag")
                         .IsRequired()
@@ -163,7 +166,7 @@ namespace AES.Infrastructure.EntityFrameworkCore.PostgreSql.Migrations
                         .HasColumnType("uuid");
 
                     b.Property<DateTime>("GradeDateTime")
-                        .HasColumnType("timestamp without time zone");
+                        .HasColumnType("timestamp with time zone");
 
                     b.Property<int>("GradeRecordType")
                         .HasColumnType("integer");
@@ -173,9 +176,11 @@ namespace AES.Infrastructure.EntityFrameworkCore.PostgreSql.Migrations
 
                     b.HasKey("Id");
 
-                    b.ToTable("GradeRecords");
+                    b.ToTable("GradeRecords", (string)null);
 
                     b.HasDiscriminator<int>("GradeRecordType");
+
+                    b.UseTphMappingStrategy();
                 });
 
             modelBuilder.Entity("AES.Domain.Language", b =>
@@ -201,7 +206,10 @@ namespace AES.Infrastructure.EntityFrameworkCore.PostgreSql.Migrations
 
                     b.HasKey("Id");
 
-                    b.ToTable("Language");
+                    b.HasIndex("Name")
+                        .IsUnique();
+
+                    b.ToTable("LanguagesList", (string)null);
                 });
 
             modelBuilder.Entity("AES.Domain.Module", b =>
@@ -232,9 +240,11 @@ namespace AES.Infrastructure.EntityFrameworkCore.PostgreSql.Migrations
 
                     b.HasIndex("GradeId");
 
-                    b.ToTable("Modules");
+                    b.ToTable("Modules", (string)null);
 
                     b.HasDiscriminator<int>("ModuleType");
+
+                    b.UseTphMappingStrategy();
                 });
 
             modelBuilder.Entity("AES.Domain.ModuleItem", b =>
@@ -258,10 +268,10 @@ namespace AES.Infrastructure.EntityFrameworkCore.PostgreSql.Migrations
                     b.Property<int>("Semester")
                         .HasColumnType("integer");
 
-                    b.Property<Guid?>("SubjectId")
+                    b.Property<Guid>("SubjectId")
                         .HasColumnType("uuid");
 
-                    b.Property<Guid?>("TypeTestingId")
+                    b.Property<Guid>("TypeTestingId")
                         .HasColumnType("uuid");
 
                     b.HasKey("Id");
@@ -274,9 +284,11 @@ namespace AES.Infrastructure.EntityFrameworkCore.PostgreSql.Migrations
 
                     b.HasIndex("TypeTestingId");
 
-                    b.ToTable("ModuleItems");
+                    b.ToTable("ModuleItems", (string)null);
 
                     b.HasDiscriminator<int>("ModuleItemType");
+
+                    b.UseTphMappingStrategy();
                 });
 
             modelBuilder.Entity("AES.Domain.Organization", b =>
@@ -315,14 +327,14 @@ namespace AES.Infrastructure.EntityFrameworkCore.PostgreSql.Migrations
                         .HasColumnType("boolean");
 
                     b.Property<DateTime>("Birthday")
-                        .HasColumnType("timestamp without time zone");
+                        .HasColumnType("timestamp with time zone");
 
                     b.Property<string>("Email")
                         .HasMaxLength(255)
                         .HasColumnType("character varying(255)");
 
                     b.Property<DateTime?>("LastActivityDateTime")
-                        .HasColumnType("timestamp without time zone");
+                        .HasColumnType("timestamp with time zone");
 
                     b.Property<string>("LastName")
                         .IsRequired()
@@ -356,7 +368,7 @@ namespace AES.Infrastructure.EntityFrameworkCore.PostgreSql.Migrations
                         .HasColumnType("integer");
 
                     b.Property<DateTime?>("WhenSetPassWord")
-                        .HasColumnType("timestamp without time zone");
+                        .HasColumnType("timestamp with time zone");
 
                     b.HasKey("Id");
 
@@ -481,7 +493,7 @@ namespace AES.Infrastructure.EntityFrameworkCore.PostgreSql.Migrations
                         .HasColumnType("character varying(255)");
 
                     b.Property<DateTime>("AgreementDate")
-                        .HasColumnType("timestamp without time zone");
+                        .HasColumnType("timestamp with time zone");
 
                     b.Property<string>("AgreementNumber")
                         .IsRequired()
@@ -491,38 +503,38 @@ namespace AES.Infrastructure.EntityFrameworkCore.PostgreSql.Migrations
                     b.Property<Guid?>("BaseRateEducationId")
                         .HasColumnType("uuid");
 
-                    b.Property<Guid?>("DirectionId")
+                    b.Property<Guid>("DirectionId")
                         .HasColumnType("uuid");
 
-                    b.Property<Guid?>("DurationId")
+                    b.Property<Guid>("DurationId")
                         .HasColumnType("uuid");
 
                     b.Property<Guid?>("EndRateEducationId")
                         .HasColumnType("uuid");
 
-                    b.Property<Guid?>("FormEducationId")
+                    b.Property<Guid>("FormEducationId")
                         .HasColumnType("uuid");
 
                     b.Property<bool>("MaybeAlternateRule")
                         .HasColumnType("boolean");
 
-                    b.Property<Guid?>("QualificationId")
+                    b.Property<Guid>("QualificationId")
                         .HasColumnType("uuid");
 
                     b.Property<byte>("Semester")
                         .HasColumnType("smallint");
 
-                    b.Property<Guid?>("SpecializationId")
+                    b.Property<Guid>("SpecializationId")
                         .HasColumnType("uuid");
 
-                    b.Property<Guid?>("StudiedLanguageId")
+                    b.Property<Guid>("StudiedLanguageId")
                         .HasColumnType("uuid");
 
-                    b.Property<Guid?>("SubdivisionId")
+                    b.Property<Guid>("SubdivisionId")
                         .HasColumnType("uuid");
 
                     b.Property<DateTime>("WhenSemesterBegin")
-                        .HasColumnType("timestamp without time zone");
+                        .HasColumnType("timestamp with time zone");
 
                     b.HasKey("Id");
 
@@ -607,9 +619,11 @@ namespace AES.Infrastructure.EntityFrameworkCore.PostgreSql.Migrations
                     b.HasIndex("Name")
                         .IsUnique();
 
-                    b.ToTable("Subjects");
+                    b.ToTable("Subjects", (string)null);
 
                     b.HasDiscriminator<int>("SubjectType");
+
+                    b.UseTphMappingStrategy();
                 });
 
             modelBuilder.Entity("AES.Domain.Tutor", b =>
@@ -643,13 +657,13 @@ namespace AES.Infrastructure.EntityFrameworkCore.PostgreSql.Migrations
                     b.Property<Guid?>("SubdivisionId")
                         .HasColumnType("uuid");
 
-                    b.Property<Guid?>("SubjectId")
+                    b.Property<Guid>("SubjectId")
                         .HasColumnType("uuid");
 
                     b.Property<Guid?>("TutorId")
                         .HasColumnType("uuid");
 
-                    b.Property<Guid?>("TypeTestingId")
+                    b.Property<Guid>("TypeTestingId")
                         .HasColumnType("uuid");
 
                     b.HasKey("Id");
@@ -732,7 +746,7 @@ namespace AES.Infrastructure.EntityFrameworkCore.PostgreSql.Migrations
                     b.Property<Guid>("BaseSubjectId")
                         .HasColumnType("uuid");
 
-                    b.Property<Guid?>("LanguageId")
+                    b.Property<Guid>("LanguageId")
                         .HasColumnType("uuid");
 
                     b.HasIndex("BaseSubjectId");
@@ -834,11 +848,15 @@ namespace AES.Infrastructure.EntityFrameworkCore.PostgreSql.Migrations
 
                     b.HasOne("AES.Domain.Subject", "Subject")
                         .WithMany()
-                        .HasForeignKey("SubjectId");
+                        .HasForeignKey("SubjectId")
+                        .OnDelete(DeleteBehavior.Cascade)
+                        .IsRequired();
 
                     b.HasOne("AES.Domain.TypeTesting", "TypeTesting")
                         .WithMany()
-                        .HasForeignKey("TypeTestingId");
+                        .HasForeignKey("TypeTestingId")
+                        .OnDelete(DeleteBehavior.Cascade)
+                        .IsRequired();
 
                     b.Navigation("Grade");
 
@@ -864,11 +882,15 @@ namespace AES.Infrastructure.EntityFrameworkCore.PostgreSql.Migrations
 
                     b.HasOne("AES.Domain.Direction", "Direction")
                         .WithMany()
-                        .HasForeignKey("DirectionId");
+                        .HasForeignKey("DirectionId")
+                        .OnDelete(DeleteBehavior.Cascade)
+                        .IsRequired();
 
                     b.HasOne("AES.Domain.Duration", "Duration")
                         .WithMany()
-                        .HasForeignKey("DurationId");
+                        .HasForeignKey("DurationId")
+                        .OnDelete(DeleteBehavior.Cascade)
+                        .IsRequired();
 
                     b.HasOne("AES.Domain.RateEducation", "EndRateEducation")
                         .WithMany()
@@ -876,7 +898,9 @@ namespace AES.Infrastructure.EntityFrameworkCore.PostgreSql.Migrations
 
                     b.HasOne("AES.Domain.FormEducation", "FormEducation")
                         .WithMany()
-                        .HasForeignKey("FormEducationId");
+                        .HasForeignKey("FormEducationId")
+                        .OnDelete(DeleteBehavior.Cascade)
+                        .IsRequired();
 
                     b.HasOne("AES.Domain.Person", "Person")
                         .WithOne("Student")
@@ -886,19 +910,27 @@ namespace AES.Infrastructure.EntityFrameworkCore.PostgreSql.Migrations
 
                     b.HasOne("AES.Domain.Qualification", "Qualification")
                         .WithMany()
-                        .HasForeignKey("QualificationId");
+                        .HasForeignKey("QualificationId")
+                        .OnDelete(DeleteBehavior.Cascade)
+                        .IsRequired();
 
                     b.HasOne("AES.Domain.Specialization", "Specialization")
                         .WithMany()
-                        .HasForeignKey("SpecializationId");
+                        .HasForeignKey("SpecializationId")
+                        .OnDelete(DeleteBehavior.Cascade)
+                        .IsRequired();
 
                     b.HasOne("AES.Domain.Language", "StudiedLanguage")
                         .WithMany()
-                        .HasForeignKey("StudiedLanguageId");
+                        .HasForeignKey("StudiedLanguageId")
+                        .OnDelete(DeleteBehavior.Cascade)
+                        .IsRequired();
 
                     b.HasOne("AES.Domain.Subdivision", "Subdivision")
                         .WithMany()
-                        .HasForeignKey("SubdivisionId");
+                        .HasForeignKey("SubdivisionId")
+                        .OnDelete(DeleteBehavior.Cascade)
+                        .IsRequired();
 
                     b.Navigation("BaseRateEducation");
 
@@ -963,7 +995,9 @@ namespace AES.Infrastructure.EntityFrameworkCore.PostgreSql.Migrations
 
                     b.HasOne("AES.Domain.Subject", "Subject")
                         .WithMany()
-                        .HasForeignKey("SubjectId");
+                        .HasForeignKey("SubjectId")
+                        .OnDelete(DeleteBehavior.Cascade)
+                        .IsRequired();
 
                     b.HasOne("AES.Domain.Tutor", null)
                         .WithMany("Descriptions")
@@ -971,7 +1005,9 @@ namespace AES.Infrastructure.EntityFrameworkCore.PostgreSql.Migrations
 
                     b.HasOne("AES.Domain.TypeTesting", "TypeTesting")
                         .WithMany()
-                        .HasForeignKey("TypeTestingId");
+                        .HasForeignKey("TypeTestingId")
+                        .OnDelete(DeleteBehavior.Cascade)
+                        .IsRequired();
 
                     b.Navigation("Direction");
 
@@ -996,7 +1032,9 @@ namespace AES.Infrastructure.EntityFrameworkCore.PostgreSql.Migrations
 
                     b.HasOne("AES.Domain.Language", "Language")
                         .WithMany()
-                        .HasForeignKey("LanguageId");
+                        .HasForeignKey("LanguageId")
+                        .OnDelete(DeleteBehavior.Cascade)
+                        .IsRequired();
 
                     b.Navigation("BaseSubject");
 

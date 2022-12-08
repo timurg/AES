@@ -10,6 +10,6 @@ namespace AES.Domain
         public ICollection<CuratorDescription> Descriptions { get; set; } = new HashSet<CuratorDescription>();
 
         [Required]
-        public virtual Person Person { get; set; }
+        public Person Person { get; set; }
     }
 }

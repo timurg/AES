@@ -9,6 +9,9 @@ namespace AES.Infrastructure.EntityFrameworkCore
 
         protected override void OnModelCreating(ModelBuilder modelBuilder)
         {
+            modelBuilder.Entity<Language>( ob =>
+                ob.ToTable("LanguagesList"));
+            modelBuilder.Entity<Language>().HasIndex(p => p.Name).IsUnique();
             modelBuilder.Entity<Subject>(
                 ob =>
             {
