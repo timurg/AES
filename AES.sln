@@ -16,6 +16,8 @@ Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "AES.BusinessLogic.Implement
 EndProject
 Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "WebApi", "WebApi\WebApi.csproj", "{A5FCF876-140D-4955-B9C6-C122624B4303}"
 EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "AES.Infrastructure.EntityFrameworkCore.Sqlite", "AES.Infrastructure.EntityFrameworkCore.Sqlite\AES.Infrastructure.EntityFrameworkCore.Sqlite.csproj", "{8841EE78-24CD-41B1-9DE1-2258DD602BC3}"
+EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
 		Debug|Any CPU = Debug|Any CPU
@@ -52,5 +54,9 @@ Global
 		{A5FCF876-140D-4955-B9C6-C122624B4303}.Debug|Any CPU.Build.0 = Debug|Any CPU
 		{A5FCF876-140D-4955-B9C6-C122624B4303}.Release|Any CPU.ActiveCfg = Release|Any CPU
 		{A5FCF876-140D-4955-B9C6-C122624B4303}.Release|Any CPU.Build.0 = Release|Any CPU
+		{8841EE78-24CD-41B1-9DE1-2258DD602BC3}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{8841EE78-24CD-41B1-9DE1-2258DD602BC3}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{8841EE78-24CD-41B1-9DE1-2258DD602BC3}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{8841EE78-24CD-41B1-9DE1-2258DD602BC3}.Release|Any CPU.Build.0 = Release|Any CPU
 	EndGlobalSection
 EndGlobal

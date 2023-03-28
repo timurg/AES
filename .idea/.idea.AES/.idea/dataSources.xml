@@ -8,5 +8,12 @@
       <jdbc-url>jdbc:postgresql://92.53.124.191:5432/default_db</jdbc-url>
       <working-dir>$ProjectFileDir$</working-dir>
     </data-source>
+    <data-source source="LOCAL" name="data" uuid="1e3a807a-1227-4ec3-80d8-2a3ff30c1b81">
+      <driver-ref>sqlite.xerial</driver-ref>
+      <synchronize>true</synchronize>
+      <jdbc-driver>org.sqlite.JDBC</jdbc-driver>
+      <jdbc-url>jdbc:sqlite:D:\yandex\YandexDisk\Документы\GitHub\AES\Data\data.sqlite</jdbc-url>
+      <working-dir>$ProjectFileDir$</working-dir>
+    </data-source>
   </component>
 </project>

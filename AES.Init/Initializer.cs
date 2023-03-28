@@ -1,9 +1,8 @@
 ﻿namespace AES.Init
 {
-    using AES.Domain;
-    using AES.Infrastructure;
+    using Domain;
+    using Infrastructure;
     using System;
-    using System.Collections;
     using System.Collections.Generic;
     using System.Linq;
     
@@ -41,7 +40,7 @@
             var subjects = CreateDictionaryByName(unitOfWork.SubjectRepository);
             var typeTesting = CreateDictionaryByName(unitOfWork.TypeTestingRepository);
 
-            Curriculum curriculum = new Curriculum()
+            var curriculum = new Curriculum()
             {
                 Id = student.Id,
                 DateOfAppointment = DateTime.UtcNow,
@@ -77,13 +76,13 @@
 
         private static Direction CreateDirection(Guid id, string name, string abbreviation, string shortname)
         {
-            Direction val = new Direction(id, name, shortname, abbreviation);
+            var val = new Direction(id, name, shortname, abbreviation);
             return val;
         }
 
         private static void AddDirectionIfNotExist(IDirectionRepository rep, Guid id, string name, string abbreviation, string shortname)
         {
-            Direction val = rep.Get(id);
+            var val = rep.Get(id);
             if (val == null)
             {
                 val = CreateDirection(id, name, abbreviation, shortname);
@@ -93,7 +92,7 @@
 
         private static void InitDirections(IUnitOfWorkFactory unitOfWorkFactory)
         {
-            using (IUnitOfWork unitOfWork = unitOfWorkFactory.Create())
+            using (var unitOfWork = unitOfWorkFactory.Create())
             {
                 AddDirectionIfNotExist(unitOfWork.DirectionRepository, new Guid("C04304AB-BD23-4CFA-8C31-424F498034FF"),
                 "Аттестация сотрудников", "АС", "АС");
@@ -107,13 +106,13 @@
 
         private static Duration CreateDurations(Guid id, string name, string abbreviation, string shortname)
         {
-            Duration val = new Duration(id, name, shortname, abbreviation);
+            var val = new Duration(id, name, shortname, abbreviation);
             return val;
         }
 
         private static void AddDurationIfNotExist(IDurationRepository rep, Guid id, string name, string abbreviation, string shortname)
         {
-            Duration val = rep.Get(id);
+            var val = rep.Get(id);
             if (val == null)
             {
                 val = CreateDurations(id, name, abbreviation, shortname);
@@ -123,7 +122,7 @@
 
         private static void InitDurations(IUnitOfWorkFactory unitOfWorkFactory)
         {
-            using (IUnitOfWork unitOfWork = unitOfWorkFactory.Create())
+            using (var unitOfWork = unitOfWorkFactory.Create())
             {
                 AddDurationIfNotExist(unitOfWork.DurationRepository, new Guid("03B809F7-7E6E-49E3-9897-B90E64793B8B"),
                 "48 часов", "48 ч.", "48 ч.");
@@ -138,13 +137,13 @@
 
         private static FormEducation CreateFormEducations(Guid id, string name, string abbreviation, string shortname)
         {
-            FormEducation val = new FormEducation(id, name, shortname, abbreviation);
+            var val = new FormEducation(id, name, shortname, abbreviation);
             return val;
         }
 
         private static void AddFormEducationIfNotExist(IFormEducationRepository rep, Guid id, string name, string abbreviation, string shortname)
         {
-            FormEducation val = rep.Get(id);
+            var val = rep.Get(id);
             if (val == null)
             {
                 val = CreateFormEducations(id, name, abbreviation, shortname);
@@ -154,7 +153,7 @@
 
         private static void InitFormEducation(IUnitOfWorkFactory unitOfWorkFactory)
         {
-            using (IUnitOfWork unitOfWork = unitOfWorkFactory.Create())
+            using (var unitOfWork = unitOfWorkFactory.Create())
             {
                 AddFormEducationIfNotExist(unitOfWork.FormEducationRepository, new Guid("FE344DC7-E157-4C6F-A667-3616A5593C3E"),
                 "очная", "o", "оч.");
@@ -169,13 +168,13 @@
 
         private static Language CreateLanguages(Guid id, string name, string abbreviation, string shortname)
         {
-            Language val = new Language(id, name, shortname, abbreviation);
+            var val = new Language(id, name, shortname, abbreviation);
             return val;
         }
 
         private static void AddLanguageIfNotExist(ILanguageRepository rep, Guid id, string name, string abbreviation, string shortname)
         {
-            Language val = rep.Get(id);
+            var val = rep.Get(id);
             if (val == null)
             {
                 val = CreateLanguages(id, name, abbreviation, shortname);
@@ -185,7 +184,7 @@
 
         private static void InitLanguages(IUnitOfWorkFactory unitOfWorkFactory)
         {
-            using (IUnitOfWork unitOfWork = unitOfWorkFactory.Create())
+            using (var unitOfWork = unitOfWorkFactory.Create())
             {
                 AddLanguageIfNotExist(unitOfWork.LanguageRepository, new Guid("758D2489-2F7C-4F15-ADFF-052685BDD877"),
                 "Английский", "Анг", "Анг.");
@@ -223,13 +222,13 @@
 
         private static Qualification CreateQualifications(Guid id, string name, string abbreviation, string shortname)
         {
-            Qualification val = new Qualification(id, name, shortname, abbreviation);
+            var val = new Qualification(id, name, shortname, abbreviation);
             return val;
         }
 
         private static void AddQualificationIfNotExist(IQualificationRepository rep, Guid id, string name, string abbreviation, string shortname)
         {
-            Qualification val = rep.Get(id);
+            var val = rep.Get(id);
             if (val == null)
             {
                 val = CreateQualifications(id, name, abbreviation, shortname);
@@ -239,7 +238,7 @@
 
         private static void InitQualifications(IUnitOfWorkFactory unitOfWorkFactory)
         {
-            using (IUnitOfWork unitOfWork = unitOfWorkFactory.Create())
+            using (var unitOfWork = unitOfWorkFactory.Create())
             {
                 AddQualificationIfNotExist(unitOfWork.QualificationRepository, new Guid("216675CA-8436-443E-9D67-5CF0E01CF5D5"),
                 "бакалавр", "б", "бак.");
@@ -254,13 +253,13 @@
 
         private static RateEducation CreateRateEducations(Guid id, string name, string abbreviation, string shortname)
         {
-            RateEducation val = new RateEducation(id, name, shortname, abbreviation);
+            var val = new RateEducation(id, name, shortname, abbreviation);
             return val;
         }
 
         private static void AddRateEducationIfNotExist(IRateEducationRepository rep, Guid id, string name, string abbreviation, string shortname)
         {
-            RateEducation val = rep.Get(id);
+            var val = rep.Get(id);
             if (val == null)
             {
                 val = CreateRateEducations(id, name, abbreviation, shortname);
@@ -270,7 +269,7 @@
 
         private static void InitRateEducations(IUnitOfWorkFactory unitOfWorkFactory)
         {
-            using (IUnitOfWork unitOfWork = unitOfWorkFactory.Create())
+            using (var unitOfWork = unitOfWorkFactory.Create())
             {
                 AddRateEducationIfNotExist(unitOfWork.RateEducationRepository, new Guid("142DA5BD-636F-4B96-B508-8CA934E022C7"),
                 "среднее (полное) общее", "СО", "СО");
@@ -285,13 +284,13 @@
 
         private static Specialization CreateSpecializations(Guid id, string name, string abbreviation, string shortname)
         {
-            Specialization val = new Specialization(id, name, shortname, abbreviation);
+            var val = new Specialization(id, name, shortname, abbreviation);
             return val;
         }
 
         private static void AddSpecializationIfNotExist(ISpecializationRepository rep, Guid id, string name, string abbreviation, string shortname)
         {
-            Specialization val = rep.Get(id);
+            var val = rep.Get(id);
             if (val == null)
             {
                 val = CreateSpecializations(id, name, abbreviation, shortname);
@@ -301,7 +300,7 @@
 
         private static void InitSpecializations(IUnitOfWorkFactory unitOfWorkFactory)
         {
-            using (IUnitOfWork unitOfWork = unitOfWorkFactory.Create())
+            using (var unitOfWork = unitOfWorkFactory.Create())
             {
                 AddSpecializationIfNotExist(unitOfWork.SpecializationRepository, new Guid("DFBD0E3F-FC84-4EB1-8C40-E540A655ADFB"),
                 "Дополнительное образование", "ДО", "Доп. обр.");
@@ -312,13 +311,13 @@
 
         private static Territory CreateTerritories(Guid id, string name, string abbreviation, string shortname)
         {
-            Territory val = new Territory(id, name, shortname, abbreviation);
+            var val = new Territory(id, name, shortname, abbreviation);
             return val;
         }
 
         private static void AddTerritoryIfNotExist(ITerritoryRepository rep, Guid id, string name, string abbreviation, string shortname)
         {
-            Territory val = rep.Get(id);
+            var val = rep.Get(id);
             if (val == null)
             {
                 val = CreateTerritories(id, name, abbreviation, shortname);
@@ -328,7 +327,7 @@
 
         private static void InitTerritories(IUnitOfWorkFactory unitOfWorkFactory)
         {
-            using (IUnitOfWork unitOfWork = unitOfWorkFactory.Create())
+            using (var unitOfWork = unitOfWorkFactory.Create())
             {
                 AddTerritoryIfNotExist(unitOfWork.TerritoryRepository, new Guid("AB279979-08C8-4B81-B299-29A9513FD4A7"),
                 "Уфа", "", "");
@@ -339,13 +338,13 @@
 
         private static TypeTesting CreateTypeTesting(Guid id, string name, string abbreviation, string shortname)
         {
-            TypeTesting val = new TypeTesting(id, name, shortname, abbreviation);
+            var val = new TypeTesting(id, name, shortname, abbreviation);
             return val;
         }
 
         private static void AddTypeTestingIfNotExist(ITypeTestingRepository rep, Guid id, string name, string abbreviation, string shortname)
         {
-            TypeTesting val = rep.Get(id);
+            var val = rep.Get(id);
             if (val == null)
             {
                 val = CreateTypeTesting(id, name, abbreviation, shortname);
@@ -355,7 +354,7 @@
 
         private static void InitTypeTesting(IUnitOfWorkFactory unitOfWorkFactory)
         {
-            using (IUnitOfWork unitOfWork = unitOfWorkFactory.Create())
+            using (var unitOfWork = unitOfWorkFactory.Create())
             {
                 AddTypeTestingIfNotExist(unitOfWork.TypeTestingRepository, new Guid("d121aa27-6cdd-4dc6-80c0-bf9a022aa68d"),
                 "Зачёт", "З", "Зач.");
@@ -378,7 +377,7 @@
 
         private static void AddSubjectIfNotExist(ISubjectRepository rep, Guid id, string name, string abbreviation, string shortname)
         {
-            Subject val = rep.Get(id);
+            var val = rep.Get(id);
             if (val == null)
             {
                 val = CreateSubject(id, name, abbreviation, shortname);
@@ -388,10 +387,10 @@
 
         private static void AddForegginSubjectIfNotExist(ISubjectRepository subRep, ILanguageRepository langRep, Guid id, string name, string abbreviation, string shortname)
         {
-            Subject val = subRep.Get(id);
+            var val = subRep.Get(id);
             if (val == null)
             {
-                BaseForeignLanguageSubject baseSubject = new BaseForeignLanguageSubject();
+                var baseSubject = new BaseForeignLanguageSubject();
                 baseSubject.Name = name;
                 baseSubject.Id = id;
                 baseSubject.Abbreviation = abbreviation;
@@ -417,7 +416,7 @@
 
         private static void InitSubjects(IUnitOfWorkFactory unitOfWorkFactory)
         {
-            using (IUnitOfWork unitOfWork = unitOfWorkFactory.Create())
+            using (var unitOfWork = unitOfWorkFactory.Create())
             {
                 AddSubjectIfNotExist(unitOfWork.SubjectRepository, subjectPaterns,
                 "Паттерны проектирования", "ПП", "Паттерны. проект.");
@@ -435,13 +434,13 @@
 
         private static Role CreateRole(Guid id, string name)
         {
-            Role val = new Role(id, name);
+            var val = new Role(id, name);
             return val;
         }
 
         private static void AddRoleIfNotExist(IRoleRepository rep, Guid id, string name, string abbreviation, string shortname)
         {
-            Role val = rep.Get(id);
+            var val = rep.Get(id);
             if (val == null)
             {
                 val = CreateRole(id, name);
@@ -451,7 +450,7 @@
 
         private static void InitRoles(IUnitOfWorkFactory unitOfWorkFactory)
         {
-            using (IUnitOfWork unitOfWork = unitOfWorkFactory.Create())
+            using (var unitOfWork = unitOfWorkFactory.Create())
             {
                 AddRoleIfNotExist(unitOfWork.RoleRepository, new Guid("892ab98a-a698-49b4-ba38-909585ac9701"),
                 "admin", "", "");
@@ -507,18 +506,18 @@
 
         private static void InitOrganization(IUnitOfWorkFactory unitOfWorkFactory)
         {
-            Guid org_id = new Guid("C71096D3-CB28-4AA8-9AB2-32D03B4167B4");
+            var orgId = new Guid("C71096D3-CB28-4AA8-9AB2-32D03B4167B4");
 
-            using (IUnitOfWork unitOfWork = unitOfWorkFactory.Create())
+            using (var unitOfWork = unitOfWorkFactory.Create())
             {
                 //AddSpecializationIfNotExist(rep, new Guid("DFBD0E3F-FC84-4EB1-8C40-E540A655ADFB"),
                 //"Дополнительное образование", "ДО", "Доп. обр.");
-                Organization organiz = unitOfWork.OrganizationRepository.Get(org_id);
+                var organiz = unitOfWork.OrganizationRepository.Get(orgId);
                 if (organiz == null)
                 {
-                    Organization org = new Organization()
+                    var org = new Organization()
                     {
-                        Id = org_id,
+                        Id = orgId,
                         Name = "Центр аттестации",
                         Abbreviation = "ЦА",
                         ShortName = ""
@@ -539,27 +538,29 @@
 
         private static void InitTimur(IUnitOfWorkFactory unitOfWorkFactory)
         {
-            using (IUnitOfWork unitOfWork = unitOfWorkFactory.Create())
+            using (var unitOfWork = unitOfWorkFactory.Create())
             {
-                Guid timur_id = new Guid("8F57BF25-E38B-4BD2-97DD-A4529FCDCEFE");
+                var timur_id = new Guid("8F57BF25-E38B-4BD2-97DD-A4529FCDCEFE");
 
-                Person timur = unitOfWork.PersonRepository.Get(timur_id);
+                var timur = unitOfWork.PersonRepository.Get(timur_id);
                 if (timur == null)
                 {
-                    timur = new Person(timur_id);
+                    timur = new Person(timur_id)
+                    {
+                        Active = true,
+                        Birthday = new DateTime(1984, 9, 25).ToUniversalTime(),
+                        Email = "lean@live.ru",
+                        LastActivityDateTime = null,
+                        LastName = "Гирфанов",
+                        Login = "timur",
+                        Name = "Тимур",
+                        Password = "123",
+                        Patronymic = "Флюрович",
+                        PhotoID = Guid.Empty,
+                        Sex = Sex.Man,
+                        WhenSetPassWord = null
+                    };
 
-                    timur.Active = true;
-                    timur.Birthday = new DateTime(1984, 9, 25).ToUniversalTime();
-                    timur.Email = "lean@live.ru";
-                    timur.LastActivityDateTime = null;
-                    timur.LastName = "Гирфанов";
-                    timur.Login = "timur";
-                    timur.Name = "Тимур";
-                    timur.Password = "123";
-                    timur.Patronymic = "Флюрович";
-                    timur.PhotoID = Guid.Empty;
-                    timur.Sex = Sex.Man;
-                    timur.WhenSetPassWord = null;
                     timur.Roles.Add(unitOfWork.RoleRepository.Get(new Guid("892ab98a-a698-49b4-ba38-909585ac9701")));
                     //timur.Roles.Add(Role.admin);
                     unitOfWork.PersonRepository.Save(timur);
@@ -570,10 +571,10 @@
 
         private static void InitPushkin(IUnitOfWorkFactory unitOfWorkFactory)
         {
-            using (IUnitOfWork unitOfWork = unitOfWorkFactory.Create())
+            using (var unitOfWork = unitOfWorkFactory.Create())
             {
-                Guid pushkinId = new Guid("2f21b134-f996-4205-86fd-05fa36f0ad0f");
-                Person pushkin = unitOfWork.PersonRepository.Get(pushkinId);
+                var pushkinId = new Guid("2f21b134-f996-4205-86fd-05fa36f0ad0f");
+                var pushkin = unitOfWork.PersonRepository.Get(pushkinId);
                 if (pushkin == null)
                 {
                     var org = unitOfWork.OrganizationRepository.Get(new Guid("C71096D3-CB28-4AA8-9AB2-32D03B4167B4"));

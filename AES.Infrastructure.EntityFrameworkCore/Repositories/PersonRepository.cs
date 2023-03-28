@@ -14,9 +14,15 @@ namespace AES.Infrastructure.EntityFrameworkCore
         public override IQueryable<Person> GetQuery()
         {
             return Context.Set<Person>()
-                .Include(p => p.Student).ThenInclude(s => s.Curriculum).ThenInclude(c => c.Modules).ThenInclude(m => m.Items)
-                .Include(p => p.Curator).ThenInclude(t => t.Descriptions)
-                .Include(p => p.Tutor).ThenInclude(t => t.Descriptions).AsQueryable();
+                .Include(p => p.Student).
+                ThenInclude(s => s.Curriculum).
+                ThenInclude(c => c.Modules)
+                .ThenInclude(m => m.Items)
+                .Include(p => p.Curator).
+                ThenInclude(t => t.Descriptions)
+                .Include(p => p.Tutor)
+                .ThenInclude(t => t.Descriptions)
+                .AsQueryable();
         }
     }
 }

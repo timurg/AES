@@ -16,6 +16,7 @@ namespace AES.Init
         {
             var containerBuilder = new ContainerBuilder();
             containerBuilder.RegisterModule(new ConfigurationModule(configuration.GetSection("unitOfWorkFactory")));
+            containerBuilder.Register(c => c.Resolve<IUnitOfWorkFactory>().Create()).SingleInstance();
             return new AutofacServiceProvider(containerBuilder.Build());
         }
 
@@ -49,13 +50,14 @@ namespace AES.Init
 
 
             //Initializer.InitDictionary(factory);
-            using var unitOfWork = factory.Create();
-            IUserFinder userFinder = new UserFinder(unitOfWork);
+            using var unitOfWork = serviceProvider.GetService(typeof(IUnitOfWork)) as IUnitOfWork;
+            var userFinder = serviceProvider.GetService(typeof(IUserFinder)) as IUserFinder;
             var pushkin = userFinder.findByLogin("pushkin");
             if (pushkin != null)
             {
                 Console.WriteLine(pushkin.Name);
                 RenderCurriculum(pushkin);
+                pushkin.Name = pushkin.Name;
             }
             //ShowSubjects(unitOfWork);
                 

@@ -10,7 +10,7 @@ namespace AES.Infrastructure
         ///</summary>
         void Commit();
 
-        T getRepositorty<T>()  where T:DomainObject; 
+        T getRepository<T>()  where T:DomainObject; 
         
         IPersonRepository PersonRepository { get; }
         IDirectionRepository DirectionRepository { get; }
