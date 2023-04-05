@@ -14,6 +14,6 @@ public class AESEntityFrameworkCoreSqliteContext: AESEntityFrameworkCoreContext
     protected override void OnConfiguring(DbContextOptionsBuilder optionsBuilder)
     {
         optionsBuilder.UseSqlite(connectionString);
-        optionsBuilder.LogTo(System.Console.WriteLine);
+       // optionsBuilder.LogTo(System.Console.WriteLine);
     }
 }

@@ -10,6 +10,7 @@
       <ProjectReference Include="..\AES.BusinessLogic\AES.BusinessLogic.csproj" />
       <ProjectReference Include="..\AES.Domain\AES.Domain.csproj" />
       <ProjectReference Include="..\AES.Infrastructure.EntityFrameworkCore.PostgreSql\AES.Infrastructure.EntityFrameworkCore.PostgreSql.csproj" />
+      <ProjectReference Include="..\AES.Infrastructure.EntityFrameworkCore.Sqlite\AES.Infrastructure.EntityFrameworkCore.Sqlite.csproj" />
       <ProjectReference Include="..\AES.Infrastructure.EntityFrameworkCore\AES.Infrastructure.EntityFrameworkCore.csproj" />
       <ProjectReference Include="..\AES.Infrastructure\AES.Infrastructure.csproj" />
     </ItemGroup>

@@ -1,0 +1,35 @@
+<Project Sdk="Microsoft.NET.Sdk">
+
+    <PropertyGroup>
+        <OutputType>Exe</OutputType>
+        <TargetFramework>net6.0</TargetFramework>
+        <ImplicitUsings>enable</ImplicitUsings>
+        <Nullable>enable</Nullable>
+    </PropertyGroup>
+
+    <ItemGroup>
+      <PackageReference Include="Autofac" Version="6.5.0" />
+      <PackageReference Include="Autofac.Configuration" Version="6.0.0" />
+      <PackageReference Include="Autofac.Extensions.DependencyInjection" Version="8.0.0" />
+      <PackageReference Include="Microsoft.Extensions.Configuration" Version="7.0.0" />
+      <PackageReference Include="Telegram.Bot" Version="18.0.0" />
+      <PackageReference Include="Telegram.Bot.Extensions" Version="1.0.0" />
+      <PackageReference Include="Telegram.Bot.Extensions.LoginWidget" Version="1.2.0" />
+      <PackageReference Include="Telegram.Bot.Extensions.Passport" Version="1.0.0" />
+      <PackageReference Include="Tuscen.Telegram.Bot.Extensions.KeyboardBuilders" Version="1.0.0" />
+    </ItemGroup>
+
+    <ItemGroup>
+      <ProjectReference Include="..\AES.BusinessLogic.Implementation\AES.BusinessLogic.Implementation.csproj" />
+      <ProjectReference Include="..\AES.Domain\AES.Domain.csproj" />
+      <ProjectReference Include="..\AES.Infrastructure.EntityFrameworkCore.Sqlite\AES.Infrastructure.EntityFrameworkCore.Sqlite.csproj" />
+      <ProjectReference Include="..\AES.Infrastructure\AES.Infrastructure.csproj" />
+    </ItemGroup>
+
+    <ItemGroup>
+      <None Update="appsettings.json">
+        <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
+      </None>
+    </ItemGroup>
+
+</Project>
