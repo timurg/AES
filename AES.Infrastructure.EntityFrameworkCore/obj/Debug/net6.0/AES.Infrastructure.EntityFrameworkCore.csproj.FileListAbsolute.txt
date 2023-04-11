@@ -15,3 +15,5 @@ D:\Yandex\YandexDisk\Документы\GitHub\AES\AES.Infrastructure.EntityFram
 D:\Yandex\YandexDisk\Документы\GitHub\AES\AES.Infrastructure.EntityFrameworkCore\obj\Debug\net6.0\refint\AES.Infrastructure.EntityFrameworkCore.dll
 D:\Yandex\YandexDisk\Документы\GitHub\AES\AES.Infrastructure.EntityFrameworkCore\obj\Debug\net6.0\AES.Infrastructure.EntityFrameworkCore.pdb
 D:\Yandex\YandexDisk\Документы\GitHub\AES\AES.Infrastructure.EntityFrameworkCore\obj\Debug\net6.0\ref\AES.Infrastructure.EntityFrameworkCore.dll
+D:\yandex\YandexDisk\Документы\GitHub\AES\AES.Infrastructure.EntityFrameworkCore\bin\Debug\net6.0\AES.Story.dll
+D:\yandex\YandexDisk\Документы\GitHub\AES\AES.Infrastructure.EntityFrameworkCore\bin\Debug\net6.0\AES.Story.pdb

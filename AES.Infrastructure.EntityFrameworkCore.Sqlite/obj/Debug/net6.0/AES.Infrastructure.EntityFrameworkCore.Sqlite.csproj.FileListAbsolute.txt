@@ -20,3 +20,5 @@ D:\yandex\YandexDisk\Документы\GitHub\AES\AES.Infrastructure.EntityFram
 D:\yandex\YandexDisk\Документы\GitHub\AES\AES.Infrastructure.EntityFrameworkCore.Sqlite\obj\Debug\net6.0\ref\AES.Infrastructure.EntityFrameworkCore.Sqlite.dll
 D:\yandex\YandexDisk\Документы\GitHub\AES\AES.Infrastructure.EntityFrameworkCore.Sqlite\bin\Debug\net6.0\AES.Infrastructure.EntityFrameworkCore.Sqlite.runtimeconfig.json
 D:\yandex\YandexDisk\Документы\GitHub\AES\AES.Infrastructure.EntityFrameworkCore.Sqlite\obj\Debug\net6.0\AES.Infrastructure.EntityFrameworkCore.Sqlite.genruntimeconfig.cache
+D:\yandex\YandexDisk\Документы\GitHub\AES\AES.Infrastructure.EntityFrameworkCore.Sqlite\bin\Debug\net6.0\AES.Story.dll
+D:\yandex\YandexDisk\Документы\GitHub\AES\AES.Infrastructure.EntityFrameworkCore.Sqlite\bin\Debug\net6.0\AES.Story.pdb

@@ -8,15 +8,11 @@
     </PropertyGroup>
 
     <ItemGroup>
-      <PackageReference Include="Autofac" Version="6.5.0" />
+      <PackageReference Include="Autofac" Version="7.0.0" />
       <PackageReference Include="Autofac.Configuration" Version="6.0.0" />
       <PackageReference Include="Autofac.Extensions.DependencyInjection" Version="8.0.0" />
       <PackageReference Include="Microsoft.Extensions.Configuration" Version="7.0.0" />
-      <PackageReference Include="Telegram.Bot" Version="18.0.0" />
-      <PackageReference Include="Telegram.Bot.Extensions" Version="1.0.0" />
-      <PackageReference Include="Telegram.Bot.Extensions.LoginWidget" Version="1.2.0" />
-      <PackageReference Include="Telegram.Bot.Extensions.Passport" Version="1.0.0" />
-      <PackageReference Include="Tuscen.Telegram.Bot.Extensions.KeyboardBuilders" Version="1.0.0" />
+      <PackageReference Include="Telegram.BotAPI" Version="6.6.1" />
     </ItemGroup>
 
     <ItemGroup>
@@ -29,6 +25,9 @@
     <ItemGroup>
       <None Update="appsettings.json">
         <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
+      </None>
+      <None Update="appsettings.json.develop">
+        <DependentUpon>appsettings.json</DependentUpon>
       </None>
     </ItemGroup>
 

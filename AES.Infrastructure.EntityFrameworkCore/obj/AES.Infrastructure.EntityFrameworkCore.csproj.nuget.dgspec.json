@@ -92,6 +92,9 @@
               },
               "D:\\yandex\\YandexDisk\\Документы\\GitHub\\AES\\AES.Infrastructure\\AES.Infrastructure.csproj": {
                 "projectPath": "D:\\yandex\\YandexDisk\\Документы\\GitHub\\AES\\AES.Infrastructure\\AES.Infrastructure.csproj"
+              },
+              "D:\\yandex\\YandexDisk\\Документы\\GitHub\\AES\\AES.Story\\AES.Story.csproj": {
+                "projectPath": "D:\\yandex\\YandexDisk\\Документы\\GitHub\\AES\\AES.Story\\AES.Story.csproj"
               }
             }
           }
@@ -160,6 +163,9 @@
             "projectReferences": {
               "D:\\yandex\\YandexDisk\\Документы\\GitHub\\AES\\AES.Domain\\AES.Domain.csproj": {
                 "projectPath": "D:\\yandex\\YandexDisk\\Документы\\GitHub\\AES\\AES.Domain\\AES.Domain.csproj"
+              },
+              "D:\\yandex\\YandexDisk\\Документы\\GitHub\\AES\\AES.Story\\AES.Story.csproj": {
+                "projectPath": "D:\\yandex\\YandexDisk\\Документы\\GitHub\\AES\\AES.Story\\AES.Story.csproj"
               }
             }
           }
@@ -179,6 +185,64 @@
               "version": "[7.0.4, )"
             }
           },
+          "imports": [
+            "net461",
+            "net462",
+            "net47",
+            "net471",
+            "net472",
+            "net48",
+            "net481"
+          ],
+          "assetTargetFallback": true,
+          "warn": true,
+          "frameworkReferences": {
+            "Microsoft.NETCore.App": {
+              "privateAssets": "all"
+            }
+          },
+          "runtimeIdentifierGraphPath": "C:\\Program Files\\dotnet\\sdk\\6.0.402\\RuntimeIdentifierGraph.json"
+        }
+      }
+    },
+    "D:\\yandex\\YandexDisk\\Документы\\GitHub\\AES\\AES.Story\\AES.Story.csproj": {
+      "version": "1.0.0",
+      "restore": {
+        "projectUniqueName": "D:\\yandex\\YandexDisk\\Документы\\GitHub\\AES\\AES.Story\\AES.Story.csproj",
+        "projectName": "AES.Story",
+        "projectPath": "D:\\yandex\\YandexDisk\\Документы\\GitHub\\AES\\AES.Story\\AES.Story.csproj",
+        "packagesPath": "C:\\Users\\lean\\.nuget\\packages\\",
+        "outputPath": "D:\\yandex\\YandexDisk\\Документы\\GitHub\\AES\\AES.Story\\obj\\",
+        "projectStyle": "PackageReference",
+        "configFilePaths": [
+          "C:\\Users\\lean\\AppData\\Roaming\\NuGet\\NuGet.Config"
+        ],
+        "originalTargetFrameworks": [
+          "net6.0"
+        ],
+        "sources": {
+          "C:\\Program Files\\dotnet\\library-packs": {},
+          "https://api.nuget.org/v3/index.json": {}
+        },
+        "frameworks": {
+          "net6.0": {
+            "targetAlias": "net6.0",
+            "projectReferences": {
+              "D:\\yandex\\YandexDisk\\Документы\\GitHub\\AES\\AES.Domain\\AES.Domain.csproj": {
+                "projectPath": "D:\\yandex\\YandexDisk\\Документы\\GitHub\\AES\\AES.Domain\\AES.Domain.csproj"
+              }
+            }
+          }
+        },
+        "warningProperties": {
+          "warnAsError": [
+            "NU1605"
+          ]
+        }
+      },
+      "frameworks": {
+        "net6.0": {
+          "targetAlias": "net6.0",
           "imports": [
             "net461",
             "net462",

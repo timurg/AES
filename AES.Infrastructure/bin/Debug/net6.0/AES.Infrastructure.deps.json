@@ -9,6 +9,7 @@
       "AES.Infrastructure/1.0.0": {
         "dependencies": {
           "AES.Domain": "1.0.0",
+          "AES.Story": "1.0.0",
           "Microsoft.EntityFrameworkCore": "7.0.4"
         },
         "runtime": {
@@ -137,6 +138,14 @@
         "runtime": {
           "AES.Domain.dll": {}
         }
+      },
+      "AES.Story/1.0.0": {
+        "dependencies": {
+          "AES.Domain": "1.0.0"
+        },
+        "runtime": {
+          "AES.Story.dll": {}
+        }
       }
     }
   },
@@ -231,6 +240,11 @@
       "hashPath": "system.runtime.compilerservices.unsafe.6.0.0.nupkg.sha512"
     },
     "AES.Domain/1.0.0": {
+      "type": "project",
+      "serviceable": false,
+      "sha512": ""
+    },
+    "AES.Story/1.0.0": {
       "type": "project",
       "serviceable": false,
       "sha512": ""

@@ -229,6 +229,19 @@
         "runtime": {
           "bin/placeholder/AES.Domain.dll": {}
         }
+      },
+      "AES.Story/1.0.0": {
+        "type": "project",
+        "framework": ".NETCoreApp,Version=v6.0",
+        "dependencies": {
+          "AES.Domain": "1.0.0"
+        },
+        "compile": {
+          "bin/placeholder/AES.Story.dll": {}
+        },
+        "runtime": {
+          "bin/placeholder/AES.Story.dll": {}
+        }
       }
     }
   },
@@ -572,11 +585,17 @@
       "type": "project",
       "path": "../AES.Domain/AES.Domain.csproj",
       "msbuildProject": "../AES.Domain/AES.Domain.csproj"
+    },
+    "AES.Story/1.0.0": {
+      "type": "project",
+      "path": "../AES.Story/AES.Story.csproj",
+      "msbuildProject": "../AES.Story/AES.Story.csproj"
     }
   },
   "projectFileDependencyGroups": {
     "net6.0": [
       "AES.Domain >= 1.0.0",
+      "AES.Story >= 1.0.0",
       "Microsoft.EntityFrameworkCore >= 7.0.4"
     ]
   },
@@ -608,6 +627,9 @@
           "projectReferences": {
             "D:\\yandex\\YandexDisk\\Документы\\GitHub\\AES\\AES.Domain\\AES.Domain.csproj": {
               "projectPath": "D:\\yandex\\YandexDisk\\Документы\\GitHub\\AES\\AES.Domain\\AES.Domain.csproj"
+            },
+            "D:\\yandex\\YandexDisk\\Документы\\GitHub\\AES\\AES.Story\\AES.Story.csproj": {
+              "projectPath": "D:\\yandex\\YandexDisk\\Документы\\GitHub\\AES\\AES.Story\\AES.Story.csproj"
             }
           }
         }

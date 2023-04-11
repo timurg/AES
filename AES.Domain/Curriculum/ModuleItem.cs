@@ -8,10 +8,6 @@ namespace AES.Domain
         public bool IsRequared { get; set; }
 
         public GradeRecord Grade { get; set; }
-        public abstract bool BeginLeanrning();
-        public abstract bool CanEnd();
-        public abstract bool EndLearning();
-        public abstract void ResetLearning();
 
         [Required]
         public Module Module { get; set; }
@@ -23,5 +19,7 @@ namespace AES.Domain
 
         [Required]
         public int Semester { get; set; }
+        
+        public LearningProcess LearningProcess { get; set; }
     }
 }

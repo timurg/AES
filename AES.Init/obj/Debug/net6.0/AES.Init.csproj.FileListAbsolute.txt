@@ -88,3 +88,5 @@ D:\yandex\YandexDisk\Документы\GitHub\AES\AES.Init\bin\Debug\net6.0\run
 D:\yandex\YandexDisk\Документы\GitHub\AES\AES.Init\bin\Debug\net6.0\runtimes\win-x86\native\e_sqlite3.dll
 D:\yandex\YandexDisk\Документы\GitHub\AES\AES.Init\bin\Debug\net6.0\AES.Infrastructure.EntityFrameworkCore.Sqlite.dll
 D:\yandex\YandexDisk\Документы\GitHub\AES\AES.Init\bin\Debug\net6.0\AES.Infrastructure.EntityFrameworkCore.Sqlite.pdb
+D:\yandex\YandexDisk\Документы\GitHub\AES\AES.Init\bin\Debug\net6.0\AES.Story.dll
+D:\yandex\YandexDisk\Документы\GitHub\AES\AES.Init\bin\Debug\net6.0\AES.Story.pdb

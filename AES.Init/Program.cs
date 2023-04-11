@@ -49,7 +49,7 @@ namespace AES.Init
                           ?? throw new ApplicationException("Не удалось создать фабрику");
 
 
-            //Initializer.InitDictionary(factory);
+            Initializer.InitDictionary(factory);
             using var unitOfWork = serviceProvider.GetService(typeof(IUnitOfWork)) as IUnitOfWork;
             var userFinder = serviceProvider.GetService(typeof(IUserFinder)) as IUserFinder;
             var pushkin = userFinder.findByLogin("pushkin");

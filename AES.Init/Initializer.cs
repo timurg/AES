@@ -1,4 +1,9 @@
-﻿namespace AES.Init
+﻿using System.IO;
+using System.Net;
+using System.Net.Mime;
+using AES.Story;
+
+namespace AES.Init
 {
     using Domain;
     using Infrastructure;
@@ -460,6 +465,62 @@
             }
         }
 
+        private static void InitMyStoryTemplate(IUnitOfWorkFactory unitOfWorkFactory)
+        {
+            using (var unitOfWork = unitOfWorkFactory.Create())
+            {
+                var id = new Guid("6a1db7d6-40a5-4abb-9d46-211a9d6f3420");
+
+                var template = unitOfWork.StoryTemplateRepository.Get(id);
+                if (template == null)
+                {
+
+                    template = new MyStoryTemplate
+                    {
+                        Id = id,
+                        Title = "Антидрон",
+                        Description =
+                            "АСПЕКТЫ ИСПОЛЬЗОВАНИЯ СИСТЕМ ОБНАРУЖЕНИЯ И ПРОТИВОДЕЙСТВИЯ БПЛА НА ОБЪЕКТАХ КРИТИЧЕСКОЙ ИНФРАСТРУКТУРЫ"
+                    };
+                    template.Items.Add(MyStoryTemplateImage.CreateFromFile(
+                        "D:\\yandex\\YandexDisk\\Изображения\\Слайды Антидрон\\001.png", "Актуальность угрозы",
+                        new Guid("cef46745-17b3-436a-841c-b077364eb0d1")));
+
+                    template.Items.Add(MyStoryTemplateImage.CreateFromFile(
+                        "D:\\yandex\\YandexDisk\\Изображения\\Слайды Антидрон\\002.png", "Актуальность угрозы",
+                        new Guid("0569fecb-c131-4d0d-be94-c44b168c8b99")));
+
+                    template.Items.Add(MyStoryTemplateImage.CreateFromFile(
+                        "D:\\yandex\\YandexDisk\\Изображения\\Слайды Антидрон\\003.png", "Актуальность угрозы",
+                        new Guid("0f73dfcb-563e-47d6-b764-1ff05e2805aa")));
+
+                    template.Items.Add(MyStoryTemplateImage.CreateFromFile(
+                        "D:\\yandex\\YandexDisk\\Изображения\\Слайды Антидрон\\004.png", "Актуальность угрозы",
+                        new Guid("9a80a4f2-85e7-4afa-9100-3bfcbeed252b")));
+
+                    template.Items.Add(MyStoryTemplateImage.CreateFromFile(
+                        "D:\\yandex\\YandexDisk\\Изображения\\Слайды Антидрон\\005.png", "Актуальность угрозы",
+                        new Guid("b83872d4-0fbc-4553-94c3-59111746823b")));
+
+                    template.Items.Add(MyStoryTemplateImage.CreateFromFile(
+                        "D:\\yandex\\YandexDisk\\Изображения\\Слайды Антидрон\\006.png", "Актуальность угрозы",
+                        new Guid("5d9115e2-f152-43ba-a160-aa019a557862")));
+
+                    template.Items.Add(MyStoryTemplateImage.CreateFromFile(
+                        "D:\\yandex\\YandexDisk\\Изображения\\Слайды Антидрон\\007.png", "Актуальность угрозы",
+                        new Guid("a3c14ffb-f624-4f88-90c2-386c95ac7c37")));
+
+                    template.Items.Add(MyStoryTemplateImage.CreateFromFile(
+                        "D:\\yandex\\YandexDisk\\Изображения\\Слайды Антидрон\\008.png", "Актуальность угрозы",
+                        new Guid("80f1717f-c019-48a2-9b30-2389c41df27a")));
+
+                    unitOfWork.StoryTemplateRepository.Save(template);
+                }
+
+                unitOfWork.Commit();
+            }
+        }
+        
         //private static void SaveCourseIfNotExist(Course course)
         //{
         //    var courseRepository = IoC.Resolve<ICourseRepository>();
@@ -671,6 +732,7 @@
             //InitCourses();
             //InitCurriculum();
 
+            InitMyStoryTemplate(unitOfWorkFactory);
             InitTimur(unitOfWorkFactory);
             InitPushkin(unitOfWorkFactory);
         }

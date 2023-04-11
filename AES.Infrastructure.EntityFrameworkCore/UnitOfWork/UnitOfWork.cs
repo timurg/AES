@@ -32,6 +32,7 @@ namespace AES.Infrastructure.EntityFrameworkCore
             SubjectRepository = new SubjectRepository(Context);
             TerritoryRepository = new TerritoryRepository(Context);
             TypeTestingRepository = new TypeTestingRepository(context);
+            StoryTemplateRepository = new StoryTemplateRepository(context);
         }
 
         public T getRepository<T>() where T : DomainObject
@@ -66,6 +67,8 @@ namespace AES.Infrastructure.EntityFrameworkCore
         public ITerritoryRepository TerritoryRepository { get; private set; }
 
         public ITypeTestingRepository TypeTestingRepository { get; private set; }
+        
+        public IStoryTemplateRepository StoryTemplateRepository { get; private set; }
 
         public void Commit()
         {

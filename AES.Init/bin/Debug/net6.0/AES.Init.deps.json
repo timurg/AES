@@ -15,7 +15,7 @@
           "AES.Infrastructure.EntityFrameworkCore": "1.0.0",
           "AES.Infrastructure.EntityFrameworkCore.PostgreSql": "1.0.0",
           "AES.Infrastructure.EntityFrameworkCore.Sqlite": "1.0.0",
-          "Autofac": "6.5.0",
+          "Autofac": "7.0.0",
           "Autofac.Configuration": "6.0.0",
           "Autofac.Extensions.DependencyInjection": "8.0.0",
           "Microsoft.EntityFrameworkCore.Relational": "7.0.4",
@@ -25,20 +25,20 @@
           "AES.Init.dll": {}
         }
       },
-      "Autofac/6.5.0": {
+      "Autofac/7.0.0": {
         "dependencies": {
           "System.Diagnostics.DiagnosticSource": "4.7.1"
         },
         "runtime": {
           "lib/net6.0/Autofac.dll": {
-            "assemblyVersion": "6.5.0.0",
-            "fileVersion": "6.5.0.0"
+            "assemblyVersion": "7.0.0.0",
+            "fileVersion": "7.0.0.0"
           }
         }
       },
       "Autofac.Configuration/6.0.0": {
         "dependencies": {
-          "Autofac": "6.5.0",
+          "Autofac": "7.0.0",
           "Microsoft.Extensions.Configuration": "7.0.0",
           "Microsoft.Extensions.Configuration.Binder": "2.2.0"
         },
@@ -51,7 +51,7 @@
       },
       "Autofac.Extensions.DependencyInjection/8.0.0": {
         "dependencies": {
-          "Autofac": "6.5.0",
+          "Autofac": "7.0.0",
           "Microsoft.Extensions.DependencyInjection.Abstractions": "7.0.0"
         },
         "runtime": {
@@ -325,30 +325,30 @@
           }
         }
       },
-      "NLog/5.1.2": {
+      "NLog/5.1.3": {
         "runtime": {
           "lib/netstandard2.0/NLog.dll": {
             "assemblyVersion": "5.0.0.0",
-            "fileVersion": "5.1.2.1561"
+            "fileVersion": "5.1.3.1645"
           }
         }
       },
       "NLog.Config/4.7.15": {
         "dependencies": {
-          "NLog": "5.1.2",
+          "NLog": "5.1.3",
           "NLog.Schema": "4.7.15"
         }
       },
-      "NLog.Extensions.Logging/5.2.2": {
+      "NLog.Extensions.Logging/5.2.3": {
         "dependencies": {
           "Microsoft.Extensions.Configuration.Abstractions": "7.0.0",
           "Microsoft.Extensions.Logging": "7.0.0",
-          "NLog": "5.1.2"
+          "NLog": "5.1.3"
         },
         "runtime": {
           "lib/net6.0/NLog.Extensions.Logging.dll": {
             "assemblyVersion": "5.0.0.0",
-            "fileVersion": "5.2.2.309"
+            "fileVersion": "5.2.3.325"
           }
         }
       },
@@ -597,6 +597,7 @@
       "AES.Infrastructure/1.0.0": {
         "dependencies": {
           "AES.Domain": "1.0.0",
+          "AES.Story": "1.0.0",
           "Microsoft.EntityFrameworkCore": "7.0.4"
         },
         "runtime": {
@@ -607,6 +608,7 @@
         "dependencies": {
           "AES.Domain": "1.0.0",
           "AES.Infrastructure": "1.0.0",
+          "AES.Story": "1.0.0",
           "Microsoft.EntityFrameworkCore": "7.0.4",
           "Microsoft.EntityFrameworkCore.Relational": "7.0.4"
         },
@@ -621,7 +623,7 @@
           "Microsoft.Extensions.Configuration": "7.0.0",
           "Microsoft.Extensions.Configuration.Json": "7.0.0",
           "NLog.Config": "4.7.15",
-          "NLog.Extensions.Logging": "5.2.2",
+          "NLog.Extensions.Logging": "5.2.3",
           "Npgsql.EntityFrameworkCore.PostgreSQL": "7.0.3"
         },
         "runtime": {
@@ -639,6 +641,14 @@
         "runtime": {
           "AES.Infrastructure.EntityFrameworkCore.Sqlite.dll": {}
         }
+      },
+      "AES.Story/1.0.0": {
+        "dependencies": {
+          "AES.Domain": "1.0.0"
+        },
+        "runtime": {
+          "AES.Story.dll": {}
+        }
       }
     }
   },
@@ -648,12 +658,12 @@
       "serviceable": false,
       "sha512": ""
     },
-    "Autofac/6.5.0": {
+    "Autofac/7.0.0": {
       "type": "package",
       "serviceable": true,
-      "sha512": "sha512-sm6HWWBDEoTPGXeyOchMygJ/7L89VxmVH72BFxakG88J34AVjA8RMi5jbv3PdpUtXI/d9ZLKOaxCmOSIo2K4aA==",
-      "path": "autofac/6.5.0",
-      "hashPath": "autofac.6.5.0.nupkg.sha512"
+      "sha512": "sha512-phR/GEk5h2kQWbMl70cZzCW5ysGxmz2ClaX5CuTw9qc3wtdDu3l9GAhWiWmZLltCytEIxIw98NtAraiOxazqLg==",
+      "path": "autofac/7.0.0",
+      "hashPath": "autofac.7.0.0.nupkg.sha512"
     },
     "Autofac.Configuration/6.0.0": {
       "type": "package",
@@ -837,12 +847,12 @@
       "path": "microsoft.extensions.primitives/7.0.0",
       "hashPath": "microsoft.extensions.primitives.7.0.0.nupkg.sha512"
     },
-    "NLog/5.1.2": {
+    "NLog/5.1.3": {
       "type": "package",
       "serviceable": true,
-      "sha512": "sha512-JfQY93ure3IPVTN3eabBewBGvrcXcWIlaesFEXdy5UzIymfIT9yCgLISYtM0cOhjWziIaUr/6Z9NC2RwtjwrsQ==",
-      "path": "nlog/5.1.2",
-      "hashPath": "nlog.5.1.2.nupkg.sha512"
+      "sha512": "sha512-rB8hwjBf1EZCfG5iPfsv3gPksLoJLr1cOrt7PBbJu6VpJgwYJchDzTUT1dhNDdPv0QakXJQJOhE59ErupcznQQ==",
+      "path": "nlog/5.1.3",
+      "hashPath": "nlog.5.1.3.nupkg.sha512"
     },
     "NLog.Config/4.7.15": {
       "type": "package",
@@ -851,12 +861,12 @@
       "path": "nlog.config/4.7.15",
       "hashPath": "nlog.config.4.7.15.nupkg.sha512"
     },
-    "NLog.Extensions.Logging/5.2.2": {
+    "NLog.Extensions.Logging/5.2.3": {
       "type": "package",
       "serviceable": true,
-      "sha512": "sha512-V6sd+0Hrk2XlU//XbUizFYTE8Hf8+xFkhi81shIhsKl4tvWFUYmjBY/zBy/wlQCt0K6mfseaEKnayRJVhIz5Iw==",
-      "path": "nlog.extensions.logging/5.2.2",
-      "hashPath": "nlog.extensions.logging.5.2.2.nupkg.sha512"
+      "sha512": "sha512-TB8zPGV2nVpvWq5C8zIVHPSmnzOHMrXppjsAwHcuJq1Ehs8sC0llnAv5Ysf5Lf/vew9amV/+01MohtRFSDzKdQ==",
+      "path": "nlog.extensions.logging/5.2.3",
+      "hashPath": "nlog.extensions.logging.5.2.3.nupkg.sha512"
     },
     "NLog.Schema/4.7.15": {
       "type": "package",
@@ -973,6 +983,11 @@
       "sha512": ""
     },
     "AES.Infrastructure.EntityFrameworkCore.Sqlite/1.0.0": {
+      "type": "project",
+      "serviceable": false,
+      "sha512": ""
+    },
+    "AES.Story/1.0.0": {
       "type": "project",
       "serviceable": false,
       "sha512": ""

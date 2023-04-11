@@ -21,3 +21,5 @@ D:\Yandex\YandexDisk\Документы\GitHub\AES\AES.Infrastructure.EntityFram
 D:\Yandex\YandexDisk\Документы\GitHub\AES\AES.Infrastructure.EntityFrameworkCore.PostgreSql\obj\Debug\net6.0\AES.Infrastructure.EntityFrameworkCore.PostgreSql.pdb
 D:\Yandex\YandexDisk\Документы\GitHub\AES\AES.Infrastructure.EntityFrameworkCore.PostgreSql\obj\Debug\net6.0\AES.Infrastructure.EntityFrameworkCore.PostgreSql.genruntimeconfig.cache
 D:\Yandex\YandexDisk\Документы\GitHub\AES\AES.Infrastructure.EntityFrameworkCore.PostgreSql\obj\Debug\net6.0\ref\AES.Infrastructure.EntityFrameworkCore.PostgreSql.dll
+D:\yandex\YandexDisk\Документы\GitHub\AES\AES.Infrastructure.EntityFrameworkCore.PostgreSql\bin\Debug\net6.0\AES.Story.dll
+D:\yandex\YandexDisk\Документы\GitHub\AES\AES.Infrastructure.EntityFrameworkCore.PostgreSql\bin\Debug\net6.0\AES.Story.pdb

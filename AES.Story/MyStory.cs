@@ -3,9 +3,9 @@ using AES.Domain;
 
 namespace AES.Story;
 
-public class MyStory : ModuleItem
+public class MyStory : LearningProcess
 {
-    public override bool BeginLeanrning()
+    public override bool BeginLearning()
     {
         throw new NotImplementedException();
     }
@@ -28,4 +28,6 @@ public class MyStory : ModuleItem
     public int StoryStep { get; set; }
 
     public IList<StoryItem> Items { get; } = new Collection<StoryItem>();
+    
+    public MyStoryTemplate StoryTemplate { get; set; }
 }

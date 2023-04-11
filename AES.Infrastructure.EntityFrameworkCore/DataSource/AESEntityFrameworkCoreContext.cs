@@ -1,4 +1,5 @@
 ﻿using AES.Domain;
+using AES.Story;
 using Microsoft.EntityFrameworkCore;
 namespace AES.Infrastructure.EntityFrameworkCore
 {
@@ -57,11 +58,23 @@ namespace AES.Infrastructure.EntityFrameworkCore
             modelBuilder.Entity<Curriculum>().HasMany(c => c.Modules).WithOne(m => m.Curriculum);
             modelBuilder.Entity<Module>().HasMany(m => m.Items).WithOne(mi => mi.Module);
 
-            modelBuilder.Entity<ModuleItem>().ToTable("ModuleItems")
-                .HasDiscriminator<int>("ModuleItemType")
-            .HasValue<CurriculumItem>(0);
+            modelBuilder.Entity<ModuleItem>().ToTable("ModuleItems").HasDiscriminator<int>("LearningProcessesType")
+                .HasValue<CurriculumItem>(1);
+            modelBuilder.Entity<LearningProcess>().ToTable("LearningProcesses")
+                .HasDiscriminator<int>("LearningProcessesType")
+            .HasValue<MyStory>(1);
 
+            modelBuilder.Entity<StoryItem>().ToTable("StoryItems")
+                .HasDiscriminator<int>("StoryItemType")
+                .HasValue<StoryPoll>(0);
+            
             modelBuilder.Entity<Curator>().ToTable("Curators");
+            
+            modelBuilder.Entity<MyStoryTemplate>(p => p.ToTable("MyStoryTemplates"));
+            
+            modelBuilder.Entity<MyStoryTemplateItem>().ToTable("MyStoryTemplateItems")
+                .HasDiscriminator<int>("MyStoryTemplateItemType")
+                .HasValue<MyStoryTemplateImage>(0);
         }
 
     }

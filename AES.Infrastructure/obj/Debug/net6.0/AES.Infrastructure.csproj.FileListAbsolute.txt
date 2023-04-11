@@ -13,3 +13,5 @@ D:\Yandex\YandexDisk\Документы\GitHub\AES\AES.Infrastructure\obj\Debug\
 D:\Yandex\YandexDisk\Документы\GitHub\AES\AES.Infrastructure\obj\Debug\net6.0\refint\AES.Infrastructure.dll
 D:\Yandex\YandexDisk\Документы\GitHub\AES\AES.Infrastructure\obj\Debug\net6.0\AES.Infrastructure.pdb
 D:\Yandex\YandexDisk\Документы\GitHub\AES\AES.Infrastructure\obj\Debug\net6.0\ref\AES.Infrastructure.dll
+D:\yandex\YandexDisk\Документы\GitHub\AES\AES.Infrastructure\bin\Debug\net6.0\AES.Story.dll
+D:\yandex\YandexDisk\Документы\GitHub\AES\AES.Infrastructure\bin\Debug\net6.0\AES.Story.pdb

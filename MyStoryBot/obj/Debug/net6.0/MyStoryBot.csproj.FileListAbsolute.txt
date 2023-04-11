@@ -23,17 +23,12 @@ D:\yandex\YandexDisk\Документы\GitHub\AES\MyStoryBot\bin\Debug\net6.0\M
 D:\yandex\YandexDisk\Документы\GitHub\AES\MyStoryBot\bin\Debug\net6.0\Microsoft.Extensions.Options.dll
 D:\yandex\YandexDisk\Документы\GitHub\AES\MyStoryBot\bin\Debug\net6.0\Microsoft.Extensions.Primitives.dll
 D:\yandex\YandexDisk\Документы\GitHub\AES\MyStoryBot\bin\Debug\net6.0\Newtonsoft.Json.dll
-D:\yandex\YandexDisk\Документы\GitHub\AES\MyStoryBot\bin\Debug\net6.0\Telegram.Bot.dll
-D:\yandex\YandexDisk\Документы\GitHub\AES\MyStoryBot\bin\Debug\net6.0\Telegram.Bot.Extensions.dll
-D:\yandex\YandexDisk\Документы\GitHub\AES\MyStoryBot\bin\Debug\net6.0\Telegram.Bot.Extensions.LoginWidget.dll
-D:\yandex\YandexDisk\Документы\GitHub\AES\MyStoryBot\bin\Debug\net6.0\Telegram.Bot.Extensions.KeyboardBuilders.dll
 D:\yandex\YandexDisk\Документы\GitHub\AES\MyStoryBot\obj\Debug\net6.0\MyStoryBot.csproj.CopyComplete
 D:\yandex\YandexDisk\Документы\GitHub\AES\MyStoryBot\obj\Debug\net6.0\MyStoryBot.dll
 D:\yandex\YandexDisk\Документы\GitHub\AES\MyStoryBot\obj\Debug\net6.0\refint\MyStoryBot.dll
 D:\yandex\YandexDisk\Документы\GitHub\AES\MyStoryBot\obj\Debug\net6.0\MyStoryBot.pdb
 D:\yandex\YandexDisk\Документы\GitHub\AES\MyStoryBot\obj\Debug\net6.0\MyStoryBot.genruntimeconfig.cache
 D:\yandex\YandexDisk\Документы\GitHub\AES\MyStoryBot\obj\Debug\net6.0\ref\MyStoryBot.dll
-D:\yandex\YandexDisk\Документы\GitHub\AES\MyStoryBot\bin\Debug\net6.0\Telegram.Bot.Extensions.Passport.dll
 D:\yandex\YandexDisk\Документы\GitHub\AES\MyStoryBot\bin\Debug\net6.0\appsettings.json
 D:\yandex\YandexDisk\Документы\GitHub\AES\MyStoryBot\bin\Debug\net6.0\Autofac.dll
 D:\yandex\YandexDisk\Документы\GitHub\AES\MyStoryBot\bin\Debug\net6.0\Autofac.Configuration.dll
@@ -87,3 +82,4 @@ D:\yandex\YandexDisk\Документы\GitHub\AES\MyStoryBot\bin\Debug\net6.0\A
 D:\yandex\YandexDisk\Документы\GitHub\AES\MyStoryBot\bin\Debug\net6.0\AES.Infrastructure.pdb
 D:\yandex\YandexDisk\Документы\GitHub\AES\MyStoryBot\bin\Debug\net6.0\AES.BusinessLogic.pdb
 D:\yandex\YandexDisk\Документы\GitHub\AES\MyStoryBot\bin\Debug\net6.0\AES.Infrastructure.EntityFrameworkCore.pdb
+D:\yandex\YandexDisk\Документы\GitHub\AES\MyStoryBot\bin\Debug\net6.0\Telegram.BotAPI.dll

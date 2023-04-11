@@ -17,3 +17,5 @@ D:\Yandex\YandexDisk\Документы\GitHub\AES\AES.BusinessLogic.Implementat
 D:\Yandex\YandexDisk\Документы\GitHub\AES\AES.BusinessLogic.Implementation\obj\Debug\net6.0\refint\AES.BusinessLogic.Implementation.dll
 D:\Yandex\YandexDisk\Документы\GitHub\AES\AES.BusinessLogic.Implementation\obj\Debug\net6.0\AES.BusinessLogic.Implementation.pdb
 D:\Yandex\YandexDisk\Документы\GitHub\AES\AES.BusinessLogic.Implementation\obj\Debug\net6.0\ref\AES.BusinessLogic.Implementation.dll
+D:\yandex\YandexDisk\Документы\GitHub\AES\AES.BusinessLogic.Implementation\bin\Debug\net6.0\AES.Story.dll
+D:\yandex\YandexDisk\Документы\GitHub\AES\AES.BusinessLogic.Implementation\bin\Debug\net6.0\AES.Story.pdb
