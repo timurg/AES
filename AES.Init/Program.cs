@@ -52,14 +52,13 @@ namespace AES.Init
             Initializer.InitDictionary(factory);
             using var unitOfWork = serviceProvider.GetService(typeof(IUnitOfWork)) as IUnitOfWork;
             var userFinder = serviceProvider.GetService(typeof(IUserFinder)) as IUserFinder;
-            var pushkin = userFinder.findByLogin("pushkin");
+            var pushkin = userFinder.findByLogin("1577631715");
             if (pushkin != null)
             {
                 Console.WriteLine(pushkin.Name);
                 RenderCurriculum(pushkin);
                 pushkin.Name = pushkin.Name;
             }
-            //ShowSubjects(unitOfWork);
                 
             unitOfWork.Commit();
         }

@@ -2,6 +2,7 @@
 using Microsoft.EntityFrameworkCore;
 using System;
 using System.Linq;
+using AES.Story;
 
 namespace AES.Infrastructure.EntityFrameworkCore
 {
@@ -18,6 +19,8 @@ namespace AES.Infrastructure.EntityFrameworkCore
                 ThenInclude(s => s.Curriculum).
                 ThenInclude(c => c.Modules)
                 .ThenInclude(m => m.Items)
+                .ThenInclude(m => m.LearningProcess)
+                .ThenInclude(e => ((MyStory)e).StoryTemplate.Items)
                 .Include(p => p.Curator).
                 ThenInclude(t => t.Descriptions)
                 .Include(p => p.Tutor)

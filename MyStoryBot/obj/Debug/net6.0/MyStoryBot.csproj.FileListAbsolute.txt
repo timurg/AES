@@ -83,3 +83,5 @@ D:\yandex\YandexDisk\Документы\GitHub\AES\MyStoryBot\bin\Debug\net6.0\A
 D:\yandex\YandexDisk\Документы\GitHub\AES\MyStoryBot\bin\Debug\net6.0\AES.BusinessLogic.pdb
 D:\yandex\YandexDisk\Документы\GitHub\AES\MyStoryBot\bin\Debug\net6.0\AES.Infrastructure.EntityFrameworkCore.pdb
 D:\yandex\YandexDisk\Документы\GitHub\AES\MyStoryBot\bin\Debug\net6.0\Telegram.BotAPI.dll
+D:\yandex\YandexDisk\Документы\GitHub\AES\MyStoryBot\bin\Debug\net6.0\AES.Story.dll
+D:\yandex\YandexDisk\Документы\GitHub\AES\MyStoryBot\bin\Debug\net6.0\AES.Story.pdb

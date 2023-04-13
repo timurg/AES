@@ -431,6 +431,9 @@ namespace AES.Init
 
                 AddForegginSubjectIfNotExist(unitOfWork.SubjectRepository, unitOfWork.LanguageRepository, subjectFS,
                 "Иностранный язык", "Ин.Яз.", "Иностранный");
+                
+                AddSubjectIfNotExist(unitOfWork.SubjectRepository, new Guid("a458baa2-0747-4dd4-a59c-a588ad49629e"),
+                    "Антидрон", "Антидрон", "Антидрон");
 
                 unitOfWork.Commit();
             }
@@ -484,35 +487,44 @@ namespace AES.Init
                     };
                     template.Items.Add(MyStoryTemplateImage.CreateFromFile(
                         "D:\\yandex\\YandexDisk\\Изображения\\Слайды Антидрон\\001.png", "Актуальность угрозы",
-                        new Guid("cef46745-17b3-436a-841c-b077364eb0d1")));
+                        new Guid("cef46745-17b3-436a-841c-b077364eb0d1"), 0));
 
                     template.Items.Add(MyStoryTemplateImage.CreateFromFile(
                         "D:\\yandex\\YandexDisk\\Изображения\\Слайды Антидрон\\002.png", "Актуальность угрозы",
-                        new Guid("0569fecb-c131-4d0d-be94-c44b168c8b99")));
+                        new Guid("0569fecb-c131-4d0d-be94-c44b168c8b99"), 1));
 
                     template.Items.Add(MyStoryTemplateImage.CreateFromFile(
                         "D:\\yandex\\YandexDisk\\Изображения\\Слайды Антидрон\\003.png", "Актуальность угрозы",
-                        new Guid("0f73dfcb-563e-47d6-b764-1ff05e2805aa")));
+                        new Guid("0f73dfcb-563e-47d6-b764-1ff05e2805aa"), 2));
 
                     template.Items.Add(MyStoryTemplateImage.CreateFromFile(
                         "D:\\yandex\\YandexDisk\\Изображения\\Слайды Антидрон\\004.png", "Актуальность угрозы",
-                        new Guid("9a80a4f2-85e7-4afa-9100-3bfcbeed252b")));
+                        new Guid("9a80a4f2-85e7-4afa-9100-3bfcbeed252b"), 3));
 
                     template.Items.Add(MyStoryTemplateImage.CreateFromFile(
                         "D:\\yandex\\YandexDisk\\Изображения\\Слайды Антидрон\\005.png", "Актуальность угрозы",
-                        new Guid("b83872d4-0fbc-4553-94c3-59111746823b")));
+                        new Guid("b83872d4-0fbc-4553-94c3-59111746823b"), 4));
 
                     template.Items.Add(MyStoryTemplateImage.CreateFromFile(
                         "D:\\yandex\\YandexDisk\\Изображения\\Слайды Антидрон\\006.png", "Актуальность угрозы",
-                        new Guid("5d9115e2-f152-43ba-a160-aa019a557862")));
+                        new Guid("5d9115e2-f152-43ba-a160-aa019a557862"), 5));
 
                     template.Items.Add(MyStoryTemplateImage.CreateFromFile(
                         "D:\\yandex\\YandexDisk\\Изображения\\Слайды Антидрон\\007.png", "Актуальность угрозы",
-                        new Guid("a3c14ffb-f624-4f88-90c2-386c95ac7c37")));
+                        new Guid("a3c14ffb-f624-4f88-90c2-386c95ac7c37"), 6));
 
                     template.Items.Add(MyStoryTemplateImage.CreateFromFile(
                         "D:\\yandex\\YandexDisk\\Изображения\\Слайды Антидрон\\008.png", "Актуальность угрозы",
-                        new Guid("80f1717f-c019-48a2-9b30-2389c41df27a")));
+                        new Guid("80f1717f-c019-48a2-9b30-2389c41df27a"), 7));
+
+                    template.Items.Add(MyStoryTemplateQuiz.Create("Что тако БПЛА?",
+                        new[]
+                        {
+                            "Большой промышленный летательный аппарат",
+                            "Боевой",
+                            "Беспилотный летательный аппарат",
+                            "Большой планер легкой авиации"
+                        }, 2, 8, new Guid("4a2b0cf6-d6d8-429d-84e9-61f60eefe904")));
 
                     unitOfWork.StoryTemplateRepository.Save(template);
                 }
@@ -647,7 +659,7 @@ namespace AES.Init
                     pushkin.Email = "timbox17@yandex.ru";
                     pushkin.LastActivityDateTime = null;
                     pushkin.LastName = "Пушкин";
-                    pushkin.Login = "pushkin";
+                    pushkin.Login = "1577631715";
                     pushkin.Name = "Александр";
                     pushkin.Password = "1234";
                     pushkin.Patronymic = "Сергеевич";
@@ -681,11 +693,11 @@ namespace AES.Init
                 {
                     pushkin.Student.Curriculum = createCurriculum(pushkin.Student, new []
                     {
-                        new dymmuCurriculum(){Semester = 1, SubjectName = "Паттерны проектирования", TypeTesting = "Зачёт" },
-                        new dymmuCurriculum(){Semester = 1, SubjectName = "Иностранный язык", TypeTesting = "Зачёт" },
-                        new dymmuCurriculum(){Semester = 2, SubjectName = "Programming Entity Framework- Code First", TypeTesting = "Зачёт" },
-                        new dymmuCurriculum(){Semester = 2, SubjectName = "Иностранный язык", TypeTesting = "Экзамен" },
-                        new dymmuCurriculum(){Semester = 3, SubjectName = "Programming Entity Framework- Code First", TypeTesting = "Диффиренцированный зачёт" },
+                        new dymmuCurriculum(){Semester = 1, SubjectName = "Антидрон", TypeTesting = "Зачёт" },
+                        //new dymmuCurriculum(){Semester = 1, SubjectName = "Иностранный язык", TypeTesting = "Зачёт" },
+                        //new dymmuCurriculum(){Semester = 2, SubjectName = "Programming Entity Framework- Code First", TypeTesting = "Зачёт" },
+                        //new dymmuCurriculum(){Semester = 2, SubjectName = "Иностранный язык", TypeTesting = "Экзамен" },
+                        //new dymmuCurriculum(){Semester = 3, SubjectName = "Programming Entity Framework- Code First", TypeTesting = "Диффиренцированный зачёт" },
                     }, unitOfWork);
                     
                 }
