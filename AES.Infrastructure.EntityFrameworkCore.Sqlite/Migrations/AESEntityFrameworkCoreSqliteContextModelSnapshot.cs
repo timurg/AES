@@ -237,7 +237,7 @@ namespace AES.Infrastructure.EntityFrameworkCore.Sqlite.Migrations
                     b.Property<Guid?>("GradeId")
                         .HasColumnType("TEXT");
 
-                    b.Property<bool>("IsRequared")
+                    b.Property<bool>("IsRequired")
                         .HasColumnType("INTEGER");
 
                     b.Property<int>("ModuleType")
@@ -269,7 +269,7 @@ namespace AES.Infrastructure.EntityFrameworkCore.Sqlite.Migrations
                     b.Property<Guid?>("GradeId")
                         .HasColumnType("TEXT");
 
-                    b.Property<bool>("IsRequared")
+                    b.Property<bool>("IsRequired")
                         .HasColumnType("INTEGER");
 
                     b.Property<Guid?>("LearningProcessId")
@@ -802,7 +802,7 @@ namespace AES.Infrastructure.EntityFrameworkCore.Sqlite.Migrations
                     b.Property<Guid?>("MyStoryTemplateQuizId")
                         .HasColumnType("TEXT");
 
-                    b.Property<int>("Order")
+                    b.Property<uint?>("Order")
                         .HasColumnType("INTEGER");
 
                     b.HasKey("Id");
@@ -818,13 +818,22 @@ namespace AES.Infrastructure.EntityFrameworkCore.Sqlite.Migrations
                         .ValueGeneratedOnAdd()
                         .HasColumnType("TEXT");
 
+                    b.Property<long?>("ChatId")
+                        .HasColumnType("INTEGER");
+
                     b.Property<DateTimeOffset>("DateCreated")
                         .HasColumnType("TEXT");
+
+                    b.Property<bool?>("IsPassed")
+                        .HasColumnType("INTEGER");
 
                     b.Property<int>("ItemIndex")
                         .HasColumnType("INTEGER");
 
                     b.Property<Guid?>("MyStoryId")
+                        .HasColumnType("TEXT");
+
+                    b.Property<string>("ObjectId")
                         .HasColumnType("TEXT");
 
                     b.Property<int>("StoryItemType")
@@ -833,15 +842,49 @@ namespace AES.Infrastructure.EntityFrameworkCore.Sqlite.Migrations
                     b.Property<int?>("TelegramId")
                         .HasColumnType("INTEGER");
 
+                    b.Property<Guid>("TemplateId")
+                        .HasColumnType("TEXT");
+
                     b.HasKey("Id");
 
                     b.HasIndex("MyStoryId");
+
+                    b.HasIndex("TemplateId");
 
                     b.ToTable("StoryItems", (string)null);
 
                     b.HasDiscriminator<int>("StoryItemType");
 
                     b.UseTphMappingStrategy();
+                });
+
+            modelBuilder.Entity("AES.Story.StoryPollItem", b =>
+                {
+                    b.Property<Guid>("Id")
+                        .ValueGeneratedOnAdd()
+                        .HasColumnType("TEXT");
+
+                    b.Property<string>("Content")
+                        .IsRequired()
+                        .HasColumnType("TEXT");
+
+                    b.Property<string>("Explanation")
+                        .HasColumnType("TEXT");
+
+                    b.Property<bool>("IsCorrect")
+                        .HasColumnType("INTEGER");
+
+                    b.Property<uint?>("Order")
+                        .HasColumnType("INTEGER");
+
+                    b.Property<Guid?>("StoryPollId")
+                        .HasColumnType("TEXT");
+
+                    b.HasKey("Id");
+
+                    b.HasIndex("StoryPollId");
+
+                    b.ToTable("StoryPollItem");
                 });
 
             modelBuilder.Entity("AES.Domain.BalledGradeRecord", b =>
@@ -934,6 +977,9 @@ namespace AES.Infrastructure.EntityFrameworkCore.Sqlite.Migrations
                         .IsRequired()
                         .HasColumnType("TEXT");
 
+                    b.Property<string>("TelegramFileId")
+                        .HasColumnType("TEXT");
+
                     b.HasDiscriminator().HasValue(0);
                 });
 
@@ -948,12 +994,21 @@ namespace AES.Infrastructure.EntityFrameworkCore.Sqlite.Migrations
                 {
                     b.HasBaseType("AES.Story.StoryItem");
 
-                    b.Property<Guid>("TemplateId")
+                    b.HasDiscriminator().HasValue(0);
+                });
+
+            modelBuilder.Entity("AES.Story.StoryPoll", b =>
+                {
+                    b.HasBaseType("AES.Story.StoryItem");
+
+                    b.Property<string>("Content")
+                        .IsRequired()
                         .HasColumnType("TEXT");
 
-                    b.HasIndex("TemplateId");
+                    b.Property<uint?>("SelectedItem")
+                        .HasColumnType("INTEGER");
 
-                    b.HasDiscriminator().HasValue(0);
+                    b.HasDiscriminator().HasValue(1);
                 });
 
             modelBuilder.Entity("AES.Domain.Curator", b =>
@@ -1233,6 +1288,21 @@ namespace AES.Infrastructure.EntityFrameworkCore.Sqlite.Migrations
                     b.HasOne("AES.Story.MyStory", null)
                         .WithMany("Items")
                         .HasForeignKey("MyStoryId");
+
+                    b.HasOne("AES.Story.MyStoryTemplateItem", "Template")
+                        .WithMany()
+                        .HasForeignKey("TemplateId")
+                        .OnDelete(DeleteBehavior.Cascade)
+                        .IsRequired();
+
+                    b.Navigation("Template");
+                });
+
+            modelBuilder.Entity("AES.Story.StoryPollItem", b =>
+                {
+                    b.HasOne("AES.Story.StoryPoll", null)
+                        .WithMany("Items")
+                        .HasForeignKey("StoryPollId");
                 });
 
             modelBuilder.Entity("AES.Story.MyStory", b =>
@@ -1263,17 +1333,6 @@ namespace AES.Infrastructure.EntityFrameworkCore.Sqlite.Migrations
                     b.Navigation("BaseSubject");
 
                     b.Navigation("Language");
-                });
-
-            modelBuilder.Entity("AES.Story.StoryImage", b =>
-                {
-                    b.HasOne("AES.Story.MyStoryTemplateImage", "Template")
-                        .WithMany()
-                        .HasForeignKey("TemplateId")
-                        .OnDelete(DeleteBehavior.Cascade)
-                        .IsRequired();
-
-                    b.Navigation("Template");
                 });
 
             modelBuilder.Entity("AES.Domain.Curator", b =>
@@ -1333,6 +1392,11 @@ namespace AES.Infrastructure.EntityFrameworkCore.Sqlite.Migrations
                 });
 
             modelBuilder.Entity("AES.Story.MyStoryTemplateQuiz", b =>
+                {
+                    b.Navigation("Items");
+                });
+
+            modelBuilder.Entity("AES.Story.StoryPoll", b =>
                 {
                     b.Navigation("Items");
                 });

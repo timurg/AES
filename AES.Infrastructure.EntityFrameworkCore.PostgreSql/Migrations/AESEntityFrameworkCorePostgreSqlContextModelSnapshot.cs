@@ -224,7 +224,7 @@ namespace AES.Infrastructure.EntityFrameworkCore.PostgreSql.Migrations
                     b.Property<Guid?>("GradeId")
                         .HasColumnType("uuid");
 
-                    b.Property<bool>("IsRequared")
+                    b.Property<bool>("IsRequired")
                         .HasColumnType("boolean");
 
                     b.Property<int>("ModuleType")
@@ -256,7 +256,7 @@ namespace AES.Infrastructure.EntityFrameworkCore.PostgreSql.Migrations
                     b.Property<Guid?>("GradeId")
                         .HasColumnType("uuid");
 
-                    b.Property<bool>("IsRequared")
+                    b.Property<bool>("IsRequired")
                         .HasColumnType("boolean");
 
                     b.Property<Guid>("ModuleId")

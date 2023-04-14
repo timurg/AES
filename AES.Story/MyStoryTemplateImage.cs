@@ -8,8 +8,8 @@ public class MyStoryTemplateImage : MyStoryTemplateItem
 {
     public virtual byte[] Bits { get; set; }
     public string ContentType { get; set; }
-    
     public string FileName { get; set; }
+    public string? TelegramFileId { get; set; }
 
     public static MyStoryTemplateImage CreateFromFile(string fileName, string title, Guid id = new(), int indexOrder = -1)
     {
@@ -45,7 +45,7 @@ public class MyStoryTemplateImage : MyStoryTemplateItem
         var newItem = new StoryImage
         {
             Template = this,
-            DateCreated = DateTimeOffset.Now
+            DateCreated = DateTimeOffset.Now,
         };
         return newItem;
     }

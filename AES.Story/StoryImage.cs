@@ -2,5 +2,5 @@
 
 public class StoryImage : StoryItem
 {
-    public MyStoryTemplateImage Template { get; set; }
+    
 }

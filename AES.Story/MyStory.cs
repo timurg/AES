@@ -7,22 +7,34 @@ public class MyStory : LearningProcess
 {
     public override bool BeginLearning()
     {
-        return NextStep() != null;
+        if (IsStarted())
+        {
+            throw new ApplicationException("Обучение запущено.");
+        }
+        StoryGeneration++;
+        return InternalNextStep() != null;
     }
 
     public override bool CanEnd()
     {
-        throw new NotImplementedException();
+        return IsLastStoryStep() &&
+               !Items.Any(i => i.Generation == StoryGeneration && i.IsPassed.HasValue && !i.IsPassed.Value);
     }
 
-    public override bool EndLearning()
+    public override GradeRecord EndLearning()
     {
-        throw new NotImplementedException();
+        var record = new BalledGradeRecord
+        {
+            IsPassed = !Items.Any(i => i.Generation == StoryGeneration && i.IsPassed.HasValue && !i.IsPassed.Value),
+            GradeDateTime = DateTimeOffset.Now,
+            Id = Guid.NewGuid()
+        };
+        return record;
     }
 
     public override void ResetLearning()
     {
-        throw new NotImplementedException();
+        StoryStep = -1;
     }
 
     public override bool IsStarted()
@@ -30,18 +42,32 @@ public class MyStory : LearningProcess
         return StoryStep >= 0;
     }
 
-    public StoryItem NextStep()
+    private bool IsLastStoryStep()
     {
-        if (StoryStep >= StoryTemplate.Items.Count - 1) return null;
+        return StoryStep == (StoryTemplate.Items.Count - 1);
+    }
+
+    private StoryItem InternalNextStep()
+    {
         StoryStep++;
         var newItem = StoryTemplate.Items.First(p => p.ItemIndex == StoryStep).CreateStoryItem();
         newItem.ItemIndex = Items.Count;
+        newItem.Generation = StoryGeneration;
         Items.Add(newItem);
         return newItem;
     }
     
+    public StoryItem NextStep()
+    {
+        if (!IsStarted()) return null;
+        if (StoryStep >= StoryTemplate.Items.Count - 1) return null;
+        return InternalNextStep();
+    }
+
     public int StoryStep { get; set; }
 
+    public uint StoryGeneration { get; protected set; } 
+    
     public IList<StoryItem> Items { get; } = new Collection<StoryItem>();
     
     public MyStoryTemplate StoryTemplate { get; set; }

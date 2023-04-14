@@ -1,6 +1,6 @@
 {
   "version": 2,
-  "dgSpecHash": "PPdOnC7u96wif0UFH2pGqh8dHPsfIuDpDlHM+5va7WFR/ZGvdGgsQ2Z2VypmzDCfWRH9fvWarTo0SzrZKCk9nQ==",
+  "dgSpecHash": "ld4Sn5ZxLg7x/1C1i5r/Xh3bqSB9UPxkJphY6a53r2N4hQEzhSLkdP7jHRiHsTSN+IURSPUrUFbRuRbwnr8aaQ==",
   "success": true,
   "projectFilePath": "D:\\yandex\\YandexDisk\\Документы\\GitHub\\AES\\AES.BusinessLogic.Implementation\\AES.BusinessLogic.Implementation.csproj",
   "expectedPackageFiles": [
@@ -15,7 +15,10 @@
     "C:\\Users\\lean\\.nuget\\packages\\microsoft.extensions.logging.abstractions\\7.0.0\\microsoft.extensions.logging.abstractions.7.0.0.nupkg.sha512",
     "C:\\Users\\lean\\.nuget\\packages\\microsoft.extensions.options\\7.0.0\\microsoft.extensions.options.7.0.0.nupkg.sha512",
     "C:\\Users\\lean\\.nuget\\packages\\microsoft.extensions.primitives\\7.0.0\\microsoft.extensions.primitives.7.0.0.nupkg.sha512",
-    "C:\\Users\\lean\\.nuget\\packages\\system.runtime.compilerservices.unsafe\\6.0.0\\system.runtime.compilerservices.unsafe.6.0.0.nupkg.sha512"
+    "C:\\Users\\lean\\.nuget\\packages\\system.runtime.compilerservices.unsafe\\6.0.0\\system.runtime.compilerservices.unsafe.6.0.0.nupkg.sha512",
+    "C:\\Users\\lean\\.nuget\\packages\\microsoft.netcore.app.ref\\6.0.16\\microsoft.netcore.app.ref.6.0.16.nupkg.sha512",
+    "C:\\Users\\lean\\.nuget\\packages\\microsoft.windowsdesktop.app.ref\\6.0.16\\microsoft.windowsdesktop.app.ref.6.0.16.nupkg.sha512",
+    "C:\\Users\\lean\\.nuget\\packages\\microsoft.aspnetcore.app.ref\\6.0.16\\microsoft.aspnetcore.app.ref.6.0.16.nupkg.sha512"
   ],
   "logs": []
 }

@@ -1,11 +1,12 @@
-﻿using System.ComponentModel.DataAnnotations;
+﻿using System.Collections.Generic;
+using System.ComponentModel.DataAnnotations;
 
 namespace AES.Domain
 {
     public abstract class ModuleItem : DomainObject
     {
         [Required]
-        public bool IsRequared { get; set; }
+        public bool IsRequired { get; set; }
 
         public GradeRecord Grade { get; set; }
 
@@ -21,5 +22,7 @@ namespace AES.Domain
         public int Semester { get; set; }
         
         public LearningProcess LearningProcess { get; set; }
+
+        public ISet<GradeRecord> GradeRecords { get; } = new HashSet<GradeRecord>();
     }
 }

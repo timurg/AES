@@ -1,6 +1,6 @@
 {
   "version": 2,
-  "dgSpecHash": "tVPzJLwxiF+q/XetJ5MZG5r3iPJjEujDe/wUGB1YDgH/A0ElLH3vfRt+5KU/2aQio6ylkXDsTi4qC+iaPsyqwg==",
+  "dgSpecHash": "MNDFU7oVLzdL8NokC7Yc7uOxpyf59AN1oxnfz7E8Che/cGsk4ojI1vGKwaYjGpYZj4lmmnm7Ut2evHBY3w342w==",
   "success": true,
   "projectFilePath": "D:\\yandex\\YandexDisk\\Документы\\GitHub\\AES\\AES.Infrastructure.EntityFrameworkCore.PostgreSql\\AES.Infrastructure.EntityFrameworkCore.PostgreSql.csproj",
   "expectedPackageFiles": [
@@ -36,7 +36,10 @@
     "C:\\Users\\lean\\.nuget\\packages\\system.codedom\\4.4.0\\system.codedom.4.4.0.nupkg.sha512",
     "C:\\Users\\lean\\.nuget\\packages\\system.runtime.compilerservices.unsafe\\6.0.0\\system.runtime.compilerservices.unsafe.6.0.0.nupkg.sha512",
     "C:\\Users\\lean\\.nuget\\packages\\system.text.encodings.web\\7.0.0\\system.text.encodings.web.7.0.0.nupkg.sha512",
-    "C:\\Users\\lean\\.nuget\\packages\\system.text.json\\7.0.0\\system.text.json.7.0.0.nupkg.sha512"
+    "C:\\Users\\lean\\.nuget\\packages\\system.text.json\\7.0.0\\system.text.json.7.0.0.nupkg.sha512",
+    "C:\\Users\\lean\\.nuget\\packages\\microsoft.netcore.app.ref\\6.0.16\\microsoft.netcore.app.ref.6.0.16.nupkg.sha512",
+    "C:\\Users\\lean\\.nuget\\packages\\microsoft.windowsdesktop.app.ref\\6.0.16\\microsoft.windowsdesktop.app.ref.6.0.16.nupkg.sha512",
+    "C:\\Users\\lean\\.nuget\\packages\\microsoft.aspnetcore.app.ref\\6.0.16\\microsoft.aspnetcore.app.ref.6.0.16.nupkg.sha512"
   ],
   "logs": []
 }

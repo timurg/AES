@@ -69,7 +69,7 @@ namespace AES.Init
                 {
                     Id = Guid.NewGuid(),
                     Grade = null,
-                    IsRequared = true,
+                    IsRequired = true,
                     Module = module,
                     Subject = subjects[item.SubjectName],
                     Semester = item.Semester,

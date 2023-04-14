@@ -5,6 +5,7 @@ build_property.UsingMicrosoftNETSdkWeb =
 build_property.ProjectTypeGuids = 
 build_property.InvariantGlobalization = 
 build_property.PlatformNeutralAssembly = 
+build_property.EnforceExtendedAnalyzerRules = 
 build_property._SupportedPlatformList = Linux,macOS,Windows
 build_property.RootNamespace = AES.Infrastructure.EntityFrameworkCore.PostgreSql
 build_property.ProjectDir = D:\yandex\YandexDisk\Документы\GitHub\AES\AES.Infrastructure.EntityFrameworkCore.PostgreSql\

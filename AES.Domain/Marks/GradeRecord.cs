@@ -6,7 +6,7 @@ namespace AES.Domain
     public abstract class GradeRecord : DomainObject
     {
         [Required]
-        public DateTime GradeDateTime { get; set; }
+        public DateTimeOffset GradeDateTime { get; set; }
 
         [Required]
         public bool IsPassed { get; set; }

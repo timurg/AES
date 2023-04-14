@@ -14,17 +14,19 @@ public class MyStoryTemplateQuiz : MyStoryTemplateItem
             ItemIndex = indexOrder,
             Title = "Выберите ваш вариант ответа"
         };
-        var inx = 0;
+        uint inx = 0;
         foreach (var option in options)
         {
+            
             q.Items.Add(new MyStoryTemplateQuizItem()
             {
                 Id = Guid.NewGuid(),
                 Content = option,
-                Order = indexOrder,
+                Order = inx,
                 IsCorrect = inx == correctOptions,
                 Explanation = string.Empty
             });
+            inx++;
         }
 
         return q;
@@ -32,8 +34,24 @@ public class MyStoryTemplateQuiz : MyStoryTemplateItem
 
     public override StoryPoll CreateStoryItem()
     {
-        var pool = new StoryPoll();
-        
+        var pool = new StoryPoll
+        {
+            Content = Description,
+            DateCreated = DateTimeOffset.Now,
+            Id = Guid.NewGuid(),
+            Template = this
+        };
+        foreach (var quizItem in Items)
+        {
+            pool.Items.Add(new StoryPollItem()
+            {
+                Content = quizItem.Content,
+                Explanation = quizItem.Explanation,
+                IsCorrect = quizItem.IsCorrect,
+                Order = quizItem.Order,
+               // Id = Guid.NewGuid()
+            });
+        }
         return pool;
     }
 }

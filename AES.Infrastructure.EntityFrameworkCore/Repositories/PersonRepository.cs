@@ -20,7 +20,12 @@ namespace AES.Infrastructure.EntityFrameworkCore
                 ThenInclude(c => c.Modules)
                 .ThenInclude(m => m.Items)
                 .ThenInclude(m => m.LearningProcess)
-                .ThenInclude(e => ((MyStory)e).StoryTemplate.Items)
+                .ThenInclude(e => ((MyStory)e).StoryTemplate.Items).ThenInclude(e => ((MyStoryTemplateQuiz)e).Items)
+                .Include(p => p.Student).
+                ThenInclude(s => s.Curriculum).
+                ThenInclude(c => c.Modules)
+                .ThenInclude(m => m.Items)
+                .ThenInclude(m => m.LearningProcess).ThenInclude(e => ((MyStory)e).Items)
                 .Include(p => p.Curator).
                 ThenInclude(t => t.Descriptions)
                 .Include(p => p.Tutor)
