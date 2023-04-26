@@ -11,10 +11,12 @@ public class MyStoryLearningProcessBuilder : BusinessObject, ILearningProcessBui
     {
         if (moduleItem.LearningProcess == null)
         {
-            var story = new MyStory();
-            story.StoryTemplate = UnitOfWork.StoryTemplateRepository.Get(
-                new Guid("6A1DB7D6-40A5-4ABB-9D46-211A9D6F3420"));
-            story.StoryStep = -1;
+            var story = new MyStory
+            {
+                StoryTemplate = UnitOfWork.StoryTemplateRepository.Get(
+                    new Guid("6A1DB7D6-40A5-4ABB-9D46-211A9D6F3420")),
+                StoryStep = -1
+            };
             return story;
         }
         else

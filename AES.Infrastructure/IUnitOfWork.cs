@@ -27,5 +27,6 @@ namespace AES.Infrastructure
         ITerritoryRepository TerritoryRepository { get; }
         ITypeTestingRepository TypeTestingRepository { get; }
         IStoryTemplateRepository StoryTemplateRepository { get; }
+        IBinaryDataRepository BinaryDataRepository { get; }
     }
 }

@@ -4,13 +4,8 @@ using System.Net.Mime;
 namespace AES.Story;
 
 // ReSharper disable once ClassWithVirtualMembersNeverInherited.Global
-public class MyStoryTemplateImage : MyStoryTemplateItem
+public class MyStoryTemplateImage : MyStoryTemplateFileBased
 {
-    public virtual byte[] Bits { get; set; }
-    public string ContentType { get; set; }
-    public string FileName { get; set; }
-    public string? TelegramFileId { get; set; }
-
     public static MyStoryTemplateImage CreateFromFile(string fileName, string title, Guid id = new(), int indexOrder = -1)
     {
         var types = new Dictionary<string, string>()
@@ -34,7 +29,7 @@ public class MyStoryTemplateImage : MyStoryTemplateItem
             Title = title,
             Description = "",
             ContentType = types.ContainsKey(ext) ? types[ext] : "application/octet-stream",
-            Bits = File.ReadAllBytes(fileName),
+            //Bits = File.ReadAllBytes(fileName),
             FileName =  Path.GetFileName(fileName),
             ItemIndex = indexOrder
         };

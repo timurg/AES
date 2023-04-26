@@ -1,4 +1,5 @@
 ﻿using AES.Domain;
+using AES.Domain.Course;
 using AES.Story;
 using Microsoft.EntityFrameworkCore;
 namespace AES.Infrastructure.EntityFrameworkCore
@@ -25,6 +26,8 @@ namespace AES.Infrastructure.EntityFrameworkCore
             });
 
             modelBuilder.Entity<Subject>().HasIndex(p => p.Name).IsUnique();
+            
+            modelBuilder.Entity<BinaryData>().ToTable("BinaryData");
 
             modelBuilder.Entity<Person>()
                 .HasOne(p => p.Student)
@@ -67,7 +70,8 @@ namespace AES.Infrastructure.EntityFrameworkCore
             modelBuilder.Entity<StoryItem>().ToTable("StoryItems")
                 .HasDiscriminator<int>("StoryItemType")
                 .HasValue<StoryImage>(0)
-                .HasValue<StoryPoll>(1);
+                .HasValue<StoryPoll>(1)
+                .HasValue<StoryVideo>(2);
             
             modelBuilder.Entity<Curator>().ToTable("Curators");
             
@@ -76,7 +80,8 @@ namespace AES.Infrastructure.EntityFrameworkCore
             modelBuilder.Entity<MyStoryTemplateItem>().ToTable("MyStoryTemplateItems")
                 .HasDiscriminator<int>("MyStoryTemplateItemType")
                 .HasValue<MyStoryTemplateImage>(0)
-                .HasValue<MyStoryTemplateQuiz>(1);
+                .HasValue<MyStoryTemplateQuiz>(1)
+                .HasValue<MyStoryTemplateVideo>(2);
         }
 
     }

@@ -18,18 +18,26 @@ public class MyStory : LearningProcess
     public override bool CanEnd()
     {
         return IsLastStoryStep() &&
-               !Items.Any(i => i.Generation == StoryGeneration && i.IsPassed.HasValue && !i.IsPassed.Value);
+               !Items.Any(i => i.Generation == StoryGeneration && !i.IsPassed.HasValue);
     }
 
     public override GradeRecord EndLearning()
     {
-        var record = new BalledGradeRecord
+        if (CanEnd())
         {
-            IsPassed = !Items.Any(i => i.Generation == StoryGeneration && i.IsPassed.HasValue && !i.IsPassed.Value),
-            GradeDateTime = DateTimeOffset.Now,
-            Id = Guid.NewGuid()
-        };
-        return record;
+            var record = new BalledGradeRecord
+            {
+                IsPassed = !Items.Any(i => i.Generation == StoryGeneration && i.IsPassed.HasValue && !i.IsPassed.Value),
+                GradeDateTime = DateTimeOffset.Now,
+                Id = Guid.NewGuid()
+            };
+            ResetLearning();
+            return record;
+        }
+        else
+        {
+            throw new ApplicationException("Cant close learning process");
+        }
     }
 
     public override void ResetLearning()
@@ -51,7 +59,7 @@ public class MyStory : LearningProcess
     {
         StoryStep++;
         var newItem = StoryTemplate.Items.First(p => p.ItemIndex == StoryStep).CreateStoryItem();
-        newItem.ItemIndex = Items.Count;
+        newItem.ItemIndex = Items.Count(i => i.Generation == StoryGeneration);
         newItem.Generation = StoryGeneration;
         Items.Add(newItem);
         return newItem;

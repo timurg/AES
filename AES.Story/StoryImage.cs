@@ -1,6 +1,6 @@
 ﻿namespace AES.Story;
 
-public class StoryImage : StoryItem
+public class StoryImage : StoryFileBasedItem
 {
     
 }
