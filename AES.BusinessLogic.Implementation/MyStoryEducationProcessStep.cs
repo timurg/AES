@@ -6,7 +6,7 @@ namespace AES.BusinessLogic.Implementation;
 
 public class MyStoryEducationProcessStep : BusinessObject, IEducationProcessStep
 {
-    public void Process(Student student, ModuleItem moduleItem)
+    public ProcessState Process(Student student, ModuleItem moduleItem)
     {
         if (moduleItem.LearningProcess != null)
         {
@@ -16,9 +16,13 @@ public class MyStoryEducationProcessStep : BusinessObject, IEducationProcessStep
                 if (moduleItem.LearningProcess.CanEnd())
                 {
                     moduleItem.Grade = moduleItem.LearningProcess.EndLearning();
+                    moduleItem.GradeRecords.Add(moduleItem.Grade);
+                    return ProcessState.AutoEnding;
                 }
             }
         }
+
+        return ProcessState.None;
     }
 
     public MyStoryEducationProcessStep(IUnitOfWork unitOfWork) : base(unitOfWork)

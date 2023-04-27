@@ -1,6 +1,7 @@
 ﻿using System.Text;
 using AES.BusinessLogic;
 using AES.BusinessLogic.Implementation;
+using AES.Domain;
 using AES.Infrastructure;
 using AES.Story;
 using Autofac;
@@ -78,7 +79,8 @@ while (true)
                             if (hasText && message.Text == "/info")
                             {
                                 var eduItem = user.Student.Curriculum.Modules.First().Items.First();
-                                var isStarted = (eduItem.LearningProcess != null) && (eduItem.LearningProcess.IsStarted());
+                                var isStarted = (eduItem.LearningProcess != null) &&
+                                                (eduItem.LearningProcess.IsStarted());
                                 var beginInfo = isStarted ? "стартовал" : "не стартовал";
                                 var btn = new InlineKeyboardButton[1];
                                 btn[0] = new InlineKeyboardButton();
@@ -98,7 +100,8 @@ while (true)
                                 {
                                     textMessage.Append(eduItem.LearningProcess.CanEnd());
                                 }
-                                botClient.SendMessage(message.Chat.Id,textMessage.ToString(),
+
+                                botClient.SendMessage(message.Chat.Id, textMessage.ToString(),
                                     parseMode: ParseMode.HTML, replyMarkup: rm);
                             }
                             else if (hasText && (message.Text == "/next" || message.Text.ToLower() == "далее"))
@@ -122,7 +125,7 @@ while (true)
                                 }
 
                                 RenderItemStory(botClient, unitOfWork, chatId.Value, story, storyItem);
-                                processStep.Process(user.Student, eduItem);
+                                ProcessLearning(botClient, chatId.Value, processStep, user.Student, eduItem);
                                 DeleteUserCommand(botClient, message);
                             }
                             else
@@ -144,15 +147,17 @@ while (true)
                                 .Where(m => m.LearningProcess is MyStory)
                                 .SelectMany(m => ((MyStory)m.LearningProcess).Items).Where(i => i is StoryPoll)
                                 .First(i => ((StoryPoll)i).ObjectId == poolId) as StoryPoll;
-                            
+
                             var moduleItem = person.Student.Curriculum.Modules
                                 .SelectMany(m => m.Items)
                                 .Where(m => m.LearningProcess is MyStory)
                                 .First(i => ((MyStory)i.LearningProcess).Items.Any(i => i.Id == storyPollItem.Id));
-                            
+
                             storyPollItem.SelectedItem = update.PollAnswer.OptionIds.First();
                             storyPollItem.CheckAnswer();
-                            processStep.Process(user.Student, moduleItem);
+
+                            ProcessLearning(botClient, storyPollItem.ChatId.Value, processStep, user.Student,
+                                moduleItem);
                         }
                         else if (update.CallbackQuery != null)
                         {
@@ -165,7 +170,8 @@ while (true)
                                 {
                                     var eduItem = user.Student.Curriculum.Modules.SelectMany(s => s.Items)
                                         .First(s => s.Id == id);
-                                    var isStarted = eduItem.LearningProcess != null && eduItem.LearningProcess.IsStarted();
+                                    var isStarted = eduItem.LearningProcess != null &&
+                                                    eduItem.LearningProcess.IsStarted();
                                     StoryItem storyItem;
                                     if (!isStarted)
                                     {
@@ -180,18 +186,28 @@ while (true)
                                         var story = eduItem.LearningProcess as MyStory;
                                         storyItem = story.GetCurrentStoryItem();
                                         RenderItemStory(botClient, unitOfWork, chatId.Value, story, storyItem);
-                                        processStep.Process(user.Student, eduItem);
+                                        ProcessLearning(botClient, chatId.Value, processStep, user.Student, eduItem);
                                     }
                                 }
                             }
+                            botClient.AnswerCallbackQuery(new AnswerCallbackQueryArgs(update.CallbackQuery.Id)
+                            {
+                                Text = update.CallbackQuery.Data,
+                                ShowAlert = true
+                            });
                         }
                     }
+                }
+                catch (NextStepException exception)
+                {
+                    //botClient.SendMessage(ch,
+                    //    $"Привет {user.Name}, ты написал:\n" + message.Text);
                 }
                 catch (Exception exception)
                 {
                     Console.WriteLine(exception.ToString());
                 }
-
+                
                 unitOfWork.Commit();
             }
         }
@@ -304,4 +320,24 @@ static void RenderItemStory(BotClient botClient, IUnitOfWork unitOfWork, long ch
     }
 
     //DeleteUserCommand(botClient, message);
+}
+
+static void ProcessLearning(BotClient botClient, long chatId, IEducationProcessStep processStep, Student student,
+    ModuleItem eduItem)
+{
+    var info = processStep.Process(student, eduItem);
+    if (info == ProcessState.AutoEnding)
+    {
+        var testItems = (eduItem.LearningProcess as MyStory).GetCurrentGenerationItems().Where(i => i is StoryPoll);
+        if (testItems.Any())
+        {
+            botClient.SendMessage(chatId,
+                $"Курс завершён. Задано тестовых заданий/ Получен правильный ответ : {testItems.Count()}/{testItems.Count(i => ((StoryPoll)i).IsPassed.Value)}.");
+        }
+        else
+        {
+            botClient.SendMessage(chatId,
+                $"Курс завершён.");
+        }
+    }
 }

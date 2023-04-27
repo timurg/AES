@@ -4,5 +4,5 @@ namespace AES.BusinessLogic;
 
 public interface IEducationProcessStep
 {
-    void Process(Student student, ModuleItem moduleItem);
+    ProcessState Process(Student student, ModuleItem moduleItem);
 }

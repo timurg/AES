@@ -68,8 +68,12 @@ public class MyStory : LearningProcess
     public StoryItem NextStep()
     {
         if (!IsStarted()) return null;
-        if (StoryStep >= StoryTemplate.Items.Count - 1) return null;
-        return InternalNextStep();
+        var currentStep = GetCurrentStoryItem();
+        if (currentStep is StoryPoll { IsPassed: null })
+        {
+            throw new NextStepException(this);
+        }
+        return StoryStep >= StoryTemplate.Items.Count - 1 ? null : InternalNextStep();
     }
 
     public int StoryStep { get; set; }
@@ -77,6 +81,11 @@ public class MyStory : LearningProcess
     public uint StoryGeneration { get; protected set; } 
     
     public IList<StoryItem> Items { get; } = new Collection<StoryItem>();
+
+    public IList<StoryItem> GetCurrentGenerationItems()
+    {
+        return Items.Where(i => i.Generation == StoryGeneration).ToList();
+    }
     
     public MyStoryTemplate StoryTemplate { get; set; }
 
