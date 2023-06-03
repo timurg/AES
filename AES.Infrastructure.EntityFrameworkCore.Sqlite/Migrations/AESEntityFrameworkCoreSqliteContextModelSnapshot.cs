@@ -15,7 +15,7 @@ namespace AES.Infrastructure.EntityFrameworkCore.Sqlite.Migrations
         protected override void BuildModel(ModelBuilder modelBuilder)
         {
 #pragma warning disable 612, 618
-            modelBuilder.HasAnnotation("ProductVersion", "7.0.4");
+            modelBuilder.HasAnnotation("ProductVersion", "7.0.5");
 
             modelBuilder.Entity("AES.Domain.Course.BinaryData", b =>
                 {
@@ -1027,6 +1027,23 @@ namespace AES.Infrastructure.EntityFrameworkCore.Sqlite.Migrations
                     b.HasDiscriminator().HasValue(1);
                 });
 
+            modelBuilder.Entity("AES.Story.MyStoryTemplateVenue", b =>
+                {
+                    b.HasBaseType("AES.Story.MyStoryTemplateItem");
+
+                    b.Property<string>("Adress")
+                        .IsRequired()
+                        .HasColumnType("TEXT");
+
+                    b.Property<float>("Latitude")
+                        .HasColumnType("REAL");
+
+                    b.Property<float>("Longitude")
+                        .HasColumnType("REAL");
+
+                    b.HasDiscriminator().HasValue(3);
+                });
+
             modelBuilder.Entity("AES.Story.MyStoryTemplateVideo", b =>
                 {
                     b.HasBaseType("AES.Story.MyStoryTemplateItem");
@@ -1067,6 +1084,27 @@ namespace AES.Infrastructure.EntityFrameworkCore.Sqlite.Migrations
                         .HasColumnType("INTEGER");
 
                     b.HasDiscriminator().HasValue(1);
+                });
+
+            modelBuilder.Entity("AES.Story.StoryVenue", b =>
+                {
+                    b.HasBaseType("AES.Story.StoryItem");
+
+                    b.Property<string>("Adress")
+                        .IsRequired()
+                        .HasColumnType("TEXT");
+
+                    b.Property<float>("Latitude")
+                        .HasColumnType("REAL");
+
+                    b.Property<float>("Longitude")
+                        .HasColumnType("REAL");
+
+                    b.Property<string>("Title")
+                        .IsRequired()
+                        .HasColumnType("TEXT");
+
+                    b.HasDiscriminator().HasValue(3);
                 });
 
             modelBuilder.Entity("AES.Story.StoryVideo", b =>

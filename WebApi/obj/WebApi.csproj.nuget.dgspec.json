@@ -41,7 +41,7 @@
           "dependencies": {
             "Autofac": {
               "target": "Package",
-              "version": "[7.0.0, )"
+              "version": "[7.0.1, )"
             },
             "Autofac.Extensions.DependencyInjection": {
               "target": "Package",
@@ -49,7 +49,7 @@
             },
             "Microsoft.EntityFrameworkCore": {
               "target": "Package",
-              "version": "[7.0.4, )"
+              "version": "[7.0.5, )"
             },
             "Swashbuckle.AspNetCore": {
               "target": "Package",

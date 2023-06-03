@@ -15,8 +15,20 @@ public class MyStoryEducationProcessStep : BusinessObject, IEducationProcessStep
             {
                 if (moduleItem.LearningProcess.CanEnd())
                 {
-                    moduleItem.Grade = moduleItem.LearningProcess.EndLearning();
-                    moduleItem.GradeRecords.Add(moduleItem.Grade);
+                    var grade = moduleItem.LearningProcess.EndLearning();
+                    if (moduleItem.Grade == null)
+                    {
+                        moduleItem.Grade = grade;
+                    }
+                    else
+                    {
+                        if (!moduleItem.Grade.IsPassed)
+                        {
+                            moduleItem.Grade = grade;
+                        }
+                    }
+
+                    moduleItem.GradeRecords.Add(grade);
                     return ProcessState.AutoEnding;
                 }
             }

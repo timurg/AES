@@ -10,7 +10,12 @@ namespace AES.Domain
         {
             get
             {
-                return "";
+                if (IsPassed)
+                return "Зачтено";
+                else
+                {
+                    return "Не зачтено";
+                }
             }
         }
     }

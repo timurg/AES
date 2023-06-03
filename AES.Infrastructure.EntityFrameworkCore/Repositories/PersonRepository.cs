@@ -30,6 +30,16 @@ namespace AES.Infrastructure.EntityFrameworkCore
                 ThenInclude(t => t.Descriptions)
                 .Include(p => p.Tutor)
                 .ThenInclude(t => t.Descriptions)
+                .Include(p => p.Student).
+                ThenInclude(s => s.Curriculum).
+                ThenInclude(c => c.Modules)
+                .ThenInclude(m => m.Items)
+                .ThenInclude(m => m.Grade)
+                .Include(p => p.Student).
+                ThenInclude(s => s.Curriculum).
+                ThenInclude(c => c.Modules)
+                .ThenInclude(m => m.Items)
+                .ThenInclude(m => m.GradeRecords)
                 .AsQueryable();
         }
     }

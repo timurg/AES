@@ -1,0 +1,27 @@
+﻿
+
+FROM mcr.microsoft.com/dotnet/runtime:6.0 AS base
+WORKDIR /app
+
+FROM mcr.microsoft.com/dotnet/sdk:6.0 AS build
+WORKDIR /src
+COPY ["MyStoryBot/MyStoryBot.csproj", "MyStoryBot/"]
+COPY ["AES.BusinessLogic.Implementation/AES.BusinessLogic.Implementation.csproj", "AES.BusinessLogic.Implementation/"]
+COPY ["AES.BusinessLogic/AES.BusinessLogic.csproj", "AES.BusinessLogic/"]
+COPY ["AES.Domain/AES.Domain.csproj", "AES.Domain/"]
+COPY ["AES.Infrastructure/AES.Infrastructure.csproj", "AES.Infrastructure/"]
+COPY ["AES.Story/AES.Story.csproj", "AES.Story/"]
+COPY ["AES.Infrastructure.EntityFrameworkCore.Sqlite/AES.Infrastructure.EntityFrameworkCore.Sqlite.csproj", "AES.Infrastructure.EntityFrameworkCore.Sqlite/"]
+COPY ["AES.Infrastructure.EntityFrameworkCore/AES.Infrastructure.EntityFrameworkCore.csproj", "AES.Infrastructure.EntityFrameworkCore/"]
+RUN dotnet restore "MyStoryBot/MyStoryBot.csproj"
+COPY . .
+WORKDIR "/src/MyStoryBot"
+RUN dotnet build "MyStoryBot.csproj" -c Release -o /app/build
+
+FROM build AS publish
+RUN dotnet publish "MyStoryBot.csproj" -c Release -o /app/publish
+
+FROM base AS final
+WORKDIR /app
+COPY --from=publish /app/publish .
+ENTRYPOINT ["dotnet", "MyStoryBot.dll"]

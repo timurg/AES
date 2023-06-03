@@ -71,7 +71,8 @@ namespace AES.Infrastructure.EntityFrameworkCore
                 .HasDiscriminator<int>("StoryItemType")
                 .HasValue<StoryImage>(0)
                 .HasValue<StoryPoll>(1)
-                .HasValue<StoryVideo>(2);
+                .HasValue<StoryVideo>(2)
+                .HasValue<StoryVenue>(3);
             
             modelBuilder.Entity<Curator>().ToTable("Curators");
             
@@ -81,7 +82,8 @@ namespace AES.Infrastructure.EntityFrameworkCore
                 .HasDiscriminator<int>("MyStoryTemplateItemType")
                 .HasValue<MyStoryTemplateImage>(0)
                 .HasValue<MyStoryTemplateQuiz>(1)
-                .HasValue<MyStoryTemplateVideo>(2);
+                .HasValue<MyStoryTemplateVideo>(2)
+                .HasValue<MyStoryTemplateVenue>(3);
         }
 
     }

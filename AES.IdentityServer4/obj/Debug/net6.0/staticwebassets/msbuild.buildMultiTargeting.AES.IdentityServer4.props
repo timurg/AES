@@ -1,0 +1,3 @@
+﻿<Project>
+  <Import Project="..\build\AES.IdentityServer4.props" />
+</Project>

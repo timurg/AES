@@ -1,4 +1,5 @@
 ﻿using System;
+using System.Linq;
 using AES.Domain;
 using AES.Infrastructure;
 using AES.Story;
@@ -11,10 +12,15 @@ public class MyStoryLearningProcessBuilder : BusinessObject, ILearningProcessBui
     {
         if (moduleItem.LearningProcess == null)
         {
+
+            var template = UnitOfWork.StoryTemplateRepository.GetQuery().First(t => 
+                t.Subject == moduleItem.Subject 
+                && t.TypeTesting == moduleItem.TypeTesting
+                && t.Semester == moduleItem.Semester);
+            
             var story = new MyStory
             {
-                StoryTemplate = UnitOfWork.StoryTemplateRepository.Get(
-                    new Guid("6A1DB7D6-40A5-4ABB-9D46-211A9D6F3420")),
+                StoryTemplate = template,
                 StoryStep = -1
             };
             return story;

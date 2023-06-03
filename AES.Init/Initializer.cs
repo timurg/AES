@@ -426,16 +426,19 @@ namespace AES.Init
             using (var unitOfWork = unitOfWorkFactory.Create())
             {
                 AddSubjectIfNotExist(unitOfWork.SubjectRepository, subjectPaterns,
-                "Паттерны проектирования", "ПП", "Паттерны. проект.");
+                "БПЛА и угрозы от них", "БПЛА и угрозы от них", "БПЛА и угрозы от них");
 
                 AddSubjectIfNotExist(unitOfWork.SubjectRepository, subjectPEFCF,
-                "Programming Entity Framework- Code First", "PEF-CF", "Programming EF- Code First");
+                "Радиоэлектронное противодействие БПЛА", "Радиоэлектронное противодействие БПЛА", "Радиоэлектронное противодействие БПЛА");
 
                 AddForegginSubjectIfNotExist(unitOfWork.SubjectRepository, unitOfWork.LanguageRepository, subjectFS,
                 "Иностранный язык", "Ин.Яз.", "Иностранный");
                 
+                AddForegginSubjectIfNotExist(unitOfWork.SubjectRepository, unitOfWork.LanguageRepository, new Guid("2e384f04-3643-4df4-bb53-21d8f777f2a6"),
+                    "Коммерческое торговое предложение", "Коммерческое торговое предложение", "Коммерческое торговое предложение");
+                
                 AddSubjectIfNotExist(unitOfWork.SubjectRepository, new Guid("a458baa2-0747-4dd4-a59c-a588ad49629e"),
-                    "Антидрон", "Антидрон", "Антидрон");
+                    "Памятка поступившему", "Памятка поступившему", "Памятка поступившему");
 
                 unitOfWork.Commit();
             }
@@ -483,80 +486,330 @@ namespace AES.Init
                     template = new MyStoryTemplate
                     {
                         Id = id,
-                        Title = "Антидрон",
+                        Title = "Памятка поступившему",
                         Description =
-                            "АСПЕКТЫ ИСПОЛЬЗОВАНИЯ СИСТЕМ ОБНАРУЖЕНИЯ И ПРОТИВОДЕЙСТВИЯ БПЛА НА ОБЪЕКТАХ КРИТИЧЕСКОЙ ИНФРАСТРУКТУРЫ",
+                            "Памятка поступившему",
                         Subject = unitOfWork.SubjectRepository.Get(new Guid("a458baa2-0747-4dd4-a59c-a588ad49629e")),
                         Semester = 1,
                         TypeTesting = unitOfWork.TypeTestingRepository.Get(new Guid("d121aa27-6cdd-4dc6-80c0-bf9a022aa68d"))
                     };
-                    MyStoryTemplateFileBased tempItem = MyStoryTemplateImage.CreateFromFile(
-                        "D:\\yandex\\YandexDisk\\Изображения\\Слайды Антидрон\\001.png", "Актуальность угрозы",
-                        new Guid("cef46745-17b3-436a-841c-b077364eb0d1"), 0);
+                    
+                    MyStoryTemplateFileBased tempItem = MyStoryTemplateVideo.CreateFromFile(
+                        "D:\\yandex\\YandexDisk\\Изображения\\slides\\abi\\00.mp4", "Обращение ректора О.А. Баулина к первокурсникам",
+                        new Guid("89ECCD37-FB7D-43EF-82EC-1EF55F876CF6"), template.Items.Count);
                     template.Items.Add(tempItem);
                     unitOfWork.BinaryDataRepository.Save(BinaryData.CreateFromFile(
-                        tempItem.Id,"D:\\yandex\\YandexDisk\\Изображения\\Слайды Антидрон\\001.png"));
-
-
-                    tempItem = MyStoryTemplateImage.CreateFromFile(
-                        "D:\\yandex\\YandexDisk\\Изображения\\Слайды Антидрон\\002.png", "Актуальность угрозы",
-                        new Guid("0569fecb-c131-4d0d-be94-c44b168c8b99"), 1);
+                        tempItem.Id,"D:\\yandex\\YandexDisk\\Изображения\\slides\\abi\\00.mp4"));
+                    
+                    var tmpId = new Guid("33D598AC-FFCE-405A-8F7F-8EDF1FBC7D6C");
+                    var filePath = "D:\\yandex\\YandexDisk\\Изображения\\slides\\abi\\01.png";
+                    tempItem = MyStoryTemplateImage.CreateFromFile(filePath
+                        , "Памятка поступившему",
+                        tmpId, template.Items.Count);
                     template.Items.Add(tempItem);
                     unitOfWork.BinaryDataRepository.Save(BinaryData.CreateFromFile(
-                        tempItem.Id,"D:\\yandex\\YandexDisk\\Изображения\\Слайды Антидрон\\002.png"));
-
-
-                    tempItem = MyStoryTemplateImage.CreateFromFile(
-                        "D:\\yandex\\YandexDisk\\Изображения\\Слайды Антидрон\\003.png", "Актуальность угрозы",
-                        new Guid("0f73dfcb-563e-47d6-b764-1ff05e2805aa"), 2);
+                        tmpId,filePath));
+                    
+                    tmpId = new Guid("ACD466A9-00FF-4032-9472-F113C1654A03");
+                    filePath = "D:\\yandex\\YandexDisk\\Изображения\\slides\\abi\\02.png";
+                    tempItem = MyStoryTemplateImage.CreateFromFile(filePath
+                        , "Памятка поступившему",
+                        tmpId, template.Items.Count);
                     template.Items.Add(tempItem);
                     unitOfWork.BinaryDataRepository.Save(BinaryData.CreateFromFile(
-                        tempItem.Id,"D:\\yandex\\YandexDisk\\Изображения\\Слайды Антидрон\\003.png"));
-
-
-                    tempItem = MyStoryTemplateImage.CreateFromFile(
-                        "D:\\yandex\\YandexDisk\\Изображения\\Слайды Антидрон\\004.png", "Актуальность угрозы",
-                        new Guid("9a80a4f2-85e7-4afa-9100-3bfcbeed252b"), 3);
+                        tmpId,filePath));
+                    
+                    tmpId = new Guid("4039AC29-7182-4270-B32F-C2EF56FF312E");
+                    filePath = "D:\\yandex\\YandexDisk\\Изображения\\slides\\abi\\03.png";
+                    tempItem = MyStoryTemplateImage.CreateFromFile(filePath
+                        , "Памятка поступившему",
+                        tmpId, template.Items.Count);
                     template.Items.Add(tempItem);
                     unitOfWork.BinaryDataRepository.Save(BinaryData.CreateFromFile(
-                        tempItem.Id,"D:\\yandex\\YandexDisk\\Изображения\\Слайды Антидрон\\004.png"));
-
-                    tempItem = MyStoryTemplateImage.CreateFromFile(
-                        "D:\\yandex\\YandexDisk\\Изображения\\Слайды Антидрон\\005.png", "Актуальность угрозы",
-                        new Guid("b83872d4-0fbc-4553-94c3-59111746823b"), 4);
+                        tmpId,filePath));
+                    
+                    tmpId = new Guid("F6FE2B1A-6635-4826-A3D6-61510F52307F");
+                    filePath = "D:\\yandex\\YandexDisk\\Изображения\\slides\\abi\\04.png";
+                    tempItem = MyStoryTemplateImage.CreateFromFile(filePath
+                        , "Памятка поступившему",
+                        tmpId, template.Items.Count);
                     template.Items.Add(tempItem);
                     unitOfWork.BinaryDataRepository.Save(BinaryData.CreateFromFile(
-                        tempItem.Id,"D:\\yandex\\YandexDisk\\Изображения\\Слайды Антидрон\\005.png"));
-
-                    tempItem = MyStoryTemplateImage.CreateFromFile(
-                        "D:\\yandex\\YandexDisk\\Изображения\\Слайды Антидрон\\006.png", "Актуальность угрозы",
-                        new Guid("5d9115e2-f152-43ba-a160-aa019a557862"), 5);
+                        tmpId,filePath));
+                    
+                    tmpId = new Guid("847FEF0C-690F-471A-8B02-823F559DD885");
+                    filePath = "D:\\yandex\\YandexDisk\\Изображения\\slides\\abi\\05.png";
+                    tempItem = MyStoryTemplateImage.CreateFromFile(filePath
+                        , "Памятка поступившему",
+                        tmpId, template.Items.Count);
                     template.Items.Add(tempItem);
                     unitOfWork.BinaryDataRepository.Save(BinaryData.CreateFromFile(
-                        tempItem.Id,"D:\\yandex\\YandexDisk\\Изображения\\Слайды Антидрон\\006.png"));
-
-                    tempItem = MyStoryTemplateImage.CreateFromFile(
-                        "D:\\yandex\\YandexDisk\\Изображения\\Слайды Антидрон\\007.png", "Актуальность угрозы",
-                        new Guid("a3c14ffb-f624-4f88-90c2-386c95ac7c37"), 6);
+                        tmpId,filePath));
+                    
+                    tmpId = new Guid("CD148916-32BC-4AF5-8766-B6E050B93431");
+                    filePath = "D:\\yandex\\YandexDisk\\Изображения\\slides\\abi\\06.png";
+                    tempItem = MyStoryTemplateImage.CreateFromFile(filePath
+                        , "Памятка поступившему",
+                        tmpId, template.Items.Count);
                     template.Items.Add(tempItem);
                     unitOfWork.BinaryDataRepository.Save(BinaryData.CreateFromFile(
-                        tempItem.Id,"D:\\yandex\\YandexDisk\\Изображения\\Слайды Антидрон\\007.png"));
+                        tmpId,filePath));
 
-                    tempItem = MyStoryTemplateImage.CreateFromFile(
-                        "D:\\yandex\\YandexDisk\\Изображения\\Слайды Антидрон\\008.png", "Актуальность угрозы",
-                        new Guid("80f1717f-c019-48a2-9b30-2389c41df27a"), 7);
+                    tmpId = new Guid("868F96A3-6F17-4EDC-8663-C77CBF909EB3");
+                    filePath = "D:\\yandex\\YandexDisk\\Изображения\\slides\\abi\\07.png";
+                    tempItem = MyStoryTemplateImage.CreateFromFile(filePath
+                        , "Памятка поступившему",
+                        tmpId, template.Items.Count);
                     template.Items.Add(tempItem);
                     unitOfWork.BinaryDataRepository.Save(BinaryData.CreateFromFile(
-                        tempItem.Id,"D:\\yandex\\YandexDisk\\Изображения\\Слайды Антидрон\\008.png"));
-
-                    tempItem = MyStoryTemplateVideo.CreateFromFile(
-                        "D:\\yandex\\YandexDisk\\Изображения\\Слайды Антидрон\\video01.mp4", "Актуальность угрозы",
-                        new Guid("04e79783-91fc-45af-8d0a-ee9bbb3a038b"), 8);
+                        tmpId,filePath));
+                    
+                    tmpId = new Guid("82D9A232-F903-4E3F-846F-7A87872948EB");
+                    filePath = "D:\\yandex\\YandexDisk\\Изображения\\slides\\abi\\08.png";
+                    tempItem = MyStoryTemplateImage.CreateFromFile(filePath
+                        , "Памятка поступившему",
+                        tmpId, template.Items.Count);
                     template.Items.Add(tempItem);
                     unitOfWork.BinaryDataRepository.Save(BinaryData.CreateFromFile(
-                        tempItem.Id,"D:\\yandex\\YandexDisk\\Изображения\\Слайды Антидрон\\video01.mp4"));
+                        tmpId,filePath));
+                    
+                    tmpId = new Guid("C317779E-F181-4638-94EA-FE48EB066518");
+                    filePath = "D:\\yandex\\YandexDisk\\Изображения\\slides\\abi\\09.png";
+                    tempItem = MyStoryTemplateImage.CreateFromFile(filePath
+                        , "Памятка поступившему",
+                        tmpId, template.Items.Count);
+                    template.Items.Add(tempItem);
+                    unitOfWork.BinaryDataRepository.Save(BinaryData.CreateFromFile(
+                        tmpId,filePath));
+                    
+                    tmpId = new Guid("89CDF587-D2FD-4553-85AC-7BD61AF7D889");
+                    filePath = "D:\\yandex\\YandexDisk\\Изображения\\slides\\abi\\10.png";
+                    tempItem = MyStoryTemplateImage.CreateFromFile(filePath
+                        , "Памятка поступившему",
+                        tmpId, template.Items.Count);
+                    template.Items.Add(tempItem);
+                    unitOfWork.BinaryDataRepository.Save(BinaryData.CreateFromFile(
+                        tmpId,filePath));
+                    
+                    tmpId = new Guid("5A669B9C-55BE-41D7-92DD-63909E441FC3");
+                    filePath = "D:\\yandex\\YandexDisk\\Изображения\\slides\\abi\\11.png";
+                    tempItem = MyStoryTemplateImage.CreateFromFile(filePath
+                        , "Памятка поступившему",
+                        tmpId, template.Items.Count);
+                    template.Items.Add(tempItem);
+                    unitOfWork.BinaryDataRepository.Save(BinaryData.CreateFromFile(
+                        tmpId,filePath));
+                    
+                    tmpId = new Guid("BC73DE27-14D4-4C44-BD28-C3E462996BE6");
+                    filePath = "D:\\yandex\\YandexDisk\\Изображения\\slides\\abi\\12.png";
+                    tempItem = MyStoryTemplateImage.CreateFromFile(filePath
+                        , "Памятка поступившему",
+                        tmpId, template.Items.Count);
+                    template.Items.Add(tempItem);
+                    unitOfWork.BinaryDataRepository.Save(BinaryData.CreateFromFile(
+                        tmpId,filePath));
+                    
+                    
+                    template.Items.Add(MyStoryTemplateQuiz.Create("Где можно узнать расписание?",
+                        new[]
+                        {
+                            "на сайте respisane.rusoil.net",
+                            "в деканате",
+                            "все ответы верны",
+                        }, 2, template.Items.Count, new Guid("3D3E06E5-2E90-4335-88EA-16F008AD32DB")));
+                    
+                    template.Items.Add(MyStoryTemplateQuiz.Create("Где можно получить выписку из приказа о зачислении, где имеется информация, что ты являешься студентом?",
+                        new[]
+                        {
+                            "В деканате",
+                            "В приемной комиссии",
+                            "В холе общежития",
+                        }, 1, template.Items.Count, new Guid("6677C7F7-DE11-4B48-9EFD-31C72C9E71EC")));
                     
 
+                    template.Items.Add(MyStoryTemplateQuiz.Create("Можно поучавствовать в «субботнике» по благоустройству учебных корпусов и общежитий, если ты",
+                        new[]
+                        {
+                            "Первокурсник очной формы обучения",
+                            "Обучаешься на заочной форме обучения",
+                            "Магистрант",
+                        }, 0, template.Items.Count, new Guid("7EFE7984-32D6-4715-9C06-701607F3A12A")));
+                    unitOfWork.StoryTemplateRepository.Save(template);
+                }
+
+                unitOfWork.Commit();
+            }
+        }
+        
+        
+        private static void InitMyStoryTemplateAntidron01(IUnitOfWorkFactory unitOfWorkFactory)
+        {
+            using (var unitOfWork = unitOfWorkFactory.Create())
+            {
+                var id = new Guid("9ed7be25-ed3f-4cf5-b1eb-baff9950e953");
+
+                var template = unitOfWork.StoryTemplateRepository.Get(id);
+                if (template == null)
+                {
+
+                    template = new MyStoryTemplate
+                    {
+                        Id = id,
+                        Title = "Антидрон. БПЛА и угрозы от них",
+                        Description =
+                            "АСПЕКТЫ ИСПОЛЬЗОВАНИЯ СИСТЕМ ОБНАРУЖЕНИЯ И ПРОТИВОДЕЙСТВИЯ БПЛА НА ОБЪЕКТАХ КРИТИЧЕСКОЙ ИНФРАСТРУКТУРЫ",
+                        Subject = unitOfWork.SubjectRepository.Get(subjectPaterns),
+                        Semester = 1,
+                        TypeTesting = unitOfWork.TypeTestingRepository.Get(new Guid("d121aa27-6cdd-4dc6-80c0-bf9a022aa68d"))
+                    };
+
+                    var tmpId = new Guid("8c5f92e0-caf0-46a9-a759-527cede7534b");
+                    var filePath = "D:\\yandex\\YandexDisk\\Изображения\\Слайды Антидрон\\01\\02.png";
+                    MyStoryTemplateFileBased tempItem = MyStoryTemplateImage.CreateFromFile(filePath
+                        , "БПЛА и угрозы от них",
+                        tmpId, template.Items.Count);
+                    template.Items.Add(tempItem);
+                    unitOfWork.BinaryDataRepository.Save(BinaryData.CreateFromFile(
+                        tmpId,filePath));
+
+
+                    tmpId = new Guid("15b436ef-008b-4877-989b-5c9cc7baa383");
+                    filePath = "D:\\yandex\\YandexDisk\\Изображения\\Слайды Антидрон\\01\\10.png";
+                    tempItem = MyStoryTemplateImage.CreateFromFile(filePath
+                        , "БПЛА и угрозы от них",
+                        tmpId, template.Items.Count);
+                    template.Items.Add(tempItem);
+                    unitOfWork.BinaryDataRepository.Save(BinaryData.CreateFromFile(
+                        tmpId,filePath));
+                    
+                    tmpId = new Guid("a34f65c7-521e-48e4-8585-8b6bb6f1cb48");
+                    filePath = "D:\\yandex\\YandexDisk\\Изображения\\Слайды Антидрон\\01\\11.png";
+                    tempItem = MyStoryTemplateImage.CreateFromFile(filePath
+                        , "БПЛА и угрозы от них",
+                        tmpId, template.Items.Count);
+                    template.Items.Add(tempItem);
+                    unitOfWork.BinaryDataRepository.Save(BinaryData.CreateFromFile(
+                        tmpId,filePath));
+                    
+                    
+                    tmpId = new Guid("19604D8B-2D68-4669-A821-07700525D1E3");
+                    filePath = "D:\\yandex\\YandexDisk\\Изображения\\Слайды Антидрон\\01\\12.png";
+                    tempItem = MyStoryTemplateImage.CreateFromFile(filePath
+                        , "БПЛА и угрозы от них",
+                        tmpId, template.Items.Count);
+                    template.Items.Add(tempItem);
+                    unitOfWork.BinaryDataRepository.Save(BinaryData.CreateFromFile(
+                        tmpId,filePath));
+                    
+                    tmpId = new Guid("CFE18B29-B246-4E01-9772-94A7BA6BB63C");
+                    filePath = "D:\\yandex\\YandexDisk\\Изображения\\Слайды Антидрон\\01\\13.png";
+                    tempItem = MyStoryTemplateImage.CreateFromFile(filePath
+                        , "БПЛА и угрозы от них",
+                        tmpId, template.Items.Count);
+                    template.Items.Add(tempItem);
+                    unitOfWork.BinaryDataRepository.Save(BinaryData.CreateFromFile(
+                        tmpId,filePath));
+                    
+                    tmpId = new Guid("4D51E617-FFD9-493C-BA1C-26DDF7F5B460");
+                    filePath = "D:\\yandex\\YandexDisk\\Изображения\\Слайды Антидрон\\01\\14.png";
+                    tempItem = MyStoryTemplateImage.CreateFromFile(filePath
+                        , "БПЛА и угрозы от них",
+                        tmpId, template.Items.Count);
+                    template.Items.Add(tempItem);
+                    unitOfWork.BinaryDataRepository.Save(BinaryData.CreateFromFile(
+                        tmpId,filePath));
+                   
+                    tmpId = new Guid("3C72D3F3-8482-4125-9580-019CBC1D4C32");
+                    filePath = "D:\\yandex\\YandexDisk\\Изображения\\Слайды Антидрон\\01\\15.png";
+                    tempItem = MyStoryTemplateImage.CreateFromFile(filePath
+                        , "БПЛА и угрозы от них",
+                        tmpId, template.Items.Count);
+                    template.Items.Add(tempItem);
+                    unitOfWork.BinaryDataRepository.Save(BinaryData.CreateFromFile(
+                        tmpId,filePath));
+
+                    tmpId = new Guid("189013F2-4657-40C6-A8B4-7E7056D33868");
+                    filePath = "D:\\yandex\\YandexDisk\\Изображения\\Слайды Антидрон\\01\\16.png";
+                    tempItem = MyStoryTemplateImage.CreateFromFile(filePath
+                        , "БПЛА и угрозы от них",
+                        tmpId, template.Items.Count);
+                    template.Items.Add(tempItem);
+                    unitOfWork.BinaryDataRepository.Save(BinaryData.CreateFromFile(
+                        tmpId,filePath));
+                    
+                    tmpId = new Guid("A7BF8FE9-10E3-4380-AF7A-28838D2258D9");
+                    filePath = "D:\\yandex\\YandexDisk\\Изображения\\Слайды Антидрон\\01\\17.png";
+                    tempItem = MyStoryTemplateImage.CreateFromFile(filePath
+                        , "БПЛА и угрозы от них",
+                        tmpId, template.Items.Count);
+                    template.Items.Add(tempItem);
+                    unitOfWork.BinaryDataRepository.Save(BinaryData.CreateFromFile(
+                        tmpId,filePath));
+                    
+                    tmpId = new Guid("0B486FC3-D0A5-4AE0-AE79-B62400703CD3");
+                    filePath = "D:\\yandex\\YandexDisk\\Изображения\\Слайды Антидрон\\01\\18.png";
+                    tempItem = MyStoryTemplateImage.CreateFromFile(filePath
+                        , "БПЛА и угрозы от них",
+                        tmpId, template.Items.Count);
+                    template.Items.Add(tempItem);
+                    unitOfWork.BinaryDataRepository.Save(BinaryData.CreateFromFile(
+                        tmpId,filePath));
+                    
+                    tmpId = new Guid("BE0CBE7F-559C-4152-A445-30D052DC2DA6");
+                    filePath = "D:\\yandex\\YandexDisk\\Изображения\\Слайды Антидрон\\01\\19.png";
+                    tempItem = MyStoryTemplateImage.CreateFromFile(filePath
+                        , "БПЛА и угрозы от них",
+                        tmpId, template.Items.Count);
+                    template.Items.Add(tempItem);
+                    unitOfWork.BinaryDataRepository.Save(BinaryData.CreateFromFile(
+                        tmpId,filePath));
+                    
+                    tmpId = new Guid("BFEDD2FA-8E08-4FDF-99D6-CBFC0DED0ECE");
+                    filePath = "D:\\yandex\\YandexDisk\\Изображения\\Слайды Антидрон\\01\\20.png";
+                    tempItem = MyStoryTemplateImage.CreateFromFile(filePath
+                        , "БПЛА и угрозы от них",
+                        tmpId, template.Items.Count);
+                    template.Items.Add(tempItem);
+                    unitOfWork.BinaryDataRepository.Save(BinaryData.CreateFromFile(
+                        tmpId,filePath));
+                    
+                    tmpId = new Guid("391EB21C-B65D-4D56-978F-4F7AC4BFE8E7");
+                    filePath = "D:\\yandex\\YandexDisk\\Изображения\\Слайды Антидрон\\01\\21.png";
+                    tempItem = MyStoryTemplateImage.CreateFromFile(filePath
+                        , "БПЛА и угрозы от них",
+                        tmpId, template.Items.Count);
+                    template.Items.Add(tempItem);
+                    unitOfWork.BinaryDataRepository.Save(BinaryData.CreateFromFile(
+                        tmpId,filePath));
+                    
+                    tmpId = new Guid("49125CA6-63D8-489F-91B4-3FE003F8E7FB");
+                    filePath = "D:\\yandex\\YandexDisk\\Изображения\\Слайды Антидрон\\01\\22.png";
+                    tempItem = MyStoryTemplateImage.CreateFromFile(filePath
+                        , "БПЛА и угрозы от них",
+                        tmpId, template.Items.Count);
+                    template.Items.Add(tempItem);
+                    unitOfWork.BinaryDataRepository.Save(BinaryData.CreateFromFile(
+                        tmpId,filePath));
+                    
+                    tmpId = new Guid("170FC9BC-80FB-4D5F-A2CC-A3B5100D4E08");
+                    filePath = "D:\\yandex\\YandexDisk\\Изображения\\Слайды Антидрон\\01\\23.png";
+                    tempItem = MyStoryTemplateImage.CreateFromFile(filePath
+                        , "БПЛА и угрозы от них",
+                        tmpId, template.Items.Count);
+                    template.Items.Add(tempItem);
+                    unitOfWork.BinaryDataRepository.Save(BinaryData.CreateFromFile(
+                        tmpId,filePath));
+                    
+                    
+                    tmpId = new Guid("702DB9CB-10C0-48D5-B00D-B59F067467B6");
+                    filePath = "D:\\yandex\\YandexDisk\\Изображения\\Слайды Антидрон\\01\\24.png";
+                    tempItem = MyStoryTemplateImage.CreateFromFile(filePath
+                        , "БПЛА и угрозы от них",
+                        tmpId, template.Items.Count);
+                    template.Items.Add(tempItem);
+                    unitOfWork.BinaryDataRepository.Save(BinaryData.CreateFromFile(
+                        tmpId,filePath));
+                    
                     template.Items.Add(MyStoryTemplateQuiz.Create("Что тако БПЛА?",
                         new[]
                         {
@@ -564,8 +817,485 @@ namespace AES.Init
                             "Боевой",
                             "Беспилотный летательный аппарат",
                             "Большой планер легкой авиации"
-                        }, 2, 9, new Guid("4a2b0cf6-d6d8-429d-84e9-61f60eefe904")));
+                        }, 2, template.Items.Count, new Guid("6B0731BC-1710-4B91-962C-EFD71EEC401A")));
+                    
+                    template.Items.Add(MyStoryTemplateQuiz.Create("Выберите 5 основных типов гражданских БПЛА",
+                        new[]
+                        {
+                            "Самолетный, вертолетный, планерный, аэрографический, мультикоптерный",
+                            "Самолетный, вертолетный, планерный, аэростатический, мультикоптерный",
+                            "Самолетный, вертолетный, планерный, аэростатический, квадрокоптерный",
+                            "Самолетный, мимолетный, планерный, аэростатический, мультикоптерный"
+                        }, 1, template.Items.Count, new Guid("1961A459-A0FC-4B77-99BA-D06F20950DBA")));
+                    
+                    template.Items.Add(MyStoryTemplateQuiz.Create("Выберите правильные варианты возможных поражающих элементов, которые могут нести БПЛА",
+                        new[]
+                        {
+                            "Взрывное устройство",
+                            "Гиря",
+                        }, 0, template.Items.Count, new Guid("30CB9E22-C084-4C8B-8DE0-BD85C79AD411")));
+                    
+                    template.Items.Add(MyStoryTemplateQuiz.Create("Выберите варианты превентивных мер минимизации угрозы.",
+                        new[]
+                        {
+                            "Юридические и информационные, Административно-уголовные и программные",
+                            "Публично-порицательные и административные, Уголовные и исправительно-трудовые",
+                        }, 0, template.Items.Count, new Guid("4B9CCEAF-48FD-4456-A7B1-26D901AF3662")));
+                    
+                    template.Items.Add(MyStoryTemplateQuiz.Create("Что такое РЭП?",
+                        new[]
+                        {
+                            "Радиоэлектронный поиск",
+                            "Радиоэлектронное подавление",
+                            "Радиоизотопный эмиссионный прибор",
+                            "Ракетно-энергетическое противодействие",
+                        }, 1, template.Items.Count, new Guid("16D9944F-D504-4706-86F3-60222BF3434E")));
+                    
+                    unitOfWork.StoryTemplateRepository.Save(template);
+                }
 
+                unitOfWork.Commit();
+            }
+        }
+        
+        
+        private static void InitMyStoryTemplateAntidron02(IUnitOfWorkFactory unitOfWorkFactory)
+        {
+            using (var unitOfWork = unitOfWorkFactory.Create())
+            {
+                var id = new Guid("9DBF36A2-ACB2-4000-A6EA-30286EB0FFAD");
+
+                var template = unitOfWork.StoryTemplateRepository.Get(id);
+                if (template == null)
+                {
+
+                    template = new MyStoryTemplate
+                    {
+                        Id = id,
+                        Title = "Антидрон. Радиоэлектронное противодействие БПЛА",
+                        Description =
+                            "АСПЕКТЫ ИСПОЛЬЗОВАНИЯ СИСТЕМ ОБНАРУЖЕНИЯ И ПРОТИВОДЕЙСТВИЯ БПЛА НА ОБЪЕКТАХ КРИТИЧЕСКОЙ ИНФРАСТРУКТУРЫ",
+                        Subject = unitOfWork.SubjectRepository.Get(new Guid("2F8E6061-EBCB-43BA-8153-4643CC9E927E")),
+                        Semester = 1,
+                        TypeTesting = unitOfWork.TypeTestingRepository.Get(new Guid("d121aa27-6cdd-4dc6-80c0-bf9a022aa68d"))
+                    };
+
+                    var tmpId = new Guid("E7AAEE4C-19D3-4799-B7E5-4482019A7142");
+                    var filePath = "D:\\yandex\\YandexDisk\\Изображения\\Слайды Антидрон\\02\\25.png";
+                    MyStoryTemplateFileBased tempItem = MyStoryTemplateImage.CreateFromFile(filePath
+                        , "Радиоэлектронное противодействие БПЛА",
+                        tmpId, template.Items.Count);
+                    template.Items.Add(tempItem);
+                    unitOfWork.BinaryDataRepository.Save(BinaryData.CreateFromFile(
+                        tmpId,filePath));
+
+
+                    tmpId = new Guid("54333900-D64E-4578-89AE-7FD099DFC40F");
+                    filePath = "D:\\yandex\\YandexDisk\\Изображения\\Слайды Антидрон\\02\\26.png";
+                    tempItem = MyStoryTemplateImage.CreateFromFile(filePath
+                        , "Радиоэлектронное противодействие БПЛА",
+                        tmpId, template.Items.Count);
+                    template.Items.Add(tempItem);
+                    unitOfWork.BinaryDataRepository.Save(BinaryData.CreateFromFile(
+                        tmpId,filePath));
+                    
+                    tmpId = new Guid("7C3BA51D-AA86-4ED3-98F1-F4451BCB7F6A");
+                    filePath = "D:\\yandex\\YandexDisk\\Изображения\\Слайды Антидрон\\02\\27.png";
+                    tempItem = MyStoryTemplateImage.CreateFromFile(filePath
+                        , "Радиоэлектронное противодействие БПЛА",
+                        tmpId, template.Items.Count);
+                    template.Items.Add(tempItem);
+                    unitOfWork.BinaryDataRepository.Save(BinaryData.CreateFromFile(
+                        tmpId,filePath));
+                    
+                    
+                    tmpId = new Guid("F2080B06-7360-47EF-AD7F-420AD34117AC");
+                    filePath = "D:\\yandex\\YandexDisk\\Изображения\\Слайды Антидрон\\02\\28.png";
+                    tempItem = MyStoryTemplateImage.CreateFromFile(filePath
+                        , "Радиоэлектронное противодействие БПЛА",
+                        tmpId, template.Items.Count);
+                    template.Items.Add(tempItem);
+                    unitOfWork.BinaryDataRepository.Save(BinaryData.CreateFromFile(
+                        tmpId,filePath));
+                    
+                    tmpId = new Guid("60CE8FD0-BC88-4816-BE64-345BE6234765");
+                    filePath = "D:\\yandex\\YandexDisk\\Изображения\\Слайды Антидрон\\02\\29.png";
+                    tempItem = MyStoryTemplateImage.CreateFromFile(filePath
+                        , "Радиоэлектронное противодействие БПЛА",
+                        tmpId, template.Items.Count);
+                    template.Items.Add(tempItem);
+                    unitOfWork.BinaryDataRepository.Save(BinaryData.CreateFromFile(
+                        tmpId,filePath));
+                    
+                    tmpId = new Guid("3D8962E2-BE7A-44DD-877B-481C4E141130");
+                    filePath = "D:\\yandex\\YandexDisk\\Изображения\\Слайды Антидрон\\02\\30.png";
+                    tempItem = MyStoryTemplateImage.CreateFromFile(filePath
+                        , "Радиоэлектронное противодействие БПЛА",
+                        tmpId, template.Items.Count);
+                    template.Items.Add(tempItem);
+                    unitOfWork.BinaryDataRepository.Save(BinaryData.CreateFromFile(
+                        tmpId,filePath));
+                   
+                    tmpId = new Guid("C82F10B9-D921-4AE2-9C09-1F84100A6439");
+                    filePath = "D:\\yandex\\YandexDisk\\Изображения\\Слайды Антидрон\\02\\31.png";
+                    tempItem = MyStoryTemplateImage.CreateFromFile(filePath
+                        , "Радиоэлектронное противодействие БПЛА",
+                        tmpId, template.Items.Count);
+                    template.Items.Add(tempItem);
+                    unitOfWork.BinaryDataRepository.Save(BinaryData.CreateFromFile(
+                        tmpId,filePath));
+
+                    tmpId = new Guid("D3BCB082-D1FE-4E75-9AE0-27DCF63C00BE");
+                    filePath = "D:\\yandex\\YandexDisk\\Изображения\\Слайды Антидрон\\02\\32.png";
+                    tempItem = MyStoryTemplateImage.CreateFromFile(filePath
+                        , "Радиоэлектронное противодействие БПЛА",
+                        tmpId, template.Items.Count);
+                    template.Items.Add(tempItem);
+                    unitOfWork.BinaryDataRepository.Save(BinaryData.CreateFromFile(
+                        tmpId,filePath));
+                    
+                    tmpId = new Guid("660F9EC6-514A-4CB2-80A5-2A573F183C9F");
+                    filePath = "D:\\yandex\\YandexDisk\\Изображения\\Слайды Антидрон\\02\\33.png";
+                    tempItem = MyStoryTemplateImage.CreateFromFile(filePath
+                        , "Радиоэлектронное противодействие БПЛА",
+                        tmpId, template.Items.Count);
+                    template.Items.Add(tempItem);
+                    unitOfWork.BinaryDataRepository.Save(BinaryData.CreateFromFile(
+                        tmpId,filePath));
+                    
+                    tmpId = new Guid("5160CEEA-825E-42D6-913C-0612B0722375");
+                    filePath = "D:\\yandex\\YandexDisk\\Изображения\\Слайды Антидрон\\02\\34.png";
+                    tempItem = MyStoryTemplateImage.CreateFromFile(filePath
+                        , "Радиоэлектронное противодействие БПЛА",
+                        tmpId, template.Items.Count);
+                    template.Items.Add(tempItem);
+                    unitOfWork.BinaryDataRepository.Save(BinaryData.CreateFromFile(
+                        tmpId,filePath));
+                    
+                    tmpId = new Guid("8FA87A8F-CD8C-4C8C-BDE0-5A02717B4A3B");
+                    filePath = "D:\\yandex\\YandexDisk\\Изображения\\Слайды Антидрон\\02\\35.png";
+                    tempItem = MyStoryTemplateImage.CreateFromFile(filePath
+                        , "Радиоэлектронное противодействие БПЛА",
+                        tmpId, template.Items.Count);
+                    template.Items.Add(tempItem);
+                    unitOfWork.BinaryDataRepository.Save(BinaryData.CreateFromFile(
+                        tmpId,filePath));
+                    
+                    tmpId = new Guid("D69A240F-FF9B-4C39-9D8E-83BF09774F0F");
+                    filePath = "D:\\yandex\\YandexDisk\\Изображения\\Слайды Антидрон\\02\\36.png";
+                    tempItem = MyStoryTemplateImage.CreateFromFile(filePath
+                        , "Радиоэлектронное противодействие БПЛА",
+                        tmpId, template.Items.Count);
+                    template.Items.Add(tempItem);
+                    unitOfWork.BinaryDataRepository.Save(BinaryData.CreateFromFile(
+                        tmpId,filePath));
+                    
+                    tmpId = new Guid("BDEF9D6F-8A8A-49FD-BA95-46A9F625D8A1");
+                    filePath = "D:\\yandex\\YandexDisk\\Изображения\\Слайды Антидрон\\02\\37.png";
+                    tempItem = MyStoryTemplateImage.CreateFromFile(filePath
+                        , "Радиоэлектронное противодействие БПЛА",
+                        tmpId, template.Items.Count);
+                    template.Items.Add(tempItem);
+                    unitOfWork.BinaryDataRepository.Save(BinaryData.CreateFromFile(
+                        tmpId,filePath));
+                    
+                    tmpId = new Guid("C7835C8C-5D90-44DF-94C4-EC2CBB735A65");
+                    filePath = "D:\\yandex\\YandexDisk\\Изображения\\Слайды Антидрон\\02\\38.png";
+                    tempItem = MyStoryTemplateImage.CreateFromFile(filePath
+                        , "Радиоэлектронное противодействие БПЛА",
+                        tmpId, template.Items.Count);
+                    template.Items.Add(tempItem);
+                    unitOfWork.BinaryDataRepository.Save(BinaryData.CreateFromFile(
+                        tmpId,filePath));
+                    
+                    tmpId = new Guid("D3F1622B-C10C-4AE5-8E88-0A2F939CE898");
+                    filePath = "D:\\yandex\\YandexDisk\\Изображения\\Слайды Антидрон\\02\\39.png";
+                    tempItem = MyStoryTemplateImage.CreateFromFile(filePath
+                        , "Радиоэлектронное противодействие БПЛА",
+                        tmpId, template.Items.Count);
+                    template.Items.Add(tempItem);
+                    unitOfWork.BinaryDataRepository.Save(BinaryData.CreateFromFile(
+                        tmpId,filePath));
+                    
+                    
+                    tmpId = new Guid("F4577F4C-0476-4D31-AA98-B9B685227C32");
+                    filePath = "D:\\yandex\\YandexDisk\\Изображения\\Слайды Антидрон\\02\\40.png";
+                    tempItem = MyStoryTemplateImage.CreateFromFile(filePath
+                        , "Радиоэлектронное противодействие БПЛА",
+                        tmpId, template.Items.Count);
+                    template.Items.Add(tempItem);
+                    unitOfWork.BinaryDataRepository.Save(BinaryData.CreateFromFile(
+                        tmpId,filePath));
+                    
+                    tmpId = new Guid("3092F1DB-A6C1-4C3E-9BE3-E4602BA133BB");
+                    filePath = "D:\\yandex\\YandexDisk\\Изображения\\Слайды Антидрон\\02\\41.png";
+                    tempItem = MyStoryTemplateImage.CreateFromFile(filePath
+                        , "Радиоэлектронное противодействие БПЛА",
+                        tmpId, template.Items.Count);
+                    template.Items.Add(tempItem);
+                    unitOfWork.BinaryDataRepository.Save(BinaryData.CreateFromFile(
+                        tmpId,filePath));
+                    
+                    tmpId = new Guid("6E721154-F773-4EA9-AF05-9DC53DF1D5FB");
+                    filePath = "D:\\yandex\\YandexDisk\\Изображения\\Слайды Антидрон\\02\\42.png";
+                    tempItem = MyStoryTemplateImage.CreateFromFile(filePath
+                        , "Радиоэлектронное противодействие БПЛА",
+                        tmpId, template.Items.Count);
+                    template.Items.Add(tempItem);
+                    unitOfWork.BinaryDataRepository.Save(BinaryData.CreateFromFile(
+                        tmpId,filePath));
+                    
+                    tmpId = new Guid("55973E1A-95B8-40BA-A78F-B3C509B4A749");
+                    filePath = "D:\\yandex\\YandexDisk\\Изображения\\Слайды Антидрон\\02\\43.png";
+                    tempItem = MyStoryTemplateImage.CreateFromFile(filePath
+                        , "Радиоэлектронное противодействие БПЛА",
+                        tmpId, template.Items.Count);
+                    template.Items.Add(tempItem);
+                    unitOfWork.BinaryDataRepository.Save(BinaryData.CreateFromFile(
+                        tmpId,filePath));
+                    
+                    tmpId = new Guid("16101F75-7FC9-4A7B-A4A2-01CCE522C95F");
+                    filePath = "D:\\yandex\\YandexDisk\\Изображения\\Слайды Антидрон\\02\\44.png";
+                    tempItem = MyStoryTemplateImage.CreateFromFile(filePath
+                        , "Радиоэлектронное противодействие БПЛА",
+                        tmpId, template.Items.Count);
+                    template.Items.Add(tempItem);
+                    unitOfWork.BinaryDataRepository.Save(BinaryData.CreateFromFile(
+                        tmpId,filePath));
+                    
+                    tmpId = new Guid("968A84C9-58D7-4D7A-B7C1-7F7B8D3A428B");
+                    filePath = "D:\\yandex\\YandexDisk\\Изображения\\Слайды Антидрон\\02\\45.png";
+                    tempItem = MyStoryTemplateImage.CreateFromFile(filePath
+                        , "Радиоэлектронное противодействие БПЛА",
+                        tmpId, template.Items.Count);
+                    template.Items.Add(tempItem);
+                    unitOfWork.BinaryDataRepository.Save(BinaryData.CreateFromFile(
+                        tmpId,filePath));
+                    
+                    template.Items.Add(MyStoryTemplateQuiz.Create("Какие функции выполняет система РЭП?",
+                        new[]
+                        {
+                            "мониторинг, отображение, распознавание, позиционирование, целеуказание, подавление, подтверждение",
+                            "мониторинг, обнаружение, распознавание, позирование, целеуказание, подавление, подтверждение",
+                            "мониторинг, отображение, распознавание, позиционирование, целеуказание, подавление, утверждение",
+                            "мониторинг, отображение, распознавание, позиционирование, целеотказание, подавление, подтверждение"
+                        }, 0, template.Items.Count, new Guid("5676E1DC-D211-4F61-A892-5923728A53BA")));
+                    
+                    template.Items.Add(MyStoryTemplateQuiz.Create("Максимальная дальность работы радиолокационного обнаружения?",
+                        new[]
+                        {
+                            "5",
+                            "11",
+                            "15",
+                            "21"
+                        }, 3, template.Items.Count, new Guid("2F880C30-F779-41DE-8EF4-2A80B1805D23")));
+                    
+                    template.Items.Add(MyStoryTemplateQuiz.Create("Максимальная дальность работы купольных средств подавления?",
+                        new[]
+                        {
+                            "5",
+                            "2,5",
+                            "1,2",
+                            "3",
+                        }, 1, template.Items.Count, new Guid("3DD257FA-ADDE-4FBF-A619-4D041CB9CE25")));
+                    
+                    template.Items.Add(MyStoryTemplateQuiz.Create("Выберите примерный частотный диапазон средств подавления",
+                        new[]
+                        {
+                            "500 – 8000 МГц",
+                            "400 - 6000 МГц",
+                            "800 - 5600 МГц",
+                            "200 - 2400 МГц",
+                        }, 1, template.Items.Count, new Guid("26DC62AD-6292-4FF1-A98B-8F7D414FCBDD")));
+                    
+                    template.Items.Add(MyStoryTemplateQuiz.Create("Как неправильно и как правильно размещать средства РЭП",
+                        new[]
+                        {
+                            "Внутри защищенного периметра",
+                            "Внутри защищенного периметра строго по центру",
+                            "Внутри защищенного периметра по краям территории",
+                            "Снаружи защищенного периметра на вышке",
+                        }, 2, template.Items.Count, new Guid("7C3BAED2-B6AC-4009-992F-E170F483EB2D")));
+                    
+                    unitOfWork.StoryTemplateRepository.Save(template);
+                }
+
+                unitOfWork.Commit();
+            }
+        }
+        
+        private static void InitMyStoryTemplateAntidron03(IUnitOfWorkFactory unitOfWorkFactory)
+        {
+            using (var unitOfWork = unitOfWorkFactory.Create())
+            {
+                var id = new Guid("BF6C93DC-9EB4-4B15-AF86-E82228A5993C");
+
+                var template = unitOfWork.StoryTemplateRepository.Get(id);
+                if (template == null)
+                {
+
+                    template = new MyStoryTemplate
+                    {
+                        Id = id,
+                        Title = "Антидрон. Коммерческое торговое предложение",
+                        Description =
+                            "АСПЕКТЫ ИСПОЛЬЗОВАНИЯ СИСТЕМ ОБНАРУЖЕНИЯ И ПРОТИВОДЕЙСТВИЯ БПЛА НА ОБЪЕКТАХ КРИТИЧЕСКОЙ ИНФРАСТРУКТУРЫ",
+                        Subject = unitOfWork.SubjectRepository.Get(new Guid("2e384f04-3643-4df4-bb53-21d8f777f2a6")),
+                        Semester = 1,
+                        TypeTesting = unitOfWork.TypeTestingRepository.Get(new Guid("d121aa27-6cdd-4dc6-80c0-bf9a022aa68d"))
+                    };
+
+                    var tmpId = new Guid("0C96F496-4844-4F5B-BBEB-3CE138672B9F");
+                    var filePath = "D:\\yandex\\YandexDisk\\Изображения\\Слайды Антидрон\\03\\46.png";
+                    MyStoryTemplateFileBased tempItem = MyStoryTemplateImage.CreateFromFile(filePath
+                        , "Коммерческое торговое предложение",
+                        tmpId, template.Items.Count);
+                    template.Items.Add(tempItem);
+                    unitOfWork.BinaryDataRepository.Save(BinaryData.CreateFromFile(
+                        tmpId,filePath));
+
+
+                    tmpId = new Guid("AA0CA0E8-A285-45E5-9443-2AB2E5A87242");
+                    filePath = "D:\\yandex\\YandexDisk\\Изображения\\Слайды Антидрон\\03\\47.png";
+                    tempItem = MyStoryTemplateImage.CreateFromFile(filePath
+                        , "Коммерческое торговое предложение",
+                        tmpId, template.Items.Count);
+                    template.Items.Add(tempItem);
+                    unitOfWork.BinaryDataRepository.Save(BinaryData.CreateFromFile(
+                        tmpId,filePath));
+                    
+                    tmpId = new Guid("BCE534E6-8EF8-46AA-B87D-81B06AC4E5F9");
+                    filePath = "D:\\yandex\\YandexDisk\\Изображения\\Слайды Антидрон\\03\\48.png";
+                    tempItem = MyStoryTemplateImage.CreateFromFile(filePath
+                        , "Коммерческое торговое предложение",
+                        tmpId, template.Items.Count);
+                    template.Items.Add(tempItem);
+                    unitOfWork.BinaryDataRepository.Save(BinaryData.CreateFromFile(
+                        tmpId,filePath));
+                    
+                    
+                    tmpId = new Guid("85C46B78-DCC7-4301-8FA8-34B77BC1DE36");
+                    filePath = "D:\\yandex\\YandexDisk\\Изображения\\Слайды Антидрон\\03\\49.png";
+                    tempItem = MyStoryTemplateImage.CreateFromFile(filePath
+                        , "Коммерческое торговое предложение",
+                        tmpId, template.Items.Count);
+                    template.Items.Add(tempItem);
+                    unitOfWork.BinaryDataRepository.Save(BinaryData.CreateFromFile(
+                        tmpId,filePath));
+                    
+                    tmpId = new Guid("3504A9A8-F3F4-43B6-B2E7-F6829D7146A7");
+                    filePath = "D:\\yandex\\YandexDisk\\Изображения\\Слайды Антидрон\\03\\50.png";
+                    tempItem = MyStoryTemplateImage.CreateFromFile(filePath
+                        , "Коммерческое торговое предложение",
+                        tmpId, template.Items.Count);
+                    template.Items.Add(tempItem);
+                    unitOfWork.BinaryDataRepository.Save(BinaryData.CreateFromFile(
+                        tmpId,filePath));
+                    
+                    tmpId = new Guid("DA70B44E-A56A-4D7F-9929-555E083BF1F2");
+                    filePath = "D:\\yandex\\YandexDisk\\Изображения\\Слайды Антидрон\\03\\51.png";
+                    tempItem = MyStoryTemplateImage.CreateFromFile(filePath
+                        , "Коммерческое торговое предложение",
+                        tmpId, template.Items.Count);
+                    template.Items.Add(tempItem);
+                    unitOfWork.BinaryDataRepository.Save(BinaryData.CreateFromFile(
+                        tmpId,filePath));
+                   
+                    tmpId = new Guid("4AE5D854-4208-4B86-B02E-2078D6718AD8");
+                    filePath = "D:\\yandex\\YandexDisk\\Изображения\\Слайды Антидрон\\03\\52.png";
+                    tempItem = MyStoryTemplateImage.CreateFromFile(filePath
+                        , "Коммерческое торговое предложение",
+                        tmpId, template.Items.Count);
+                    template.Items.Add(tempItem);
+                    unitOfWork.BinaryDataRepository.Save(BinaryData.CreateFromFile(
+                        tmpId,filePath));
+
+                    tmpId = new Guid("D4C6916F-3591-4E8E-840E-E9730ECB945F");
+                    filePath = "D:\\yandex\\YandexDisk\\Изображения\\Слайды Антидрон\\03\\53.png";
+                    tempItem = MyStoryTemplateImage.CreateFromFile(filePath
+                        , "Коммерческое торговое предложение",
+                        tmpId, template.Items.Count);
+                    template.Items.Add(tempItem);
+                    unitOfWork.BinaryDataRepository.Save(BinaryData.CreateFromFile(
+                        tmpId,filePath));
+                    
+                    
+                    
+                    tempItem = MyStoryTemplateVideo.CreateFromFile(
+                        "D:\\yandex\\YandexDisk\\Изображения\\Слайды Антидрон\\03\\54.mp4", "Коммерческое торговое предложение",
+                        new Guid("57901D6B-B052-4487-A4AB-4510907434B4"), template.Items.Count);
+                    template.Items.Add(tempItem);
+                    unitOfWork.BinaryDataRepository.Save(BinaryData.CreateFromFile(
+                        tempItem.Id,"D:\\yandex\\YandexDisk\\Изображения\\Слайды Антидрон\\03\\54.mp4"));
+                    
+                    
+                    tmpId = new Guid("37268FC3-E17C-4049-A69C-1801830AFE55");
+                    filePath = "D:\\yandex\\YandexDisk\\Изображения\\Слайды Антидрон\\03\\55.png";
+                    tempItem = MyStoryTemplateImage.CreateFromFile(filePath
+                        , "Коммерческое торговое предложение",
+                        tmpId, template.Items.Count);
+                    template.Items.Add(tempItem);
+                    unitOfWork.BinaryDataRepository.Save(BinaryData.CreateFromFile(
+                        tmpId,filePath));
+                    
+                    tmpId = new Guid("F93A2356-0335-43D7-8474-F88E8606BC9D");
+                    filePath = "D:\\yandex\\YandexDisk\\Изображения\\Слайды Антидрон\\03\\56.png";
+                    tempItem = MyStoryTemplateImage.CreateFromFile(filePath
+                        , "Коммерческое торговое предложение",
+                        tmpId, template.Items.Count);
+                    template.Items.Add(tempItem);
+                    unitOfWork.BinaryDataRepository.Save(BinaryData.CreateFromFile(
+                        tmpId,filePath));
+                    
+                    tmpId = new Guid("B2CC7DD7-C7DE-4670-80A2-84E0CFE1AFDF");
+                    filePath = "D:\\yandex\\YandexDisk\\Изображения\\Слайды Антидрон\\03\\57.png";
+                    tempItem = MyStoryTemplateImage.CreateFromFile(filePath
+                        , "Коммерческое торговое предложение",
+                        tmpId, template.Items.Count);
+                    template.Items.Add(tempItem);
+                    unitOfWork.BinaryDataRepository.Save(BinaryData.CreateFromFile(
+                        tmpId,filePath));
+                    
+                    tmpId = new Guid("98205169-9345-4C76-8032-3FC44636AD37");
+                    filePath = "D:\\yandex\\YandexDisk\\Изображения\\Слайды Антидрон\\03\\58.png";
+                    tempItem = MyStoryTemplateImage.CreateFromFile(filePath
+                        , "Коммерческое торговое предложение",
+                        tmpId, template.Items.Count);
+                    template.Items.Add(tempItem);
+                    unitOfWork.BinaryDataRepository.Save(BinaryData.CreateFromFile(
+                        tmpId,filePath));
+                    
+                    tmpId = new Guid("C518AA22-B07A-426C-8710-412453F70BA9");
+                    filePath = "D:\\yandex\\YandexDisk\\Изображения\\Слайды Антидрон\\03\\59.png";
+                    tempItem = MyStoryTemplateImage.CreateFromFile(filePath
+                        , "Коммерческое торговое предложение",
+                        tmpId, template.Items.Count);
+                    template.Items.Add(tempItem);
+                    unitOfWork.BinaryDataRepository.Save(BinaryData.CreateFromFile(
+                        tmpId,filePath));
+                    
+                    
+                    
+                    template.Items.Add(MyStoryTemplateQuiz.Create("Какой этап очень важен?",
+                        new[]
+                        {
+                            "Подписание NDA",
+                            "Обследование объекта Заказчика",
+                            "Предоставление ТКП",
+                            "Подписание договора"
+                        }, 1, template.Items.Count, new Guid("1E96A6A7-7AE7-4CC6-91AF-B7589066E196")));
+                    
+                    template.Items.Add(MyStoryTemplateQuiz.Create("Как определяется местоположение оператора БПЛА? ",
+                        new[]
+                        {
+                            "Методом классификации",
+                            "Методом маркеризации",
+                            "Методом триангуляции",
+                            "Методом манипуляции",
+                        }, 2, template.Items.Count, new Guid("C7EB6338-3C7E-441A-86A8-ECC42080DDED")));
+                    
+                    
+                    
                     unitOfWork.StoryTemplateRepository.Save(template);
                 }
 
@@ -733,10 +1463,10 @@ namespace AES.Init
                 {
                     pushkin.Student.Curriculum = createCurriculum(pushkin.Student, new []
                     {
-                        new dymmuCurriculum(){Semester = 1, SubjectName = "Антидрон", TypeTesting = "Зачёт" },
-                        //new dymmuCurriculum(){Semester = 1, SubjectName = "Иностранный язык", TypeTesting = "Зачёт" },
-                        //new dymmuCurriculum(){Semester = 2, SubjectName = "Programming Entity Framework- Code First", TypeTesting = "Зачёт" },
-                        //new dymmuCurriculum(){Semester = 2, SubjectName = "Иностранный язык", TypeTesting = "Экзамен" },
+                        new dymmuCurriculum(){Semester = 1, SubjectName = "Памятка поступившему", TypeTesting = "Зачёт" },
+                     //   new dymmuCurriculum(){Semester = 1, SubjectName = "БПЛА и угрозы от них", TypeTesting = "Зачёт" },
+                     //   new dymmuCurriculum(){Semester = 1, SubjectName = "Радиоэлектронное противодействие БПЛА", TypeTesting = "Зачёт" },
+                    //    new dymmuCurriculum(){Semester = 1, SubjectName = "Коммерческое торговое предложение", TypeTesting = "Зачёт" },
                         //new dymmuCurriculum(){Semester = 3, SubjectName = "Programming Entity Framework- Code First", TypeTesting = "Диффиренцированный зачёт" },
                     }, unitOfWork);
                     
@@ -785,6 +1515,11 @@ namespace AES.Init
             //InitCurriculum();
 
             InitMyStoryTemplate(unitOfWorkFactory);
+            
+            InitMyStoryTemplateAntidron01(unitOfWorkFactory);
+            InitMyStoryTemplateAntidron02(unitOfWorkFactory);
+            InitMyStoryTemplateAntidron03(unitOfWorkFactory);
+            
             InitTimur(unitOfWorkFactory);
             InitPushkin(unitOfWorkFactory);
         }

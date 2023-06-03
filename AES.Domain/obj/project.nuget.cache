@@ -1,12 +1,12 @@
 {
   "version": 2,
-  "dgSpecHash": "PaNm18ICvu+OwSs+c2vdQN378TSPj7rmFrv6zvKNXjUieqqeWU0z83cepjn6hR3rk8ryVCHMLXwPB+HaMII5iQ==",
+  "dgSpecHash": "KOywC0ONv89/AzxypixSRjpb3zFHjXvpXybewQ5kDQqFIRTf9M81lz+t6V0TPK9yo33Jv+z0nh5CzK6+S7yAlw==",
   "success": true,
   "projectFilePath": "D:\\yandex\\YandexDisk\\Документы\\GitHub\\AES\\AES.Domain\\AES.Domain.csproj",
   "expectedPackageFiles": [
-    "C:\\Users\\lean\\.nuget\\packages\\microsoft.entityframeworkcore\\7.0.4\\microsoft.entityframeworkcore.7.0.4.nupkg.sha512",
-    "C:\\Users\\lean\\.nuget\\packages\\microsoft.entityframeworkcore.abstractions\\7.0.4\\microsoft.entityframeworkcore.abstractions.7.0.4.nupkg.sha512",
-    "C:\\Users\\lean\\.nuget\\packages\\microsoft.entityframeworkcore.analyzers\\7.0.4\\microsoft.entityframeworkcore.analyzers.7.0.4.nupkg.sha512",
+    "C:\\Users\\lean\\.nuget\\packages\\microsoft.entityframeworkcore\\7.0.5\\microsoft.entityframeworkcore.7.0.5.nupkg.sha512",
+    "C:\\Users\\lean\\.nuget\\packages\\microsoft.entityframeworkcore.abstractions\\7.0.5\\microsoft.entityframeworkcore.abstractions.7.0.5.nupkg.sha512",
+    "C:\\Users\\lean\\.nuget\\packages\\microsoft.entityframeworkcore.analyzers\\7.0.5\\microsoft.entityframeworkcore.analyzers.7.0.5.nupkg.sha512",
     "C:\\Users\\lean\\.nuget\\packages\\microsoft.extensions.caching.abstractions\\7.0.0\\microsoft.extensions.caching.abstractions.7.0.0.nupkg.sha512",
     "C:\\Users\\lean\\.nuget\\packages\\microsoft.extensions.caching.memory\\7.0.0\\microsoft.extensions.caching.memory.7.0.0.nupkg.sha512",
     "C:\\Users\\lean\\.nuget\\packages\\microsoft.extensions.dependencyinjection\\7.0.0\\microsoft.extensions.dependencyinjection.7.0.0.nupkg.sha512",

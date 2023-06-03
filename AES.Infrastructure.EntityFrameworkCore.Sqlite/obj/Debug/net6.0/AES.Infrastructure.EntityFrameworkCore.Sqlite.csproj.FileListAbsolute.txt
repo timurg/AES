@@ -1,4 +1,3 @@
-D:\yandex\YandexDisk\Документы\GitHub\AES\AES.Infrastructure.EntityFrameworkCore.Sqlite\bin\Debug\net6.0\appsettings.json
 D:\yandex\YandexDisk\Документы\GitHub\AES\AES.Infrastructure.EntityFrameworkCore.Sqlite\bin\Debug\net6.0\AES.Infrastructure.EntityFrameworkCore.Sqlite.deps.json
 D:\yandex\YandexDisk\Документы\GitHub\AES\AES.Infrastructure.EntityFrameworkCore.Sqlite\bin\Debug\net6.0\AES.Infrastructure.EntityFrameworkCore.Sqlite.dll
 D:\yandex\YandexDisk\Документы\GitHub\AES\AES.Infrastructure.EntityFrameworkCore.Sqlite\bin\Debug\net6.0\AES.Infrastructure.EntityFrameworkCore.Sqlite.pdb

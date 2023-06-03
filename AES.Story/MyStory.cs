@@ -25,11 +25,15 @@ public class MyStory : LearningProcess
     {
         if (CanEnd())
         {
+            var testItems = GetCurrentGenerationItems().Where(i => i is StoryPoll);
+            var passCount = testItems.Count() / 2;
             var record = new BalledGradeRecord
             {
-                IsPassed = !Items.Any(i => i.Generation == StoryGeneration && i.IsPassed.HasValue && !i.IsPassed.Value),
+                
+                IsPassed = testItems.Count(i => ((StoryPoll)i).IsPassed.Value) >= passCount,
                 GradeDateTime = DateTimeOffset.Now,
-                Id = Guid.NewGuid()
+                Id = Guid.NewGuid(),
+                
             };
             ResetLearning();
             return record;
