@@ -129,7 +129,7 @@ public class UserUtils
                // new dymmuCurriculum() { Semester = 1, SubjectName = "Памятка поступившему", TypeTesting = "Зачёт" },
                 new dymmuCurriculum(){Semester = 1, SubjectName = "БПЛА и угрозы от них", TypeTesting = "Зачёт" },
                 new dymmuCurriculum(){Semester = 1, SubjectName = "Радиоэлектронное противодействие БПЛА", TypeTesting = "Зачёт" },
-              //  new dymmuCurriculum(){Semester = 1, SubjectName = "Коммерческое торговое предложение", TypeTesting = "Зачёт" },
+                new dymmuCurriculum(){Semester = 1, SubjectName = "Существующие комплексные решения по РЭБ", TypeTesting = "Зачёт" },
             }, unitOfWork);
         }
 

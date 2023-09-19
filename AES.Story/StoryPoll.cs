@@ -1,8 +1,7 @@
 ﻿namespace AES.Story;
 
-public class StoryPoll: StoryItem
+public class StoryPoll: StoryTextContentBase
 {
-    public string Content { get; set; }
     public IList<StoryPollItem> Items { get; set; } = new List<StoryPollItem>();
     public uint? SelectedItem { get; set; }
     public void CheckAnswer()

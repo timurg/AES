@@ -30,7 +30,7 @@ public class MyStory : LearningProcess
             var record = new BalledGradeRecord
             {
                 
-                IsPassed = testItems.Count(i => ((StoryPoll)i).IsPassed.Value) >= passCount,
+                IsPassed = (!testItems.Any()) || (testItems.Count(i => ((StoryPoll)i).IsPassed.Value) >= passCount),
                 GradeDateTime = DateTimeOffset.Now,
                 Id = Guid.NewGuid(),
                 

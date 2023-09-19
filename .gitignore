@@ -1,2 +1,8 @@
 
 *.cache
+Data/Data05_09_2023.7z
+Data/Data05_09_2023.7z
+*data.sqlite
+*.sqlite
+*.sqlite-shm
+*.sqlite-wal

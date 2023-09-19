@@ -2,10 +2,14 @@
 
 public class MyStoryTemplateVenue : MyStoryTemplateItem
 {
+
+    public static MyStoryTemplateVenue Create(string adress, string title, float latitude, float longitude, int indexOrder = -1, Guid id = new())
+    {
+        return new MyStoryTemplateVenue() { Id = id, Adress = adress, Title = title, Latitude = latitude, Longitude = longitude, ItemIndex = indexOrder, Description = adress};
+    }
+
     public float Longitude { get; set; }
     public float Latitude { get; set; }
-    
-    public string Title { get; set; }
     public string Adress { get; set; }
 
     /*
@@ -22,7 +26,8 @@ public class MyStoryTemplateVenue : MyStoryTemplateItem
             Adress = Adress,
             Latitude = Latitude,
             Longitude = Longitude,
-            Title = Title
+            Title = Title,
+            Template = this
         };
     }
     

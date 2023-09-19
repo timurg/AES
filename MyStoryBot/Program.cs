@@ -1,4 +1,5 @@
-﻿using System.Text;
+﻿using System.Net.Mime;
+using System.Text;
 using AES.BusinessLogic;
 using AES.BusinessLogic.Implementation;
 using AES.Domain;
@@ -16,6 +17,7 @@ using Telegram.BotAPI.AvailableTypes;
 using Telegram.BotAPI.GettingUpdates;
 using Telegram.BotAPI.UpdatingMessages;
 using Module = AES.Domain.Module;
+NLog.ILogger _logger = NLog.LogManager.GetCurrentClassLogger();
 
 var configuration = new ConfigurationBuilder().AddJsonFile("appsettings.json", optional: false).Build();
 var serviceProvider = ConfigureServices(configuration) as AutofacServiceProvider ?? throw new ApplicationException();
@@ -24,18 +26,18 @@ if (serviceProvider == null) throw new ArgumentNullException(nameof(serviceProvi
 var botClient = new BotClient("6291851683:AAGz8AXfuHtNV1NcoAibWWuW3iuGDUumFNw");
 //var botClient = new BotClient("6270151229:AAHCDwuE1ajG-JLK2QbiwAHxrZmV6zyFpFw");
 var me = botClient.GetMe();
-Console.WriteLine($"Start listening for @{me.Username}");
+_logger.Debug($"Start listening for @{me.Username}");
 
 var updates = await botClient.GetUpdatesAsync();
-Console.WriteLine("Enter to cycle");
+_logger.Debug("Enter to cycle");
 botClient.SetMyCommands(new BotCommand("info", "Информация"), new BotCommand("/next", "Далее"));
 var unitOfWorkFactory = serviceProvider.GetService(typeof(IUnitOfWorkFactory)) as IUnitOfWorkFactory;
 while (true)
 {
-    Console.WriteLine("tic");
+    _logger.Trace("tic");
     if (updates.Any())
     {
-        Console.WriteLine("Detect updates");
+        _logger.Debug("Detect updates");
         foreach (var update in updates)
         {
             using (var unitOfWork = unitOfWorkFactory.Create())
@@ -123,12 +125,12 @@ while (true)
                                     if (anyStarted)
                                     {
                                         botClient.SendMessage(message.Chat.Id, textMessage.ToString(),
-                                            parseMode: ParseMode.HTML);
+                                            parseMode: ParseMode.HTML, disableNotification: true);
                                     }
                                     else
                                     {
                                         botClient.SendMessage(message.Chat.Id, textMessage.ToString(),
-                                            parseMode: ParseMode.HTML, replyMarkup: rm);
+                                            parseMode: ParseMode.HTML, replyMarkup: rm, disableNotification: true);
                                     }
                                 }
                                 
@@ -175,10 +177,38 @@ while (true)
                                         $"Наберите команду /info");
                                 }
                             }
+                            else if (hasText && message.Text == "/allresults")
+                            {
+                                if (user.Roles.Any(r => r.Name == "admin"))
+                                {
+                                    foreach (var student in unitOfWork.StudentRepository.GetQuery().ToArray())
+                                    {
+                                        var btn = new InlineKeyboardButton[1];
+                                        btn[0] = new InlineKeyboardButton();
+                                        var rm = new InlineKeyboardMarkup
+                                        {
+                                            InlineKeyboard = new[]
+                                            {
+                                                btn
+                                            }
+                                        };
+                                        btn[0].Text = "Показать";
+                                        btn[0].CallbackData = "show " + student.Id;
+                                        botClient.SendMessage(message.Chat.Id, $"{student.Person.Login}: {student.Person.FullName}",
+                                            parseMode: ParseMode.HTML, replyMarkup: rm, disableNotification: true);
+                                    }
+                                }
+                                else
+                                {
+                                    botClient.SendMessage(message.Chat.Id,
+                                        $"Недостаточно прав для выполнения команды.");
+                                    
+                                }
+                            }
                             else
                             {
                                 botClient.SendMessage(message.Chat.Id,
-                                    $"Привет {user.Name}, набери команду /info");
+                                    $"Привет {user.Name}, набери команду /info", disableNotification: true);
                             }
                         }
                         else if (update.PollAnswer != null)
@@ -219,7 +249,6 @@ while (true)
                                         .First(s => s.Id == id);
                                     var isStarted = eduItem.LearningProcess != null &&
                                                     eduItem.LearningProcess.IsStarted();
-                                    StoryItem storyItem;
                                     if (!isStarted)
                                     {
                                         ILearningProcessBuilder builder = new MyStoryLearningProcessBuilder(unitOfWork);
@@ -231,18 +260,51 @@ while (true)
 
                                         eduItem.LearningProcess.BeginLearning();
                                         var story = eduItem.LearningProcess as MyStory;
-                                        storyItem = story.GetCurrentStoryItem();
+                                        var storyItem = story.GetCurrentStoryItem();
                                         
                                         RenderItemStory(botClient, unitOfWork, chatId.Value, story, storyItem);
                                         ProcessLearning(botClient, chatId.Value, processStep, user.Student, eduItem);
                                     }
+                                    botClient.AnswerCallbackQuery(new AnswerCallbackQueryArgs(update.CallbackQuery.Id)
+                                    {
+                                        Text = "Используйте кнопку \"Далее\" рядом с клавиатурой, для навигации.",//update.CallbackQuery.Data,
+                                        ShowAlert = true
+                                    });
+                                }
+                                else if (commandData[0] == "show")
+                                {
+                                    var person = unitOfWork.PersonRepository.GetQuery().First(s => s.Student.Id == id);
+                                    var items
+                                        = person.Student.Curriculum.Modules.First().Items;
+                                    var cid = chatId.Value;
+                                    var textMessage = new StringBuilder();
+                                    textMessage.Append(person.FullName + "\n");
+                                    int inx = 1;
+                                    foreach (var moduleItem in items)
+                                    {
+                                        var isStarted = (moduleItem.LearningProcess != null) &&
+                                                        (moduleItem.LearningProcess.IsStarted());
+                                        var beginInfo = isStarted ? "стартовал\n" : "не стартовал";
+
+                                        
+                                        textMessage.Append(
+                                            $"\n{inx++}) <b>{moduleItem.Subject.Name}</b>, процесс обучения {beginInfo}");
+                                        if (moduleItem.Grade != null)
+                                        {
+                                            textMessage.AppendLine($"\nТекущая оценка {moduleItem.Grade.Description} ({moduleItem.Grade.GradeDateTime.DateTime.ToShortDateString()})");
+                                        }
+                                        else
+                                        {
+                                            textMessage.AppendLine();
+                                        }
+                                        
+                                    }
+                                    botClient.SendMessage(cid, textMessage.ToString(),
+                                        parseMode: ParseMode.HTML, disableNotification: true);
+                                    botClient.AnswerCallbackQuery(new AnswerCallbackQueryArgs(update.CallbackQuery.Id));
                                 }
                             }
-                            botClient.AnswerCallbackQuery(new AnswerCallbackQueryArgs(update.CallbackQuery.Id)
-                            {
-                                Text = "Используйте кнопку \"Далее\" рядом с клавиатурой, для навигации.",//update.CallbackQuery.Data,
-                                ShowAlert = true
-                            });
+                            
                         }
                     }
                 }
@@ -253,7 +315,7 @@ while (true)
                 }
                 catch (Exception exception)
                 {
-                    Console.WriteLine(exception.ToString());
+                    _logger.Error(exception.ToString());
                 }
                 
                 unitOfWork.Commit();
@@ -307,14 +369,14 @@ static void RenderItemStory(BotClient botClient, IUnitOfWork unitOfWork, long ch
             {
                 message = botClient.SendPhoto(chatId, file,
                     caption: $"Шаг {story.StoryStep + 1} из {story.StoryTemplate.Items.Count}",
-                    replyMarkup: keyboard, protectContent: true);
+                    replyMarkup: keyboard, protectContent: true, disableNotification: true);
                 templateWithFile.TelegramFileId = message.Photo.First().FileId;
             }
             else if (storyFileBasedItem is StoryVideo)
             {
                 message = botClient.SendVideo(chatId, file,
                     caption: $"Шаг {story.StoryStep + 1} из {story.StoryTemplate.Items.Count}",
-                    replyMarkup: keyboard, protectContent: true);
+                    replyMarkup: keyboard, protectContent: true, disableNotification: true);
                 templateWithFile.TelegramFileId = message.Video.FileId;
             }
         }
@@ -324,13 +386,13 @@ static void RenderItemStory(BotClient botClient, IUnitOfWork unitOfWork, long ch
             {
                 message = botClient.SendPhoto(chatId, photo: templateWithFile.TelegramFileId,
                     caption: $"Шаг {story.StoryStep + 1} из {story.StoryTemplate.Items.Count}",
-                    replyMarkup: keyboard, protectContent: true);
+                    replyMarkup: keyboard, protectContent: true, disableNotification: true);
             }
             else if (storyFileBasedItem is StoryVideo)
             {
                 message = botClient.SendVideo(chatId, video: templateWithFile.TelegramFileId,
                     caption: $"Шаг {story.StoryStep + 1} из {story.StoryTemplate.Items.Count}",
-                    replyMarkup: keyboard, protectContent: true);
+                    replyMarkup: keyboard, protectContent: true, disableNotification: true);
             }
         }
 
@@ -359,9 +421,24 @@ static void RenderItemStory(BotClient botClient, IUnitOfWork unitOfWork, long ch
         storyItemPool.TelegramId = poolMessage.MessageId;
         storyItemPool.ObjectId = poolMessage.Poll.Id;
     }
+    else if (storyItem is StoryVenue storyVenue)
+    {
+        var sendVenue = botClient.SendVenue(chatId, latitude: storyVenue.Latitude, longitude: storyVenue.Longitude,
+            title: storyVenue.Title, address: storyVenue.Adress, disableNotification: true);
+        storyVenue.ChatId = sendVenue.Chat.Id;
+        storyVenue.TelegramId = sendVenue.MessageId;
+        storyVenue.IsPassed = true;
+    }
+    else if (storyItem is StoryHtml storyHtml)
+    {
+        var sendMessage = botClient.SendMessage(chatId, storyHtml.Content, protectContent: true, disableNotification: true, parseMode: ParseMode.HTML);
+        storyHtml.ChatId = sendMessage.Chat.Id;
+        storyHtml.TelegramId = sendMessage.MessageId;
+        storyHtml.IsPassed = true;
+    }
     else if (storyItem == null)
     {
-        botClient.SendMessage(chatId, $"Обучение завершено.");
+        botClient.SendMessage(chatId, $"Обучение завершено.", disableNotification: true);
     }
     else
     {
@@ -381,12 +458,12 @@ static void ProcessLearning(BotClient botClient, long chatId, IEducationProcessS
         if (testItems.Any())
         {
             botClient.SendMessage(chatId,
-                $"Курс завершён. Задано тестовых заданий/ Получен правильный ответ : {testItems.Count()}/{testItems.Count(i => ((StoryPoll)i).IsPassed.Value)}.");
+                $"Курс завершён. Задано тестовых заданий/ Получен правильный ответ : {testItems.Count()}/{testItems.Count(i => ((StoryPoll)i).IsPassed.Value)}.", disableNotification: true);
         }
         else
         {
             botClient.SendMessage(chatId,
-                $"Курс завершён.");
+                $"Курс завершён.", disableNotification: true);
         }
     }
 }

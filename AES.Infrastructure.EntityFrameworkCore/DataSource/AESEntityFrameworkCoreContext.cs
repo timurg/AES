@@ -45,6 +45,8 @@ namespace AES.Infrastructure.EntityFrameworkCore
                 .WithOne(i => i.Person)
                 .HasForeignKey<Tutor>(b => b.Id);
 
+            modelBuilder.Entity<Person>().HasMany(p => p.Roles).WithMany();
+            
             modelBuilder.Entity<Student>()
                 .HasOne(s => s.Curriculum)
                 .WithOne(c => c.Student)
@@ -72,7 +74,8 @@ namespace AES.Infrastructure.EntityFrameworkCore
                 .HasValue<StoryImage>(0)
                 .HasValue<StoryPoll>(1)
                 .HasValue<StoryVideo>(2)
-                .HasValue<StoryVenue>(3);
+                .HasValue<StoryVenue>(3)
+                .HasValue<StoryHtml>(4);
             
             modelBuilder.Entity<Curator>().ToTable("Curators");
             
@@ -83,7 +86,8 @@ namespace AES.Infrastructure.EntityFrameworkCore
                 .HasValue<MyStoryTemplateImage>(0)
                 .HasValue<MyStoryTemplateQuiz>(1)
                 .HasValue<MyStoryTemplateVideo>(2)
-                .HasValue<MyStoryTemplateVenue>(3);
+                .HasValue<MyStoryTemplateVenue>(3)
+                .HasValue<MyStoryTemplateHtml>(4);
         }
 
     }

@@ -1,5 +1,6 @@
 D:\yandex\YandexDisk\Документы\GitHub\AES\MyStoryBot\bin\Release\net6.0\publish\MyStoryBot.exe
 D:\yandex\YandexDisk\Документы\GitHub\AES\MyStoryBot\bin\Release\net6.0\publish\data.sqlite
+D:\yandex\YandexDisk\Документы\GitHub\AES\MyStoryBot\bin\Release\net6.0\publish\NLog.config
 D:\yandex\YandexDisk\Документы\GitHub\AES\MyStoryBot\bin\Release\net6.0\publish\appsettings.json
 D:\yandex\YandexDisk\Документы\GitHub\AES\MyStoryBot\bin\Release\net6.0\publish\MyStoryBot.dll
 D:\yandex\YandexDisk\Документы\GitHub\AES\MyStoryBot\bin\Release\net6.0\publish\MyStoryBot.deps.json
@@ -31,6 +32,7 @@ D:\yandex\YandexDisk\Документы\GitHub\AES\MyStoryBot\bin\Release\net6.0
 D:\yandex\YandexDisk\Документы\GitHub\AES\MyStoryBot\bin\Release\net6.0\publish\Microsoft.Extensions.Options.dll
 D:\yandex\YandexDisk\Документы\GitHub\AES\MyStoryBot\bin\Release\net6.0\publish\Microsoft.Extensions.Primitives.dll
 D:\yandex\YandexDisk\Документы\GitHub\AES\MyStoryBot\bin\Release\net6.0\publish\Newtonsoft.Json.dll
+D:\yandex\YandexDisk\Документы\GitHub\AES\MyStoryBot\bin\Release\net6.0\publish\NLog.dll
 D:\yandex\YandexDisk\Документы\GitHub\AES\MyStoryBot\bin\Release\net6.0\publish\SQLitePCLRaw.batteries_v2.dll
 D:\yandex\YandexDisk\Документы\GitHub\AES\MyStoryBot\bin\Release\net6.0\publish\SQLitePCLRaw.core.dll
 D:\yandex\YandexDisk\Документы\GitHub\AES\MyStoryBot\bin\Release\net6.0\publish\SQLitePCLRaw.provider.e_sqlite3.dll

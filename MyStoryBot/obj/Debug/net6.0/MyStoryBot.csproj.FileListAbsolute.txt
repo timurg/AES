@@ -86,3 +86,5 @@ D:\yandex\YandexDisk\Документы\GitHub\AES\MyStoryBot\bin\Debug\net6.0\T
 D:\yandex\YandexDisk\Документы\GitHub\AES\MyStoryBot\bin\Debug\net6.0\AES.Story.dll
 D:\yandex\YandexDisk\Документы\GitHub\AES\MyStoryBot\bin\Debug\net6.0\AES.Story.pdb
 D:\yandex\YandexDisk\Документы\GitHub\AES\MyStoryBot\bin\Debug\net6.0\data.sqlite
+D:\yandex\YandexDisk\Документы\GitHub\AES\MyStoryBot\bin\Debug\net6.0\NLog.config
+D:\yandex\YandexDisk\Документы\GitHub\AES\MyStoryBot\bin\Debug\net6.0\NLog.dll
