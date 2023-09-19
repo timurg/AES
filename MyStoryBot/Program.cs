@@ -19,12 +19,15 @@ using Telegram.BotAPI.UpdatingMessages;
 using Module = AES.Domain.Module;
 NLog.ILogger _logger = NLog.LogManager.GetCurrentClassLogger();
 
-var configuration = new ConfigurationBuilder().AddJsonFile("appsettings.json", optional: false).Build();
+var configuration = new ConfigurationBuilder()
+    .AddJsonFile("appsettings.json", optional: false)
+    .AddUserSecrets<Program>()
+    .Build();
 var serviceProvider = ConfigureServices(configuration) as AutofacServiceProvider ?? throw new ApplicationException();
 if (serviceProvider == null) throw new ArgumentNullException(nameof(serviceProvider));
 
-var botClient = new BotClient("6291851683:AAGz8AXfuHtNV1NcoAibWWuW3iuGDUumFNw");
-//var botClient = new BotClient("6270151229:AAHCDwuE1ajG-JLK2QbiwAHxrZmV6zyFpFw");
+var botClient = new BotClient(configuration["bot:id"]);
+
 var me = botClient.GetMe();
 _logger.Debug($"Start listening for @{me.Username}");
 

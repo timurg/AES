@@ -88,3 +88,4 @@ D:\yandex\YandexDisk\Документы\GitHub\AES\MyStoryBot\obj\Release\net6.0
 D:\yandex\YandexDisk\Документы\GitHub\AES\MyStoryBot\bin\Release\net6.0\data.sqlite
 D:\yandex\YandexDisk\Документы\GitHub\AES\MyStoryBot\bin\Release\net6.0\NLog.config
 D:\yandex\YandexDisk\Документы\GitHub\AES\MyStoryBot\bin\Release\net6.0\NLog.dll
+D:\yandex\YandexDisk\Документы\GitHub\AES\MyStoryBot\bin\Release\net6.0\Microsoft.Extensions.Configuration.UserSecrets.dll
