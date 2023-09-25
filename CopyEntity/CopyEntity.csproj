@@ -1,0 +1,16 @@
+﻿<Project Sdk="Microsoft.NET.Sdk">
+
+    <PropertyGroup>
+        <OutputType>Exe</OutputType>
+        <TargetFramework>net6.0</TargetFramework>
+        <ImplicitUsings>enable</ImplicitUsings>
+        <Nullable>enable</Nullable>
+      <UserSecretsId>572f093b-54bf-46ba-bb96-10e33d010255</UserSecretsId>
+  </PropertyGroup>
+
+    <ItemGroup>
+      <ProjectReference Include="..\AES.Infrastructure.EntityFrameworkCore.PostgreSql\AES.Infrastructure.EntityFrameworkCore.PostgreSql.csproj" />
+      <ProjectReference Include="..\AES.Infrastructure.EntityFrameworkCore.Sqlite\AES.Infrastructure.EntityFrameworkCore.Sqlite.csproj" />
+    </ItemGroup>
+
+</Project>
