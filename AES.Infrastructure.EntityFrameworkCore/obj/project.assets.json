@@ -699,46 +699,38 @@
     ]
   },
   "packageFolders": {
-    "C:\\Users\\lean\\.nuget\\packages\\": {},
-    "C:\\Program Files (x86)\\Microsoft Visual Studio\\Shared\\NuGetPackages": {}
+    "/home/timur/.nuget/packages/": {}
   },
   "project": {
     "version": "1.0.0",
     "restore": {
-      "projectUniqueName": "D:\\yandex\\YandexDisk\\Документы\\GitHub\\AES\\AES.Infrastructure.EntityFrameworkCore\\AES.Infrastructure.EntityFrameworkCore.csproj",
+      "projectUniqueName": "/home/timur/RiderProjects/AES/AES.Infrastructure.EntityFrameworkCore/AES.Infrastructure.EntityFrameworkCore.csproj",
       "projectName": "AES.Infrastructure.EntityFrameworkCore",
-      "projectPath": "D:\\yandex\\YandexDisk\\Документы\\GitHub\\AES\\AES.Infrastructure.EntityFrameworkCore\\AES.Infrastructure.EntityFrameworkCore.csproj",
-      "packagesPath": "C:\\Users\\lean\\.nuget\\packages\\",
-      "outputPath": "D:\\yandex\\YandexDisk\\Документы\\GitHub\\AES\\AES.Infrastructure.EntityFrameworkCore\\obj\\",
+      "projectPath": "/home/timur/RiderProjects/AES/AES.Infrastructure.EntityFrameworkCore/AES.Infrastructure.EntityFrameworkCore.csproj",
+      "packagesPath": "/home/timur/.nuget/packages/",
+      "outputPath": "/home/timur/RiderProjects/AES/AES.Infrastructure.EntityFrameworkCore/obj/",
       "projectStyle": "PackageReference",
-      "fallbackFolders": [
-        "C:\\Program Files (x86)\\Microsoft Visual Studio\\Shared\\NuGetPackages"
-      ],
       "configFilePaths": [
-        "C:\\Users\\lean\\AppData\\Roaming\\NuGet\\NuGet.Config",
-        "C:\\Program Files (x86)\\NuGet\\Config\\Microsoft.VisualStudio.FallbackLocation.config",
-        "C:\\Program Files (x86)\\NuGet\\Config\\Microsoft.VisualStudio.Offline.config"
+        "/home/timur/.nuget/NuGet/NuGet.Config"
       ],
       "originalTargetFrameworks": [
         "net6.0"
       ],
       "sources": {
-        "C:\\Program Files (x86)\\Microsoft SDKs\\NuGetPackages\\": {},
-        "C:\\Program Files\\dotnet\\library-packs": {},
         "https://api.nuget.org/v3/index.json": {}
       },
       "frameworks": {
         "net6.0": {
           "targetAlias": "net6.0",
           "projectReferences": {
-            "D:\\yandex\\YandexDisk\\Документы\\GitHub\\AES\\AES.Domain\\AES.Domain.csproj": {
-              "projectPath": "D:\\yandex\\YandexDisk\\Документы\\GitHub\\AES\\AES.Domain\\AES.Domain.csproj"
+            "/home/timur/RiderProjects/AES/AES.Domain/AES.Domain.csproj": {
+              "projectPath": "/home/timur/RiderProjects/AES/AES.Domain/AES.Domain.csproj"
             },
-            "D:\\yandex\\YandexDisk\\Документы\\GitHub\\AES\\AES.Infrastructure\\AES.Infrastructure.csproj": {
-              "projectPath": "D:\\yandex\\YandexDisk\\Документы\\GitHub\\AES\\AES.Infrastructure\\AES.Infrastructure.csproj"
+            "/home/timur/RiderProjects/AES/AES.Infrastructure/AES.Infrastructure.csproj": {
+              "projectPath": "/home/timur/RiderProjects/AES/AES.Infrastructure/AES.Infrastructure.csproj"
             },
-            "D:\\yandex\\YandexDisk\\Документы\\GitHub\\AES\\AES.Story\\AES.Story.csproj": {
-              "projectPath": "D:\\yandex\\YandexDisk\\Документы\\GitHub\\AES\\AES.Story\\AES.Story.csproj"
+            "/home/timur/RiderProjects/AES/AES.Story/AES.Story.csproj": {
+              "projectPath": "/home/timur/RiderProjects/AES/AES.Story/AES.Story.csproj"
             }
           }
         }
@@ -778,7 +770,7 @@
             "privateAssets": "all"
           }
         },
-        "runtimeIdentifierGraphPath": "C:\\Program Files\\dotnet\\sdk\\7.0.400\\RuntimeIdentifierGraph.json"
+        "runtimeIdentifierGraphPath": "/home/timur/.dotnet/sdk/7.0.401/RuntimeIdentifierGraph.json"
       }
     }
   }

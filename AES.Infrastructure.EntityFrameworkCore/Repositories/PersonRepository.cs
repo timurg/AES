@@ -41,7 +41,7 @@ namespace AES.Infrastructure.EntityFrameworkCore
                 .ThenInclude(m => m.Items)
                 .ThenInclude(m => m.GradeRecords)
                 .Include(p => p.Roles)
-                .AsQueryable();
+                .AsSplitQuery();
         }
     }
 }

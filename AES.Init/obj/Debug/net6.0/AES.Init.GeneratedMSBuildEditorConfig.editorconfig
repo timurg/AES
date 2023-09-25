@@ -8,4 +8,4 @@ build_property.PlatformNeutralAssembly =
 build_property.EnforceExtendedAnalyzerRules = 
 build_property._SupportedPlatformList = Linux,macOS,Windows
 build_property.RootNamespace = AES.Init
-build_property.ProjectDir = D:\yandex\YandexDisk\Документы\GitHub\AES\AES.Init\
+build_property.ProjectDir = /home/timur/RiderProjects/AES/AES.Init/

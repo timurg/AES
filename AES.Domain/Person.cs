@@ -139,7 +139,7 @@ namespace AES.Domain
             Roles = new HashSet<Role>();
         }
 
-        public virtual ICollection<Role> Roles
+        public ICollection<Role> Roles
         {
             get; set;
         }

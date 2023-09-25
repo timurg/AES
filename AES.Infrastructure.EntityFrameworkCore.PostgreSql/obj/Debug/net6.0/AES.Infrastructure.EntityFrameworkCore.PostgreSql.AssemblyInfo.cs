@@ -10,6 +10,7 @@
 using System;
 using System.Reflection;
 
+[assembly: Microsoft.Extensions.Configuration.UserSecrets.UserSecretsIdAttribute("abb4b9fa-fdf4-4cd2-8af3-fc4546c0669c")]
 [assembly: System.Reflection.AssemblyCompanyAttribute("AES.Infrastructure.EntityFrameworkCore.PostgreSql")]
 [assembly: System.Reflection.AssemblyConfigurationAttribute("Debug")]
 [assembly: System.Reflection.AssemblyFileVersionAttribute("1.0.0.0")]

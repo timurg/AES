@@ -5,14 +5,14 @@
       <driver-ref>sqlite.xerial</driver-ref>
       <synchronize>true</synchronize>
       <jdbc-driver>org.sqlite.JDBC</jdbc-driver>
-      <jdbc-url>jdbc:sqlite:D:\yandex\YandexDisk\Документы\GitHub\AES\Data\data.sqlite</jdbc-url>
+      <jdbc-url>jdbc:sqlite:data.sqlite</jdbc-url>
       <working-dir>$ProjectFileDir$</working-dir>
     </data-source>
-    <data-source source="LOCAL" name="data debug" uuid="0d1e8bac-9ca1-4a97-8a2e-c95d3975f5fd">
-      <driver-ref>sqlite.xerial</driver-ref>
+    <data-source source="LOCAL" name="AES@girfanov.com" uuid="f28e5c27-25ea-4d50-a58a-7e513c4b96d1">
+      <driver-ref>postgresql</driver-ref>
       <synchronize>true</synchronize>
-      <jdbc-driver>org.sqlite.JDBC</jdbc-driver>
-      <jdbc-url>jdbc:sqlite:$PROJECT_DIR$/../MyStoryBot/bin/Debug/net6.0/data.sqlite</jdbc-url>
+      <jdbc-driver>org.postgresql.Driver</jdbc-driver>
+      <jdbc-url>jdbc:postgresql://girfanov.com:5432/AES</jdbc-url>
       <working-dir>$ProjectFileDir$</working-dir>
     </data-source>
   </component>

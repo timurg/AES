@@ -15,7 +15,7 @@ namespace AES.Infrastructure.EntityFrameworkCore.PostgreSql
         protected override void OnConfiguring(DbContextOptionsBuilder optionsBuilder)
         {
             optionsBuilder.UseNpgsql(connectionString);
-            optionsBuilder.LogTo(System.Console.WriteLine);
+            //optionsBuilder.LogTo(System.Console.WriteLine);
         }
     }
 }

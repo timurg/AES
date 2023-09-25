@@ -15,11 +15,11 @@
           }
         }
       },
-      "Microsoft.EntityFrameworkCore/7.0.5": {
+      "Microsoft.EntityFrameworkCore/7.0.11": {
         "type": "package",
         "dependencies": {
-          "Microsoft.EntityFrameworkCore.Abstractions": "7.0.5",
-          "Microsoft.EntityFrameworkCore.Analyzers": "7.0.5",
+          "Microsoft.EntityFrameworkCore.Abstractions": "7.0.11",
+          "Microsoft.EntityFrameworkCore.Analyzers": "7.0.11",
           "Microsoft.Extensions.Caching.Memory": "7.0.0",
           "Microsoft.Extensions.DependencyInjection": "7.0.0",
           "Microsoft.Extensions.Logging": "7.0.0"
@@ -38,7 +38,7 @@
           "buildTransitive/net6.0/Microsoft.EntityFrameworkCore.props": {}
         }
       },
-      "Microsoft.EntityFrameworkCore.Abstractions/7.0.5": {
+      "Microsoft.EntityFrameworkCore.Abstractions/7.0.11": {
         "type": "package",
         "compile": {
           "lib/net6.0/Microsoft.EntityFrameworkCore.Abstractions.dll": {
@@ -51,7 +51,7 @@
           }
         }
       },
-      "Microsoft.EntityFrameworkCore.Analyzers/7.0.5": {
+      "Microsoft.EntityFrameworkCore.Analyzers/7.0.11": {
         "type": "package",
         "compile": {
           "lib/netstandard2.0/_._": {}
@@ -60,11 +60,11 @@
           "lib/netstandard2.0/_._": {}
         }
       },
-      "Microsoft.EntityFrameworkCore.Design/7.0.5": {
+      "Microsoft.EntityFrameworkCore.Design/7.0.11": {
         "type": "package",
         "dependencies": {
           "Humanizer.Core": "2.14.1",
-          "Microsoft.EntityFrameworkCore.Relational": "7.0.5",
+          "Microsoft.EntityFrameworkCore.Relational": "7.0.11",
           "Microsoft.Extensions.DependencyModel": "7.0.0",
           "Mono.TextTemplating": "2.2.1"
         },
@@ -82,10 +82,10 @@
           "build/net6.0/Microsoft.EntityFrameworkCore.Design.props": {}
         }
       },
-      "Microsoft.EntityFrameworkCore.Relational/7.0.5": {
+      "Microsoft.EntityFrameworkCore.Relational/7.0.11": {
         "type": "package",
         "dependencies": {
-          "Microsoft.EntityFrameworkCore": "7.0.5",
+          "Microsoft.EntityFrameworkCore": "7.0.11",
           "Microsoft.Extensions.Configuration.Abstractions": "7.0.0"
         },
         "compile": {
@@ -224,6 +224,29 @@
         },
         "build": {
           "buildTransitive/net6.0/_._": {}
+        }
+      },
+      "Microsoft.Extensions.Configuration.UserSecrets/7.0.0": {
+        "type": "package",
+        "dependencies": {
+          "Microsoft.Extensions.Configuration.Abstractions": "7.0.0",
+          "Microsoft.Extensions.Configuration.Json": "7.0.0",
+          "Microsoft.Extensions.FileProviders.Abstractions": "7.0.0",
+          "Microsoft.Extensions.FileProviders.Physical": "7.0.0"
+        },
+        "compile": {
+          "lib/net6.0/Microsoft.Extensions.Configuration.UserSecrets.dll": {
+            "related": ".xml"
+          }
+        },
+        "runtime": {
+          "lib/net6.0/Microsoft.Extensions.Configuration.UserSecrets.dll": {
+            "related": ".xml"
+          }
+        },
+        "build": {
+          "buildTransitive/net6.0/Microsoft.Extensions.Configuration.UserSecrets.props": {},
+          "buildTransitive/net6.0/Microsoft.Extensions.Configuration.UserSecrets.targets": {}
         }
       },
       "Microsoft.Extensions.DependencyInjection/7.0.0": {
@@ -426,63 +449,7 @@
           "lib/netstandard2.0/Mono.TextTemplating.dll": {}
         }
       },
-      "NLog/5.1.3": {
-        "type": "package",
-        "compile": {
-          "lib/netstandard2.0/NLog.dll": {
-            "related": ".xml"
-          }
-        },
-        "runtime": {
-          "lib/netstandard2.0/NLog.dll": {
-            "related": ".xml"
-          }
-        }
-      },
-      "NLog.Config/4.7.15": {
-        "type": "package",
-        "dependencies": {
-          "NLog": "4.7.15",
-          "NLog.Schema": "4.7.15"
-        },
-        "contentFiles": {
-          "contentFiles/any/any/NLog.config": {
-            "buildAction": "None",
-            "codeLanguage": "any",
-            "copyToOutput": true,
-            "outputPath": "NLog.config"
-          }
-        }
-      },
-      "NLog.Extensions.Logging/5.2.3": {
-        "type": "package",
-        "dependencies": {
-          "Microsoft.Extensions.Configuration.Abstractions": "6.0.0",
-          "Microsoft.Extensions.Logging": "6.0.0",
-          "NLog": "5.1.3"
-        },
-        "compile": {
-          "lib/net6.0/NLog.Extensions.Logging.dll": {
-            "related": ".xml"
-          }
-        },
-        "runtime": {
-          "lib/net6.0/NLog.Extensions.Logging.dll": {
-            "related": ".xml"
-          }
-        }
-      },
-      "NLog.Schema/4.7.15": {
-        "type": "package",
-        "contentFiles": {
-          "contentFiles/any/any/_._": {
-            "buildAction": "None",
-            "codeLanguage": "any",
-            "copyToOutput": false
-          }
-        }
-      },
-      "Npgsql/7.0.4": {
+      "Npgsql/7.0.6": {
         "type": "package",
         "dependencies": {
           "Microsoft.Extensions.Logging.Abstractions": "6.0.0",
@@ -499,13 +466,13 @@
           }
         }
       },
-      "Npgsql.EntityFrameworkCore.PostgreSQL/7.0.4": {
+      "Npgsql.EntityFrameworkCore.PostgreSQL/7.0.11": {
         "type": "package",
         "dependencies": {
-          "Microsoft.EntityFrameworkCore": "[7.0.5, 8.0.0)",
-          "Microsoft.EntityFrameworkCore.Abstractions": "[7.0.5, 8.0.0)",
-          "Microsoft.EntityFrameworkCore.Relational": "[7.0.5, 8.0.0)",
-          "Npgsql": "7.0.4"
+          "Microsoft.EntityFrameworkCore": "[7.0.11, 8.0.0)",
+          "Microsoft.EntityFrameworkCore.Abstractions": "[7.0.11, 8.0.0)",
+          "Microsoft.EntityFrameworkCore.Relational": "[7.0.11, 8.0.0)",
+          "Npgsql": "7.0.6"
         },
         "compile": {
           "lib/net6.0/Npgsql.EntityFrameworkCore.PostgreSQL.dll": {
@@ -669,10 +636,10 @@
         "logo.png"
       ]
     },
-    "Microsoft.EntityFrameworkCore/7.0.5": {
-      "sha512": "RXbRLHHWP2Z3pq8qcL5nQ6LPeoOyp8hasM5bd0Te8PiQi3RjWQR4tcbdY5XMqQ+oTO9wA8/RLhZRn/hnxlTDnQ==",
+    "Microsoft.EntityFrameworkCore/7.0.11": {
+      "sha512": "r7YGITjQ7v1hYtUXIavjSx+T1itKVPUFAIBN7HaKNjbR8x+gep8w9H3NEchglJOh1woZR4b2MhbSo2YFRZwZDg==",
       "type": "package",
-      "path": "microsoft.entityframeworkcore/7.0.5",
+      "path": "microsoft.entityframeworkcore/7.0.11",
       "files": [
         ".nupkg.metadata",
         ".signature.p7s",
@@ -680,42 +647,42 @@
         "buildTransitive/net6.0/Microsoft.EntityFrameworkCore.props",
         "lib/net6.0/Microsoft.EntityFrameworkCore.dll",
         "lib/net6.0/Microsoft.EntityFrameworkCore.xml",
-        "microsoft.entityframeworkcore.7.0.5.nupkg.sha512",
+        "microsoft.entityframeworkcore.7.0.11.nupkg.sha512",
         "microsoft.entityframeworkcore.nuspec"
       ]
     },
-    "Microsoft.EntityFrameworkCore.Abstractions/7.0.5": {
-      "sha512": "iwQso+hFRsEWjhH2WsEQj1D2QE5BlEXiXEt6A3SlYTPRPdZsyTNDeDDEdtxL+H/UJPQgQYY+9SMMRcEiXBmCAA==",
+    "Microsoft.EntityFrameworkCore.Abstractions/7.0.11": {
+      "sha512": "IoOnhycZ0/VtLowf0HgB0cujxwksokzkS3/5108AHOcbntHUTqwxtCjG4E4FCly/45G+mxb+4PxBdFZhA49lwQ==",
       "type": "package",
-      "path": "microsoft.entityframeworkcore.abstractions/7.0.5",
+      "path": "microsoft.entityframeworkcore.abstractions/7.0.11",
       "files": [
         ".nupkg.metadata",
         ".signature.p7s",
         "Icon.png",
         "lib/net6.0/Microsoft.EntityFrameworkCore.Abstractions.dll",
         "lib/net6.0/Microsoft.EntityFrameworkCore.Abstractions.xml",
-        "microsoft.entityframeworkcore.abstractions.7.0.5.nupkg.sha512",
+        "microsoft.entityframeworkcore.abstractions.7.0.11.nupkg.sha512",
         "microsoft.entityframeworkcore.abstractions.nuspec"
       ]
     },
-    "Microsoft.EntityFrameworkCore.Analyzers/7.0.5": {
-      "sha512": "yMLM/aK1MikVqpjxd7PJ1Pjgztd3VAd26ZHxyjxG3RPeM9cHjvS5tCg9kAAayR6eHmBg0ffZsHdT28WfA5tTlA==",
+    "Microsoft.EntityFrameworkCore.Analyzers/7.0.11": {
+      "sha512": "Qexum5safSSfijx6P1QSq5bVJPPTM/uf7lQmpL/shkiozEC/0FzqNaVUfFpbNN8zsO1jMFYbeDMF4cxJMlTT9w==",
       "type": "package",
-      "path": "microsoft.entityframeworkcore.analyzers/7.0.5",
+      "path": "microsoft.entityframeworkcore.analyzers/7.0.11",
       "files": [
         ".nupkg.metadata",
         ".signature.p7s",
         "Icon.png",
         "analyzers/dotnet/cs/Microsoft.EntityFrameworkCore.Analyzers.dll",
         "lib/netstandard2.0/_._",
-        "microsoft.entityframeworkcore.analyzers.7.0.5.nupkg.sha512",
+        "microsoft.entityframeworkcore.analyzers.7.0.11.nupkg.sha512",
         "microsoft.entityframeworkcore.analyzers.nuspec"
       ]
     },
-    "Microsoft.EntityFrameworkCore.Design/7.0.5": {
-      "sha512": "fzoU+Jk/chkqVOzDjuF+fwdc/6Tyqbp9L7rDORqB6IwHRG7nr+QnFOPdRi3B5kAZldvsvhUt+6Cl5qzeLT7B0Q==",
+    "Microsoft.EntityFrameworkCore.Design/7.0.11": {
+      "sha512": "DaykA+XkNNiznnJq8HWVl4jpBycL9/W8NkonoBz7eIrxfU9Q4zH4iPztlvOkJugYCNPS29frPnju3RY72FoPNQ==",
       "type": "package",
-      "path": "microsoft.entityframeworkcore.design/7.0.5",
+      "path": "microsoft.entityframeworkcore.design/7.0.11",
       "files": [
         ".nupkg.metadata",
         ".signature.p7s",
@@ -723,21 +690,21 @@
         "build/net6.0/Microsoft.EntityFrameworkCore.Design.props",
         "lib/net6.0/Microsoft.EntityFrameworkCore.Design.dll",
         "lib/net6.0/Microsoft.EntityFrameworkCore.Design.xml",
-        "microsoft.entityframeworkcore.design.7.0.5.nupkg.sha512",
+        "microsoft.entityframeworkcore.design.7.0.11.nupkg.sha512",
         "microsoft.entityframeworkcore.design.nuspec"
       ]
     },
-    "Microsoft.EntityFrameworkCore.Relational/7.0.5": {
-      "sha512": "u/33DC4S6g2hpMPgBc5Kdnlz//nqHR5c/ovgjtiP/wQ7sOd0EOdygVzUJAAOxCwbtAHDsJXS9Vc3jLFYq0yu8Q==",
+    "Microsoft.EntityFrameworkCore.Relational/7.0.11": {
+      "sha512": "yHEEyah1XARStV1SJOsdKj8ieoMCZ0MkNuQaLfWONMWmbqwuDohfGQZk/FuzdT4aO/lJrUYiXbBSFv0ACzphEw==",
       "type": "package",
-      "path": "microsoft.entityframeworkcore.relational/7.0.5",
+      "path": "microsoft.entityframeworkcore.relational/7.0.11",
       "files": [
         ".nupkg.metadata",
         ".signature.p7s",
         "Icon.png",
         "lib/net6.0/Microsoft.EntityFrameworkCore.Relational.dll",
         "lib/net6.0/Microsoft.EntityFrameworkCore.Relational.xml",
-        "microsoft.entityframeworkcore.relational.7.0.5.nupkg.sha512",
+        "microsoft.entityframeworkcore.relational.7.0.11.nupkg.sha512",
         "microsoft.entityframeworkcore.relational.nuspec"
       ]
     },
@@ -902,6 +869,37 @@
         "lib/netstandard2.1/Microsoft.Extensions.Configuration.Json.xml",
         "microsoft.extensions.configuration.json.7.0.0.nupkg.sha512",
         "microsoft.extensions.configuration.json.nuspec",
+        "useSharedDesignerContext.txt"
+      ]
+    },
+    "Microsoft.Extensions.Configuration.UserSecrets/7.0.0": {
+      "sha512": "33HPW1PmB2RS0ietBQyvOxjp4O3wlt+4tIs8KPyMn1kqp04goiZGa7+3mc69NRLv6bphkLDy0YR7Uw3aZyf8Zw==",
+      "type": "package",
+      "path": "microsoft.extensions.configuration.usersecrets/7.0.0",
+      "files": [
+        ".nupkg.metadata",
+        ".signature.p7s",
+        "Icon.png",
+        "LICENSE.TXT",
+        "THIRD-PARTY-NOTICES.TXT",
+        "buildTransitive/net461/Microsoft.Extensions.Configuration.UserSecrets.targets",
+        "buildTransitive/net462/Microsoft.Extensions.Configuration.UserSecrets.props",
+        "buildTransitive/net462/Microsoft.Extensions.Configuration.UserSecrets.targets",
+        "buildTransitive/net6.0/Microsoft.Extensions.Configuration.UserSecrets.props",
+        "buildTransitive/net6.0/Microsoft.Extensions.Configuration.UserSecrets.targets",
+        "buildTransitive/netcoreapp2.0/Microsoft.Extensions.Configuration.UserSecrets.targets",
+        "buildTransitive/netstandard2.0/Microsoft.Extensions.Configuration.UserSecrets.props",
+        "buildTransitive/netstandard2.0/Microsoft.Extensions.Configuration.UserSecrets.targets",
+        "lib/net462/Microsoft.Extensions.Configuration.UserSecrets.dll",
+        "lib/net462/Microsoft.Extensions.Configuration.UserSecrets.xml",
+        "lib/net6.0/Microsoft.Extensions.Configuration.UserSecrets.dll",
+        "lib/net6.0/Microsoft.Extensions.Configuration.UserSecrets.xml",
+        "lib/net7.0/Microsoft.Extensions.Configuration.UserSecrets.dll",
+        "lib/net7.0/Microsoft.Extensions.Configuration.UserSecrets.xml",
+        "lib/netstandard2.0/Microsoft.Extensions.Configuration.UserSecrets.dll",
+        "lib/netstandard2.0/Microsoft.Extensions.Configuration.UserSecrets.xml",
+        "microsoft.extensions.configuration.usersecrets.7.0.0.nupkg.sha512",
+        "microsoft.extensions.configuration.usersecrets.nuspec",
         "useSharedDesignerContext.txt"
       ]
     },
@@ -1240,86 +1238,10 @@
         "mono.texttemplating.nuspec"
       ]
     },
-    "NLog/5.1.3": {
-      "sha512": "rB8hwjBf1EZCfG5iPfsv3gPksLoJLr1cOrt7PBbJu6VpJgwYJchDzTUT1dhNDdPv0QakXJQJOhE59ErupcznQQ==",
+    "Npgsql/7.0.6": {
+      "sha512": "TAqvwRnm3NJ0QvN7cvu6geJkbI0XPzGVRElVY5hF4gsgA+BnE12x6GM1TLhdeq+7ZKvvo3BD8jXKnXmr3tvdEw==",
       "type": "package",
-      "path": "nlog/5.1.3",
-      "files": [
-        ".nupkg.metadata",
-        ".signature.p7s",
-        "N.png",
-        "lib/net35/NLog.dll",
-        "lib/net35/NLog.xml",
-        "lib/net45/NLog.dll",
-        "lib/net45/NLog.xml",
-        "lib/net46/NLog.dll",
-        "lib/net46/NLog.xml",
-        "lib/netstandard1.3/NLog.dll",
-        "lib/netstandard1.3/NLog.xml",
-        "lib/netstandard1.5/NLog.dll",
-        "lib/netstandard1.5/NLog.xml",
-        "lib/netstandard2.0/NLog.dll",
-        "lib/netstandard2.0/NLog.xml",
-        "nlog.5.1.3.nupkg.sha512",
-        "nlog.nuspec"
-      ]
-    },
-    "NLog.Config/4.7.15": {
-      "sha512": "njc2NvwgAzEuH609TGO4yqpokcxXFdypHwG3I8hyLYIE4pr+j4KJB4ZhsyODVwkP/n2F2V4uJ24VW4icNyJMcA==",
-      "type": "package",
-      "path": "nlog.config/4.7.15",
-      "hasTools": true,
-      "files": [
-        ".nupkg.metadata",
-        ".signature.p7s",
-        "content/NLog.config",
-        "contentFiles/any/any/NLog.config",
-        "nlog.config.4.7.15.nupkg.sha512",
-        "nlog.config.nuspec",
-        "tools/Install.ps1"
-      ]
-    },
-    "NLog.Extensions.Logging/5.2.3": {
-      "sha512": "TB8zPGV2nVpvWq5C8zIVHPSmnzOHMrXppjsAwHcuJq1Ehs8sC0llnAv5Ysf5Lf/vew9amV/+01MohtRFSDzKdQ==",
-      "type": "package",
-      "path": "nlog.extensions.logging/5.2.3",
-      "files": [
-        ".nupkg.metadata",
-        ".signature.p7s",
-        "N.png",
-        "lib/net461/NLog.Extensions.Logging.dll",
-        "lib/net461/NLog.Extensions.Logging.xml",
-        "lib/net6.0/NLog.Extensions.Logging.dll",
-        "lib/net6.0/NLog.Extensions.Logging.xml",
-        "lib/netstandard1.3/NLog.Extensions.Logging.dll",
-        "lib/netstandard1.3/NLog.Extensions.Logging.xml",
-        "lib/netstandard1.5/NLog.Extensions.Logging.dll",
-        "lib/netstandard1.5/NLog.Extensions.Logging.xml",
-        "lib/netstandard2.0/NLog.Extensions.Logging.dll",
-        "lib/netstandard2.0/NLog.Extensions.Logging.xml",
-        "lib/netstandard2.1/NLog.Extensions.Logging.dll",
-        "lib/netstandard2.1/NLog.Extensions.Logging.xml",
-        "nlog.extensions.logging.5.2.3.nupkg.sha512",
-        "nlog.extensions.logging.nuspec"
-      ]
-    },
-    "NLog.Schema/4.7.15": {
-      "sha512": "cBzca2abS5Qz8e40vIPZNWBiDAQaRY7PKWffBbazMAzvxGBM6/ZWgaAEmqHUOluhV41cuyXnHOzo485JPLeChg==",
-      "type": "package",
-      "path": "nlog.schema/4.7.15",
-      "files": [
-        ".nupkg.metadata",
-        ".signature.p7s",
-        "content/NLog.xsd",
-        "contentFiles/any/any/NLog.xsd",
-        "nlog.schema.4.7.15.nupkg.sha512",
-        "nlog.schema.nuspec"
-      ]
-    },
-    "Npgsql/7.0.4": {
-      "sha512": "7UVPYy2RP0ci04PED1tc9ZCaTw/DfSdSkLiGEFCAvwMwsgA/bAluj1liNzP1IpN0MFofnOF0cm1zJfmbEuCehg==",
-      "type": "package",
-      "path": "npgsql/7.0.4",
+      "path": "npgsql/7.0.6",
       "files": [
         ".nupkg.metadata",
         ".signature.p7s",
@@ -1336,15 +1258,15 @@
         "lib/netstandard2.0/Npgsql.xml",
         "lib/netstandard2.1/Npgsql.dll",
         "lib/netstandard2.1/Npgsql.xml",
-        "npgsql.7.0.4.nupkg.sha512",
+        "npgsql.7.0.6.nupkg.sha512",
         "npgsql.nuspec",
         "postgresql.png"
       ]
     },
-    "Npgsql.EntityFrameworkCore.PostgreSQL/7.0.4": {
-      "sha512": "ZYMtyG6pmLtUsFAx0/XaIlVkJM+1gArWEKD55cLLxiVlGScAphjiGj+G7Gk16yg5lhhdWx+bgXWpIUISXuS33g==",
+    "Npgsql.EntityFrameworkCore.PostgreSQL/7.0.11": {
+      "sha512": "cHEgEz0ldXc9wVANs8sJqC+3eilqefrkasCBgaVT0tyj8tb1p3/pwy2ngjboNkDG3M0z+xJsJ4jC5p8wySAM3w==",
       "type": "package",
-      "path": "npgsql.entityframeworkcore.postgresql/7.0.4",
+      "path": "npgsql.entityframeworkcore.postgresql/7.0.11",
       "files": [
         ".nupkg.metadata",
         ".signature.p7s",
@@ -1353,7 +1275,7 @@
         "lib/net6.0/Npgsql.EntityFrameworkCore.PostgreSQL.xml",
         "lib/net7.0/Npgsql.EntityFrameworkCore.PostgreSQL.dll",
         "lib/net7.0/Npgsql.EntityFrameworkCore.PostgreSQL.xml",
-        "npgsql.entityframeworkcore.postgresql.7.0.4.nupkg.sha512",
+        "npgsql.entityframeworkcore.postgresql.7.0.11.nupkg.sha512",
         "npgsql.entityframeworkcore.postgresql.nuspec",
         "postgresql.png"
       ]
@@ -1530,50 +1452,41 @@
   "projectFileDependencyGroups": {
     "net6.0": [
       "AES.Infrastructure.EntityFrameworkCore >= 1.0.0",
-      "Microsoft.EntityFrameworkCore >= 7.0.5",
-      "Microsoft.EntityFrameworkCore.Design >= 7.0.5",
+      "Microsoft.EntityFrameworkCore >= 7.0.11",
+      "Microsoft.EntityFrameworkCore.Design >= 7.0.11",
       "Microsoft.Extensions.Configuration >= 7.0.0",
       "Microsoft.Extensions.Configuration.Json >= 7.0.0",
-      "NLog.Config >= 4.7.15",
-      "NLog.Extensions.Logging >= 5.2.3",
-      "Npgsql.EntityFrameworkCore.PostgreSQL >= 7.0.4"
+      "Microsoft.Extensions.Configuration.UserSecrets >= 7.0.0",
+      "Npgsql.EntityFrameworkCore.PostgreSQL >= 7.0.11"
     ]
   },
   "packageFolders": {
-    "C:\\Users\\lean\\.nuget\\packages\\": {},
-    "C:\\Program Files (x86)\\Microsoft Visual Studio\\Shared\\NuGetPackages": {}
+    "/home/timur/.nuget/packages/": {}
   },
   "project": {
     "version": "1.0.0",
     "restore": {
-      "projectUniqueName": "D:\\yandex\\YandexDisk\\Документы\\GitHub\\AES\\AES.Infrastructure.EntityFrameworkCore.PostgreSql\\AES.Infrastructure.EntityFrameworkCore.PostgreSql.csproj",
+      "projectUniqueName": "/home/timur/RiderProjects/AES/AES.Infrastructure.EntityFrameworkCore.PostgreSql/AES.Infrastructure.EntityFrameworkCore.PostgreSql.csproj",
       "projectName": "AES.Infrastructure.EntityFrameworkCore.PostgreSql",
-      "projectPath": "D:\\yandex\\YandexDisk\\Документы\\GitHub\\AES\\AES.Infrastructure.EntityFrameworkCore.PostgreSql\\AES.Infrastructure.EntityFrameworkCore.PostgreSql.csproj",
-      "packagesPath": "C:\\Users\\lean\\.nuget\\packages\\",
-      "outputPath": "D:\\yandex\\YandexDisk\\Документы\\GitHub\\AES\\AES.Infrastructure.EntityFrameworkCore.PostgreSql\\obj\\",
+      "projectPath": "/home/timur/RiderProjects/AES/AES.Infrastructure.EntityFrameworkCore.PostgreSql/AES.Infrastructure.EntityFrameworkCore.PostgreSql.csproj",
+      "packagesPath": "/home/timur/.nuget/packages/",
+      "outputPath": "/home/timur/RiderProjects/AES/AES.Infrastructure.EntityFrameworkCore.PostgreSql/obj/",
       "projectStyle": "PackageReference",
-      "fallbackFolders": [
-        "C:\\Program Files (x86)\\Microsoft Visual Studio\\Shared\\NuGetPackages"
-      ],
       "configFilePaths": [
-        "C:\\Users\\lean\\AppData\\Roaming\\NuGet\\NuGet.Config",
-        "C:\\Program Files (x86)\\NuGet\\Config\\Microsoft.VisualStudio.FallbackLocation.config",
-        "C:\\Program Files (x86)\\NuGet\\Config\\Microsoft.VisualStudio.Offline.config"
+        "/home/timur/.nuget/NuGet/NuGet.Config"
       ],
       "originalTargetFrameworks": [
         "net6.0"
       ],
       "sources": {
-        "C:\\Program Files (x86)\\Microsoft SDKs\\NuGetPackages\\": {},
-        "C:\\Program Files\\dotnet\\library-packs": {},
         "https://api.nuget.org/v3/index.json": {}
       },
       "frameworks": {
         "net6.0": {
           "targetAlias": "net6.0",
           "projectReferences": {
-            "D:\\yandex\\YandexDisk\\Документы\\GitHub\\AES\\AES.Infrastructure.EntityFrameworkCore\\AES.Infrastructure.EntityFrameworkCore.csproj": {
-              "projectPath": "D:\\yandex\\YandexDisk\\Документы\\GitHub\\AES\\AES.Infrastructure.EntityFrameworkCore\\AES.Infrastructure.EntityFrameworkCore.csproj"
+            "/home/timur/RiderProjects/AES/AES.Infrastructure.EntityFrameworkCore/AES.Infrastructure.EntityFrameworkCore.csproj": {
+              "projectPath": "/home/timur/RiderProjects/AES/AES.Infrastructure.EntityFrameworkCore/AES.Infrastructure.EntityFrameworkCore.csproj"
             }
           }
         }
@@ -1590,13 +1503,13 @@
         "dependencies": {
           "Microsoft.EntityFrameworkCore": {
             "target": "Package",
-            "version": "[7.0.5, )"
+            "version": "[7.0.11, )"
           },
           "Microsoft.EntityFrameworkCore.Design": {
             "include": "Runtime, Build, Native, ContentFiles, Analyzers, BuildTransitive",
             "suppressParent": "All",
             "target": "Package",
-            "version": "[7.0.5, )"
+            "version": "[7.0.11, )"
           },
           "Microsoft.Extensions.Configuration": {
             "target": "Package",
@@ -1606,17 +1519,13 @@
             "target": "Package",
             "version": "[7.0.0, )"
           },
-          "NLog.Config": {
+          "Microsoft.Extensions.Configuration.UserSecrets": {
             "target": "Package",
-            "version": "[4.7.15, )"
-          },
-          "NLog.Extensions.Logging": {
-            "target": "Package",
-            "version": "[5.2.3, )"
+            "version": "[7.0.0, )"
           },
           "Npgsql.EntityFrameworkCore.PostgreSQL": {
             "target": "Package",
-            "version": "[7.0.4, )"
+            "version": "[7.0.11, )"
           }
         },
         "imports": [
@@ -1635,7 +1544,7 @@
             "privateAssets": "all"
           }
         },
-        "runtimeIdentifierGraphPath": "C:\\Program Files\\dotnet\\sdk\\7.0.400\\RuntimeIdentifierGraph.json"
+        "runtimeIdentifierGraphPath": "/home/timur/.dotnet/sdk/7.0.401/RuntimeIdentifierGraph.json"
       }
     }
   }

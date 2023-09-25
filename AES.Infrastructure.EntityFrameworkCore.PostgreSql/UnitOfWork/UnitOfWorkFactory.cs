@@ -15,7 +15,7 @@ namespace AES.Infrastructure.EntityFrameworkCore.PostgreSql
             Context = new AESEntityFrameworkCorePostgreSqlContext(connectionString);
             var serviceProvider = Context.GetInfrastructure<IServiceProvider>();
             var loggerFactory = serviceProvider.GetService<ILoggerFactory>();
-            loggerFactory?.AddProvider(new NLog.Extensions.Logging.NLogLoggerProvider());
+            //loggerFactory?.AddProvider(new NLog.Extensions.Logging.NLogLoggerProvider());
         }
 
         public IUnitOfWork Create()

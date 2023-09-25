@@ -24,7 +24,7 @@ var configuration = new ConfigurationBuilder()
     .AddUserSecrets<Program>()
     .Build();
 var serviceProvider = ConfigureServices(configuration) as AutofacServiceProvider ?? throw new ApplicationException();
-if (serviceProvider == null) throw new ArgumentNullException(nameof(serviceProvider));
+if (serviceProvider == null) throw new ArgumentNullException(paramName: "serviceProvider");
 
 var botClient = new BotClient(configuration["bot:id"]);
 
@@ -43,62 +43,149 @@ while (true)
         _logger.Debug("Detect updates");
         foreach (var update in updates)
         {
-            using (var unitOfWork = unitOfWorkFactory.Create())
+            using var unitOfWork = unitOfWorkFactory.Create();
+            try
             {
-                try
+                var userFinder = new UserFinder(unitOfWork); //serviceProvider.GetService(typeof(IUserFinder)) as IUserFinder;
+                IEducationProcessStep processStep = new MyStoryEducationProcessStep(unitOfWork);
+
+                long? fromId = null;
+                long? chatId = null;
+                User telegramUser = null;
+
+                if (update.Message != null)
                 {
-                    var userFinder = new UserFinder(unitOfWork); //serviceProvider.GetService(typeof(IUserFinder)) as IUserFinder;
-                    IEducationProcessStep processStep = new MyStoryEducationProcessStep(unitOfWork);
+                    fromId = update.Message.From.Id;
+                    chatId = update.Message.Chat.Id;
+                    telegramUser = update.Message.From;
+                }
+                else if (update.CallbackQuery != null)
+                {
+                    fromId = update.CallbackQuery.From.Id;
+                    chatId = update.CallbackQuery.Message.Chat.Id;
+                }
+                else if (update.PollAnswer != null)
+                {
+                    fromId = update.PollAnswer.User.Id;
+                }
 
-                    long? fromId = null;
-                    long? chatId = null;
-                    User telegramUser = null;
+                var user = userFinder.findByLogin(fromId.ToString());
 
-                    if (update.Message != null)
-                    {
-                        fromId = update.Message.From.Id;
-                        chatId = update.Message.Chat.Id;
-                        telegramUser = update.Message.From;
-                    }
-                    else if (update.CallbackQuery != null)
-                    {
-                        fromId = update.CallbackQuery.From.Id;
-                        chatId = update.CallbackQuery.Message.Chat.Id;
-                    }
-                    else if (update.PollAnswer != null)
-                    {
-                        fromId = update.PollAnswer.User.Id;
-                    }
-
-                    var user = userFinder.findByLogin(fromId.ToString());
-
-                    if (user == null)
-                    {
-                        user = UserUtils.InitNewUser(unitOfWork, fromId.Value, telegramUser);
-                        //if (chatId.HasValue)
-                        //{
-                        //    botClient.SendMessage(chatId.Value,
-                        //        "Привет пользователь " + chatId);
-                        //}
-                    }
+                if (user == null)
+                {
+                    user = UserUtils.InitNewUser(unitOfWork, fromId.Value, telegramUser);
+                    _logger.Info("New user created: " + user.Login);
+                    //if (chatId.HasValue)
+                    //{
+                    //    botClient.SendMessage(chatId.Value,
+                    //        "Привет пользователь " + chatId);
+                    //}
+                }
                     
+                {
+                    var message = update.Message;
+                    if (message != null)
                     {
-                        var message = update.Message;
-                        if (message != null)
+                        var hasText = !string.IsNullOrEmpty(message.Text);
+                        if (hasText && message.Text == "/info")
                         {
-                            var hasText = !string.IsNullOrEmpty(message.Text);
-                            if (hasText && message.Text == "/info")
-                            {
-                                var anyStarted = user.Student.Curriculum.Modules.First().Items.Any(i =>
-                                    (i.LearningProcess != null) &&
-                                    (i.LearningProcess.IsStarted()));
+                            var anyStarted = user.Student.Curriculum.Modules.First().Items.Any(i =>
+                                (i.LearningProcess != null) &&
+                                (i.LearningProcess.IsStarted()));
                                 
-                                foreach (var moduleItem in user.Student.Curriculum.Modules.First().Items)
-                                {
-                                    var isStarted = (moduleItem.LearningProcess != null) &&
-                                                    (moduleItem.LearningProcess.IsStarted());
-                                    var beginInfo = isStarted ? "стартовал" : "не стартовал";
+                            foreach (var moduleItem in user.Student.Curriculum.Modules.First().Items)
+                            {
+                                var isStarted = (moduleItem.LearningProcess != null) &&
+                                                (moduleItem.LearningProcess.IsStarted());
+                                var beginInfo = isStarted ? "стартовал" : "не стартовал";
                                     
+                                var btn = new InlineKeyboardButton[1];
+                                btn[0] = new InlineKeyboardButton();
+                                var rm = new InlineKeyboardMarkup
+                                {
+                                    InlineKeyboard = new[]
+                                    {
+                                        btn
+                                    }
+                                };
+                                btn[0].Text = "Начать";
+                                btn[0].CallbackData = "start " + moduleItem.Id;
+                                var textMessage = new StringBuilder();
+                                if (isStarted)
+                                {
+                                    textMessage.Append("Текущая дисциплина: ");
+                                }
+                                textMessage.Append(
+                                    $"<b>{moduleItem.Subject.Name}</b>, процесс обучения {beginInfo}");
+                                if (moduleItem.Grade != null)
+                                {
+                                    textMessage.AppendLine($"\nТекущая оценка {moduleItem.Grade.Description} ({moduleItem.Grade.GradeDateTime.DateTime.ToShortDateString()})");
+                                }
+                                //if (isStarted)
+                                //{
+                                //     textMessage.Append(eduItem.LearningProcess.CanEnd());
+                                // }
+                                if (anyStarted)
+                                {
+                                    botClient.SendMessage(message.Chat.Id, textMessage.ToString(),
+                                        parseMode: ParseMode.HTML, disableNotification: true);
+                                }
+                                else
+                                {
+                                    botClient.SendMessage(message.Chat.Id, textMessage.ToString(),
+                                        parseMode: ParseMode.HTML, replyMarkup: rm, disableNotification: true);
+                                }
+                            }
+                                
+                                
+                        }
+                        /* else if (hasText && (message.Text == "/lan" || message.Text.ToLower() == "далее"))
+                             {
+                                 botClient.SendVenue(message.Chat.Id, 54.724463f, 56.014890f,
+                                     "Архитектурно-Строительный Институт, специальности Горно-Нефтяного Факультета (ГФ, ГЛ, БГЛ)",
+                                     "ул. Менделеева, 195, каб. 245");
+                             }*/
+                        else if (hasText && (message.Text == "/next" || message.Text.ToLower() == "далее"))
+                        {
+                            var eduItem = user.Student.Curriculum.Modules.First().Items.FirstOrDefault(i =>
+                                (i.LearningProcess != null) &&
+                                (i.LearningProcess.IsStarted()));
+                            if (eduItem != null)
+                            {
+                                var isStarted = eduItem.LearningProcess != null;
+                                MyStory story;
+                                StoryItem storyItem;
+                                if (!isStarted)
+                                {
+                                    ILearningProcessBuilder builder = new MyStoryLearningProcessBuilder(unitOfWork);
+                                    eduItem.LearningProcess = builder.CreateLearningProcess(user.Student, eduItem);
+                                    eduItem.LearningProcess.BeginLearning();
+                                    story = eduItem.LearningProcess as MyStory;
+                                    storyItem = story.GetCurrentStoryItem();
+                                }
+                                else
+                                {
+                                    story = eduItem.LearningProcess as MyStory;
+                                    storyItem = story.NextStep();
+                                }
+
+                                RenderItemStory(botClient, unitOfWork, chatId.Value, story, storyItem);
+                                ProcessLearning(botClient, chatId.Value, processStep, user.Student, eduItem);
+                                DeleteUserCommand(botClient, message);
+                            }
+                            else
+                            {
+                                DeleteUserCommand(botClient, message);
+                                botClient.SendMessage(message.Chat.Id,
+                                    $"Наберите команду /info");
+                            }
+                        }
+                        else if (hasText && message.Text == "/allresults")
+                        {
+                            if (user.Roles.Any(r => r.Name == "admin"))
+                            {
+                                foreach (var student in unitOfWork.StudentRepository.GetQuery().ToArray())
+                                {
                                     var btn = new InlineKeyboardButton[1];
                                     btn[0] = new InlineKeyboardButton();
                                     var rm = new InlineKeyboardMarkup
@@ -108,221 +195,133 @@ while (true)
                                             btn
                                         }
                                     };
-                                    btn[0].Text = "Начать";
-                                    btn[0].CallbackData = "start " + moduleItem.Id;
-                                    var textMessage = new StringBuilder();
-                                    if (isStarted)
-                                    {
-                                        textMessage.Append("Текущая дисциплина: ");
-                                    }
-                                    textMessage.Append(
-                                        $"<b>{moduleItem.Subject.Name}</b>, процесс обучения {beginInfo}");
-                                    if (moduleItem.Grade != null)
-                                    {
-                                        textMessage.AppendLine($"\nТекущая оценка {moduleItem.Grade.Description} ({moduleItem.Grade.GradeDateTime.DateTime.ToShortDateString()})");
-                                    }
-                                    //if (isStarted)
-                                    //{
-                                    //     textMessage.Append(eduItem.LearningProcess.CanEnd());
-                                    // }
-                                    if (anyStarted)
-                                    {
-                                        botClient.SendMessage(message.Chat.Id, textMessage.ToString(),
-                                            parseMode: ParseMode.HTML, disableNotification: true);
-                                    }
-                                    else
-                                    {
-                                        botClient.SendMessage(message.Chat.Id, textMessage.ToString(),
-                                            parseMode: ParseMode.HTML, replyMarkup: rm, disableNotification: true);
-                                    }
-                                }
-                                
-                                
-                            }
-                           /* else if (hasText && (message.Text == "/lan" || message.Text.ToLower() == "далее"))
-                            {
-                                botClient.SendVenue(message.Chat.Id, 54.724463f, 56.014890f,
-                                    "Архитектурно-Строительный Институт, специальности Горно-Нефтяного Факультета (ГФ, ГЛ, БГЛ)",
-                                    "ул. Менделеева, 195, каб. 245");
-                            }*/
-                            else if (hasText && (message.Text == "/next" || message.Text.ToLower() == "далее"))
-                            {
-                                var eduItem = user.Student.Curriculum.Modules.First().Items.FirstOrDefault(i =>
-                                    (i.LearningProcess != null) &&
-                                    (i.LearningProcess.IsStarted()));
-                                if (eduItem != null)
-                                {
-                                    var isStarted = eduItem.LearningProcess != null;
-                                    MyStory story;
-                                    StoryItem storyItem;
-                                    if (!isStarted)
-                                    {
-                                        ILearningProcessBuilder builder = new MyStoryLearningProcessBuilder(unitOfWork);
-                                        eduItem.LearningProcess = builder.CreateLearningProcess(user.Student, eduItem);
-                                        eduItem.LearningProcess.BeginLearning();
-                                        story = eduItem.LearningProcess as MyStory;
-                                        storyItem = story.GetCurrentStoryItem();
-                                    }
-                                    else
-                                    {
-                                        story = eduItem.LearningProcess as MyStory;
-                                        storyItem = story.NextStep();
-                                    }
-
-                                    RenderItemStory(botClient, unitOfWork, chatId.Value, story, storyItem);
-                                    ProcessLearning(botClient, chatId.Value, processStep, user.Student, eduItem);
-                                    DeleteUserCommand(botClient, message);
-                                }
-                                else
-                                {
-                                    DeleteUserCommand(botClient, message);
-                                    botClient.SendMessage(message.Chat.Id,
-                                        $"Наберите команду /info");
-                                }
-                            }
-                            else if (hasText && message.Text == "/allresults")
-                            {
-                                if (user.Roles.Any(r => r.Name == "admin"))
-                                {
-                                    foreach (var student in unitOfWork.StudentRepository.GetQuery().ToArray())
-                                    {
-                                        var btn = new InlineKeyboardButton[1];
-                                        btn[0] = new InlineKeyboardButton();
-                                        var rm = new InlineKeyboardMarkup
-                                        {
-                                            InlineKeyboard = new[]
-                                            {
-                                                btn
-                                            }
-                                        };
-                                        btn[0].Text = "Показать";
-                                        btn[0].CallbackData = "show " + student.Id;
-                                        botClient.SendMessage(message.Chat.Id, $"{student.Person.Login}: {student.Person.FullName}",
-                                            parseMode: ParseMode.HTML, replyMarkup: rm, disableNotification: true);
-                                    }
-                                }
-                                else
-                                {
-                                    botClient.SendMessage(message.Chat.Id,
-                                        $"Недостаточно прав для выполнения команды.");
-                                    
+                                    btn[0].Text = "Показать";
+                                    btn[0].CallbackData = "show " + student.Id;
+                                    botClient.SendMessage(message.Chat.Id, $"{student.Person.Login}: {student.Person.FullName}",
+                                        parseMode: ParseMode.HTML, replyMarkup: rm, disableNotification: true);
                                 }
                             }
                             else
                             {
                                 botClient.SendMessage(message.Chat.Id,
-                                    $"Привет {user.Name}, набери команду /info", disableNotification: true);
+                                    $"Недостаточно прав для выполнения команды.");
+                                    
                             }
                         }
-                        else if (update.PollAnswer != null)
+                        else
                         {
-                            var poolId = update.PollAnswer.PollId;
-                            var person = unitOfWork.PersonRepository.GetQuery().FirstOrDefault(p =>
-                                p.Student.Curriculum.Modules.Any(a =>
-                                    a.Items.Any(b =>
-                                        ((MyStory)b.LearningProcess).Items.Any(item =>
-                                            ((StoryPoll)item).ObjectId == poolId))));
-                            var storyPollItem = person.Student.Curriculum.Modules
-                                .SelectMany(m => m.Items)
-                                .Where(m => m.LearningProcess is MyStory)
-                                .SelectMany(m => ((MyStory)m.LearningProcess).Items).Where(i => i is StoryPoll)
-                                .First(i => ((StoryPoll)i).ObjectId == poolId) as StoryPoll;
-
-                            var moduleItem = person.Student.Curriculum.Modules
-                                .SelectMany(m => m.Items)
-                                .Where(m => m.LearningProcess is MyStory)
-                                .First(i => ((MyStory)i.LearningProcess).Items.Any(i => i.Id == storyPollItem.Id));
-
-                            storyPollItem.SelectedItem = update.PollAnswer.OptionIds.First();
-                            storyPollItem.CheckAnswer();
-
-                            ProcessLearning(botClient, storyPollItem.ChatId.Value, processStep, user.Student,
-                                moduleItem);
-                        }
-                        else if (update.CallbackQuery != null)
-                        {
-                            var data = update.CallbackQuery.Data;
-                            if (!string.IsNullOrWhiteSpace(data))
-                            {
-                                var commandData = data.Split(' ');
-                                var id = new Guid(commandData[1]);
-                                if (commandData[0] == "start")
-                                {
-                                    var eduItem = user.Student.Curriculum.Modules.SelectMany(s => s.Items)
-                                        .First(s => s.Id == id);
-                                    var isStarted = eduItem.LearningProcess != null &&
-                                                    eduItem.LearningProcess.IsStarted();
-                                    if (!isStarted)
-                                    {
-                                        ILearningProcessBuilder builder = new MyStoryLearningProcessBuilder(unitOfWork);
-                                        if (eduItem.LearningProcess == null)
-                                        {
-                                            eduItem.LearningProcess =
-                                                builder.CreateLearningProcess(user.Student, eduItem);
-                                        }
-
-                                        eduItem.LearningProcess.BeginLearning();
-                                        var story = eduItem.LearningProcess as MyStory;
-                                        var storyItem = story.GetCurrentStoryItem();
-                                        
-                                        RenderItemStory(botClient, unitOfWork, chatId.Value, story, storyItem);
-                                        ProcessLearning(botClient, chatId.Value, processStep, user.Student, eduItem);
-                                    }
-                                    botClient.AnswerCallbackQuery(new AnswerCallbackQueryArgs(update.CallbackQuery.Id)
-                                    {
-                                        Text = "Используйте кнопку \"Далее\" рядом с клавиатурой, для навигации.",//update.CallbackQuery.Data,
-                                        ShowAlert = true
-                                    });
-                                }
-                                else if (commandData[0] == "show")
-                                {
-                                    var person = unitOfWork.PersonRepository.GetQuery().First(s => s.Student.Id == id);
-                                    var items
-                                        = person.Student.Curriculum.Modules.First().Items;
-                                    var cid = chatId.Value;
-                                    var textMessage = new StringBuilder();
-                                    textMessage.Append(person.FullName + "\n");
-                                    int inx = 1;
-                                    foreach (var moduleItem in items)
-                                    {
-                                        var isStarted = (moduleItem.LearningProcess != null) &&
-                                                        (moduleItem.LearningProcess.IsStarted());
-                                        var beginInfo = isStarted ? "стартовал\n" : "не стартовал";
-
-                                        
-                                        textMessage.Append(
-                                            $"\n{inx++}) <b>{moduleItem.Subject.Name}</b>, процесс обучения {beginInfo}");
-                                        if (moduleItem.Grade != null)
-                                        {
-                                            textMessage.AppendLine($"\nТекущая оценка {moduleItem.Grade.Description} ({moduleItem.Grade.GradeDateTime.DateTime.ToShortDateString()})");
-                                        }
-                                        else
-                                        {
-                                            textMessage.AppendLine();
-                                        }
-                                        
-                                    }
-                                    botClient.SendMessage(cid, textMessage.ToString(),
-                                        parseMode: ParseMode.HTML, disableNotification: true);
-                                    botClient.AnswerCallbackQuery(new AnswerCallbackQueryArgs(update.CallbackQuery.Id));
-                                }
-                            }
-                            
+                            botClient.SendMessage(message.Chat.Id,
+                                $"Привет {user.Name}, набери команду /info", disableNotification: true);
                         }
                     }
+                    else if (update.PollAnswer != null)
+                    {
+                        var poolId = update.PollAnswer.PollId;
+                        var person = unitOfWork.PersonRepository.GetQuery().FirstOrDefault(p =>
+                            p.Student.Curriculum.Modules.Any(a =>
+                                a.Items.Any(b =>
+                                    ((MyStory)b.LearningProcess).Items.Any(item =>
+                                        ((StoryPoll)item).ObjectId == poolId))));
+                        var storyPollItem = person.Student.Curriculum.Modules
+                            .SelectMany(m => m.Items)
+                            .Where(m => m.LearningProcess is MyStory)
+                            .SelectMany(m => ((MyStory)m.LearningProcess).Items).Where(i => i is StoryPoll)
+                            .First(i => ((StoryPoll)i).ObjectId == poolId) as StoryPoll;
+
+                        var moduleItem = person.Student.Curriculum.Modules
+                            .SelectMany(m => m.Items)
+                            .Where(m => m.LearningProcess is MyStory)
+                            .First(i => ((MyStory)i.LearningProcess).Items.Any(i => i.Id == storyPollItem.Id));
+
+                        storyPollItem.SelectedItem = update.PollAnswer.OptionIds.First();
+                        storyPollItem.CheckAnswer();
+
+                        ProcessLearning(botClient, storyPollItem.ChatId.Value, processStep, user.Student,
+                            moduleItem);
+                    }
+                    else if (update.CallbackQuery != null)
+                    {
+                        var data = update.CallbackQuery.Data;
+                        if (!string.IsNullOrWhiteSpace(data))
+                        {
+                            var commandData = data.Split(' ');
+                            var id = new Guid(commandData[1]);
+                            if (commandData[0] == "start")
+                            {
+                                var eduItem = user.Student.Curriculum.Modules.SelectMany(s => s.Items)
+                                    .First(s => s.Id == id);
+                                var isStarted = eduItem.LearningProcess != null &&
+                                                eduItem.LearningProcess.IsStarted();
+                                if (!isStarted)
+                                {
+                                    ILearningProcessBuilder builder = new MyStoryLearningProcessBuilder(unitOfWork);
+                                    if (eduItem.LearningProcess == null)
+                                    {
+                                        eduItem.LearningProcess =
+                                            builder.CreateLearningProcess(user.Student, eduItem);
+                                    }
+
+                                    eduItem.LearningProcess.BeginLearning();
+                                    var story = eduItem.LearningProcess as MyStory;
+                                    var storyItem = story.GetCurrentStoryItem();
+                                        
+                                    RenderItemStory(botClient, unitOfWork, chatId.Value, story, storyItem);
+                                    ProcessLearning(botClient, chatId.Value, processStep, user.Student, eduItem);
+                                }
+                                botClient.AnswerCallbackQuery(new AnswerCallbackQueryArgs(update.CallbackQuery.Id)
+                                {
+                                    Text = "Используйте кнопку \"Далее\" рядом с клавиатурой, для навигации.",//update.CallbackQuery.Data,
+                                    ShowAlert = true
+                                });
+                            }
+                            else if (commandData[0] == "show")
+                            {
+                                var person = unitOfWork.PersonRepository.GetQuery().First(s => s.Student.Id == id);
+                                var items
+                                    = person.Student.Curriculum.Modules.First().Items;
+                                var cid = chatId.Value;
+                                var textMessage = new StringBuilder();
+                                textMessage.Append(person.FullName + "\n");
+                                int inx = 1;
+                                foreach (var moduleItem in items)
+                                {
+                                    var isStarted = (moduleItem.LearningProcess != null) &&
+                                                    (moduleItem.LearningProcess.IsStarted());
+                                    var beginInfo = isStarted ? "стартовал\n" : "не стартовал";
+
+                                        
+                                    textMessage.Append(
+                                        $"\n{inx++}) <b>{moduleItem.Subject.Name}</b>, процесс обучения {beginInfo}");
+                                    if (moduleItem.Grade != null)
+                                    {
+                                        textMessage.AppendLine($"\nТекущая оценка {moduleItem.Grade.Description} ({moduleItem.Grade.GradeDateTime.DateTime.ToShortDateString()})");
+                                    }
+                                    else
+                                    {
+                                        textMessage.AppendLine();
+                                    }
+                                        
+                                }
+                                botClient.SendMessage(cid, textMessage.ToString(),
+                                    parseMode: ParseMode.HTML, disableNotification: true);
+                                botClient.AnswerCallbackQuery(new AnswerCallbackQueryArgs(update.CallbackQuery.Id));
+                            }
+                        }
+                            
+                    }
                 }
-                catch (NextStepException exception)
-                {
-                    //botClient.SendMessage(ch,
-                    //    $"Привет {user.Name}, ты написал:\n" + message.Text);
-                }
-                catch (Exception exception)
-                {
-                    _logger.Error(exception.ToString());
-                }
-                
-                unitOfWork.Commit();
             }
+            catch (NextStepException exception)
+            {
+                //botClient.SendMessage(ch,
+                //    $"Привет {user.Name}, ты написал:\n" + message.Text);
+            }
+            catch (Exception exception)
+            {
+                _logger.Error(exception.ToString());
+            }
+                
+            unitOfWork.Commit();
         }
 
         var offset = updates.Last().UpdateId + 1;

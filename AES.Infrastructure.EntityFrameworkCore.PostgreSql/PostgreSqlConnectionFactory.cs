@@ -1,4 +1,5 @@
-﻿using Microsoft.EntityFrameworkCore.Design;
+﻿using System.Reflection;
+using Microsoft.EntityFrameworkCore.Design;
 using Microsoft.EntityFrameworkCore.Infrastructure;
 using Microsoft.Extensions.Configuration;
 
@@ -12,7 +13,10 @@ namespace AES.Infrastructure.EntityFrameworkCore.PostgreSql
     {
         public AESEntityFrameworkCorePostgreSqlContext CreateDbContext(string[] args)
         {
-            IConfigurationRoot configuration = new ConfigurationBuilder().AddJsonFile("appsettings.json", optional: true).Build();
+            var assembly = Assembly.GetExecutingAssembly();
+            var configuration = new ConfigurationBuilder()
+                .AddJsonFile("appsettings.json", optional: true)
+                .AddUserSecrets(assembly).Build();
             var connectionString = configuration.GetConnectionString("aes");
             if (string.IsNullOrEmpty(connectionString))
             {
