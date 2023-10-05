@@ -14,15 +14,19 @@ var configuration = new ConfigurationBuilder()
 var psql = new AESEntityFrameworkCorePostgreSqlContext(configuration.GetConnectionString("psql"));
 var sqlt = new AESEntityFrameworkCoreSqliteContext(configuration.GetConnectionString("sqlt"));
 
+/*
 var entityTypes = sqlt.Model.GetEntityTypes().Select(t => t.ClrType).ToList();
 foreach (var entityType in entityTypes)
 {
     Console.WriteLine(entityType.FullName);
 }
+*/
 
 IUnitOfWork unitOfWorkSqlite = new UnitOfWork(sqlt);
 IUnitOfWork unitOfWorkPsql = new UnitOfWork(psql);
 
+
+/*
 Console.WriteLine("DirectionRepository");
 foreach (var entity in unitOfWorkSqlite.DirectionRepository.GetQuery().ToList())
 {
@@ -58,18 +62,25 @@ foreach (var entity in unitOfWorkSqlite.SubjectRepository.GetQuery().ToList())
 {
     unitOfWorkPsql.SubjectRepository.Save(entity);
 }
-/*
+
 foreach (var entity in unitOfWorkSqlite.TerritoryRepository.GetQuery().AsNoTracking().ToList())
 {
     unitOfWorkPsql.TerritoryRepository.Save(entity);
 }
 */
+
+
+/*
 Console.WriteLine("BinaryDataRepository");
 foreach (var entity in unitOfWorkSqlite.BinaryDataRepository.GetQuery().ToList())
 {
+    Console.WriteLine("Entity " + entity.Id);
+    IUnitOfWork unitOfWorkPsql = new UnitOfWork(psql);
     unitOfWorkPsql.BinaryDataRepository.Save(entity);
+    unitOfWorkPsql.Commit();
 }
-
+*/
+/*
 Console.WriteLine("FormEducationRepository");
 foreach (var entity in unitOfWorkSqlite.FormEducationRepository.GetQuery().ToList())
 {
@@ -120,5 +131,13 @@ foreach (var entity in unitOfWorkSqlite.PersonRepository.GetQuery().ToList())
     unitOfWorkPsql.PersonRepository.Save(entity);
 }
 */
+
+Console.WriteLine("StoryTemplateRepository");
+foreach (var entity in unitOfWorkSqlite.StoryTemplateRepository.GetQuery().ToList())
+{
+    unitOfWorkPsql.StoryTemplateRepository.Save(entity);
+}
+
+
 unitOfWorkSqlite.Commit();
 unitOfWorkPsql.Commit();
