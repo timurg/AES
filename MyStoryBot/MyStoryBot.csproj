@@ -22,6 +22,7 @@
     <ItemGroup>
       <ProjectReference Include="..\AES.BusinessLogic.Implementation\AES.BusinessLogic.Implementation.csproj" />
       <ProjectReference Include="..\AES.Domain\AES.Domain.csproj" />
+      <ProjectReference Include="..\AES.Infrastructure.EntityFrameworkCore.PostgreSql\AES.Infrastructure.EntityFrameworkCore.PostgreSql.csproj" />
       <ProjectReference Include="..\AES.Infrastructure.EntityFrameworkCore.Sqlite\AES.Infrastructure.EntityFrameworkCore.Sqlite.csproj" />
       <ProjectReference Include="..\AES.Infrastructure\AES.Infrastructure.csproj" />
     </ItemGroup>

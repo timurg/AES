@@ -12,7 +12,7 @@ namespace AES.Domain
         public ISet<Module> Modules { get; set; } = new HashSet<Module>();
 
         [Required]
-        public DateTime DateOfAppointment { get; set; }
+        public DateTimeOffset DateOfAppointment { get; set; }
 
         /// <summary>
         /// Тэг для поиска плана

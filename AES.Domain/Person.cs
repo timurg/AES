@@ -90,7 +90,7 @@ namespace AES.Domain
         /// <summary>
         /// Время последней активности
         /// </summary>
-        public DateTime? LastActivityDateTime
+        public DateTimeOffset? LastActivityDateTime
         {
             get; set;
         }
@@ -98,7 +98,7 @@ namespace AES.Domain
         /// <summary>
         /// Дата установки пароля
         /// </summary>
-        public DateTime? WhenSetPassWord
+        public DateTimeOffset? WhenSetPassWord
         {
             get; set;
         }
@@ -116,7 +116,7 @@ namespace AES.Domain
         /// Дата рождения
         /// </summary>
         [Required]
-        public DateTime Birthday
+        public DateTimeOffset Birthday
         {
             get; set;
         }

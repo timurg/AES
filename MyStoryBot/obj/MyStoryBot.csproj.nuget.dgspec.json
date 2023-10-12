@@ -69,7 +69,7 @@
               "privateAssets": "all"
             }
           },
-          "runtimeIdentifierGraphPath": "/usr/share/dotnet/sdk/6.0.414/RuntimeIdentifierGraph.json"
+          "runtimeIdentifierGraphPath": "/usr/share/dotnet/sdk/6.0.415/RuntimeIdentifierGraph.json"
         }
       }
     },
@@ -132,7 +132,7 @@
               "privateAssets": "all"
             }
           },
-          "runtimeIdentifierGraphPath": "/usr/share/dotnet/sdk/6.0.414/RuntimeIdentifierGraph.json"
+          "runtimeIdentifierGraphPath": "/usr/share/dotnet/sdk/6.0.415/RuntimeIdentifierGraph.json"
         }
       }
     },
@@ -191,7 +191,92 @@
               "privateAssets": "all"
             }
           },
-          "runtimeIdentifierGraphPath": "/usr/share/dotnet/sdk/6.0.414/RuntimeIdentifierGraph.json"
+          "runtimeIdentifierGraphPath": "/usr/share/dotnet/sdk/6.0.415/RuntimeIdentifierGraph.json"
+        }
+      }
+    },
+    "/home/timur/RiderProjects/AES/AES.Infrastructure.EntityFrameworkCore.PostgreSql/AES.Infrastructure.EntityFrameworkCore.PostgreSql.csproj": {
+      "version": "1.0.0",
+      "restore": {
+        "projectUniqueName": "/home/timur/RiderProjects/AES/AES.Infrastructure.EntityFrameworkCore.PostgreSql/AES.Infrastructure.EntityFrameworkCore.PostgreSql.csproj",
+        "projectName": "AES.Infrastructure.EntityFrameworkCore.PostgreSql",
+        "projectPath": "/home/timur/RiderProjects/AES/AES.Infrastructure.EntityFrameworkCore.PostgreSql/AES.Infrastructure.EntityFrameworkCore.PostgreSql.csproj",
+        "packagesPath": "/home/timur/.nuget/packages/",
+        "outputPath": "/home/timur/RiderProjects/AES/AES.Infrastructure.EntityFrameworkCore.PostgreSql/obj/",
+        "projectStyle": "PackageReference",
+        "configFilePaths": [
+          "/home/timur/.nuget/NuGet/NuGet.Config"
+        ],
+        "originalTargetFrameworks": [
+          "net6.0"
+        ],
+        "sources": {
+          "https://api.nuget.org/v3/index.json": {}
+        },
+        "frameworks": {
+          "net6.0": {
+            "targetAlias": "net6.0",
+            "projectReferences": {
+              "/home/timur/RiderProjects/AES/AES.Infrastructure.EntityFrameworkCore/AES.Infrastructure.EntityFrameworkCore.csproj": {
+                "projectPath": "/home/timur/RiderProjects/AES/AES.Infrastructure.EntityFrameworkCore/AES.Infrastructure.EntityFrameworkCore.csproj"
+              }
+            }
+          }
+        },
+        "warningProperties": {
+          "warnAsError": [
+            "NU1605"
+          ]
+        }
+      },
+      "frameworks": {
+        "net6.0": {
+          "targetAlias": "net6.0",
+          "dependencies": {
+            "Microsoft.EntityFrameworkCore": {
+              "target": "Package",
+              "version": "[7.0.11, )"
+            },
+            "Microsoft.EntityFrameworkCore.Design": {
+              "include": "Runtime, Build, Native, ContentFiles, Analyzers, BuildTransitive",
+              "suppressParent": "All",
+              "target": "Package",
+              "version": "[7.0.11, )"
+            },
+            "Microsoft.Extensions.Configuration": {
+              "target": "Package",
+              "version": "[7.0.0, )"
+            },
+            "Microsoft.Extensions.Configuration.Json": {
+              "target": "Package",
+              "version": "[7.0.0, )"
+            },
+            "Microsoft.Extensions.Configuration.UserSecrets": {
+              "target": "Package",
+              "version": "[7.0.0, )"
+            },
+            "Npgsql.EntityFrameworkCore.PostgreSQL": {
+              "target": "Package",
+              "version": "[7.0.11, )"
+            }
+          },
+          "imports": [
+            "net461",
+            "net462",
+            "net47",
+            "net471",
+            "net472",
+            "net48",
+            "net481"
+          ],
+          "assetTargetFallback": true,
+          "warn": true,
+          "frameworkReferences": {
+            "Microsoft.NETCore.App": {
+              "privateAssets": "all"
+            }
+          },
+          "runtimeIdentifierGraphPath": "/usr/share/dotnet/sdk/6.0.415/RuntimeIdentifierGraph.json"
         }
       }
     },
@@ -276,7 +361,7 @@
               "privateAssets": "all"
             }
           },
-          "runtimeIdentifierGraphPath": "/usr/share/dotnet/sdk/6.0.414/RuntimeIdentifierGraph.json"
+          "runtimeIdentifierGraphPath": "/usr/share/dotnet/sdk/6.0.415/RuntimeIdentifierGraph.json"
         }
       }
     },
@@ -349,7 +434,7 @@
               "privateAssets": "all"
             }
           },
-          "runtimeIdentifierGraphPath": "/usr/share/dotnet/sdk/6.0.414/RuntimeIdentifierGraph.json"
+          "runtimeIdentifierGraphPath": "/usr/share/dotnet/sdk/6.0.415/RuntimeIdentifierGraph.json"
         }
       }
     },
@@ -415,7 +500,7 @@
               "privateAssets": "all"
             }
           },
-          "runtimeIdentifierGraphPath": "/usr/share/dotnet/sdk/6.0.414/RuntimeIdentifierGraph.json"
+          "runtimeIdentifierGraphPath": "/usr/share/dotnet/sdk/6.0.415/RuntimeIdentifierGraph.json"
         }
       }
     },
@@ -472,7 +557,7 @@
               "privateAssets": "all"
             }
           },
-          "runtimeIdentifierGraphPath": "/usr/share/dotnet/sdk/6.0.414/RuntimeIdentifierGraph.json"
+          "runtimeIdentifierGraphPath": "/usr/share/dotnet/sdk/6.0.415/RuntimeIdentifierGraph.json"
         }
       }
     },
@@ -503,6 +588,9 @@
               },
               "/home/timur/RiderProjects/AES/AES.Domain/AES.Domain.csproj": {
                 "projectPath": "/home/timur/RiderProjects/AES/AES.Domain/AES.Domain.csproj"
+              },
+              "/home/timur/RiderProjects/AES/AES.Infrastructure.EntityFrameworkCore.PostgreSql/AES.Infrastructure.EntityFrameworkCore.PostgreSql.csproj": {
+                "projectPath": "/home/timur/RiderProjects/AES/AES.Infrastructure.EntityFrameworkCore.PostgreSql/AES.Infrastructure.EntityFrameworkCore.PostgreSql.csproj"
               },
               "/home/timur/RiderProjects/AES/AES.Infrastructure.EntityFrameworkCore.Sqlite/AES.Infrastructure.EntityFrameworkCore.Sqlite.csproj": {
                 "projectPath": "/home/timur/RiderProjects/AES/AES.Infrastructure.EntityFrameworkCore.Sqlite/AES.Infrastructure.EntityFrameworkCore.Sqlite.csproj"
@@ -568,7 +656,7 @@
               "privateAssets": "all"
             }
           },
-          "runtimeIdentifierGraphPath": "/usr/share/dotnet/sdk/6.0.414/RuntimeIdentifierGraph.json"
+          "runtimeIdentifierGraphPath": "/usr/share/dotnet/sdk/6.0.415/RuntimeIdentifierGraph.json"
         }
       }
     }

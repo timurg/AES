@@ -82,7 +82,7 @@ namespace AES.Infrastructure.EntityFrameworkCore.PostgreSql.Migrations
                     b.Property<Guid>("Id")
                         .HasColumnType("uuid");
 
-                    b.Property<DateTime>("DateOfAppointment")
+                    b.Property<DateTimeOffset>("DateOfAppointment")
                         .HasColumnType("timestamp with time zone");
 
                     b.Property<string>("tag")
@@ -368,14 +368,14 @@ namespace AES.Infrastructure.EntityFrameworkCore.PostgreSql.Migrations
                     b.Property<bool>("Active")
                         .HasColumnType("boolean");
 
-                    b.Property<DateTime>("Birthday")
+                    b.Property<DateTimeOffset>("Birthday")
                         .HasColumnType("timestamp with time zone");
 
                     b.Property<string>("Email")
                         .HasMaxLength(255)
                         .HasColumnType("character varying(255)");
 
-                    b.Property<DateTime?>("LastActivityDateTime")
+                    b.Property<DateTimeOffset?>("LastActivityDateTime")
                         .HasColumnType("timestamp with time zone");
 
                     b.Property<string>("LastName")
@@ -409,7 +409,7 @@ namespace AES.Infrastructure.EntityFrameworkCore.PostgreSql.Migrations
                     b.Property<int>("Sex")
                         .HasColumnType("integer");
 
-                    b.Property<DateTime?>("WhenSetPassWord")
+                    b.Property<DateTimeOffset?>("WhenSetPassWord")
                         .HasColumnType("timestamp with time zone");
 
                     b.HasKey("Id");
@@ -529,7 +529,7 @@ namespace AES.Infrastructure.EntityFrameworkCore.PostgreSql.Migrations
                         .HasMaxLength(255)
                         .HasColumnType("character varying(255)");
 
-                    b.Property<DateTime>("AgreementDate")
+                    b.Property<DateTimeOffset>("AgreementDate")
                         .HasColumnType("timestamp with time zone");
 
                     b.Property<string>("AgreementNumber")
@@ -570,7 +570,7 @@ namespace AES.Infrastructure.EntityFrameworkCore.PostgreSql.Migrations
                     b.Property<Guid>("SubdivisionId")
                         .HasColumnType("uuid");
 
-                    b.Property<DateTime>("WhenSemesterBegin")
+                    b.Property<DateTimeOffset>("WhenSemesterBegin")
                         .HasColumnType("timestamp with time zone");
 
                     b.HasKey("Id");

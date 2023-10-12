@@ -1,4 +1,5 @@
-﻿using AES.Domain;
+﻿using System;
+using AES.Domain;
 using Microsoft.EntityFrameworkCore;
 
 namespace AES.Infrastructure.EntityFrameworkCore.PostgreSql
@@ -10,11 +11,13 @@ namespace AES.Infrastructure.EntityFrameworkCore.PostgreSql
         public AESEntityFrameworkCorePostgreSqlContext(string connectionString)
         {
             this.connectionString = connectionString;
+            //this.SetSwitch("Npgsql.EnableLegacyTimestampBehavior", true);
         }
 
         protected override void OnConfiguring(DbContextOptionsBuilder optionsBuilder)
         {
-            optionsBuilder.UseNpgsql(connectionString);
+            optionsBuilder.UseNpgsql(connectionString) ;
+            AppContext.SetSwitch("Npgsql.EnableLegacyTimestampBehavior", true);
             //optionsBuilder.LogTo(System.Console.WriteLine);
         }
     }

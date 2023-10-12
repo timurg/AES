@@ -180,3 +180,7 @@ D:/yandex/YandexDisk/Документы/GitHub/AES/MyStoryBot/bin/Debug/net6.0/M
 /home/timur/RiderProjects/AES/MyStoryBot/obj/Debug/net6.0/MyStoryBot.pdb
 /home/timur/RiderProjects/AES/MyStoryBot/obj/Debug/net6.0/MyStoryBot.genruntimeconfig.cache
 /home/timur/RiderProjects/AES/MyStoryBot/obj/Debug/net6.0/ref/MyStoryBot.dll
+/home/timur/RiderProjects/AES/MyStoryBot/bin/Debug/net6.0/Npgsql.dll
+/home/timur/RiderProjects/AES/MyStoryBot/bin/Debug/net6.0/Npgsql.EntityFrameworkCore.PostgreSQL.dll
+/home/timur/RiderProjects/AES/MyStoryBot/bin/Debug/net6.0/AES.Infrastructure.EntityFrameworkCore.PostgreSql.dll
+/home/timur/RiderProjects/AES/MyStoryBot/bin/Debug/net6.0/AES.Infrastructure.EntityFrameworkCore.PostgreSql.pdb

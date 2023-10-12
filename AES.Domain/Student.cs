@@ -14,7 +14,7 @@ namespace AES.Domain
         public string AgreementNumber { get; set; }
 
         [Required]
-        public System.DateTime AgreementDate { get; set; }
+        public System.DateTimeOffset AgreementDate { get; set; }
 
         [Required]
         public bool ActiveAgreement { get; set; }
@@ -23,7 +23,7 @@ namespace AES.Domain
         public byte Semester { get; set; }
 
         [Required]
-        public System.DateTime WhenSemesterBegin { get; set; }
+        public System.DateTimeOffset WhenSemesterBegin { get; set; }
 
         [Required]
         public bool MaybeAlternateRule { get; set; }
