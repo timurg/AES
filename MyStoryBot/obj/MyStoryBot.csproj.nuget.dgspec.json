@@ -1,17 +1,17 @@
 {
   "format": 1,
   "restore": {
-    "/home/timur/RiderProjects/AES/MyStoryBot/MyStoryBot.csproj": {}
+    "/home/timur/Документы/GitHub/AES/MyStoryBot/MyStoryBot.csproj": {}
   },
   "projects": {
-    "/home/timur/RiderProjects/AES/AES.BusinessLogic.Implementation/AES.BusinessLogic.Implementation.csproj": {
+    "/home/timur/Документы/GitHub/AES/AES.BusinessLogic.Implementation/AES.BusinessLogic.Implementation.csproj": {
       "version": "1.0.0",
       "restore": {
-        "projectUniqueName": "/home/timur/RiderProjects/AES/AES.BusinessLogic.Implementation/AES.BusinessLogic.Implementation.csproj",
+        "projectUniqueName": "/home/timur/Документы/GitHub/AES/AES.BusinessLogic.Implementation/AES.BusinessLogic.Implementation.csproj",
         "projectName": "AES.BusinessLogic.Implementation",
-        "projectPath": "/home/timur/RiderProjects/AES/AES.BusinessLogic.Implementation/AES.BusinessLogic.Implementation.csproj",
+        "projectPath": "/home/timur/Документы/GitHub/AES/AES.BusinessLogic.Implementation/AES.BusinessLogic.Implementation.csproj",
         "packagesPath": "/home/timur/.nuget/packages/",
-        "outputPath": "/home/timur/RiderProjects/AES/AES.BusinessLogic.Implementation/obj/",
+        "outputPath": "/home/timur/Документы/GitHub/AES/AES.BusinessLogic.Implementation/obj/",
         "projectStyle": "PackageReference",
         "configFilePaths": [
           "/home/timur/.nuget/NuGet/NuGet.Config"
@@ -26,14 +26,14 @@
           "net6.0": {
             "targetAlias": "net6.0",
             "projectReferences": {
-              "/home/timur/RiderProjects/AES/AES.BusinessLogic/AES.BusinessLogic.csproj": {
-                "projectPath": "/home/timur/RiderProjects/AES/AES.BusinessLogic/AES.BusinessLogic.csproj"
+              "/home/timur/Документы/GitHub/AES/AES.BusinessLogic/AES.BusinessLogic.csproj": {
+                "projectPath": "/home/timur/Документы/GitHub/AES/AES.BusinessLogic/AES.BusinessLogic.csproj"
               },
-              "/home/timur/RiderProjects/AES/AES.Domain/AES.Domain.csproj": {
-                "projectPath": "/home/timur/RiderProjects/AES/AES.Domain/AES.Domain.csproj"
+              "/home/timur/Документы/GitHub/AES/AES.Domain/AES.Domain.csproj": {
+                "projectPath": "/home/timur/Документы/GitHub/AES/AES.Domain/AES.Domain.csproj"
               },
-              "/home/timur/RiderProjects/AES/AES.Infrastructure/AES.Infrastructure.csproj": {
-                "projectPath": "/home/timur/RiderProjects/AES/AES.Infrastructure/AES.Infrastructure.csproj"
+              "/home/timur/Документы/GitHub/AES/AES.Infrastructure/AES.Infrastructure.csproj": {
+                "projectPath": "/home/timur/Документы/GitHub/AES/AES.Infrastructure/AES.Infrastructure.csproj"
               }
             }
           }
@@ -69,18 +69,18 @@
               "privateAssets": "all"
             }
           },
-          "runtimeIdentifierGraphPath": "/usr/share/dotnet/sdk/6.0.415/RuntimeIdentifierGraph.json"
+          "runtimeIdentifierGraphPath": "/usr/share/dotnet/sdk/7.0.402/RuntimeIdentifierGraph.json"
         }
       }
     },
-    "/home/timur/RiderProjects/AES/AES.BusinessLogic/AES.BusinessLogic.csproj": {
+    "/home/timur/Документы/GitHub/AES/AES.BusinessLogic/AES.BusinessLogic.csproj": {
       "version": "1.0.0",
       "restore": {
-        "projectUniqueName": "/home/timur/RiderProjects/AES/AES.BusinessLogic/AES.BusinessLogic.csproj",
+        "projectUniqueName": "/home/timur/Документы/GitHub/AES/AES.BusinessLogic/AES.BusinessLogic.csproj",
         "projectName": "AES.BusinessLogic",
-        "projectPath": "/home/timur/RiderProjects/AES/AES.BusinessLogic/AES.BusinessLogic.csproj",
+        "projectPath": "/home/timur/Документы/GitHub/AES/AES.BusinessLogic/AES.BusinessLogic.csproj",
         "packagesPath": "/home/timur/.nuget/packages/",
-        "outputPath": "/home/timur/RiderProjects/AES/AES.BusinessLogic/obj/",
+        "outputPath": "/home/timur/Документы/GitHub/AES/AES.BusinessLogic/obj/",
         "projectStyle": "PackageReference",
         "configFilePaths": [
           "/home/timur/.nuget/NuGet/NuGet.Config"
@@ -95,8 +95,8 @@
           "net6.0": {
             "targetAlias": "net6.0",
             "projectReferences": {
-              "/home/timur/RiderProjects/AES/AES.Domain/AES.Domain.csproj": {
-                "projectPath": "/home/timur/RiderProjects/AES/AES.Domain/AES.Domain.csproj"
+              "/home/timur/Документы/GitHub/AES/AES.Domain/AES.Domain.csproj": {
+                "projectPath": "/home/timur/Документы/GitHub/AES/AES.Domain/AES.Domain.csproj"
               }
             }
           }
@@ -132,18 +132,18 @@
               "privateAssets": "all"
             }
           },
-          "runtimeIdentifierGraphPath": "/usr/share/dotnet/sdk/6.0.415/RuntimeIdentifierGraph.json"
+          "runtimeIdentifierGraphPath": "/usr/share/dotnet/sdk/7.0.402/RuntimeIdentifierGraph.json"
         }
       }
     },
-    "/home/timur/RiderProjects/AES/AES.Domain/AES.Domain.csproj": {
+    "/home/timur/Документы/GitHub/AES/AES.Domain/AES.Domain.csproj": {
       "version": "1.0.0",
       "restore": {
-        "projectUniqueName": "/home/timur/RiderProjects/AES/AES.Domain/AES.Domain.csproj",
+        "projectUniqueName": "/home/timur/Документы/GitHub/AES/AES.Domain/AES.Domain.csproj",
         "projectName": "AES.Domain",
-        "projectPath": "/home/timur/RiderProjects/AES/AES.Domain/AES.Domain.csproj",
+        "projectPath": "/home/timur/Документы/GitHub/AES/AES.Domain/AES.Domain.csproj",
         "packagesPath": "/home/timur/.nuget/packages/",
-        "outputPath": "/home/timur/RiderProjects/AES/AES.Domain/obj/",
+        "outputPath": "/home/timur/Документы/GitHub/AES/AES.Domain/obj/",
         "projectStyle": "PackageReference",
         "configFilePaths": [
           "/home/timur/.nuget/NuGet/NuGet.Config"
@@ -191,18 +191,18 @@
               "privateAssets": "all"
             }
           },
-          "runtimeIdentifierGraphPath": "/usr/share/dotnet/sdk/6.0.415/RuntimeIdentifierGraph.json"
+          "runtimeIdentifierGraphPath": "/usr/share/dotnet/sdk/7.0.402/RuntimeIdentifierGraph.json"
         }
       }
     },
-    "/home/timur/RiderProjects/AES/AES.Infrastructure.EntityFrameworkCore.PostgreSql/AES.Infrastructure.EntityFrameworkCore.PostgreSql.csproj": {
+    "/home/timur/Документы/GitHub/AES/AES.Infrastructure.EntityFrameworkCore.PostgreSql/AES.Infrastructure.EntityFrameworkCore.PostgreSql.csproj": {
       "version": "1.0.0",
       "restore": {
-        "projectUniqueName": "/home/timur/RiderProjects/AES/AES.Infrastructure.EntityFrameworkCore.PostgreSql/AES.Infrastructure.EntityFrameworkCore.PostgreSql.csproj",
+        "projectUniqueName": "/home/timur/Документы/GitHub/AES/AES.Infrastructure.EntityFrameworkCore.PostgreSql/AES.Infrastructure.EntityFrameworkCore.PostgreSql.csproj",
         "projectName": "AES.Infrastructure.EntityFrameworkCore.PostgreSql",
-        "projectPath": "/home/timur/RiderProjects/AES/AES.Infrastructure.EntityFrameworkCore.PostgreSql/AES.Infrastructure.EntityFrameworkCore.PostgreSql.csproj",
+        "projectPath": "/home/timur/Документы/GitHub/AES/AES.Infrastructure.EntityFrameworkCore.PostgreSql/AES.Infrastructure.EntityFrameworkCore.PostgreSql.csproj",
         "packagesPath": "/home/timur/.nuget/packages/",
-        "outputPath": "/home/timur/RiderProjects/AES/AES.Infrastructure.EntityFrameworkCore.PostgreSql/obj/",
+        "outputPath": "/home/timur/Документы/GitHub/AES/AES.Infrastructure.EntityFrameworkCore.PostgreSql/obj/",
         "projectStyle": "PackageReference",
         "configFilePaths": [
           "/home/timur/.nuget/NuGet/NuGet.Config"
@@ -217,8 +217,8 @@
           "net6.0": {
             "targetAlias": "net6.0",
             "projectReferences": {
-              "/home/timur/RiderProjects/AES/AES.Infrastructure.EntityFrameworkCore/AES.Infrastructure.EntityFrameworkCore.csproj": {
-                "projectPath": "/home/timur/RiderProjects/AES/AES.Infrastructure.EntityFrameworkCore/AES.Infrastructure.EntityFrameworkCore.csproj"
+              "/home/timur/Документы/GitHub/AES/AES.Infrastructure.EntityFrameworkCore/AES.Infrastructure.EntityFrameworkCore.csproj": {
+                "projectPath": "/home/timur/Документы/GitHub/AES/AES.Infrastructure.EntityFrameworkCore/AES.Infrastructure.EntityFrameworkCore.csproj"
               }
             }
           }
@@ -235,13 +235,13 @@
           "dependencies": {
             "Microsoft.EntityFrameworkCore": {
               "target": "Package",
-              "version": "[7.0.11, )"
+              "version": "[7.0.12, )"
             },
             "Microsoft.EntityFrameworkCore.Design": {
               "include": "Runtime, Build, Native, ContentFiles, Analyzers, BuildTransitive",
               "suppressParent": "All",
               "target": "Package",
-              "version": "[7.0.11, )"
+              "version": "[7.0.12, )"
             },
             "Microsoft.Extensions.Configuration": {
               "target": "Package",
@@ -276,103 +276,18 @@
               "privateAssets": "all"
             }
           },
-          "runtimeIdentifierGraphPath": "/usr/share/dotnet/sdk/6.0.415/RuntimeIdentifierGraph.json"
+          "runtimeIdentifierGraphPath": "/usr/share/dotnet/sdk/7.0.402/RuntimeIdentifierGraph.json"
         }
       }
     },
-    "/home/timur/RiderProjects/AES/AES.Infrastructure.EntityFrameworkCore.Sqlite/AES.Infrastructure.EntityFrameworkCore.Sqlite.csproj": {
+    "/home/timur/Документы/GitHub/AES/AES.Infrastructure.EntityFrameworkCore/AES.Infrastructure.EntityFrameworkCore.csproj": {
       "version": "1.0.0",
       "restore": {
-        "projectUniqueName": "/home/timur/RiderProjects/AES/AES.Infrastructure.EntityFrameworkCore.Sqlite/AES.Infrastructure.EntityFrameworkCore.Sqlite.csproj",
-        "projectName": "AES.Infrastructure.EntityFrameworkCore.Sqlite",
-        "projectPath": "/home/timur/RiderProjects/AES/AES.Infrastructure.EntityFrameworkCore.Sqlite/AES.Infrastructure.EntityFrameworkCore.Sqlite.csproj",
-        "packagesPath": "/home/timur/.nuget/packages/",
-        "outputPath": "/home/timur/RiderProjects/AES/AES.Infrastructure.EntityFrameworkCore.Sqlite/obj/",
-        "projectStyle": "PackageReference",
-        "configFilePaths": [
-          "/home/timur/.nuget/NuGet/NuGet.Config"
-        ],
-        "originalTargetFrameworks": [
-          "net6.0"
-        ],
-        "sources": {
-          "https://api.nuget.org/v3/index.json": {}
-        },
-        "frameworks": {
-          "net6.0": {
-            "targetAlias": "net6.0",
-            "projectReferences": {
-              "/home/timur/RiderProjects/AES/AES.Infrastructure.EntityFrameworkCore/AES.Infrastructure.EntityFrameworkCore.csproj": {
-                "projectPath": "/home/timur/RiderProjects/AES/AES.Infrastructure.EntityFrameworkCore/AES.Infrastructure.EntityFrameworkCore.csproj"
-              }
-            }
-          }
-        },
-        "warningProperties": {
-          "warnAsError": [
-            "NU1605"
-          ]
-        }
-      },
-      "frameworks": {
-        "net6.0": {
-          "targetAlias": "net6.0",
-          "dependencies": {
-            "Microsoft.EntityFrameworkCore": {
-              "target": "Package",
-              "version": "[7.0.5, )"
-            },
-            "Microsoft.EntityFrameworkCore.Design": {
-              "include": "Runtime, Build, Native, ContentFiles, Analyzers, BuildTransitive",
-              "suppressParent": "All",
-              "target": "Package",
-              "version": "[7.0.5, )"
-            },
-            "Microsoft.EntityFrameworkCore.Sqlite": {
-              "target": "Package",
-              "version": "[7.0.5, )"
-            },
-            "Microsoft.Extensions.Configuration": {
-              "target": "Package",
-              "version": "[7.0.0, )"
-            },
-            "Microsoft.Extensions.Configuration.Json": {
-              "target": "Package",
-              "version": "[7.0.0, )"
-            },
-            "Microsoft.Extensions.Configuration.UserSecrets": {
-              "target": "Package",
-              "version": "[7.0.0, )"
-            }
-          },
-          "imports": [
-            "net461",
-            "net462",
-            "net47",
-            "net471",
-            "net472",
-            "net48",
-            "net481"
-          ],
-          "assetTargetFallback": true,
-          "warn": true,
-          "frameworkReferences": {
-            "Microsoft.NETCore.App": {
-              "privateAssets": "all"
-            }
-          },
-          "runtimeIdentifierGraphPath": "/usr/share/dotnet/sdk/6.0.415/RuntimeIdentifierGraph.json"
-        }
-      }
-    },
-    "/home/timur/RiderProjects/AES/AES.Infrastructure.EntityFrameworkCore/AES.Infrastructure.EntityFrameworkCore.csproj": {
-      "version": "1.0.0",
-      "restore": {
-        "projectUniqueName": "/home/timur/RiderProjects/AES/AES.Infrastructure.EntityFrameworkCore/AES.Infrastructure.EntityFrameworkCore.csproj",
+        "projectUniqueName": "/home/timur/Документы/GitHub/AES/AES.Infrastructure.EntityFrameworkCore/AES.Infrastructure.EntityFrameworkCore.csproj",
         "projectName": "AES.Infrastructure.EntityFrameworkCore",
-        "projectPath": "/home/timur/RiderProjects/AES/AES.Infrastructure.EntityFrameworkCore/AES.Infrastructure.EntityFrameworkCore.csproj",
+        "projectPath": "/home/timur/Документы/GitHub/AES/AES.Infrastructure.EntityFrameworkCore/AES.Infrastructure.EntityFrameworkCore.csproj",
         "packagesPath": "/home/timur/.nuget/packages/",
-        "outputPath": "/home/timur/RiderProjects/AES/AES.Infrastructure.EntityFrameworkCore/obj/",
+        "outputPath": "/home/timur/Документы/GitHub/AES/AES.Infrastructure.EntityFrameworkCore/obj/",
         "projectStyle": "PackageReference",
         "configFilePaths": [
           "/home/timur/.nuget/NuGet/NuGet.Config"
@@ -387,14 +302,14 @@
           "net6.0": {
             "targetAlias": "net6.0",
             "projectReferences": {
-              "/home/timur/RiderProjects/AES/AES.Domain/AES.Domain.csproj": {
-                "projectPath": "/home/timur/RiderProjects/AES/AES.Domain/AES.Domain.csproj"
+              "/home/timur/Документы/GitHub/AES/AES.Domain/AES.Domain.csproj": {
+                "projectPath": "/home/timur/Документы/GitHub/AES/AES.Domain/AES.Domain.csproj"
               },
-              "/home/timur/RiderProjects/AES/AES.Infrastructure/AES.Infrastructure.csproj": {
-                "projectPath": "/home/timur/RiderProjects/AES/AES.Infrastructure/AES.Infrastructure.csproj"
+              "/home/timur/Документы/GitHub/AES/AES.Infrastructure/AES.Infrastructure.csproj": {
+                "projectPath": "/home/timur/Документы/GitHub/AES/AES.Infrastructure/AES.Infrastructure.csproj"
               },
-              "/home/timur/RiderProjects/AES/AES.Story/AES.Story.csproj": {
-                "projectPath": "/home/timur/RiderProjects/AES/AES.Story/AES.Story.csproj"
+              "/home/timur/Документы/GitHub/AES/AES.Story/AES.Story.csproj": {
+                "projectPath": "/home/timur/Документы/GitHub/AES/AES.Story/AES.Story.csproj"
               }
             }
           }
@@ -411,11 +326,11 @@
           "dependencies": {
             "Microsoft.EntityFrameworkCore": {
               "target": "Package",
-              "version": "[7.0.5, )"
+              "version": "[7.0.12, )"
             },
             "Microsoft.EntityFrameworkCore.Relational": {
               "target": "Package",
-              "version": "[7.0.5, )"
+              "version": "[7.0.12, )"
             }
           },
           "imports": [
@@ -434,18 +349,18 @@
               "privateAssets": "all"
             }
           },
-          "runtimeIdentifierGraphPath": "/usr/share/dotnet/sdk/6.0.415/RuntimeIdentifierGraph.json"
+          "runtimeIdentifierGraphPath": "/usr/share/dotnet/sdk/7.0.402/RuntimeIdentifierGraph.json"
         }
       }
     },
-    "/home/timur/RiderProjects/AES/AES.Infrastructure/AES.Infrastructure.csproj": {
+    "/home/timur/Документы/GitHub/AES/AES.Infrastructure/AES.Infrastructure.csproj": {
       "version": "1.0.0",
       "restore": {
-        "projectUniqueName": "/home/timur/RiderProjects/AES/AES.Infrastructure/AES.Infrastructure.csproj",
+        "projectUniqueName": "/home/timur/Документы/GitHub/AES/AES.Infrastructure/AES.Infrastructure.csproj",
         "projectName": "AES.Infrastructure",
-        "projectPath": "/home/timur/RiderProjects/AES/AES.Infrastructure/AES.Infrastructure.csproj",
+        "projectPath": "/home/timur/Документы/GitHub/AES/AES.Infrastructure/AES.Infrastructure.csproj",
         "packagesPath": "/home/timur/.nuget/packages/",
-        "outputPath": "/home/timur/RiderProjects/AES/AES.Infrastructure/obj/",
+        "outputPath": "/home/timur/Документы/GitHub/AES/AES.Infrastructure/obj/",
         "projectStyle": "PackageReference",
         "configFilePaths": [
           "/home/timur/.nuget/NuGet/NuGet.Config"
@@ -460,11 +375,11 @@
           "net6.0": {
             "targetAlias": "net6.0",
             "projectReferences": {
-              "/home/timur/RiderProjects/AES/AES.Domain/AES.Domain.csproj": {
-                "projectPath": "/home/timur/RiderProjects/AES/AES.Domain/AES.Domain.csproj"
+              "/home/timur/Документы/GitHub/AES/AES.Domain/AES.Domain.csproj": {
+                "projectPath": "/home/timur/Документы/GitHub/AES/AES.Domain/AES.Domain.csproj"
               },
-              "/home/timur/RiderProjects/AES/AES.Story/AES.Story.csproj": {
-                "projectPath": "/home/timur/RiderProjects/AES/AES.Story/AES.Story.csproj"
+              "/home/timur/Документы/GitHub/AES/AES.Story/AES.Story.csproj": {
+                "projectPath": "/home/timur/Документы/GitHub/AES/AES.Story/AES.Story.csproj"
               }
             }
           }
@@ -500,18 +415,18 @@
               "privateAssets": "all"
             }
           },
-          "runtimeIdentifierGraphPath": "/usr/share/dotnet/sdk/6.0.415/RuntimeIdentifierGraph.json"
+          "runtimeIdentifierGraphPath": "/usr/share/dotnet/sdk/7.0.402/RuntimeIdentifierGraph.json"
         }
       }
     },
-    "/home/timur/RiderProjects/AES/AES.Story/AES.Story.csproj": {
+    "/home/timur/Документы/GitHub/AES/AES.Story/AES.Story.csproj": {
       "version": "1.0.0",
       "restore": {
-        "projectUniqueName": "/home/timur/RiderProjects/AES/AES.Story/AES.Story.csproj",
+        "projectUniqueName": "/home/timur/Документы/GitHub/AES/AES.Story/AES.Story.csproj",
         "projectName": "AES.Story",
-        "projectPath": "/home/timur/RiderProjects/AES/AES.Story/AES.Story.csproj",
+        "projectPath": "/home/timur/Документы/GitHub/AES/AES.Story/AES.Story.csproj",
         "packagesPath": "/home/timur/.nuget/packages/",
-        "outputPath": "/home/timur/RiderProjects/AES/AES.Story/obj/",
+        "outputPath": "/home/timur/Документы/GitHub/AES/AES.Story/obj/",
         "projectStyle": "PackageReference",
         "configFilePaths": [
           "/home/timur/.nuget/NuGet/NuGet.Config"
@@ -526,8 +441,8 @@
           "net6.0": {
             "targetAlias": "net6.0",
             "projectReferences": {
-              "/home/timur/RiderProjects/AES/AES.Domain/AES.Domain.csproj": {
-                "projectPath": "/home/timur/RiderProjects/AES/AES.Domain/AES.Domain.csproj"
+              "/home/timur/Документы/GitHub/AES/AES.Domain/AES.Domain.csproj": {
+                "projectPath": "/home/timur/Документы/GitHub/AES/AES.Domain/AES.Domain.csproj"
               }
             }
           }
@@ -557,18 +472,18 @@
               "privateAssets": "all"
             }
           },
-          "runtimeIdentifierGraphPath": "/usr/share/dotnet/sdk/6.0.415/RuntimeIdentifierGraph.json"
+          "runtimeIdentifierGraphPath": "/usr/share/dotnet/sdk/7.0.402/RuntimeIdentifierGraph.json"
         }
       }
     },
-    "/home/timur/RiderProjects/AES/MyStoryBot/MyStoryBot.csproj": {
+    "/home/timur/Документы/GitHub/AES/MyStoryBot/MyStoryBot.csproj": {
       "version": "1.0.0",
       "restore": {
-        "projectUniqueName": "/home/timur/RiderProjects/AES/MyStoryBot/MyStoryBot.csproj",
+        "projectUniqueName": "/home/timur/Документы/GitHub/AES/MyStoryBot/MyStoryBot.csproj",
         "projectName": "MyStoryBot",
-        "projectPath": "/home/timur/RiderProjects/AES/MyStoryBot/MyStoryBot.csproj",
+        "projectPath": "/home/timur/Документы/GitHub/AES/MyStoryBot/MyStoryBot.csproj",
         "packagesPath": "/home/timur/.nuget/packages/",
-        "outputPath": "/home/timur/RiderProjects/AES/MyStoryBot/obj/",
+        "outputPath": "/home/timur/Документы/GitHub/AES/MyStoryBot/obj/",
         "projectStyle": "PackageReference",
         "configFilePaths": [
           "/home/timur/.nuget/NuGet/NuGet.Config"
@@ -583,20 +498,17 @@
           "net6.0": {
             "targetAlias": "net6.0",
             "projectReferences": {
-              "/home/timur/RiderProjects/AES/AES.BusinessLogic.Implementation/AES.BusinessLogic.Implementation.csproj": {
-                "projectPath": "/home/timur/RiderProjects/AES/AES.BusinessLogic.Implementation/AES.BusinessLogic.Implementation.csproj"
+              "/home/timur/Документы/GitHub/AES/AES.BusinessLogic.Implementation/AES.BusinessLogic.Implementation.csproj": {
+                "projectPath": "/home/timur/Документы/GitHub/AES/AES.BusinessLogic.Implementation/AES.BusinessLogic.Implementation.csproj"
               },
-              "/home/timur/RiderProjects/AES/AES.Domain/AES.Domain.csproj": {
-                "projectPath": "/home/timur/RiderProjects/AES/AES.Domain/AES.Domain.csproj"
+              "/home/timur/Документы/GitHub/AES/AES.Domain/AES.Domain.csproj": {
+                "projectPath": "/home/timur/Документы/GitHub/AES/AES.Domain/AES.Domain.csproj"
               },
-              "/home/timur/RiderProjects/AES/AES.Infrastructure.EntityFrameworkCore.PostgreSql/AES.Infrastructure.EntityFrameworkCore.PostgreSql.csproj": {
-                "projectPath": "/home/timur/RiderProjects/AES/AES.Infrastructure.EntityFrameworkCore.PostgreSql/AES.Infrastructure.EntityFrameworkCore.PostgreSql.csproj"
+              "/home/timur/Документы/GitHub/AES/AES.Infrastructure.EntityFrameworkCore.PostgreSql/AES.Infrastructure.EntityFrameworkCore.PostgreSql.csproj": {
+                "projectPath": "/home/timur/Документы/GitHub/AES/AES.Infrastructure.EntityFrameworkCore.PostgreSql/AES.Infrastructure.EntityFrameworkCore.PostgreSql.csproj"
               },
-              "/home/timur/RiderProjects/AES/AES.Infrastructure.EntityFrameworkCore.Sqlite/AES.Infrastructure.EntityFrameworkCore.Sqlite.csproj": {
-                "projectPath": "/home/timur/RiderProjects/AES/AES.Infrastructure.EntityFrameworkCore.Sqlite/AES.Infrastructure.EntityFrameworkCore.Sqlite.csproj"
-              },
-              "/home/timur/RiderProjects/AES/AES.Infrastructure/AES.Infrastructure.csproj": {
-                "projectPath": "/home/timur/RiderProjects/AES/AES.Infrastructure/AES.Infrastructure.csproj"
+              "/home/timur/Документы/GitHub/AES/AES.Infrastructure/AES.Infrastructure.csproj": {
+                "projectPath": "/home/timur/Документы/GitHub/AES/AES.Infrastructure/AES.Infrastructure.csproj"
               }
             }
           }
@@ -613,7 +525,7 @@
           "dependencies": {
             "Autofac": {
               "target": "Package",
-              "version": "[7.0.1, )"
+              "version": "[7.1.0, )"
             },
             "Autofac.Configuration": {
               "target": "Package",
@@ -637,7 +549,7 @@
             },
             "Telegram.BotAPI": {
               "target": "Package",
-              "version": "[6.7.1, )"
+              "version": "[6.9.0, )"
             }
           },
           "imports": [
@@ -656,7 +568,7 @@
               "privateAssets": "all"
             }
           },
-          "runtimeIdentifierGraphPath": "/usr/share/dotnet/sdk/6.0.415/RuntimeIdentifierGraph.json"
+          "runtimeIdentifierGraphPath": "/usr/share/dotnet/sdk/7.0.402/RuntimeIdentifierGraph.json"
         }
       }
     }

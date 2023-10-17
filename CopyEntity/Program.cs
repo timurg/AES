@@ -23,7 +23,7 @@ foreach (var entityType in entityTypes)
 */
 
 IUnitOfWork unitOfWorkSqlite = new UnitOfWork(sqlt);
-IUnitOfWork unitOfWorkPsql = new UnitOfWork(psql);
+//IUnitOfWork unitOfWorkPsql = new UnitOfWork(psql);
 
 
 /*
@@ -70,7 +70,7 @@ foreach (var entity in unitOfWorkSqlite.TerritoryRepository.GetQuery().AsNoTrack
 */
 
 
-/*
+
 Console.WriteLine("BinaryDataRepository");
 foreach (var entity in unitOfWorkSqlite.BinaryDataRepository.GetQuery().ToList())
 {
@@ -79,7 +79,7 @@ foreach (var entity in unitOfWorkSqlite.BinaryDataRepository.GetQuery().ToList()
     unitOfWorkPsql.BinaryDataRepository.Save(entity);
     unitOfWorkPsql.Commit();
 }
-*/
+
 /*
 Console.WriteLine("FormEducationRepository");
 foreach (var entity in unitOfWorkSqlite.FormEducationRepository.GetQuery().ToList())
@@ -132,12 +132,13 @@ foreach (var entity in unitOfWorkSqlite.PersonRepository.GetQuery().ToList())
 }
 */
 
+/*
 Console.WriteLine("StoryTemplateRepository");
 foreach (var entity in unitOfWorkSqlite.StoryTemplateRepository.GetQuery().ToList())
 {
     unitOfWorkPsql.StoryTemplateRepository.Save(entity);
 }
-
+*/
 
 unitOfWorkSqlite.Commit();
-unitOfWorkPsql.Commit();
+//unitOfWorkPsql.Commit();

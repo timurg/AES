@@ -1,8 +1,8 @@
 {
   "version": 2,
-  "dgSpecHash": "Pd2Wz03/tmMiskJ3KP6yc6UrZHjEalB+XWU2MUE1I2KmzYA2wYzR+Fp0B52mtHB/pw7QtGPZz4N6zBYe56caCA==",
+  "dgSpecHash": "uk8K7XRgk1OUruexBfro7zNBfDb7iqW1mq4ywusQH7RiEfHmM/5UuzHFORZajfwMhktHZowYMTIOKthMbpygPg==",
   "success": true,
-  "projectFilePath": "/home/timur/RiderProjects/AES/AES.Infrastructure/AES.Infrastructure.csproj",
+  "projectFilePath": "/home/timur/Документы/GitHub/AES/AES.Infrastructure/AES.Infrastructure.csproj",
   "expectedPackageFiles": [
     "/home/timur/.nuget/packages/microsoft.entityframeworkcore/7.0.5/microsoft.entityframeworkcore.7.0.5.nupkg.sha512",
     "/home/timur/.nuget/packages/microsoft.entityframeworkcore.abstractions/7.0.5/microsoft.entityframeworkcore.abstractions.7.0.5.nupkg.sha512",

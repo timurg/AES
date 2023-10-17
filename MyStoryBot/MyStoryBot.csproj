@@ -10,20 +10,19 @@
   </PropertyGroup>
 
     <ItemGroup>
-      <PackageReference Include="Autofac" Version="7.0.1" />
+      <PackageReference Include="Autofac" Version="7.1.0" />
       <PackageReference Include="Autofac.Configuration" Version="6.0.0" />
       <PackageReference Include="Autofac.Extensions.DependencyInjection" Version="8.0.0" />
       <PackageReference Include="Microsoft.Extensions.Configuration" Version="7.0.0" />
       <PackageReference Include="Microsoft.Extensions.Configuration.UserSecrets" Version="7.0.0" />
       <PackageReference Include="NLog.Config" Version="4.7.15" />
-      <PackageReference Include="Telegram.BotAPI" Version="6.7.1" />
+      <PackageReference Include="Telegram.BotAPI" Version="6.9.0" />
     </ItemGroup>
 
     <ItemGroup>
       <ProjectReference Include="..\AES.BusinessLogic.Implementation\AES.BusinessLogic.Implementation.csproj" />
       <ProjectReference Include="..\AES.Domain\AES.Domain.csproj" />
       <ProjectReference Include="..\AES.Infrastructure.EntityFrameworkCore.PostgreSql\AES.Infrastructure.EntityFrameworkCore.PostgreSql.csproj" />
-      <ProjectReference Include="..\AES.Infrastructure.EntityFrameworkCore.Sqlite\AES.Infrastructure.EntityFrameworkCore.Sqlite.csproj" />
       <ProjectReference Include="..\AES.Infrastructure\AES.Infrastructure.csproj" />
     </ItemGroup>
 
@@ -42,7 +41,6 @@
       </Content>
       <Content Include="..\Data\data.sqlite">
         <Link>data.sqlite</Link>
-        <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
       </Content>
     </ItemGroup>
 

@@ -10,6 +10,7 @@
 using System;
 using System.Reflection;
 
+[assembly: Microsoft.Extensions.Configuration.UserSecrets.UserSecretsIdAttribute("8f4878b6-4216-4d86-913d-eddcbe1631a8")]
 [assembly: System.Reflection.AssemblyCompanyAttribute("AES.Infrastructure.EntityFrameworkCore.Sqlite")]
 [assembly: System.Reflection.AssemblyConfigurationAttribute("Release")]
 [assembly: System.Reflection.AssemblyFileVersionAttribute("1.0.0.0")]

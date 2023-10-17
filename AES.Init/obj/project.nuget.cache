@@ -1,16 +1,16 @@
 {
   "version": 2,
-  "dgSpecHash": "7DUhZAfh04bDrkwaqZJpcPQ7LH/kFSk/0Jt0ewnpPH/0G2M3Xk/eb4BcIQDF3FDzSfazqRIaIycwC+4cfg+97Q==",
+  "dgSpecHash": "F/Al1WbBMuaHdHvmUpBo8w0cLGShQiZLb1yFr+6sa5aDkra0dnms4VHy/EGymx9RKnGXtiEUL4SkuNMy9Y2t8g==",
   "success": false,
-  "projectFilePath": "/home/timur/RiderProjects/AES/AES.Init/AES.Init.csproj",
+  "projectFilePath": "/home/timur/Документы/GitHub/AES/AES.Init/AES.Init.csproj",
   "expectedPackageFiles": [
     "/home/timur/.nuget/packages/autofac/7.0.1/autofac.7.0.1.nupkg.sha512",
     "/home/timur/.nuget/packages/autofac.configuration/6.0.0/autofac.configuration.6.0.0.nupkg.sha512",
     "/home/timur/.nuget/packages/autofac.extensions.dependencyinjection/8.0.0/autofac.extensions.dependencyinjection.8.0.0.nupkg.sha512",
     "/home/timur/.nuget/packages/microsoft.data.sqlite.core/7.0.5/microsoft.data.sqlite.core.7.0.5.nupkg.sha512",
-    "/home/timur/.nuget/packages/microsoft.entityframeworkcore/7.0.11/microsoft.entityframeworkcore.7.0.11.nupkg.sha512",
-    "/home/timur/.nuget/packages/microsoft.entityframeworkcore.abstractions/7.0.11/microsoft.entityframeworkcore.abstractions.7.0.11.nupkg.sha512",
-    "/home/timur/.nuget/packages/microsoft.entityframeworkcore.analyzers/7.0.11/microsoft.entityframeworkcore.analyzers.7.0.11.nupkg.sha512",
+    "/home/timur/.nuget/packages/microsoft.entityframeworkcore/7.0.12/microsoft.entityframeworkcore.7.0.12.nupkg.sha512",
+    "/home/timur/.nuget/packages/microsoft.entityframeworkcore.abstractions/7.0.12/microsoft.entityframeworkcore.abstractions.7.0.12.nupkg.sha512",
+    "/home/timur/.nuget/packages/microsoft.entityframeworkcore.analyzers/7.0.12/microsoft.entityframeworkcore.analyzers.7.0.12.nupkg.sha512",
     "/home/timur/.nuget/packages/microsoft.entityframeworkcore.relational/7.0.5/microsoft.entityframeworkcore.relational.7.0.5.nupkg.sha512",
     "/home/timur/.nuget/packages/microsoft.entityframeworkcore.sqlite/7.0.5/microsoft.entityframeworkcore.sqlite.7.0.5.nupkg.sha512",
     "/home/timur/.nuget/packages/microsoft.entityframeworkcore.sqlite.core/7.0.5/microsoft.entityframeworkcore.sqlite.core.7.0.5.nupkg.sha512",
@@ -45,6 +45,15 @@
     "/home/timur/.nuget/packages/system.text.json/7.0.0/system.text.json.7.0.0.nupkg.sha512"
   ],
   "logs": [
+    {
+      "code": "NU1605",
+      "level": "Error",
+      "message": "Detected package downgrade: Microsoft.EntityFrameworkCore.Relational from 7.0.12 to 7.0.5. Reference the package directly from the project to select a different version. \n AES.Init -> AES.Infrastructure.EntityFrameworkCore -> Microsoft.EntityFrameworkCore.Relational (>= 7.0.12) \n AES.Init -> Microsoft.EntityFrameworkCore.Relational (>= 7.0.5)",
+      "libraryId": "Microsoft.EntityFrameworkCore.Relational",
+      "targetGraphs": [
+        "net6.0"
+      ]
+    },
     {
       "code": "NU1605",
       "level": "Error",
