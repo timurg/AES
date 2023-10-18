@@ -1,6 +1,6 @@
 using AES.Domain;
 
-namespace AES.Domain;
+namespace MyStoryBot.Commands;
 
 //Контекст выполнения команды
 public record CommandContext
