@@ -1,4 +1,6 @@
-﻿using AES.Story;
+﻿using AES.BusinessLogic;
+using AES.BusinessLogic.Implementation;
+using AES.Story;
 using Telegram.BotAPI;
 
 namespace MyStoryBot.Commands;
@@ -28,10 +30,11 @@ public class PollAnswerCommand : NamedCommand
             .Where(m => m.LearningProcess is MyStory)
             .First(i => ((MyStory)i.LearningProcess).Items.Any(i => i.Id == storyPollItem.Id));
 
-      //  storyPollItem.SelectedItem = update.PollAnswer.OptionIds.First();
+        storyPollItem.SelectedItem = uint.Parse(context.Parameters.Skip(1).First());
         storyPollItem.CheckAnswer();
-
-     //   ProcessLearning(context, processStep, context.User.Student,
-     //       moduleItem);
+        context.ChatId = storyPollItem.ChatId;
+        IEducationProcessStep processStep = new MyStoryEducationProcessStep(context.UnitOfWork);
+        ProcessLearning(context, processStep, person.Student,
+            moduleItem);
     }
 }

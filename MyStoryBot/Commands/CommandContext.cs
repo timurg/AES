@@ -6,6 +6,7 @@ namespace MyStoryBot.Commands;
 //Контекст выполнения команды
 public record CommandContext
 {
+    public string CommandName;
     public long? ChatId;
     public int? MessageId;
     public long? FromId;
