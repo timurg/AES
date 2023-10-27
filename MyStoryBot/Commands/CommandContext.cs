@@ -1,4 +1,5 @@
 using AES.Domain;
+using AES.Infrastructure;
 
 namespace MyStoryBot.Commands;
 
@@ -10,5 +11,6 @@ public record CommandContext
     public long? FromId;
     public string Message;
     public Person User;
-    
+    public IUnitOfWork UnitOfWork;
+    public string[] Parameters;
 }

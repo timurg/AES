@@ -1,25 +1,32 @@
 {
   "format": 1,
   "restore": {
-    "/home/timur/Документы/GitHub/AES/AES.Infrastructure.EntityFrameworkCore.PostgreSql/AES.Infrastructure.EntityFrameworkCore.PostgreSql.csproj": {}
+    "D:\\yandex\\YandexDisk\\Документы\\GitHub\\AES\\AES.Infrastructure.EntityFrameworkCore.PostgreSql\\AES.Infrastructure.EntityFrameworkCore.PostgreSql.csproj": {}
   },
   "projects": {
-    "/home/timur/Документы/GitHub/AES/AES.Domain/AES.Domain.csproj": {
+    "D:\\yandex\\YandexDisk\\Документы\\GitHub\\AES\\AES.Domain\\AES.Domain.csproj": {
       "version": "1.0.0",
       "restore": {
-        "projectUniqueName": "/home/timur/Документы/GitHub/AES/AES.Domain/AES.Domain.csproj",
+        "projectUniqueName": "D:\\yandex\\YandexDisk\\Документы\\GitHub\\AES\\AES.Domain\\AES.Domain.csproj",
         "projectName": "AES.Domain",
-        "projectPath": "/home/timur/Документы/GitHub/AES/AES.Domain/AES.Domain.csproj",
-        "packagesPath": "/home/timur/.nuget/packages/",
-        "outputPath": "/home/timur/Документы/GitHub/AES/AES.Domain/obj/",
+        "projectPath": "D:\\yandex\\YandexDisk\\Документы\\GitHub\\AES\\AES.Domain\\AES.Domain.csproj",
+        "packagesPath": "C:\\Users\\lean\\.nuget\\packages\\",
+        "outputPath": "D:\\yandex\\YandexDisk\\Документы\\GitHub\\AES\\AES.Domain\\obj\\",
         "projectStyle": "PackageReference",
+        "fallbackFolders": [
+          "C:\\Program Files (x86)\\Microsoft Visual Studio\\Shared\\NuGetPackages"
+        ],
         "configFilePaths": [
-          "/home/timur/.nuget/NuGet/NuGet.Config"
+          "C:\\Users\\lean\\AppData\\Roaming\\NuGet\\NuGet.Config",
+          "C:\\Program Files (x86)\\NuGet\\Config\\Microsoft.VisualStudio.FallbackLocation.config",
+          "C:\\Program Files (x86)\\NuGet\\Config\\Microsoft.VisualStudio.Offline.config"
         ],
         "originalTargetFrameworks": [
           "net6.0"
         ],
         "sources": {
+          "C:\\Program Files (x86)\\Microsoft SDKs\\NuGetPackages\\": {},
+          "C:\\Program Files\\dotnet\\library-packs": {},
           "https://api.nuget.org/v3/index.json": {}
         },
         "frameworks": {
@@ -59,34 +66,41 @@
               "privateAssets": "all"
             }
           },
-          "runtimeIdentifierGraphPath": "/usr/share/dotnet/sdk/7.0.402/RuntimeIdentifierGraph.json"
+          "runtimeIdentifierGraphPath": "C:\\Program Files\\dotnet\\sdk\\7.0.400\\RuntimeIdentifierGraph.json"
         }
       }
     },
-    "/home/timur/Документы/GitHub/AES/AES.Infrastructure.EntityFrameworkCore.PostgreSql/AES.Infrastructure.EntityFrameworkCore.PostgreSql.csproj": {
+    "D:\\yandex\\YandexDisk\\Документы\\GitHub\\AES\\AES.Infrastructure.EntityFrameworkCore.PostgreSql\\AES.Infrastructure.EntityFrameworkCore.PostgreSql.csproj": {
       "version": "1.0.0",
       "restore": {
-        "projectUniqueName": "/home/timur/Документы/GitHub/AES/AES.Infrastructure.EntityFrameworkCore.PostgreSql/AES.Infrastructure.EntityFrameworkCore.PostgreSql.csproj",
+        "projectUniqueName": "D:\\yandex\\YandexDisk\\Документы\\GitHub\\AES\\AES.Infrastructure.EntityFrameworkCore.PostgreSql\\AES.Infrastructure.EntityFrameworkCore.PostgreSql.csproj",
         "projectName": "AES.Infrastructure.EntityFrameworkCore.PostgreSql",
-        "projectPath": "/home/timur/Документы/GitHub/AES/AES.Infrastructure.EntityFrameworkCore.PostgreSql/AES.Infrastructure.EntityFrameworkCore.PostgreSql.csproj",
-        "packagesPath": "/home/timur/.nuget/packages/",
-        "outputPath": "/home/timur/Документы/GitHub/AES/AES.Infrastructure.EntityFrameworkCore.PostgreSql/obj/",
+        "projectPath": "D:\\yandex\\YandexDisk\\Документы\\GitHub\\AES\\AES.Infrastructure.EntityFrameworkCore.PostgreSql\\AES.Infrastructure.EntityFrameworkCore.PostgreSql.csproj",
+        "packagesPath": "C:\\Users\\lean\\.nuget\\packages\\",
+        "outputPath": "D:\\yandex\\YandexDisk\\Документы\\GitHub\\AES\\AES.Infrastructure.EntityFrameworkCore.PostgreSql\\obj\\",
         "projectStyle": "PackageReference",
+        "fallbackFolders": [
+          "C:\\Program Files (x86)\\Microsoft Visual Studio\\Shared\\NuGetPackages"
+        ],
         "configFilePaths": [
-          "/home/timur/.nuget/NuGet/NuGet.Config"
+          "C:\\Users\\lean\\AppData\\Roaming\\NuGet\\NuGet.Config",
+          "C:\\Program Files (x86)\\NuGet\\Config\\Microsoft.VisualStudio.FallbackLocation.config",
+          "C:\\Program Files (x86)\\NuGet\\Config\\Microsoft.VisualStudio.Offline.config"
         ],
         "originalTargetFrameworks": [
           "net6.0"
         ],
         "sources": {
+          "C:\\Program Files (x86)\\Microsoft SDKs\\NuGetPackages\\": {},
+          "C:\\Program Files\\dotnet\\library-packs": {},
           "https://api.nuget.org/v3/index.json": {}
         },
         "frameworks": {
           "net6.0": {
             "targetAlias": "net6.0",
             "projectReferences": {
-              "/home/timur/Документы/GitHub/AES/AES.Infrastructure.EntityFrameworkCore/AES.Infrastructure.EntityFrameworkCore.csproj": {
-                "projectPath": "/home/timur/Документы/GitHub/AES/AES.Infrastructure.EntityFrameworkCore/AES.Infrastructure.EntityFrameworkCore.csproj"
+              "D:\\yandex\\YandexDisk\\Документы\\GitHub\\AES\\AES.Infrastructure.EntityFrameworkCore\\AES.Infrastructure.EntityFrameworkCore.csproj": {
+                "projectPath": "D:\\yandex\\YandexDisk\\Документы\\GitHub\\AES\\AES.Infrastructure.EntityFrameworkCore\\AES.Infrastructure.EntityFrameworkCore.csproj"
               }
             }
           }
@@ -144,40 +158,47 @@
               "privateAssets": "all"
             }
           },
-          "runtimeIdentifierGraphPath": "/usr/share/dotnet/sdk/7.0.402/RuntimeIdentifierGraph.json"
+          "runtimeIdentifierGraphPath": "C:\\Program Files\\dotnet\\sdk\\7.0.400\\RuntimeIdentifierGraph.json"
         }
       }
     },
-    "/home/timur/Документы/GitHub/AES/AES.Infrastructure.EntityFrameworkCore/AES.Infrastructure.EntityFrameworkCore.csproj": {
+    "D:\\yandex\\YandexDisk\\Документы\\GitHub\\AES\\AES.Infrastructure.EntityFrameworkCore\\AES.Infrastructure.EntityFrameworkCore.csproj": {
       "version": "1.0.0",
       "restore": {
-        "projectUniqueName": "/home/timur/Документы/GitHub/AES/AES.Infrastructure.EntityFrameworkCore/AES.Infrastructure.EntityFrameworkCore.csproj",
+        "projectUniqueName": "D:\\yandex\\YandexDisk\\Документы\\GitHub\\AES\\AES.Infrastructure.EntityFrameworkCore\\AES.Infrastructure.EntityFrameworkCore.csproj",
         "projectName": "AES.Infrastructure.EntityFrameworkCore",
-        "projectPath": "/home/timur/Документы/GitHub/AES/AES.Infrastructure.EntityFrameworkCore/AES.Infrastructure.EntityFrameworkCore.csproj",
-        "packagesPath": "/home/timur/.nuget/packages/",
-        "outputPath": "/home/timur/Документы/GitHub/AES/AES.Infrastructure.EntityFrameworkCore/obj/",
+        "projectPath": "D:\\yandex\\YandexDisk\\Документы\\GitHub\\AES\\AES.Infrastructure.EntityFrameworkCore\\AES.Infrastructure.EntityFrameworkCore.csproj",
+        "packagesPath": "C:\\Users\\lean\\.nuget\\packages\\",
+        "outputPath": "D:\\yandex\\YandexDisk\\Документы\\GitHub\\AES\\AES.Infrastructure.EntityFrameworkCore\\obj\\",
         "projectStyle": "PackageReference",
+        "fallbackFolders": [
+          "C:\\Program Files (x86)\\Microsoft Visual Studio\\Shared\\NuGetPackages"
+        ],
         "configFilePaths": [
-          "/home/timur/.nuget/NuGet/NuGet.Config"
+          "C:\\Users\\lean\\AppData\\Roaming\\NuGet\\NuGet.Config",
+          "C:\\Program Files (x86)\\NuGet\\Config\\Microsoft.VisualStudio.FallbackLocation.config",
+          "C:\\Program Files (x86)\\NuGet\\Config\\Microsoft.VisualStudio.Offline.config"
         ],
         "originalTargetFrameworks": [
           "net6.0"
         ],
         "sources": {
+          "C:\\Program Files (x86)\\Microsoft SDKs\\NuGetPackages\\": {},
+          "C:\\Program Files\\dotnet\\library-packs": {},
           "https://api.nuget.org/v3/index.json": {}
         },
         "frameworks": {
           "net6.0": {
             "targetAlias": "net6.0",
             "projectReferences": {
-              "/home/timur/Документы/GitHub/AES/AES.Domain/AES.Domain.csproj": {
-                "projectPath": "/home/timur/Документы/GitHub/AES/AES.Domain/AES.Domain.csproj"
+              "D:\\yandex\\YandexDisk\\Документы\\GitHub\\AES\\AES.Domain\\AES.Domain.csproj": {
+                "projectPath": "D:\\yandex\\YandexDisk\\Документы\\GitHub\\AES\\AES.Domain\\AES.Domain.csproj"
               },
-              "/home/timur/Документы/GitHub/AES/AES.Infrastructure/AES.Infrastructure.csproj": {
-                "projectPath": "/home/timur/Документы/GitHub/AES/AES.Infrastructure/AES.Infrastructure.csproj"
+              "D:\\yandex\\YandexDisk\\Документы\\GitHub\\AES\\AES.Infrastructure\\AES.Infrastructure.csproj": {
+                "projectPath": "D:\\yandex\\YandexDisk\\Документы\\GitHub\\AES\\AES.Infrastructure\\AES.Infrastructure.csproj"
               },
-              "/home/timur/Документы/GitHub/AES/AES.Story/AES.Story.csproj": {
-                "projectPath": "/home/timur/Документы/GitHub/AES/AES.Story/AES.Story.csproj"
+              "D:\\yandex\\YandexDisk\\Документы\\GitHub\\AES\\AES.Story\\AES.Story.csproj": {
+                "projectPath": "D:\\yandex\\YandexDisk\\Документы\\GitHub\\AES\\AES.Story\\AES.Story.csproj"
               }
             }
           }
@@ -217,37 +238,44 @@
               "privateAssets": "all"
             }
           },
-          "runtimeIdentifierGraphPath": "/usr/share/dotnet/sdk/7.0.402/RuntimeIdentifierGraph.json"
+          "runtimeIdentifierGraphPath": "C:\\Program Files\\dotnet\\sdk\\7.0.400\\RuntimeIdentifierGraph.json"
         }
       }
     },
-    "/home/timur/Документы/GitHub/AES/AES.Infrastructure/AES.Infrastructure.csproj": {
+    "D:\\yandex\\YandexDisk\\Документы\\GitHub\\AES\\AES.Infrastructure\\AES.Infrastructure.csproj": {
       "version": "1.0.0",
       "restore": {
-        "projectUniqueName": "/home/timur/Документы/GitHub/AES/AES.Infrastructure/AES.Infrastructure.csproj",
+        "projectUniqueName": "D:\\yandex\\YandexDisk\\Документы\\GitHub\\AES\\AES.Infrastructure\\AES.Infrastructure.csproj",
         "projectName": "AES.Infrastructure",
-        "projectPath": "/home/timur/Документы/GitHub/AES/AES.Infrastructure/AES.Infrastructure.csproj",
-        "packagesPath": "/home/timur/.nuget/packages/",
-        "outputPath": "/home/timur/Документы/GitHub/AES/AES.Infrastructure/obj/",
+        "projectPath": "D:\\yandex\\YandexDisk\\Документы\\GitHub\\AES\\AES.Infrastructure\\AES.Infrastructure.csproj",
+        "packagesPath": "C:\\Users\\lean\\.nuget\\packages\\",
+        "outputPath": "D:\\yandex\\YandexDisk\\Документы\\GitHub\\AES\\AES.Infrastructure\\obj\\",
         "projectStyle": "PackageReference",
+        "fallbackFolders": [
+          "C:\\Program Files (x86)\\Microsoft Visual Studio\\Shared\\NuGetPackages"
+        ],
         "configFilePaths": [
-          "/home/timur/.nuget/NuGet/NuGet.Config"
+          "C:\\Users\\lean\\AppData\\Roaming\\NuGet\\NuGet.Config",
+          "C:\\Program Files (x86)\\NuGet\\Config\\Microsoft.VisualStudio.FallbackLocation.config",
+          "C:\\Program Files (x86)\\NuGet\\Config\\Microsoft.VisualStudio.Offline.config"
         ],
         "originalTargetFrameworks": [
           "net6.0"
         ],
         "sources": {
+          "C:\\Program Files (x86)\\Microsoft SDKs\\NuGetPackages\\": {},
+          "C:\\Program Files\\dotnet\\library-packs": {},
           "https://api.nuget.org/v3/index.json": {}
         },
         "frameworks": {
           "net6.0": {
             "targetAlias": "net6.0",
             "projectReferences": {
-              "/home/timur/Документы/GitHub/AES/AES.Domain/AES.Domain.csproj": {
-                "projectPath": "/home/timur/Документы/GitHub/AES/AES.Domain/AES.Domain.csproj"
+              "D:\\yandex\\YandexDisk\\Документы\\GitHub\\AES\\AES.Domain\\AES.Domain.csproj": {
+                "projectPath": "D:\\yandex\\YandexDisk\\Документы\\GitHub\\AES\\AES.Domain\\AES.Domain.csproj"
               },
-              "/home/timur/Документы/GitHub/AES/AES.Story/AES.Story.csproj": {
-                "projectPath": "/home/timur/Документы/GitHub/AES/AES.Story/AES.Story.csproj"
+              "D:\\yandex\\YandexDisk\\Документы\\GitHub\\AES\\AES.Story\\AES.Story.csproj": {
+                "projectPath": "D:\\yandex\\YandexDisk\\Документы\\GitHub\\AES\\AES.Story\\AES.Story.csproj"
               }
             }
           }
@@ -283,34 +311,41 @@
               "privateAssets": "all"
             }
           },
-          "runtimeIdentifierGraphPath": "/usr/share/dotnet/sdk/7.0.402/RuntimeIdentifierGraph.json"
+          "runtimeIdentifierGraphPath": "C:\\Program Files\\dotnet\\sdk\\7.0.400\\RuntimeIdentifierGraph.json"
         }
       }
     },
-    "/home/timur/Документы/GitHub/AES/AES.Story/AES.Story.csproj": {
+    "D:\\yandex\\YandexDisk\\Документы\\GitHub\\AES\\AES.Story\\AES.Story.csproj": {
       "version": "1.0.0",
       "restore": {
-        "projectUniqueName": "/home/timur/Документы/GitHub/AES/AES.Story/AES.Story.csproj",
+        "projectUniqueName": "D:\\yandex\\YandexDisk\\Документы\\GitHub\\AES\\AES.Story\\AES.Story.csproj",
         "projectName": "AES.Story",
-        "projectPath": "/home/timur/Документы/GitHub/AES/AES.Story/AES.Story.csproj",
-        "packagesPath": "/home/timur/.nuget/packages/",
-        "outputPath": "/home/timur/Документы/GitHub/AES/AES.Story/obj/",
+        "projectPath": "D:\\yandex\\YandexDisk\\Документы\\GitHub\\AES\\AES.Story\\AES.Story.csproj",
+        "packagesPath": "C:\\Users\\lean\\.nuget\\packages\\",
+        "outputPath": "D:\\yandex\\YandexDisk\\Документы\\GitHub\\AES\\AES.Story\\obj\\",
         "projectStyle": "PackageReference",
+        "fallbackFolders": [
+          "C:\\Program Files (x86)\\Microsoft Visual Studio\\Shared\\NuGetPackages"
+        ],
         "configFilePaths": [
-          "/home/timur/.nuget/NuGet/NuGet.Config"
+          "C:\\Users\\lean\\AppData\\Roaming\\NuGet\\NuGet.Config",
+          "C:\\Program Files (x86)\\NuGet\\Config\\Microsoft.VisualStudio.FallbackLocation.config",
+          "C:\\Program Files (x86)\\NuGet\\Config\\Microsoft.VisualStudio.Offline.config"
         ],
         "originalTargetFrameworks": [
           "net6.0"
         ],
         "sources": {
+          "C:\\Program Files (x86)\\Microsoft SDKs\\NuGetPackages\\": {},
+          "C:\\Program Files\\dotnet\\library-packs": {},
           "https://api.nuget.org/v3/index.json": {}
         },
         "frameworks": {
           "net6.0": {
             "targetAlias": "net6.0",
             "projectReferences": {
-              "/home/timur/Документы/GitHub/AES/AES.Domain/AES.Domain.csproj": {
-                "projectPath": "/home/timur/Документы/GitHub/AES/AES.Domain/AES.Domain.csproj"
+              "D:\\yandex\\YandexDisk\\Документы\\GitHub\\AES\\AES.Domain\\AES.Domain.csproj": {
+                "projectPath": "D:\\yandex\\YandexDisk\\Документы\\GitHub\\AES\\AES.Domain\\AES.Domain.csproj"
               }
             }
           }
@@ -340,7 +375,7 @@
               "privateAssets": "all"
             }
           },
-          "runtimeIdentifierGraphPath": "/usr/share/dotnet/sdk/7.0.402/RuntimeIdentifierGraph.json"
+          "runtimeIdentifierGraphPath": "C:\\Program Files\\dotnet\\sdk\\7.0.400\\RuntimeIdentifierGraph.json"
         }
       }
     }

@@ -10,6 +10,7 @@ using Autofac.Configuration;
 using Autofac.Extensions.DependencyInjection;
 using Microsoft.Extensions.Configuration;
 using MyStoryBot;
+using MyStoryBot.Commands;
 using Telegram.BotAPI;
 using Telegram.BotAPI.AvailableMethods;
 using Telegram.BotAPI.AvailableMethods.FormattingOptions;
@@ -35,6 +36,15 @@ var updates = await botClient.GetUpdatesAsync();
 _logger.Debug("Enter to cycle");
 botClient.SetMyCommands(new BotCommand("info", "Информация"), new BotCommand("/next", "Далее"));
 var unitOfWorkFactory = serviceProvider.GetService(typeof(IUnitOfWorkFactory)) as IUnitOfWorkFactory;
+
+ICollection<NamedCommand> namedCommands = new List<NamedCommand>();
+namedCommands.Add(new InfoCommand(botClient));
+namedCommands.Add(new NextCommand(botClient));
+namedCommands.Add(new AllResultsCommand(botClient));
+
+namedCommands.Add(new ShowCommand(botClient));
+namedCommands.Add(new StartLearningCommand(botClient));
+
 while (true)
 {
     _logger.Trace("tic");
@@ -46,35 +56,37 @@ while (true)
             using var unitOfWork = unitOfWorkFactory.Create();
             try
             {
+                CommandContext commandContext = new CommandContext();
+                commandContext.UnitOfWork = unitOfWork;
                 var userFinder = new UserFinder(unitOfWork); //serviceProvider.GetService(typeof(IUserFinder)) as IUserFinder;
                 IEducationProcessStep processStep = new MyStoryEducationProcessStep(unitOfWork);
 
-                long? fromId = null;
-                long? chatId = null;
                 User telegramUser = null;
 
                 if (update.Message != null)
                 {
-                    fromId = update.Message.From.Id;
-                    chatId = update.Message.Chat.Id;
                     telegramUser = update.Message.From;
+
+                    commandContext.FromId = update.Message.From.Id;
+                    commandContext.ChatId =update.Message.Chat.Id;
+                    
                 }
                 else if (update.CallbackQuery != null)
                 {
-                    fromId = update.CallbackQuery.From.Id;
-                    chatId = update.CallbackQuery.Message.Chat.Id;
+                    commandContext.FromId = update.CallbackQuery.From.Id;
+                    commandContext.ChatId = update.CallbackQuery.Message.Chat.Id;
                 }
                 else if (update.PollAnswer != null)
                 {
-                    fromId = update.PollAnswer.User.Id;
+                    commandContext.FromId = update.PollAnswer.User.Id;
                 }
 
-                var user = userFinder.findByLogin(fromId.ToString());
+                commandContext.User = userFinder.findByLogin(commandContext.FromId.ToString());
 
-                if (user == null)
+                if (commandContext.User == null)
                 {
-                    user = UserUtils.InitNewUser(unitOfWork, fromId.Value, telegramUser);
-                    _logger.Info("New user created: " + user.Login);
+                    commandContext.User = UserUtils.InitNewUser(unitOfWork, commandContext.FromId.Value, telegramUser);
+                    _logger.Info("New user created: " + commandContext.User.Login);
                     //if (chatId.HasValue)
                     //{
                     //    botClient.SendMessage(chatId.Value,
@@ -86,132 +98,25 @@ while (true)
                     var message = update.Message;
                     if (message != null)
                     {
-                        var hasText = !string.IsNullOrEmpty(message.Text);
-                        if (hasText && message.Text == "/info")
+                        commandContext.MessageId = message.MessageId;
+                        commandContext.Message = message.Text;
+                        var hasText = !string.IsNullOrEmpty(commandContext.Message);
+                        if (hasText)
                         {
-                            var anyStarted = user.Student.Curriculum.Modules.First().Items.Any(i =>
-                                (i.LearningProcess != null) &&
-                                (i.LearningProcess.IsStarted()));
-                                
-                            foreach (var moduleItem in user.Student.Curriculum.Modules.First().Items)
+                            if (commandContext.Message.Equals("Далее", StringComparison.OrdinalIgnoreCase))
                             {
-                                var isStarted = (moduleItem.LearningProcess != null) &&
-                                                (moduleItem.LearningProcess.IsStarted());
-                                var beginInfo = isStarted ? "стартовал" : "не стартовал";
-                                    
-                                var btn = new InlineKeyboardButton[1];
-                                btn[0] = new InlineKeyboardButton();
-                                var rm = new InlineKeyboardMarkup
+                                commandContext.Message = "/next";
+                            }
+                            if (commandContext.Message.StartsWith('/'))
+                            {
+                                var commandParts = commandContext.Message.Split(' ');
+                                if (commandParts.Any())
                                 {
-                                    InlineKeyboard = new[]
-                                    {
-                                        btn
-                                    }
-                                };
-                                btn[0].Text = "Начать";
-                                btn[0].CallbackData = "start " + moduleItem.Id;
-                                var textMessage = new StringBuilder();
-                                if (isStarted)
-                                {
-                                    textMessage.Append("Текущая дисциплина: ");
-                                }
-                                textMessage.Append(
-                                    $"<b>{moduleItem.Subject.Name}</b>, процесс обучения {beginInfo}");
-                                if (moduleItem.Grade != null)
-                                {
-                                    textMessage.AppendLine($"\nТекущая оценка {moduleItem.Grade.Description} ({moduleItem.Grade.GradeDateTime.DateTime.ToShortDateString()})");
-                                }
-                                //if (isStarted)
-                                //{
-                                //     textMessage.Append(eduItem.LearningProcess.CanEnd());
-                                // }
-                                if (anyStarted)
-                                {
-                                    botClient.SendMessage(message.Chat.Id, textMessage.ToString(),
-                                        parseMode: ParseMode.HTML, disableNotification: true);
-                                }
-                                else
-                                {
-                                    botClient.SendMessage(message.Chat.Id, textMessage.ToString(),
-                                        parseMode: ParseMode.HTML, replyMarkup: rm, disableNotification: true);
+                                    var command = commandParts[0].Trim().ToLower().Remove(0, 1);
+                                    commandContext.Parameters = commandParts.Skip(1).ToArray();
+                                    namedCommands.ExecuteCommand(command, commandContext);
                                 }
                             }
-                                
-                                
-                        }
-                        /* else if (hasText && (message.Text == "/lan" || message.Text.ToLower() == "далее"))
-                             {
-                                 botClient.SendVenue(message.Chat.Id, 54.724463f, 56.014890f,
-                                     "Архитектурно-Строительный Институт, специальности Горно-Нефтяного Факультета (ГФ, ГЛ, БГЛ)",
-                                     "ул. Менделеева, 195, каб. 245");
-                             }*/
-                        else if (hasText && (message.Text == "/next" || message.Text.ToLower() == "далее"))
-                        {
-                            var eduItem = user.Student.Curriculum.Modules.First().Items.FirstOrDefault(i =>
-                                (i.LearningProcess != null) &&
-                                (i.LearningProcess.IsStarted()));
-                            if (eduItem != null)
-                            {
-                                var isStarted = eduItem.LearningProcess != null;
-                                MyStory story;
-                                StoryItem storyItem;
-                                if (!isStarted)
-                                {
-                                    ILearningProcessBuilder builder = new MyStoryLearningProcessBuilder(unitOfWork);
-                                    eduItem.LearningProcess = builder.CreateLearningProcess(user.Student, eduItem);
-                                    eduItem.LearningProcess.BeginLearning();
-                                    story = eduItem.LearningProcess as MyStory;
-                                    storyItem = story.GetCurrentStoryItem();
-                                }
-                                else
-                                {
-                                    story = eduItem.LearningProcess as MyStory;
-                                    storyItem = story.NextStep();
-                                }
-
-                                RenderItemStory(botClient, unitOfWork, chatId.Value, story, storyItem);
-                                ProcessLearning(botClient, chatId.Value, processStep, user.Student, eduItem);
-                                DeleteUserCommand(botClient, message);
-                            }
-                            else
-                            {
-                                DeleteUserCommand(botClient, message);
-                                botClient.SendMessage(message.Chat.Id,
-                                    $"Наберите команду /info");
-                            }
-                        }
-                        else if (hasText && message.Text == "/allresults")
-                        {
-                            if (user.Roles.Any(r => r.Name == "admin"))
-                            {
-                                foreach (var student in unitOfWork.StudentRepository.GetQuery().ToArray())
-                                {
-                                    var btn = new InlineKeyboardButton[1];
-                                    btn[0] = new InlineKeyboardButton();
-                                    var rm = new InlineKeyboardMarkup
-                                    {
-                                        InlineKeyboard = new[]
-                                        {
-                                            btn
-                                        }
-                                    };
-                                    btn[0].Text = "Показать";
-                                    btn[0].CallbackData = "show " + student.Id;
-                                    botClient.SendMessage(message.Chat.Id, $"{student.Person.Login}: {student.Person.FullName}",
-                                        parseMode: ParseMode.HTML, replyMarkup: rm, disableNotification: true);
-                                }
-                            }
-                            else
-                            {
-                                botClient.SendMessage(message.Chat.Id,
-                                    $"Недостаточно прав для выполнения команды.");
-                                    
-                            }
-                        }
-                        else
-                        {
-                            botClient.SendMessage(message.Chat.Id,
-                                $"Привет {user.Name}, набери команду /info", disableNotification: true);
                         }
                     }
                     else if (update.PollAnswer != null)
@@ -236,7 +141,7 @@ while (true)
                         storyPollItem.SelectedItem = update.PollAnswer.OptionIds.First();
                         storyPollItem.CheckAnswer();
 
-                        ProcessLearning(botClient, storyPollItem.ChatId.Value, processStep, user.Student,
+                        ProcessLearning(botClient, storyPollItem.ChatId.Value, processStep, commandContext.User.Student,
                             moduleItem);
                     }
                     else if (update.CallbackQuery != null)
@@ -245,67 +150,11 @@ while (true)
                         if (!string.IsNullOrWhiteSpace(data))
                         {
                             var commandData = data.Split(' ');
-                            var id = new Guid(commandData[1]);
-                            if (commandData[0] == "start")
-                            {
-                                var eduItem = user.Student.Curriculum.Modules.SelectMany(s => s.Items)
-                                    .First(s => s.Id == id);
-                                var isStarted = eduItem.LearningProcess != null &&
-                                                eduItem.LearningProcess.IsStarted();
-                                if (!isStarted)
-                                {
-                                    ILearningProcessBuilder builder = new MyStoryLearningProcessBuilder(unitOfWork);
-                                    if (eduItem.LearningProcess == null)
-                                    {
-                                        eduItem.LearningProcess =
-                                            builder.CreateLearningProcess(user.Student, eduItem);
-                                    }
-
-                                    eduItem.LearningProcess.BeginLearning();
-                                    var story = eduItem.LearningProcess as MyStory;
-                                    var storyItem = story.GetCurrentStoryItem();
-                                        
-                                    RenderItemStory(botClient, unitOfWork, chatId.Value, story, storyItem);
-                                    ProcessLearning(botClient, chatId.Value, processStep, user.Student, eduItem);
-                                }
-                                botClient.AnswerCallbackQuery(new AnswerCallbackQueryArgs(update.CallbackQuery.Id)
-                                {
-                                    Text = "Используйте кнопку \"Далее\" рядом с клавиатурой, для навигации.",//update.CallbackQuery.Data,
-                                    ShowAlert = true
-                                });
-                            }
-                            else if (commandData[0] == "show")
-                            {
-                                var person = unitOfWork.PersonRepository.GetQuery().First(s => s.Student.Id == id);
-                                var items
-                                    = person.Student.Curriculum.Modules.First().Items;
-                                var cid = chatId.Value;
-                                var textMessage = new StringBuilder();
-                                textMessage.Append(person.FullName + "\n");
-                                int inx = 1;
-                                foreach (var moduleItem in items)
-                                {
-                                    var isStarted = (moduleItem.LearningProcess != null) &&
-                                                    (moduleItem.LearningProcess.IsStarted());
-                                    var beginInfo = isStarted ? "стартовал\n" : "не стартовал";
-
-                                        
-                                    textMessage.Append(
-                                        $"\n{inx++}) <b>{moduleItem.Subject.Name}</b>, процесс обучения {beginInfo}");
-                                    if (moduleItem.Grade != null)
-                                    {
-                                        textMessage.AppendLine($"\nТекущая оценка {moduleItem.Grade.Description} ({moduleItem.Grade.GradeDateTime.DateTime.ToShortDateString()})");
-                                    }
-                                    else
-                                    {
-                                        textMessage.AppendLine();
-                                    }
-                                        
-                                }
-                                botClient.SendMessage(cid, textMessage.ToString(),
-                                    parseMode: ParseMode.HTML, disableNotification: true);
-                                botClient.AnswerCallbackQuery(new AnswerCallbackQueryArgs(update.CallbackQuery.Id));
-                            }
+                            var callBackParams = new List<string>(commandData.Skip(1).ToArray());
+                            callBackParams.Insert(0, update.CallbackQuery.Id);
+                            commandContext.Parameters = callBackParams.ToArray();
+                            
+                            namedCommands.ExecuteCommand(commandData[0].Trim().ToLower(), commandContext);
                         }
                             
                     }
@@ -339,115 +188,6 @@ static IServiceProvider ConfigureServices(IConfigurationRoot configuration)
     containerBuilder.RegisterModule(new ConfigurationModule(configuration.GetSection("unitOfWorkFactory")));
     containerBuilder.Register(c => c.Resolve<IUnitOfWorkFactory>().Create()).SingleInstance();
     return new AutofacServiceProvider(containerBuilder.Build());
-}
-
-static void DeleteUserCommand(BotClient bot, Message message)
-{
-    bot.DeleteMessage(message.Chat.Id, message.MessageId);
-}
-
-static void RenderItemStory(BotClient botClient, IUnitOfWork unitOfWork, long chatId, MyStory story, StoryItem storyItem)
-{
-    if (storyItem is StoryFileBasedItem storyFileBasedItem)
-    {
-        var buttons = new KeyboardButton[]
-        {
-            new("Далее"),
-        };
-        var keyboard = new ReplyKeyboardMarkup
-        {
-            Keyboard = new[] { buttons },
-            ResizeKeyboard = true
-        };
-        Message message = null;
-        var templateWithFile =
-            storyFileBasedItem.Template as MyStoryTemplateFileBased;
-        if (string.IsNullOrEmpty(templateWithFile.TelegramFileId))
-        {
-            var binaryData = unitOfWork.BinaryDataRepository.Get(templateWithFile.Id);
-            var file = new InputFile(binaryData.Bits,
-                templateWithFile.FileName);
-            if (storyFileBasedItem is StoryImage)
-            {
-                message = botClient.SendPhoto(chatId, file,
-                    caption: $"Шаг {story.StoryStep + 1} из {story.StoryTemplate.Items.Count}",
-                    replyMarkup: keyboard, protectContent: true, disableNotification: true);
-                templateWithFile.TelegramFileId = message.Photo.First().FileId;
-            }
-            else if (storyFileBasedItem is StoryVideo)
-            {
-                message = botClient.SendVideo(chatId, file,
-                    caption: $"Шаг {story.StoryStep + 1} из {story.StoryTemplate.Items.Count}",
-                    replyMarkup: keyboard, protectContent: true, disableNotification: true);
-                templateWithFile.TelegramFileId = message.Video.FileId;
-            }
-        }
-        else
-        {
-            if (storyFileBasedItem is StoryImage)
-            {
-                message = botClient.SendPhoto(chatId, photo: templateWithFile.TelegramFileId,
-                    caption: $"Шаг {story.StoryStep + 1} из {story.StoryTemplate.Items.Count}",
-                    replyMarkup: keyboard, protectContent: true, disableNotification: true);
-            }
-            else if (storyFileBasedItem is StoryVideo)
-            {
-                message = botClient.SendVideo(chatId, video: templateWithFile.TelegramFileId,
-                    caption: $"Шаг {story.StoryStep + 1} из {story.StoryTemplate.Items.Count}",
-                    replyMarkup: keyboard, protectContent: true, disableNotification: true);
-            }
-        }
-
-        if (message != null)
-        {
-            storyFileBasedItem.ChatId = message.Chat.Id;
-            storyFileBasedItem.TelegramId = message.MessageId;
-            storyFileBasedItem.IsPassed = true;
-        }
-    }
-    else if (storyItem is StoryPoll storyItemPool)
-    {
-        var orderedPoolItems = storyItemPool.Items.ToArray().OrderBy(i => i.Order);
-
-        var arg = new SendPollArgs(chatId: chatId,
-            question: storyItemPool.Content,
-            options: orderedPoolItems.Select(p => p.Content))
-        {
-            Type = "quiz",
-            CorrectOptionId = orderedPoolItems.First(p => p.IsCorrect).Order,
-            IsAnonymous = false,
-            ProtectContent = true
-        };
-        var poolMessage = botClient.SendPoll(arg);
-        storyItemPool.ChatId = poolMessage.Chat.Id;
-        storyItemPool.TelegramId = poolMessage.MessageId;
-        storyItemPool.ObjectId = poolMessage.Poll.Id;
-    }
-    else if (storyItem is StoryVenue storyVenue)
-    {
-        var sendVenue = botClient.SendVenue(chatId, latitude: storyVenue.Latitude, longitude: storyVenue.Longitude,
-            title: storyVenue.Title, address: storyVenue.Adress, disableNotification: true);
-        storyVenue.ChatId = sendVenue.Chat.Id;
-        storyVenue.TelegramId = sendVenue.MessageId;
-        storyVenue.IsPassed = true;
-    }
-    else if (storyItem is StoryHtml storyHtml)
-    {
-        var sendMessage = botClient.SendMessage(chatId, storyHtml.Content, protectContent: true, disableNotification: true, parseMode: ParseMode.HTML);
-        storyHtml.ChatId = sendMessage.Chat.Id;
-        storyHtml.TelegramId = sendMessage.MessageId;
-        storyHtml.IsPassed = true;
-    }
-    else if (storyItem == null)
-    {
-        botClient.SendMessage(chatId, $"Обучение завершено.", disableNotification: true);
-    }
-    else
-    {
-        botClient.SendMessage(chatId, $"Текущий шаг: {storyItem.Id}");
-    }
-
-    //DeleteUserCommand(botClient, message);
 }
 
 static void ProcessLearning(BotClient botClient, long chatId, IEducationProcessStep processStep, Student student,

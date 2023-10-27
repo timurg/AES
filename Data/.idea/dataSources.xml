@@ -8,11 +8,11 @@
       <jdbc-url>jdbc:sqlite:data.sqlite</jdbc-url>
       <working-dir>$ProjectFileDir$</working-dir>
     </data-source>
-    <data-source source="LOCAL" name="AES@girfanov.com" uuid="f28e5c27-25ea-4d50-a58a-7e513c4b96d1">
+    <data-source source="LOCAL" name="aes@girfanov.com" uuid="f28e5c27-25ea-4d50-a58a-7e513c4b96d1">
       <driver-ref>postgresql</driver-ref>
       <synchronize>true</synchronize>
       <jdbc-driver>org.postgresql.Driver</jdbc-driver>
-      <jdbc-url>jdbc:postgresql://girfanov.com:5432/AES</jdbc-url>
+      <jdbc-url>jdbc:postgresql://girfanov.com:5432/aes</jdbc-url>
       <working-dir>$ProjectFileDir$</working-dir>
     </data-source>
   </component>
