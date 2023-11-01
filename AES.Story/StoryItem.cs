@@ -1,10 +1,13 @@
-﻿using AES.Domain;
+﻿using System.ComponentModel;
+using AES.Domain;
 
 namespace AES.Story;
 
 public abstract class StoryItem : DomainObject
 {
     public DateTimeOffset DateCreated { get; set; }
+    [DefaultValue(null)]
+    public DateTimeOffset? DateViewed { get; set; }
     public int ItemIndex { get; set; }
     public int? TelegramId { get; set; }
     public long? ChatId { get; set; }

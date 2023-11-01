@@ -1,6 +1,5 @@
 D:\yandex\YandexDisk\Документы\GitHub\AES\MyStoryBot\bin\Release\net6.0\publish\MyStoryBot.exe
 D:\yandex\YandexDisk\Документы\GitHub\AES\MyStoryBot\bin\Release\net6.0\publish\NLog.config
-D:\yandex\YandexDisk\Документы\GitHub\AES\MyStoryBot\bin\Release\net6.0\publish\appsettings.json
 D:\yandex\YandexDisk\Документы\GitHub\AES\MyStoryBot\bin\Release\net6.0\publish\MyStoryBot.dll
 D:\yandex\YandexDisk\Документы\GitHub\AES\MyStoryBot\bin\Release\net6.0\publish\MyStoryBot.deps.json
 D:\yandex\YandexDisk\Документы\GitHub\AES\MyStoryBot\bin\Release\net6.0\publish\MyStoryBot.runtimeconfig.json

@@ -122,6 +122,10 @@ public abstract class NamedCommand : BaseCommand
             _botClient.SendMessage(commandContext.ChatId.Value, $"Текущий шаг: {storyItem.Id}");
         }
 
+        if (storyItem != null)
+        {
+            storyItem.DateViewed = DateTimeOffset.Now;
+        }
         //DeleteUserCommand(botClient, message);
     }
 

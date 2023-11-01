@@ -53,6 +53,7 @@ public static class CommandExtensions
         {
             commandContext.User = UserUtils.InitNewUser(unitOfWork, commandContext.FromId.Value, telegramUser);
         }
+        commandContext.User.LastActivityDateTime = DateTimeOffset.Now;
 
         {
             var message = update.Message;

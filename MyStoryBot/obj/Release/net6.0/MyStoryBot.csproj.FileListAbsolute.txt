@@ -1,4 +1,3 @@
-D:/yandex/YandexDisk/Документы/GitHub/AES/MyStoryBot/bin/Release/net6.0/appsettings.json
 D:/yandex/YandexDisk/Документы/GitHub/AES/MyStoryBot/bin/Release/net6.0/MyStoryBot.exe
 D:/yandex/YandexDisk/Документы/GitHub/AES/MyStoryBot/bin/Release/net6.0/MyStoryBot.deps.json
 D:/yandex/YandexDisk/Документы/GitHub/AES/MyStoryBot/bin/Release/net6.0/MyStoryBot.runtimeconfig.json
@@ -121,7 +120,6 @@ D:/yandex/YandexDisk/Документы/GitHub/AES/MyStoryBot/bin/Release/net6.0
 /home/timur/Документы/GitHub/AES/MyStoryBot/obj/Release/net6.0/MyStoryBot.genruntimeconfig.cache
 /home/timur/Документы/GitHub/AES/MyStoryBot/obj/Release/net6.0/ref/MyStoryBot.dll
 D:\yandex\YandexDisk\Документы\GitHub\AES\MyStoryBot\bin\Release\net6.0\NLog.config
-D:\yandex\YandexDisk\Документы\GitHub\AES\MyStoryBot\bin\Release\net6.0\appsettings.json
 D:\yandex\YandexDisk\Документы\GitHub\AES\MyStoryBot\bin\Release\net6.0\MyStoryBot.exe
 D:\yandex\YandexDisk\Документы\GitHub\AES\MyStoryBot\bin\Release\net6.0\MyStoryBot.deps.json
 D:\yandex\YandexDisk\Документы\GitHub\AES\MyStoryBot\bin\Release\net6.0\MyStoryBot.runtimeconfig.json

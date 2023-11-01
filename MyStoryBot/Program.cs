@@ -1,4 +1,5 @@
-﻿using System.Net.Mime;
+﻿using System.Collections.Concurrent;
+using System.Net.Mime;
 using System.Text;
 using AES.BusinessLogic;
 using AES.BusinessLogic.Implementation;
@@ -37,7 +38,7 @@ _logger.Debug("Enter to cycle");
 botClient.SetMyCommands(new BotCommand("info", "Информация"), new BotCommand("/next", "Далее"));
 var unitOfWorkFactory = serviceProvider.GetService(typeof(IUnitOfWorkFactory)) as IUnitOfWorkFactory;
 
-ICollection<NamedCommand> namedCommands = new List<NamedCommand>();
+var namedCommands = new BlockingCollection<NamedCommand>();
 namedCommands.Add(new InfoCommand(botClient));
 namedCommands.Add(new NextCommand(botClient));
 namedCommands.Add(new AllResultsCommand(botClient));
