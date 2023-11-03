@@ -1903,42 +1903,42 @@
     "AES.BusinessLogic/1.0.0": {
       "type": "project",
       "path": "../AES.BusinessLogic/AES.BusinessLogic.csproj",
-      "msbuildProject": "../AES.BusinessLogic/AES.BusinessLogic.csproj"
+      "msbuildProject": "../../../../Yandex.Disk/Документы/GitHub/AES/AES.BusinessLogic/AES.BusinessLogic.csproj"
     },
     "AES.BusinessLogic.Implementation/1.0.0": {
       "type": "project",
       "path": "../AES.BusinessLogic.Implementation/AES.BusinessLogic.Implementation.csproj",
-      "msbuildProject": "../AES.BusinessLogic.Implementation/AES.BusinessLogic.Implementation.csproj"
+      "msbuildProject": "../../../../Yandex.Disk/Документы/GitHub/AES/AES.BusinessLogic.Implementation/AES.BusinessLogic.Implementation.csproj"
     },
     "AES.Domain/1.0.0": {
       "type": "project",
       "path": "../AES.Domain/AES.Domain.csproj",
-      "msbuildProject": "../AES.Domain/AES.Domain.csproj"
+      "msbuildProject": "../../../../Yandex.Disk/Документы/GitHub/AES/AES.Domain/AES.Domain.csproj"
     },
     "AES.Infrastructure/1.0.0": {
       "type": "project",
       "path": "../AES.Infrastructure/AES.Infrastructure.csproj",
-      "msbuildProject": "../AES.Infrastructure/AES.Infrastructure.csproj"
+      "msbuildProject": "../../../../Yandex.Disk/Документы/GitHub/AES/AES.Infrastructure/AES.Infrastructure.csproj"
     },
     "AES.Infrastructure.EntityFrameworkCore/1.0.0": {
       "type": "project",
       "path": "../AES.Infrastructure.EntityFrameworkCore/AES.Infrastructure.EntityFrameworkCore.csproj",
-      "msbuildProject": "../AES.Infrastructure.EntityFrameworkCore/AES.Infrastructure.EntityFrameworkCore.csproj"
+      "msbuildProject": "../../../../Yandex.Disk/Документы/GitHub/AES/AES.Infrastructure.EntityFrameworkCore/AES.Infrastructure.EntityFrameworkCore.csproj"
     },
     "AES.Infrastructure.EntityFrameworkCore.PostgreSql/1.0.0": {
       "type": "project",
       "path": "../AES.Infrastructure.EntityFrameworkCore.PostgreSql/AES.Infrastructure.EntityFrameworkCore.PostgreSql.csproj",
-      "msbuildProject": "../AES.Infrastructure.EntityFrameworkCore.PostgreSql/AES.Infrastructure.EntityFrameworkCore.PostgreSql.csproj"
+      "msbuildProject": "../../../../Yandex.Disk/Документы/GitHub/AES/AES.Infrastructure.EntityFrameworkCore.PostgreSql/AES.Infrastructure.EntityFrameworkCore.PostgreSql.csproj"
     },
     "AES.Infrastructure.EntityFrameworkCore.Sqlite/1.0.0": {
       "type": "project",
       "path": "../AES.Infrastructure.EntityFrameworkCore.Sqlite/AES.Infrastructure.EntityFrameworkCore.Sqlite.csproj",
-      "msbuildProject": "../AES.Infrastructure.EntityFrameworkCore.Sqlite/AES.Infrastructure.EntityFrameworkCore.Sqlite.csproj"
+      "msbuildProject": "../../../../Yandex.Disk/Документы/GitHub/AES/AES.Infrastructure.EntityFrameworkCore.Sqlite/AES.Infrastructure.EntityFrameworkCore.Sqlite.csproj"
     },
     "AES.Story/1.0.0": {
       "type": "project",
       "path": "../AES.Story/AES.Story.csproj",
-      "msbuildProject": "../AES.Story/AES.Story.csproj"
+      "msbuildProject": "../../../../Yandex.Disk/Документы/GitHub/AES/AES.Story/AES.Story.csproj"
     }
   },
   "projectFileDependencyGroups": {
@@ -1958,58 +1958,50 @@
     ]
   },
   "packageFolders": {
-    "C:\\Users\\lean\\.nuget\\packages\\": {},
-    "C:\\Program Files (x86)\\Microsoft Visual Studio\\Shared\\NuGetPackages": {}
+    "/home/timur/.nuget/packages/": {}
   },
   "project": {
     "version": "1.0.0",
     "restore": {
-      "projectUniqueName": "D:\\yandex\\YandexDisk\\Документы\\GitHub\\AES\\AES.Init\\AES.Init.csproj",
+      "projectUniqueName": "/home/timur/Yandex.Disk/Документы/GitHub/AES/AES.Init/AES.Init.csproj",
       "projectName": "AES.Init",
-      "projectPath": "D:\\yandex\\YandexDisk\\Документы\\GitHub\\AES\\AES.Init\\AES.Init.csproj",
-      "packagesPath": "C:\\Users\\lean\\.nuget\\packages\\",
-      "outputPath": "D:\\yandex\\YandexDisk\\Документы\\GitHub\\AES\\AES.Init\\obj\\",
+      "projectPath": "/home/timur/Yandex.Disk/Документы/GitHub/AES/AES.Init/AES.Init.csproj",
+      "packagesPath": "/home/timur/.nuget/packages/",
+      "outputPath": "/home/timur/Yandex.Disk/Документы/GitHub/AES/AES.Init/obj/",
       "projectStyle": "PackageReference",
-      "fallbackFolders": [
-        "C:\\Program Files (x86)\\Microsoft Visual Studio\\Shared\\NuGetPackages"
-      ],
       "configFilePaths": [
-        "C:\\Users\\lean\\AppData\\Roaming\\NuGet\\NuGet.Config",
-        "C:\\Program Files (x86)\\NuGet\\Config\\Microsoft.VisualStudio.FallbackLocation.config",
-        "C:\\Program Files (x86)\\NuGet\\Config\\Microsoft.VisualStudio.Offline.config"
+        "/home/timur/.nuget/NuGet/NuGet.Config"
       ],
       "originalTargetFrameworks": [
         "net6.0"
       ],
       "sources": {
-        "C:\\Program Files (x86)\\Microsoft SDKs\\NuGetPackages\\": {},
-        "C:\\Program Files\\dotnet\\library-packs": {},
         "https://api.nuget.org/v3/index.json": {}
       },
       "frameworks": {
         "net6.0": {
           "targetAlias": "net6.0",
           "projectReferences": {
-            "D:\\yandex\\YandexDisk\\Документы\\GitHub\\AES\\AES.BusinessLogic.Implementation\\AES.BusinessLogic.Implementation.csproj": {
-              "projectPath": "D:\\yandex\\YandexDisk\\Документы\\GitHub\\AES\\AES.BusinessLogic.Implementation\\AES.BusinessLogic.Implementation.csproj"
+            "/home/timur/Yandex.Disk/Документы/GitHub/AES/AES.BusinessLogic.Implementation/AES.BusinessLogic.Implementation.csproj": {
+              "projectPath": "/home/timur/Yandex.Disk/Документы/GitHub/AES/AES.BusinessLogic.Implementation/AES.BusinessLogic.Implementation.csproj"
             },
-            "D:\\yandex\\YandexDisk\\Документы\\GitHub\\AES\\AES.BusinessLogic\\AES.BusinessLogic.csproj": {
-              "projectPath": "D:\\yandex\\YandexDisk\\Документы\\GitHub\\AES\\AES.BusinessLogic\\AES.BusinessLogic.csproj"
+            "/home/timur/Yandex.Disk/Документы/GitHub/AES/AES.BusinessLogic/AES.BusinessLogic.csproj": {
+              "projectPath": "/home/timur/Yandex.Disk/Документы/GitHub/AES/AES.BusinessLogic/AES.BusinessLogic.csproj"
             },
-            "D:\\yandex\\YandexDisk\\Документы\\GitHub\\AES\\AES.Domain\\AES.Domain.csproj": {
-              "projectPath": "D:\\yandex\\YandexDisk\\Документы\\GitHub\\AES\\AES.Domain\\AES.Domain.csproj"
+            "/home/timur/Yandex.Disk/Документы/GitHub/AES/AES.Domain/AES.Domain.csproj": {
+              "projectPath": "/home/timur/Yandex.Disk/Документы/GitHub/AES/AES.Domain/AES.Domain.csproj"
             },
-            "D:\\yandex\\YandexDisk\\Документы\\GitHub\\AES\\AES.Infrastructure.EntityFrameworkCore.PostgreSql\\AES.Infrastructure.EntityFrameworkCore.PostgreSql.csproj": {
-              "projectPath": "D:\\yandex\\YandexDisk\\Документы\\GitHub\\AES\\AES.Infrastructure.EntityFrameworkCore.PostgreSql\\AES.Infrastructure.EntityFrameworkCore.PostgreSql.csproj"
+            "/home/timur/Yandex.Disk/Документы/GitHub/AES/AES.Infrastructure.EntityFrameworkCore.PostgreSql/AES.Infrastructure.EntityFrameworkCore.PostgreSql.csproj": {
+              "projectPath": "/home/timur/Yandex.Disk/Документы/GitHub/AES/AES.Infrastructure.EntityFrameworkCore.PostgreSql/AES.Infrastructure.EntityFrameworkCore.PostgreSql.csproj"
             },
-            "D:\\yandex\\YandexDisk\\Документы\\GitHub\\AES\\AES.Infrastructure.EntityFrameworkCore.Sqlite\\AES.Infrastructure.EntityFrameworkCore.Sqlite.csproj": {
-              "projectPath": "D:\\yandex\\YandexDisk\\Документы\\GitHub\\AES\\AES.Infrastructure.EntityFrameworkCore.Sqlite\\AES.Infrastructure.EntityFrameworkCore.Sqlite.csproj"
+            "/home/timur/Yandex.Disk/Документы/GitHub/AES/AES.Infrastructure.EntityFrameworkCore.Sqlite/AES.Infrastructure.EntityFrameworkCore.Sqlite.csproj": {
+              "projectPath": "/home/timur/Yandex.Disk/Документы/GitHub/AES/AES.Infrastructure.EntityFrameworkCore.Sqlite/AES.Infrastructure.EntityFrameworkCore.Sqlite.csproj"
             },
-            "D:\\yandex\\YandexDisk\\Документы\\GitHub\\AES\\AES.Infrastructure.EntityFrameworkCore\\AES.Infrastructure.EntityFrameworkCore.csproj": {
-              "projectPath": "D:\\yandex\\YandexDisk\\Документы\\GitHub\\AES\\AES.Infrastructure.EntityFrameworkCore\\AES.Infrastructure.EntityFrameworkCore.csproj"
+            "/home/timur/Yandex.Disk/Документы/GitHub/AES/AES.Infrastructure.EntityFrameworkCore/AES.Infrastructure.EntityFrameworkCore.csproj": {
+              "projectPath": "/home/timur/Yandex.Disk/Документы/GitHub/AES/AES.Infrastructure.EntityFrameworkCore/AES.Infrastructure.EntityFrameworkCore.csproj"
             },
-            "D:\\yandex\\YandexDisk\\Документы\\GitHub\\AES\\AES.Infrastructure\\AES.Infrastructure.csproj": {
-              "projectPath": "D:\\yandex\\YandexDisk\\Документы\\GitHub\\AES\\AES.Infrastructure\\AES.Infrastructure.csproj"
+            "/home/timur/Yandex.Disk/Документы/GitHub/AES/AES.Infrastructure/AES.Infrastructure.csproj": {
+              "projectPath": "/home/timur/Yandex.Disk/Документы/GitHub/AES/AES.Infrastructure/AES.Infrastructure.csproj"
             }
           }
         }
@@ -2051,8 +2043,7 @@
           "net47",
           "net471",
           "net472",
-          "net48",
-          "net481"
+          "net48"
         ],
         "assetTargetFallback": true,
         "warn": true,
@@ -2061,7 +2052,7 @@
             "privateAssets": "all"
           }
         },
-        "runtimeIdentifierGraphPath": "C:\\Program Files\\dotnet\\sdk\\7.0.400\\RuntimeIdentifierGraph.json"
+        "runtimeIdentifierGraphPath": "/usr/lib/dotnet/sdk/6.0.124/RuntimeIdentifierGraph.json"
       }
     }
   },
@@ -2069,7 +2060,7 @@
     {
       "code": "NU1605",
       "level": "Error",
-      "message": "Detected package downgrade: Microsoft.EntityFrameworkCore.Relational from 7.0.12 to 7.0.5. Reference the package directly from the project to select a different version. \r\n AES.Init -> AES.Infrastructure.EntityFrameworkCore -> Microsoft.EntityFrameworkCore.Relational (>= 7.0.12) \r\n AES.Init -> Microsoft.EntityFrameworkCore.Relational (>= 7.0.5)",
+      "message": "Detected package downgrade: Microsoft.EntityFrameworkCore.Relational from 7.0.12 to 7.0.5. Reference the package directly from the project to select a different version. \n AES.Init -> AES.Infrastructure.EntityFrameworkCore -> Microsoft.EntityFrameworkCore.Relational (>= 7.0.12) \n AES.Init -> Microsoft.EntityFrameworkCore.Relational (>= 7.0.5)",
       "libraryId": "Microsoft.EntityFrameworkCore.Relational",
       "targetGraphs": [
         "net6.0"
@@ -2078,7 +2069,7 @@
     {
       "code": "NU1605",
       "level": "Error",
-      "message": "Detected package downgrade: Microsoft.EntityFrameworkCore.Relational from 7.0.11 to 7.0.5. Reference the package directly from the project to select a different version. \r\n AES.Init -> AES.Infrastructure.EntityFrameworkCore.PostgreSql -> Npgsql.EntityFrameworkCore.PostgreSQL 7.0.11 -> Microsoft.EntityFrameworkCore.Relational (>= 7.0.11 && < 8.0.0) \r\n AES.Init -> Microsoft.EntityFrameworkCore.Relational (>= 7.0.5)",
+      "message": "Detected package downgrade: Microsoft.EntityFrameworkCore.Relational from 7.0.11 to 7.0.5. Reference the package directly from the project to select a different version. \n AES.Init -> AES.Infrastructure.EntityFrameworkCore.PostgreSql -> Npgsql.EntityFrameworkCore.PostgreSQL 7.0.11 -> Microsoft.EntityFrameworkCore.Relational (>= 7.0.11 && < 8.0.0) \n AES.Init -> Microsoft.EntityFrameworkCore.Relational (>= 7.0.5)",
       "libraryId": "Microsoft.EntityFrameworkCore.Relational",
       "targetGraphs": [
         "net6.0"
