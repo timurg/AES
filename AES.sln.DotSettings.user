@@ -3,4 +3,12 @@
   &lt;Assembly Path="C:\Users\lean\.nuget\packages\telegram.bots.extensions.polling\5.9.0\lib\net6.0\Telegram.Bots.Extensions.Polling.dll" /&gt;
   &lt;PhysicalFolder Path="/home/timur/.nuget/packages/telegram.botapi/6.9.0" Loaded="True" /&gt;
 &lt;/AssemblyExplorer&gt;</s:String>
-	<s:Boolean x:Key="/Default/UserDictionary/Words/=allresults/@EntryIndexedValue">True</s:Boolean></wpf:ResourceDictionary>
+	<s:Boolean x:Key="/Default/UserDictionary/Words/=allresults/@EntryIndexedValue">True</s:Boolean>
+	<s:Boolean x:Key="/Default/UserDictionary/Words/=startlearning/@EntryIndexedValue">True</s:Boolean>
+	<s:Boolean x:Key="/Default/UserDictionary/Words/=_0414_0430_043B_0435_0435/@EntryIndexedValue">True</s:Boolean>
+	<s:Boolean x:Key="/Default/UserDictionary/Words/=_041A_043E_043D_0442_0435_043A_0441_0442/@EntryIndexedValue">True</s:Boolean>
+	<s:Boolean x:Key="/Default/UserDictionary/Words/=_041D_0435_0434_043E_0441_0442_0430_0442_043E_0447_043D_043E/@EntryIndexedValue">True</s:Boolean>
+	<s:Boolean x:Key="/Default/UserDictionary/Words/=_041F_043E_043A_0430_0437_0430_0442_044C/@EntryIndexedValue">True</s:Boolean>
+	<s:Boolean x:Key="/Default/UserDictionary/Words/=_0432_044B_043F_043E_043B_043D_0435_043D_0438_044F/@EntryIndexedValue">True</s:Boolean>
+	<s:Boolean x:Key="/Default/UserDictionary/Words/=_043A_043E_043C_0430_043D_0434_044B/@EntryIndexedValue">True</s:Boolean>
+	<s:Boolean x:Key="/Default/UserDictionary/Words/=_043F_0440_0430_0432/@EntryIndexedValue">True</s:Boolean></wpf:ResourceDictionary>

@@ -2,5 +2,5 @@
 
 public abstract class StoryTextContentBase : StoryItem
 {
-    public string Content { get; set; }
+    public string Content { get; set; } = default!;
 }

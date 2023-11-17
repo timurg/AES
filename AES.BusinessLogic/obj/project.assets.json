@@ -571,7 +571,7 @@
     "AES.Domain/1.0.0": {
       "type": "project",
       "path": "../AES.Domain/AES.Domain.csproj",
-      "msbuildProject": "../../../../Yandex.Disk/Документы/GitHub/AES/AES.Domain/AES.Domain.csproj"
+      "msbuildProject": "../AES.Domain/AES.Domain.csproj"
     }
   },
   "projectFileDependencyGroups": {
@@ -632,7 +632,8 @@
           "net47",
           "net471",
           "net472",
-          "net48"
+          "net48",
+          "net481"
         ],
         "assetTargetFallback": true,
         "warn": true,
@@ -641,7 +642,7 @@
             "privateAssets": "all"
           }
         },
-        "runtimeIdentifierGraphPath": "/usr/lib/dotnet/sdk/6.0.124/RuntimeIdentifierGraph.json"
+        "runtimeIdentifierGraphPath": "/usr/lib64/dotnet/sdk/7.0.112/RuntimeIdentifierGraph.json"
       }
     }
   }

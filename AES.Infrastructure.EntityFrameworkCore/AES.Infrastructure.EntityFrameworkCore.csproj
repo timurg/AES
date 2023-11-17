@@ -5,6 +5,14 @@
         <LangVersion>10</LangVersion>
     </PropertyGroup>
 
+    <PropertyGroup Condition=" '$(Configuration)' == 'Debug' ">
+      <DocumentationFile>bin\Debug\net6.0\AES.Infrastructure.EntityFrameworkCore.xml</DocumentationFile>
+    </PropertyGroup>
+
+    <PropertyGroup Condition=" '$(Configuration)' == 'Release' ">
+      <DocumentationFile>bin\Release\net6.0\AES.Infrastructure.EntityFrameworkCore.xml</DocumentationFile>
+    </PropertyGroup>
+
     <ItemGroup>
       <ProjectReference Include="..\AES.Domain\AES.Domain.csproj" />
       <ProjectReference Include="..\AES.Infrastructure\AES.Infrastructure.csproj" />

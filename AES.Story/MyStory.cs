@@ -1,5 +1,8 @@
 ﻿using System.Collections.ObjectModel;
+using System.Diagnostics.CodeAnalysis;
 using AES.Domain;
+using AES.Exceptions;
+using AES.Story.Exceptions;
 
 namespace AES.Story;
 
@@ -11,8 +14,14 @@ public class MyStory : LearningProcess
         {
             throw new ApplicationException("Обучение запущено.");
         }
+
+        if (!StoryTemplate.Items.Any())
+        {
+            throw new StoryTemplateIsEmptyException(this);
+        }
         StoryGeneration++;
-        return InternalNextStep() != null;
+        InternalNextStep();
+        return true;
     }
 
     public override bool CanEnd()
@@ -25,12 +34,12 @@ public class MyStory : LearningProcess
     {
         if (CanEnd())
         {
-            var testItems = GetCurrentGenerationItems().Where(i => i is StoryPoll);
-            var passCount = testItems.Count() / 2;
+            var testItems = GetCurrentGenerationItems().OfType<StoryPoll>().ToArray();
+            var passCount = testItems.Length / 2;
             var record = new BalledGradeRecord
             {
                 
-                IsPassed = (!testItems.Any()) || (testItems.Count(i => ((StoryPoll)i).IsPassed.Value) >= passCount),
+                IsPassed = (!testItems.Any()) || (testItems.Count(i => i.IsPassed.HasValue &&  i.IsPassed.Value) >= passCount),
                 GradeDateTime = DateTimeOffset.Now,
                 Id = Guid.NewGuid(),
                 
@@ -38,10 +47,8 @@ public class MyStory : LearningProcess
             ResetLearning();
             return record;
         }
-        else
-        {
-            throw new ApplicationException("Cant close learning process");
-        }
+        
+        throw new EndLearningException(this,"Cant close learning process");
     }
 
     public override void ResetLearning()
@@ -69,9 +76,9 @@ public class MyStory : LearningProcess
         return newItem;
     }
     
-    public StoryItem NextStep()
+    public StoryItem? NextStep()
     {
-        if (!IsStarted()) return null;
+        if (!IsStarted()) throw new LearningProcessNotStartedException(this);
         var currentStep = GetCurrentStoryItem();
         if (currentStep is StoryPoll { IsPassed: null })
         {
@@ -86,12 +93,12 @@ public class MyStory : LearningProcess
     
     public IList<StoryItem> Items { get; } = new Collection<StoryItem>();
 
-    public IList<StoryItem> GetCurrentGenerationItems()
+    public IEnumerable<StoryItem> GetCurrentGenerationItems()
     {
-        return Items.Where(i => i.Generation == StoryGeneration).ToList();
+        return Items.Where(i => i.Generation == StoryGeneration).ToArray();
     }
-    
-    public MyStoryTemplate StoryTemplate { get; set; }
+
+    public MyStoryTemplate StoryTemplate { get; set; } = null!;
 
     public StoryItem GetCurrentStoryItem()
     {

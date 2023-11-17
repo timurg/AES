@@ -24,8 +24,10 @@ public static class CommandExtensions
 
     public static CommandContext GetCommandContext(this Update update, IUnitOfWork unitOfWork, IUserFinder userFinder)
     {
-        var commandContext = new CommandContext();
-        commandContext.UnitOfWork = unitOfWork;
+        var commandContext = new CommandContext
+        {
+            UnitOfWork = unitOfWork
+        };
         //serviceProvider.GetService(typeof(IUserFinder)) as IUserFinder;
 
         User telegramUser = null;

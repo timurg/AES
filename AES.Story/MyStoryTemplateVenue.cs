@@ -10,7 +10,7 @@ public class MyStoryTemplateVenue : MyStoryTemplateItem
 
     public float Longitude { get; set; }
     public float Latitude { get; set; }
-    public string Adress { get; set; }
+    public string Adress { get; set; } = default!;
 
     /*
     public static MyStoryTemplateVenue Create(string , string[] options, int correctOptions,

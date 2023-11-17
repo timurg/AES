@@ -244,6 +244,19 @@
           "bin/placeholder/AES.Domain.dll": {}
         }
       },
+      "AES.Exceptions/1.0.0": {
+        "type": "project",
+        "framework": ".NETCoreApp,Version=v6.0",
+        "dependencies": {
+          "AES.Domain": "1.0.0"
+        },
+        "compile": {
+          "bin/placeholder/AES.Exceptions.dll": {}
+        },
+        "runtime": {
+          "bin/placeholder/AES.Exceptions.dll": {}
+        }
+      },
       "AES.Infrastructure/1.0.0": {
         "type": "project",
         "framework": ".NETCoreApp,Version=v6.0",
@@ -263,7 +276,8 @@
         "type": "project",
         "framework": ".NETCoreApp,Version=v6.0",
         "dependencies": {
-          "AES.Domain": "1.0.0"
+          "AES.Domain": "1.0.0",
+          "AES.Exceptions": "1.0.0"
         },
         "compile": {
           "bin/placeholder/AES.Story.dll": {}
@@ -613,22 +627,27 @@
     "AES.BusinessLogic/1.0.0": {
       "type": "project",
       "path": "../AES.BusinessLogic/AES.BusinessLogic.csproj",
-      "msbuildProject": "../../../../Yandex.Disk/Документы/GitHub/AES/AES.BusinessLogic/AES.BusinessLogic.csproj"
+      "msbuildProject": "../AES.BusinessLogic/AES.BusinessLogic.csproj"
     },
     "AES.Domain/1.0.0": {
       "type": "project",
       "path": "../AES.Domain/AES.Domain.csproj",
-      "msbuildProject": "../../../../Yandex.Disk/Документы/GitHub/AES/AES.Domain/AES.Domain.csproj"
+      "msbuildProject": "../AES.Domain/AES.Domain.csproj"
+    },
+    "AES.Exceptions/1.0.0": {
+      "type": "project",
+      "path": "../AES.Exceptions/AES.Exceptions.csproj",
+      "msbuildProject": "../AES.Exceptions/AES.Exceptions.csproj"
     },
     "AES.Infrastructure/1.0.0": {
       "type": "project",
       "path": "../AES.Infrastructure/AES.Infrastructure.csproj",
-      "msbuildProject": "../../../../Yandex.Disk/Документы/GitHub/AES/AES.Infrastructure/AES.Infrastructure.csproj"
+      "msbuildProject": "../AES.Infrastructure/AES.Infrastructure.csproj"
     },
     "AES.Story/1.0.0": {
       "type": "project",
       "path": "../AES.Story/AES.Story.csproj",
-      "msbuildProject": "../../../../Yandex.Disk/Документы/GitHub/AES/AES.Story/AES.Story.csproj"
+      "msbuildProject": "../AES.Story/AES.Story.csproj"
     }
   },
   "projectFileDependencyGroups": {
@@ -636,6 +655,7 @@
       "AES.BusinessLogic >= 1.0.0",
       "AES.Domain >= 1.0.0",
       "AES.Infrastructure >= 1.0.0",
+      "AES.Story >= 1.0.0",
       "Microsoft.EntityFrameworkCore >= 7.0.5"
     ]
   },
@@ -672,6 +692,9 @@
             },
             "/home/timur/Yandex.Disk/Документы/GitHub/AES/AES.Infrastructure/AES.Infrastructure.csproj": {
               "projectPath": "/home/timur/Yandex.Disk/Документы/GitHub/AES/AES.Infrastructure/AES.Infrastructure.csproj"
+            },
+            "/home/timur/Yandex.Disk/Документы/GitHub/AES/AES.Story/AES.Story.csproj": {
+              "projectPath": "/home/timur/Yandex.Disk/Документы/GitHub/AES/AES.Story/AES.Story.csproj"
             }
           }
         }
@@ -697,7 +720,8 @@
           "net47",
           "net471",
           "net472",
-          "net48"
+          "net48",
+          "net481"
         ],
         "assetTargetFallback": true,
         "warn": true,
@@ -706,7 +730,7 @@
             "privateAssets": "all"
           }
         },
-        "runtimeIdentifierGraphPath": "/usr/lib/dotnet/sdk/6.0.124/RuntimeIdentifierGraph.json"
+        "runtimeIdentifierGraphPath": "/usr/lib64/dotnet/sdk/7.0.112/RuntimeIdentifierGraph.json"
       }
     }
   }

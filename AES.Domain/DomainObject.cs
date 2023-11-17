@@ -2,14 +2,24 @@
 
 namespace AES.Domain
 {
+    /// <summary>
+    /// Объект, от которого наследуются все остальные объекты
+    /// </summary>
     public class DomainObject
     {
-        protected System.Guid id;
+        /// <summary>
+        /// Поле идентификатор объекта
+        /// </summary>
+        private System.Guid id;
 
         protected DomainObject()
         {
         }
 
+        /// <summary>
+        /// Базовый конструктор с инициализацией идентификатора
+        /// </summary>
+        /// <param name="nID">Идентификатор</param>
         public DomainObject(System.Guid nID)
         {
             id = nID;
@@ -17,7 +27,7 @@ namespace AES.Domain
 
         [Key]
         [Required]
-        public System.Guid Id { get { return id; } set { id = value; } }
+        public System.Guid Id { get => id; set => id = value; }
     }
 }
 

@@ -4,6 +4,14 @@
         <TargetFramework>net6.0</TargetFramework>
     </PropertyGroup>
 
+    <PropertyGroup Condition=" '$(Configuration)' == 'Debug' ">
+      <DocumentationFile>bin\Debug\net6.0\AES.Infrastructure.xml</DocumentationFile>
+    </PropertyGroup>
+
+    <PropertyGroup Condition=" '$(Configuration)' == 'Release' ">
+      <DocumentationFile>bin\Release\net6.0\AES.Infrastructure.xml</DocumentationFile>
+    </PropertyGroup>
+
     <ItemGroup>
       <ProjectReference Include="..\AES.Domain\AES.Domain.csproj" />
       <ProjectReference Include="..\AES.Story\AES.Story.csproj" />

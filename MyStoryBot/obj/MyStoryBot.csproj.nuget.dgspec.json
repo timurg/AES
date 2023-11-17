@@ -34,6 +34,9 @@
               },
               "/home/timur/Yandex.Disk/Документы/GitHub/AES/AES.Infrastructure/AES.Infrastructure.csproj": {
                 "projectPath": "/home/timur/Yandex.Disk/Документы/GitHub/AES/AES.Infrastructure/AES.Infrastructure.csproj"
+              },
+              "/home/timur/Yandex.Disk/Документы/GitHub/AES/AES.Story/AES.Story.csproj": {
+                "projectPath": "/home/timur/Yandex.Disk/Документы/GitHub/AES/AES.Story/AES.Story.csproj"
               }
             }
           }
@@ -59,7 +62,8 @@
             "net47",
             "net471",
             "net472",
-            "net48"
+            "net48",
+            "net481"
           ],
           "assetTargetFallback": true,
           "warn": true,
@@ -68,7 +72,7 @@
               "privateAssets": "all"
             }
           },
-          "runtimeIdentifierGraphPath": "/usr/lib/dotnet/sdk/6.0.124/RuntimeIdentifierGraph.json"
+          "runtimeIdentifierGraphPath": "/usr/lib64/dotnet/sdk/7.0.112/RuntimeIdentifierGraph.json"
         }
       }
     },
@@ -121,7 +125,8 @@
             "net47",
             "net471",
             "net472",
-            "net48"
+            "net48",
+            "net481"
           ],
           "assetTargetFallback": true,
           "warn": true,
@@ -130,7 +135,7 @@
               "privateAssets": "all"
             }
           },
-          "runtimeIdentifierGraphPath": "/usr/lib/dotnet/sdk/6.0.124/RuntimeIdentifierGraph.json"
+          "runtimeIdentifierGraphPath": "/usr/lib64/dotnet/sdk/7.0.112/RuntimeIdentifierGraph.json"
         }
       }
     },
@@ -179,7 +184,8 @@
             "net47",
             "net471",
             "net472",
-            "net48"
+            "net48",
+            "net481"
           ],
           "assetTargetFallback": true,
           "warn": true,
@@ -188,7 +194,64 @@
               "privateAssets": "all"
             }
           },
-          "runtimeIdentifierGraphPath": "/usr/lib/dotnet/sdk/6.0.124/RuntimeIdentifierGraph.json"
+          "runtimeIdentifierGraphPath": "/usr/lib64/dotnet/sdk/7.0.112/RuntimeIdentifierGraph.json"
+        }
+      }
+    },
+    "/home/timur/Yandex.Disk/Документы/GitHub/AES/AES.Exceptions/AES.Exceptions.csproj": {
+      "version": "1.0.0",
+      "restore": {
+        "projectUniqueName": "/home/timur/Yandex.Disk/Документы/GitHub/AES/AES.Exceptions/AES.Exceptions.csproj",
+        "projectName": "AES.Exceptions",
+        "projectPath": "/home/timur/Yandex.Disk/Документы/GitHub/AES/AES.Exceptions/AES.Exceptions.csproj",
+        "packagesPath": "/home/timur/.nuget/packages/",
+        "outputPath": "/home/timur/Yandex.Disk/Документы/GitHub/AES/AES.Exceptions/obj/",
+        "projectStyle": "PackageReference",
+        "configFilePaths": [
+          "/home/timur/.nuget/NuGet/NuGet.Config"
+        ],
+        "originalTargetFrameworks": [
+          "net6.0"
+        ],
+        "sources": {
+          "https://api.nuget.org/v3/index.json": {}
+        },
+        "frameworks": {
+          "net6.0": {
+            "targetAlias": "net6.0",
+            "projectReferences": {
+              "/home/timur/Yandex.Disk/Документы/GitHub/AES/AES.Domain/AES.Domain.csproj": {
+                "projectPath": "/home/timur/Yandex.Disk/Документы/GitHub/AES/AES.Domain/AES.Domain.csproj"
+              }
+            }
+          }
+        },
+        "warningProperties": {
+          "warnAsError": [
+            "NU1605"
+          ]
+        }
+      },
+      "frameworks": {
+        "net6.0": {
+          "targetAlias": "net6.0",
+          "imports": [
+            "net461",
+            "net462",
+            "net47",
+            "net471",
+            "net472",
+            "net48",
+            "net481"
+          ],
+          "assetTargetFallback": true,
+          "warn": true,
+          "frameworkReferences": {
+            "Microsoft.NETCore.App": {
+              "privateAssets": "all"
+            }
+          },
+          "runtimeIdentifierGraphPath": "/usr/lib64/dotnet/sdk/7.0.112/RuntimeIdentifierGraph.json"
         }
       }
     },
@@ -214,8 +277,17 @@
           "net6.0": {
             "targetAlias": "net6.0",
             "projectReferences": {
+              "/home/timur/Yandex.Disk/Документы/GitHub/AES/AES.Domain/AES.Domain.csproj": {
+                "projectPath": "/home/timur/Yandex.Disk/Документы/GitHub/AES/AES.Domain/AES.Domain.csproj"
+              },
               "/home/timur/Yandex.Disk/Документы/GitHub/AES/AES.Infrastructure.EntityFrameworkCore/AES.Infrastructure.EntityFrameworkCore.csproj": {
                 "projectPath": "/home/timur/Yandex.Disk/Документы/GitHub/AES/AES.Infrastructure.EntityFrameworkCore/AES.Infrastructure.EntityFrameworkCore.csproj"
+              },
+              "/home/timur/Yandex.Disk/Документы/GitHub/AES/AES.Infrastructure/AES.Infrastructure.csproj": {
+                "projectPath": "/home/timur/Yandex.Disk/Документы/GitHub/AES/AES.Infrastructure/AES.Infrastructure.csproj"
+              },
+              "/home/timur/Yandex.Disk/Документы/GitHub/AES/AES.Story/AES.Story.csproj": {
+                "projectPath": "/home/timur/Yandex.Disk/Документы/GitHub/AES/AES.Story/AES.Story.csproj"
               }
             }
           }
@@ -263,7 +335,8 @@
             "net47",
             "net471",
             "net472",
-            "net48"
+            "net48",
+            "net481"
           ],
           "assetTargetFallback": true,
           "warn": true,
@@ -272,7 +345,7 @@
               "privateAssets": "all"
             }
           },
-          "runtimeIdentifierGraphPath": "/usr/lib/dotnet/sdk/6.0.124/RuntimeIdentifierGraph.json"
+          "runtimeIdentifierGraphPath": "/usr/lib64/dotnet/sdk/7.0.112/RuntimeIdentifierGraph.json"
         }
       }
     },
@@ -335,7 +408,8 @@
             "net47",
             "net471",
             "net472",
-            "net48"
+            "net48",
+            "net481"
           ],
           "assetTargetFallback": true,
           "warn": true,
@@ -344,7 +418,7 @@
               "privateAssets": "all"
             }
           },
-          "runtimeIdentifierGraphPath": "/usr/lib/dotnet/sdk/6.0.124/RuntimeIdentifierGraph.json"
+          "runtimeIdentifierGraphPath": "/usr/lib64/dotnet/sdk/7.0.112/RuntimeIdentifierGraph.json"
         }
       }
     },
@@ -400,7 +474,8 @@
             "net47",
             "net471",
             "net472",
-            "net48"
+            "net48",
+            "net481"
           ],
           "assetTargetFallback": true,
           "warn": true,
@@ -409,7 +484,7 @@
               "privateAssets": "all"
             }
           },
-          "runtimeIdentifierGraphPath": "/usr/lib/dotnet/sdk/6.0.124/RuntimeIdentifierGraph.json"
+          "runtimeIdentifierGraphPath": "/usr/lib64/dotnet/sdk/7.0.112/RuntimeIdentifierGraph.json"
         }
       }
     },
@@ -437,6 +512,9 @@
             "projectReferences": {
               "/home/timur/Yandex.Disk/Документы/GitHub/AES/AES.Domain/AES.Domain.csproj": {
                 "projectPath": "/home/timur/Yandex.Disk/Документы/GitHub/AES/AES.Domain/AES.Domain.csproj"
+              },
+              "/home/timur/Yandex.Disk/Документы/GitHub/AES/AES.Exceptions/AES.Exceptions.csproj": {
+                "projectPath": "/home/timur/Yandex.Disk/Документы/GitHub/AES/AES.Exceptions/AES.Exceptions.csproj"
               }
             }
           }
@@ -456,7 +534,8 @@
             "net47",
             "net471",
             "net472",
-            "net48"
+            "net48",
+            "net481"
           ],
           "assetTargetFallback": true,
           "warn": true,
@@ -465,7 +544,7 @@
               "privateAssets": "all"
             }
           },
-          "runtimeIdentifierGraphPath": "/usr/lib/dotnet/sdk/6.0.124/RuntimeIdentifierGraph.json"
+          "runtimeIdentifierGraphPath": "/usr/lib64/dotnet/sdk/7.0.112/RuntimeIdentifierGraph.json"
         }
       }
     },
@@ -494,14 +573,23 @@
               "/home/timur/Yandex.Disk/Документы/GitHub/AES/AES.BusinessLogic.Implementation/AES.BusinessLogic.Implementation.csproj": {
                 "projectPath": "/home/timur/Yandex.Disk/Документы/GitHub/AES/AES.BusinessLogic.Implementation/AES.BusinessLogic.Implementation.csproj"
               },
+              "/home/timur/Yandex.Disk/Документы/GitHub/AES/AES.BusinessLogic/AES.BusinessLogic.csproj": {
+                "projectPath": "/home/timur/Yandex.Disk/Документы/GitHub/AES/AES.BusinessLogic/AES.BusinessLogic.csproj"
+              },
               "/home/timur/Yandex.Disk/Документы/GitHub/AES/AES.Domain/AES.Domain.csproj": {
                 "projectPath": "/home/timur/Yandex.Disk/Документы/GitHub/AES/AES.Domain/AES.Domain.csproj"
               },
               "/home/timur/Yandex.Disk/Документы/GitHub/AES/AES.Infrastructure.EntityFrameworkCore.PostgreSql/AES.Infrastructure.EntityFrameworkCore.PostgreSql.csproj": {
                 "projectPath": "/home/timur/Yandex.Disk/Документы/GitHub/AES/AES.Infrastructure.EntityFrameworkCore.PostgreSql/AES.Infrastructure.EntityFrameworkCore.PostgreSql.csproj"
               },
+              "/home/timur/Yandex.Disk/Документы/GitHub/AES/AES.Infrastructure.EntityFrameworkCore/AES.Infrastructure.EntityFrameworkCore.csproj": {
+                "projectPath": "/home/timur/Yandex.Disk/Документы/GitHub/AES/AES.Infrastructure.EntityFrameworkCore/AES.Infrastructure.EntityFrameworkCore.csproj"
+              },
               "/home/timur/Yandex.Disk/Документы/GitHub/AES/AES.Infrastructure/AES.Infrastructure.csproj": {
                 "projectPath": "/home/timur/Yandex.Disk/Документы/GitHub/AES/AES.Infrastructure/AES.Infrastructure.csproj"
+              },
+              "/home/timur/Yandex.Disk/Документы/GitHub/AES/AES.Story/AES.Story.csproj": {
+                "projectPath": "/home/timur/Yandex.Disk/Документы/GitHub/AES/AES.Story/AES.Story.csproj"
               }
             }
           }
@@ -551,16 +639,23 @@
             "net47",
             "net471",
             "net472",
-            "net48"
+            "net48",
+            "net481"
           ],
           "assetTargetFallback": true,
           "warn": true,
+          "downloadDependencies": [
+            {
+              "name": "Microsoft.NETCore.App.Host.linux-x64",
+              "version": "[6.0.23, 6.0.23]"
+            }
+          ],
           "frameworkReferences": {
             "Microsoft.NETCore.App": {
               "privateAssets": "all"
             }
           },
-          "runtimeIdentifierGraphPath": "/usr/lib/dotnet/sdk/6.0.124/RuntimeIdentifierGraph.json"
+          "runtimeIdentifierGraphPath": "/usr/lib64/dotnet/sdk/7.0.112/RuntimeIdentifierGraph.json"
         }
       }
     }

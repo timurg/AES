@@ -11,6 +11,7 @@
           "AES.BusinessLogic": "1.0.0",
           "AES.Domain": "1.0.0",
           "AES.Infrastructure": "1.0.0",
+          "AES.Story": "1.0.0",
           "Microsoft.EntityFrameworkCore": "7.0.5"
         },
         "runtime": {

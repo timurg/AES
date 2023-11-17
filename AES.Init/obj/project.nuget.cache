@@ -1,8 +1,8 @@
 {
   "version": 2,
-  "dgSpecHash": "HIaUWF+dUar0ws3c/ylSUD+okfnnACnlyBqICHS6U0tPPT/xqyQgH34MZJbfplFo7+P5KQObWJi0hs7Ga4IPBw==",
+  "dgSpecHash": "WZL8p4vCayg95e1xuOIsKKZuRPFEXct8KoFrBM5JkzZsH6w0375V7M90/VtP86Tq1HnXz4HHiFGStE7pNyka1A==",
   "success": false,
-  "projectFilePath": "/home/timur/Документы/GitHub/AES/AES.Init/AES.Init.csproj",
+  "projectFilePath": "/home/timur/Yandex.Disk/Документы/GitHub/AES/AES.Init/AES.Init.csproj",
   "expectedPackageFiles": [
     "/home/timur/.nuget/packages/autofac/7.0.1/autofac.7.0.1.nupkg.sha512",
     "/home/timur/.nuget/packages/autofac.configuration/6.0.0/autofac.configuration.6.0.0.nupkg.sha512",
@@ -42,13 +42,13 @@
     "/home/timur/.nuget/packages/system.memory/4.5.3/system.memory.4.5.3.nupkg.sha512",
     "/home/timur/.nuget/packages/system.runtime.compilerservices.unsafe/6.0.0/system.runtime.compilerservices.unsafe.6.0.0.nupkg.sha512",
     "/home/timur/.nuget/packages/system.text.encodings.web/7.0.0/system.text.encodings.web.7.0.0.nupkg.sha512",
-    "/home/timur/.nuget/packages/system.text.json/7.0.0/system.text.json.7.0.0.nupkg.sha512"
+    "/home/timur/.nuget/packages/system.text.json/7.0.0/system.text.json.7.0.0.nupkg.sha512",
+    "/home/timur/.nuget/packages/microsoft.netcore.app.host.linux-x64/6.0.23/microsoft.netcore.app.host.linux-x64.6.0.23.nupkg.sha512"
   ],
   "logs": [
     {
       "code": "NU1605",
       "level": "Error",
-      "filePath": "/home/timur/Yandex.Disk/Документы/GitHub/AES/AES.Init/AES.Init.csproj",
       "message": "Detected package downgrade: Microsoft.EntityFrameworkCore.Relational from 7.0.12 to 7.0.5. Reference the package directly from the project to select a different version. \n AES.Init -> AES.Infrastructure.EntityFrameworkCore -> Microsoft.EntityFrameworkCore.Relational (>= 7.0.12) \n AES.Init -> Microsoft.EntityFrameworkCore.Relational (>= 7.0.5)",
       "libraryId": "Microsoft.EntityFrameworkCore.Relational",
       "targetGraphs": [
@@ -58,7 +58,6 @@
     {
       "code": "NU1605",
       "level": "Error",
-      "filePath": "/home/timur/Yandex.Disk/Документы/GitHub/AES/AES.Init/AES.Init.csproj",
       "message": "Detected package downgrade: Microsoft.EntityFrameworkCore.Relational from 7.0.11 to 7.0.5. Reference the package directly from the project to select a different version. \n AES.Init -> AES.Infrastructure.EntityFrameworkCore.PostgreSql -> Npgsql.EntityFrameworkCore.PostgreSQL 7.0.11 -> Microsoft.EntityFrameworkCore.Relational (>= 7.0.11 && < 8.0.0) \n AES.Init -> Microsoft.EntityFrameworkCore.Relational (>= 7.0.5)",
       "libraryId": "Microsoft.EntityFrameworkCore.Relational",
       "targetGraphs": [

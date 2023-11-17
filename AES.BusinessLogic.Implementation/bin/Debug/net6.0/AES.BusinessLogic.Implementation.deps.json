@@ -11,6 +11,7 @@
           "AES.BusinessLogic": "1.0.0",
           "AES.Domain": "1.0.0",
           "AES.Infrastructure": "1.0.0",
+          "AES.Story": "1.0.0",
           "Microsoft.EntityFrameworkCore": "7.0.5"
         },
         "runtime": {
@@ -149,6 +150,14 @@
           "AES.Domain.dll": {}
         }
       },
+      "AES.Exceptions/1.0.0": {
+        "dependencies": {
+          "AES.Domain": "1.0.0"
+        },
+        "runtime": {
+          "AES.Exceptions.dll": {}
+        }
+      },
       "AES.Infrastructure/1.0.0": {
         "dependencies": {
           "AES.Domain": "1.0.0",
@@ -161,7 +170,8 @@
       },
       "AES.Story/1.0.0": {
         "dependencies": {
-          "AES.Domain": "1.0.0"
+          "AES.Domain": "1.0.0",
+          "AES.Exceptions": "1.0.0"
         },
         "runtime": {
           "AES.Story.dll": {}
@@ -265,6 +275,11 @@
       "sha512": ""
     },
     "AES.Domain/1.0.0": {
+      "type": "project",
+      "serviceable": false,
+      "sha512": ""
+    },
+    "AES.Exceptions/1.0.0": {
       "type": "project",
       "serviceable": false,
       "sha512": ""

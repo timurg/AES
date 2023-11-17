@@ -8,7 +8,10 @@
     ".NETCoreApp,Version=v6.0": {
       "AES.Infrastructure.EntityFrameworkCore.PostgreSql/1.0.0": {
         "dependencies": {
+          "AES.Domain": "1.0.0",
+          "AES.Infrastructure": "1.0.0",
           "AES.Infrastructure.EntityFrameworkCore": "1.0.0",
+          "AES.Story": "1.0.0",
           "Microsoft.EntityFrameworkCore": "7.0.12",
           "Microsoft.EntityFrameworkCore.Design": "7.0.12",
           "Microsoft.Extensions.Configuration": "7.0.0",
@@ -364,6 +367,14 @@
           "AES.Domain.dll": {}
         }
       },
+      "AES.Exceptions/1.0.0": {
+        "dependencies": {
+          "AES.Domain": "1.0.0"
+        },
+        "runtime": {
+          "AES.Exceptions.dll": {}
+        }
+      },
       "AES.Infrastructure/1.0.0": {
         "dependencies": {
           "AES.Domain": "1.0.0",
@@ -388,7 +399,8 @@
       },
       "AES.Story/1.0.0": {
         "dependencies": {
-          "AES.Domain": "1.0.0"
+          "AES.Domain": "1.0.0",
+          "AES.Exceptions": "1.0.0"
         },
         "runtime": {
           "AES.Story.dll": {}
@@ -613,6 +625,11 @@
       "hashPath": "system.text.json.7.0.0.nupkg.sha512"
     },
     "AES.Domain/1.0.0": {
+      "type": "project",
+      "serviceable": false,
+      "sha512": ""
+    },
+    "AES.Exceptions/1.0.0": {
       "type": "project",
       "serviceable": false,
       "sha512": ""

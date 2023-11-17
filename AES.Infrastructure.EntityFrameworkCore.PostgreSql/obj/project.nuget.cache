@@ -1,8 +1,8 @@
 {
   "version": 2,
-  "dgSpecHash": "XbIfpbqV6mU1Mx4fr3fF6+YEHlkEBX0CQ+25DKyVyk7hv5AIA7CDnrtwuQDPaz3aC9XWAM7g/fc2/G+mDXCRAQ==",
+  "dgSpecHash": "LhEeriRDDfn9yQwBUqKxXT8aKRUaateWk5jTS2QpSP+AmE5ei/XyeP/w/TGDSs1bdAf2ssyvtKAg+WqcbcYcPA==",
   "success": true,
-  "projectFilePath": "/home/timur/Документы/GitHub/AES/AES.Infrastructure.EntityFrameworkCore.PostgreSql/AES.Infrastructure.EntityFrameworkCore.PostgreSql.csproj",
+  "projectFilePath": "/home/timur/Yandex.Disk/Документы/GitHub/AES/AES.Infrastructure.EntityFrameworkCore.PostgreSql/AES.Infrastructure.EntityFrameworkCore.PostgreSql.csproj",
   "expectedPackageFiles": [
     "/home/timur/.nuget/packages/humanizer.core/2.14.1/humanizer.core.2.14.1.nupkg.sha512",
     "/home/timur/.nuget/packages/microsoft.entityframeworkcore/7.0.12/microsoft.entityframeworkcore.7.0.12.nupkg.sha512",

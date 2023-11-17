@@ -39,7 +39,7 @@ public class ShowCommand : CallbackQueryCommand
             }
                                         
         }
-        _botClient.SendMessage(context.ChatId.Value, textMessage.ToString(),
+        BotClient.SendMessage(context.ChatId.Value, textMessage.ToString(),
             parseMode: ParseMode.HTML, disableNotification: true);
     }
 }

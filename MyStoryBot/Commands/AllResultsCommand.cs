@@ -28,14 +28,16 @@ public class AllResultsCommand : NamedCommand
                 };
                 btn[0].Text = "Показать";
                 btn[0].CallbackData = "show " + student.Id;
-                _botClient.SendMessage(context.ChatId.Value, $"{student.Person.Login}: {student.Person.FullName}",
-                    parseMode: ParseMode.HTML, replyMarkup: rm, disableNotification: true);
+                if (context.ChatId != null && student.Person != null)
+                    BotClient.SendMessage(context.ChatId.Value, $"{student.Person.Login}: {student.Person.FullName}",
+                        parseMode: ParseMode.HTML, replyMarkup: rm, disableNotification: true);
             }
         }
         else
         {
-            _botClient.SendMessage(context.ChatId.Value,
-                $"Недостаточно прав для выполнения команды.");
+            if (context.ChatId != null)
+                BotClient.SendMessage(context.ChatId.Value,
+                    $"Недостаточно прав для выполнения команды.");
         }
     }
 }

@@ -4,10 +4,19 @@
         <TargetFramework>net6.0</TargetFramework>
     </PropertyGroup>
 
+    <PropertyGroup Condition=" '$(Configuration)' == 'Debug' ">
+      <DocumentationFile>bin\Debug\net6.0\AES.BusinessLogic.Implementation.xml</DocumentationFile>
+    </PropertyGroup>
+
+    <PropertyGroup Condition=" '$(Configuration)' == 'Release' ">
+      <DocumentationFile>bin\Release\net6.0\AES.BusinessLogic.Implementation.xml</DocumentationFile>
+    </PropertyGroup>
+
     <ItemGroup>
       <ProjectReference Include="..\AES.BusinessLogic\AES.BusinessLogic.csproj" />
       <ProjectReference Include="..\AES.Domain\AES.Domain.csproj" />
       <ProjectReference Include="..\AES.Infrastructure\AES.Infrastructure.csproj" />
+      <ProjectReference Include="..\AES.Story\AES.Story.csproj" />
     </ItemGroup>
 
     <ItemGroup>

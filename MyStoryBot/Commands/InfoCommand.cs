@@ -56,13 +56,15 @@ public class InfoCommand : NamedCommand
             // }
             if (anyStarted)
             {
-                _botClient.SendMessage(context.ChatId.Value, textMessage.ToString(),
-                    parseMode: ParseMode.HTML, disableNotification: true);
+                if (context.ChatId != null)
+                    BotClient.SendMessage(context.ChatId.Value, textMessage.ToString(),
+                        parseMode: ParseMode.HTML, disableNotification: true);
             }
             else
             {
-                _botClient.SendMessage(context.ChatId.Value, textMessage.ToString(),
-                    parseMode: ParseMode.HTML, replyMarkup: rm, disableNotification: true);
+                if (context.ChatId != null)
+                    BotClient.SendMessage(context.ChatId.Value, textMessage.ToString(),
+                        parseMode: ParseMode.HTML, replyMarkup: rm, disableNotification: true);
             }
         }
     }

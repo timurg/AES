@@ -39,6 +39,7 @@ botClient.SetMyCommands(new BotCommand("info", "Информация"), new BotC
 var unitOfWorkFactory = serviceProvider.GetService(typeof(IUnitOfWorkFactory)) as IUnitOfWorkFactory;
 
 var namedCommands = new BlockingCollection<NamedCommand>();
+namedCommands.Add(new StartCommand(botClient));
 namedCommands.Add(new InfoCommand(botClient));
 namedCommands.Add(new NextCommand(botClient));
 namedCommands.Add(new AllResultsCommand(botClient));

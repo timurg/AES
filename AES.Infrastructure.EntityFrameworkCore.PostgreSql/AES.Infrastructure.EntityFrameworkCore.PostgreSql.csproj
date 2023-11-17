@@ -6,7 +6,10 @@
   </PropertyGroup>
 
     <ItemGroup>
+      <ProjectReference Include="..\AES.Domain\AES.Domain.csproj" />
       <ProjectReference Include="..\AES.Infrastructure.EntityFrameworkCore\AES.Infrastructure.EntityFrameworkCore.csproj" />
+      <ProjectReference Include="..\AES.Infrastructure\AES.Infrastructure.csproj" />
+      <ProjectReference Include="..\AES.Story\AES.Story.csproj" />
     </ItemGroup>
 
     <ItemGroup>

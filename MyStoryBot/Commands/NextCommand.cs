@@ -1,5 +1,6 @@
 ﻿using AES.BusinessLogic;
 using AES.BusinessLogic.Implementation;
+using AES.Exceptions;
 using AES.Story;
 using Telegram.BotAPI;
 using Telegram.BotAPI.AvailableMethods;
@@ -34,7 +35,13 @@ public class NextCommand : NamedCommand
             else
             {
                 story = eduItem.LearningProcess as MyStory;
-                storyItem = story.NextStep();
+                try
+                {
+                    storyItem = story.NextStep();
+                } catch (LearningProcessNotStartedException)
+                {
+                    storyItem = null;
+                }
             }
 
             RenderItemStory(context, story, storyItem);
@@ -44,7 +51,7 @@ public class NextCommand : NamedCommand
         else
         {
             DeleteUserCommand(context);
-            _botClient.SendMessage(context.ChatId.Value,
+            BotClient.SendMessage(context.ChatId.Value,
                 $"Наберите команду /info");
         }
     }

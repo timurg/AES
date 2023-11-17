@@ -9,6 +9,14 @@
       <UserSecretsId>c90899d6-fa25-4768-8b24-8bf125e52eb0</UserSecretsId>
   </PropertyGroup>
 
+    <PropertyGroup Condition=" '$(Configuration)' == 'Debug' ">
+      <DocumentationFile></DocumentationFile>
+    </PropertyGroup>
+
+    <PropertyGroup Condition=" '$(Configuration)' == 'Release' ">
+      <DocumentationFile></DocumentationFile>
+    </PropertyGroup>
+
     <ItemGroup>
       <PackageReference Include="Autofac" Version="7.1.0" />
       <PackageReference Include="Autofac.Configuration" Version="6.0.0" />
@@ -21,9 +29,12 @@
 
     <ItemGroup>
       <ProjectReference Include="..\AES.BusinessLogic.Implementation\AES.BusinessLogic.Implementation.csproj" />
+      <ProjectReference Include="..\AES.BusinessLogic\AES.BusinessLogic.csproj" />
       <ProjectReference Include="..\AES.Domain\AES.Domain.csproj" />
       <ProjectReference Include="..\AES.Infrastructure.EntityFrameworkCore.PostgreSql\AES.Infrastructure.EntityFrameworkCore.PostgreSql.csproj" />
+      <ProjectReference Include="..\AES.Infrastructure.EntityFrameworkCore\AES.Infrastructure.EntityFrameworkCore.csproj" />
       <ProjectReference Include="..\AES.Infrastructure\AES.Infrastructure.csproj" />
+      <ProjectReference Include="..\AES.Story\AES.Story.csproj" />
     </ItemGroup>
 
     <ItemGroup>
