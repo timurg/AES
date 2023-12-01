@@ -1,5 +1,8 @@
 ﻿namespace AES.Domain
 {
+    /// <summary>
+    /// Пол
+    /// </summary>
     public enum Sex
     {
         Man = 1,

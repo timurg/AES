@@ -5,13 +5,8 @@ namespace AES.Domain
     /// <summary>
     /// Объект, от которого наследуются все остальные объекты
     /// </summary>
-    public class DomainObject
+    public abstract class DomainObject
     {
-        /// <summary>
-        /// Поле идентификатор объекта
-        /// </summary>
-        private System.Guid id;
-
         protected DomainObject()
         {
         }
@@ -20,14 +15,17 @@ namespace AES.Domain
         /// Базовый конструктор с инициализацией идентификатора
         /// </summary>
         /// <param name="nID">Идентификатор</param>
-        public DomainObject(System.Guid nID)
+        protected DomainObject(System.Guid nID)
         {
-            id = nID;
+            Id = nID;
         }
 
+        /// <summary>
+        /// Идентификатор объекта
+        /// </summary>
         [Key]
         [Required]
-        public System.Guid Id { get => id; set => id = value; }
+        public System.Guid Id { get; set; }
     }
 }
 

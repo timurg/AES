@@ -4,33 +4,60 @@ using System.ComponentModel.DataAnnotations;
 namespace AES.Domain
 {
     
-    public class Student : DomainObject
+    /// <summary>
+    /// Информация об обучающемся
+    /// </summary>
+    public sealed class Student : DomainObject
     {
         private Person person;
 
 
+        /// <summary>
+        /// Уникальное обозначение обучающегося
+        /// </summary>
         [Required]
         [MaxLength(50)]
         public string AgreementNumber { get; set; }
 
+        /// <summary>
+        /// Дата заключения договора обучающегося по направлению
+        /// </summary>
         [Required]
         public System.DateTimeOffset AgreementDate { get; set; }
 
+        /// <summary>
+        /// Флаг активности обучающегося, если true - обучающийся имеет доступ к обучению
+        /// </summary>
         [Required]
         public bool ActiveAgreement { get; set; }
 
+        /// <summary>
+        /// Номер стадии обучения, если 0, то обучающийся ещё в стадии незачисленного на обучение
+        /// </summary>
         [Required]
         public byte Semester { get; set; }
 
+        /// <summary>
+        /// Дата начала текущей стадии обучения
+        /// </summary>
         [Required]
         public System.DateTimeOffset WhenSemesterBegin { get; set; }
 
+        /// <summary>
+        /// Флаг, указывающий, что для обуающегося предусмотрена альтернативная траектория
+        /// </summary>
         [Required]
         public bool MaybeAlternateRule { get; set; }
 
+        /// <summary>
+        /// Комментарий к договору обучающегося
+        /// </summary>
         [MaxLength(255)]
         public string AgreementComment { get; set; }
 
+        /// <summary>
+        /// Подразделение в котором проходит обучение
+        /// </summary>
         [Required]
         public Subdivision Subdivision { get; set; }
 
@@ -57,7 +84,7 @@ namespace AES.Domain
         public RateEducation EndRateEducation { get; set; }
 
         [Required]
-        public virtual Person Person { get; set; }
+        public Person Person { get; set; }
 
         //[Required]
         public Curriculum Curriculum { get; set; }

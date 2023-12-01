@@ -1,6 +1,6 @@
 {
   "version": 2,
-  "dgSpecHash": "WZL8p4vCayg95e1xuOIsKKZuRPFEXct8KoFrBM5JkzZsH6w0375V7M90/VtP86Tq1HnXz4HHiFGStE7pNyka1A==",
+  "dgSpecHash": "Lj+02cPUFrAxCfCbPjlPXOc3bHyPv2RowEdLHq64K54g2VOLxj781breoxBmdbVclRe7+kk7r5ZVB6aYfK1EhQ==",
   "success": false,
   "projectFilePath": "/home/timur/Yandex.Disk/Документы/GitHub/AES/AES.Init/AES.Init.csproj",
   "expectedPackageFiles": [
@@ -43,7 +43,7 @@
     "/home/timur/.nuget/packages/system.runtime.compilerservices.unsafe/6.0.0/system.runtime.compilerservices.unsafe.6.0.0.nupkg.sha512",
     "/home/timur/.nuget/packages/system.text.encodings.web/7.0.0/system.text.encodings.web.7.0.0.nupkg.sha512",
     "/home/timur/.nuget/packages/system.text.json/7.0.0/system.text.json.7.0.0.nupkg.sha512",
-    "/home/timur/.nuget/packages/microsoft.netcore.app.host.linux-x64/6.0.23/microsoft.netcore.app.host.linux-x64.6.0.23.nupkg.sha512"
+    "/home/timur/.nuget/packages/microsoft.netcore.app.host.linux-x64/6.0.24/microsoft.netcore.app.host.linux-x64.6.0.24.nupkg.sha512"
   ],
   "logs": [
     {
