@@ -2,11 +2,12 @@
 
     <PropertyGroup>
         <OutputType>Exe</OutputType>
-        <TargetFramework>net6.0</TargetFramework>
+        <TargetFramework>net8.0</TargetFramework>
         <ImplicitUsings>enable</ImplicitUsings>
         <Nullable>enable</Nullable>
         <DockerDefaultTargetOS>Linux</DockerDefaultTargetOS>
       <UserSecretsId>c90899d6-fa25-4768-8b24-8bf125e52eb0</UserSecretsId>
+      <LangVersion>11</LangVersion>
   </PropertyGroup>
 
     <PropertyGroup Condition=" '$(Configuration)' == 'Debug' ">
@@ -21,10 +22,10 @@
       <PackageReference Include="Autofac" Version="7.1.0" />
       <PackageReference Include="Autofac.Configuration" Version="6.0.0" />
       <PackageReference Include="Autofac.Extensions.DependencyInjection" Version="8.0.0" />
-      <PackageReference Include="Microsoft.Extensions.Configuration" Version="7.0.0" />
-      <PackageReference Include="Microsoft.Extensions.Configuration.UserSecrets" Version="7.0.0" />
+      <PackageReference Include="Microsoft.Extensions.Configuration" Version="8.0.0" />
+      <PackageReference Include="Microsoft.Extensions.Configuration.UserSecrets" Version="8.0.0" />
       <PackageReference Include="NLog.Config" Version="4.7.15" />
-      <PackageReference Include="Telegram.BotAPI" Version="6.9.0" />
+      <PackageReference Include="Telegram.BotAPI" Version="6.9.2" />
     </ItemGroup>
 
     <ItemGroup>
@@ -34,8 +35,8 @@
       <ProjectReference Include="..\AES.Infrastructure.EntityFrameworkCore.PostgreSql\AES.Infrastructure.EntityFrameworkCore.PostgreSql.csproj" />
       <ProjectReference Include="..\AES.Infrastructure.EntityFrameworkCore\AES.Infrastructure.EntityFrameworkCore.csproj" />
       <ProjectReference Include="..\AES.Infrastructure\AES.Infrastructure.csproj" />
-      <ProjectReference Include="..\AES.Story\AES.Story.csproj" />
     </ItemGroup>
+
 
     <ItemGroup>
       <None Update="appsettings.json">

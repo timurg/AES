@@ -1,5 +1,8 @@
 ﻿namespace AES.Story;
 
+/// <summary>
+/// Часть истории, опрос, тест пользователя
+/// </summary>
 public class StoryPoll: StoryTextContentBase
 {
     public IList<StoryPollItem> Items { get; set; } = new List<StoryPollItem>();

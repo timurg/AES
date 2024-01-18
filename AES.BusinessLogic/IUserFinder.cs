@@ -5,6 +5,9 @@ using System.Text;
 
 namespace AES.BusinessLogic
 {
+    /// <summary>
+    /// Интерфейс для поиска пользователя по параметрам
+    /// </summary>
     public interface IUserFinder
     {
         Person findByLogin(string login);

@@ -3,6 +3,9 @@ using AES.Domain;
 
 namespace AES.Story;
 
+/// <summary>
+/// Абстрактный класс для элемента истории
+/// </summary>
 public abstract class StoryItem : DomainObject
 {
     public DateTimeOffset DateCreated { get; set; }

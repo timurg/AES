@@ -2,6 +2,8 @@
 	<s:String x:Key="/Default/Environment/AssemblyExplorer/XmlDocument/@EntryValue">&lt;AssemblyExplorer&gt;
   &lt;Assembly Path="C:\Users\lean\.nuget\packages\telegram.bots.extensions.polling\5.9.0\lib\net6.0\Telegram.Bots.Extensions.Polling.dll" /&gt;
   &lt;PhysicalFolder Path="/home/timur/.nuget/packages/telegram.botapi/6.9.0" Loaded="True" /&gt;
+  &lt;Assembly Path="/home/timur/.nuget/packages/telegram.botapi/6.9.2/lib/netstandard2.0/Telegram.BotAPI.dll" /&gt;
+  &lt;Assembly Path="/home/timur/Документы/GitHub/AES/AES.Story/bin/Release/net8.0/AES.Story.dll" /&gt;
 &lt;/AssemblyExplorer&gt;</s:String>
 	<s:Boolean x:Key="/Default/UserDictionary/Words/=allresults/@EntryIndexedValue">True</s:Boolean>
 	<s:Boolean x:Key="/Default/UserDictionary/Words/=startlearning/@EntryIndexedValue">True</s:Boolean>

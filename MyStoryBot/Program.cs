@@ -22,7 +22,7 @@ using Module = AES.Domain.Module;
 NLog.ILogger _logger = NLog.LogManager.GetCurrentClassLogger();
 
 var configuration = new ConfigurationBuilder()
-    .AddJsonFile("appsettings.json", optional: false)
+    .AddJsonFile("appsettings.json", optional: true)
     .AddUserSecrets<Program>()
     .Build();
 var serviceProvider = ConfigureServices(configuration) as AutofacServiceProvider ?? throw new ApplicationException();
@@ -68,6 +68,7 @@ while (true)
             {
                 //botClient.SendMessage(ch,
                 //    $"Привет {user.Name}, ты написал:\n" + message.Text);
+                _logger.Error(exception.ToString());
             }
             catch (Exception exception)
             {

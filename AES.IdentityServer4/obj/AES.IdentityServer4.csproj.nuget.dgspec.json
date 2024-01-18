@@ -1,30 +1,30 @@
 {
   "format": 1,
   "restore": {
-    "/home/timur/Yandex.Disk/Документы/GitHub/AES/AES.IdentityServer4/AES.IdentityServer4.csproj": {}
+    "/home/timur/Документы/GitHub/AES/AES.IdentityServer4/AES.IdentityServer4.csproj": {}
   },
   "projects": {
-    "/home/timur/Yandex.Disk/Документы/GitHub/AES/AES.IdentityServer4/AES.IdentityServer4.csproj": {
+    "/home/timur/Документы/GitHub/AES/AES.IdentityServer4/AES.IdentityServer4.csproj": {
       "version": "1.0.0",
       "restore": {
-        "projectUniqueName": "/home/timur/Yandex.Disk/Документы/GitHub/AES/AES.IdentityServer4/AES.IdentityServer4.csproj",
+        "projectUniqueName": "/home/timur/Документы/GitHub/AES/AES.IdentityServer4/AES.IdentityServer4.csproj",
         "projectName": "AES.IdentityServer4",
-        "projectPath": "/home/timur/Yandex.Disk/Документы/GitHub/AES/AES.IdentityServer4/AES.IdentityServer4.csproj",
+        "projectPath": "/home/timur/Документы/GitHub/AES/AES.IdentityServer4/AES.IdentityServer4.csproj",
         "packagesPath": "/home/timur/.nuget/packages/",
-        "outputPath": "/home/timur/Yandex.Disk/Документы/GitHub/AES/AES.IdentityServer4/obj/",
+        "outputPath": "/home/timur/Документы/GitHub/AES/AES.IdentityServer4/obj/",
         "projectStyle": "PackageReference",
         "configFilePaths": [
           "/home/timur/.nuget/NuGet/NuGet.Config"
         ],
         "originalTargetFrameworks": [
-          "net6.0"
+          "net8.0"
         ],
         "sources": {
           "https://api.nuget.org/v3/index.json": {}
         },
         "frameworks": {
-          "net6.0": {
-            "targetAlias": "net6.0",
+          "net8.0": {
+            "targetAlias": "net8.0",
             "projectReferences": {}
           }
         },
@@ -35,34 +35,34 @@
         }
       },
       "frameworks": {
-        "net6.0": {
-          "targetAlias": "net6.0",
+        "net8.0": {
+          "targetAlias": "net8.0",
           "dependencies": {
             "IdentityServer4.EntityFramework": {
               "target": "Package",
-              "version": "[4.0.0, )"
+              "version": "[4.1.2, )"
             },
             "Microsoft.AspNetCore.Authentication.Google": {
               "target": "Package",
-              "version": "[3.1.5, )"
+              "version": "[8.0.1, )"
             },
             "Microsoft.AspNetCore.Diagnostics.EntityFrameworkCore": {
               "target": "Package",
-              "version": "[3.1.5, )"
+              "version": "[8.0.1, )"
             },
             "Microsoft.EntityFrameworkCore.Sqlite": {
               "target": "Package",
-              "version": "[3.1.5, )"
+              "version": "[8.0.1, )"
             },
             "Microsoft.EntityFrameworkCore.Tools": {
               "include": "Runtime, Build, Native, ContentFiles, Analyzers, BuildTransitive",
               "suppressParent": "All",
               "target": "Package",
-              "version": "[3.1.5, )"
+              "version": "[8.0.1, )"
             },
             "Serilog.AspNetCore": {
               "target": "Package",
-              "version": "[3.2.0, )"
+              "version": "[8.0.0, )"
             }
           },
           "imports": [
@@ -76,12 +76,6 @@
           ],
           "assetTargetFallback": true,
           "warn": true,
-          "downloadDependencies": [
-            {
-              "name": "Microsoft.NETCore.App.Host.linux-x64",
-              "version": "[6.0.24, 6.0.24]"
-            }
-          ],
           "frameworkReferences": {
             "Microsoft.AspNetCore.App": {
               "privateAssets": "none"
@@ -90,7 +84,7 @@
               "privateAssets": "all"
             }
           },
-          "runtimeIdentifierGraphPath": "/usr/lib64/dotnet/sdk/7.0.113/RuntimeIdentifierGraph.json"
+          "runtimeIdentifierGraphPath": "/usr/lib64/dotnet/sdk/8.0.100/PortableRuntimeIdentifierGraph.json"
         }
       }
     }
