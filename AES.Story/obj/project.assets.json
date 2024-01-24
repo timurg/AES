@@ -600,11 +600,11 @@
   "project": {
     "version": "1.0.0",
     "restore": {
-      "projectUniqueName": "/home/timur/Yandex.Disk/Документы/GitHub/AES/AES.Story/AES.Story.csproj",
+      "projectUniqueName": "/home/timur/Документы/GitHub/AES/AES.Story/AES.Story.csproj",
       "projectName": "AES.Story",
-      "projectPath": "/home/timur/Yandex.Disk/Документы/GitHub/AES/AES.Story/AES.Story.csproj",
+      "projectPath": "/home/timur/Документы/GitHub/AES/AES.Story/AES.Story.csproj",
       "packagesPath": "/home/timur/.nuget/packages/",
-      "outputPath": "/home/timur/Yandex.Disk/Документы/GitHub/AES/AES.Story/obj/",
+      "outputPath": "/home/timur/Документы/GitHub/AES/AES.Story/obj/",
       "projectStyle": "PackageReference",
       "configFilePaths": [
         "/home/timur/.nuget/NuGet/NuGet.Config"
@@ -619,11 +619,11 @@
         "net8.0": {
           "targetAlias": "net8.0",
           "projectReferences": {
-            "/home/timur/Yandex.Disk/Документы/GitHub/AES/AES.Domain/AES.Domain.csproj": {
-              "projectPath": "/home/timur/Yandex.Disk/Документы/GitHub/AES/AES.Domain/AES.Domain.csproj"
+            "/home/timur/Документы/GitHub/AES/AES.Domain/AES.Domain.csproj": {
+              "projectPath": "/home/timur/Документы/GitHub/AES/AES.Domain/AES.Domain.csproj"
             },
-            "/home/timur/Yandex.Disk/Документы/GitHub/AES/AES.Exceptions/AES.Exceptions.csproj": {
-              "projectPath": "/home/timur/Yandex.Disk/Документы/GitHub/AES/AES.Exceptions/AES.Exceptions.csproj"
+            "/home/timur/Документы/GitHub/AES/AES.Exceptions/AES.Exceptions.csproj": {
+              "projectPath": "/home/timur/Документы/GitHub/AES/AES.Exceptions/AES.Exceptions.csproj"
             }
           }
         }

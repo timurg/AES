@@ -1,17 +1,17 @@
 {
   "format": 1,
   "restore": {
-    "/home/timur/Yandex.Disk/Документы/GitHub/AES/AES.Infrastructure.EntityFrameworkCore.PostgreSql/AES.Infrastructure.EntityFrameworkCore.PostgreSql.csproj": {}
+    "/home/timur/Документы/GitHub/AES/AES.Infrastructure.EntityFrameworkCore.PostgreSql/AES.Infrastructure.EntityFrameworkCore.PostgreSql.csproj": {}
   },
   "projects": {
-    "/home/timur/Yandex.Disk/Документы/GitHub/AES/AES.Domain/AES.Domain.csproj": {
+    "/home/timur/Документы/GitHub/AES/AES.Domain/AES.Domain.csproj": {
       "version": "1.0.0",
       "restore": {
-        "projectUniqueName": "/home/timur/Yandex.Disk/Документы/GitHub/AES/AES.Domain/AES.Domain.csproj",
+        "projectUniqueName": "/home/timur/Документы/GitHub/AES/AES.Domain/AES.Domain.csproj",
         "projectName": "AES.Domain",
-        "projectPath": "/home/timur/Yandex.Disk/Документы/GitHub/AES/AES.Domain/AES.Domain.csproj",
+        "projectPath": "/home/timur/Документы/GitHub/AES/AES.Domain/AES.Domain.csproj",
         "packagesPath": "/home/timur/.nuget/packages/",
-        "outputPath": "/home/timur/Yandex.Disk/Документы/GitHub/AES/AES.Domain/obj/",
+        "outputPath": "/home/timur/Документы/GitHub/AES/AES.Domain/obj/",
         "projectStyle": "PackageReference",
         "configFilePaths": [
           "/home/timur/.nuget/NuGet/NuGet.Config"
@@ -63,14 +63,14 @@
         }
       }
     },
-    "/home/timur/Yandex.Disk/Документы/GitHub/AES/AES.Exceptions/AES.Exceptions.csproj": {
+    "/home/timur/Документы/GitHub/AES/AES.Exceptions/AES.Exceptions.csproj": {
       "version": "1.0.0",
       "restore": {
-        "projectUniqueName": "/home/timur/Yandex.Disk/Документы/GitHub/AES/AES.Exceptions/AES.Exceptions.csproj",
+        "projectUniqueName": "/home/timur/Документы/GitHub/AES/AES.Exceptions/AES.Exceptions.csproj",
         "projectName": "AES.Exceptions",
-        "projectPath": "/home/timur/Yandex.Disk/Документы/GitHub/AES/AES.Exceptions/AES.Exceptions.csproj",
+        "projectPath": "/home/timur/Документы/GitHub/AES/AES.Exceptions/AES.Exceptions.csproj",
         "packagesPath": "/home/timur/.nuget/packages/",
-        "outputPath": "/home/timur/Yandex.Disk/Документы/GitHub/AES/AES.Exceptions/obj/",
+        "outputPath": "/home/timur/Документы/GitHub/AES/AES.Exceptions/obj/",
         "projectStyle": "PackageReference",
         "configFilePaths": [
           "/home/timur/.nuget/NuGet/NuGet.Config"
@@ -85,8 +85,8 @@
           "net8.0": {
             "targetAlias": "net8.0",
             "projectReferences": {
-              "/home/timur/Yandex.Disk/Документы/GitHub/AES/AES.Domain/AES.Domain.csproj": {
-                "projectPath": "/home/timur/Yandex.Disk/Документы/GitHub/AES/AES.Domain/AES.Domain.csproj"
+              "/home/timur/Документы/GitHub/AES/AES.Domain/AES.Domain.csproj": {
+                "projectPath": "/home/timur/Документы/GitHub/AES/AES.Domain/AES.Domain.csproj"
               }
             }
           }
@@ -120,14 +120,14 @@
         }
       }
     },
-    "/home/timur/Yandex.Disk/Документы/GitHub/AES/AES.Infrastructure.EntityFrameworkCore.PostgreSql/AES.Infrastructure.EntityFrameworkCore.PostgreSql.csproj": {
+    "/home/timur/Документы/GitHub/AES/AES.Infrastructure.EntityFrameworkCore.PostgreSql/AES.Infrastructure.EntityFrameworkCore.PostgreSql.csproj": {
       "version": "1.0.0",
       "restore": {
-        "projectUniqueName": "/home/timur/Yandex.Disk/Документы/GitHub/AES/AES.Infrastructure.EntityFrameworkCore.PostgreSql/AES.Infrastructure.EntityFrameworkCore.PostgreSql.csproj",
+        "projectUniqueName": "/home/timur/Документы/GitHub/AES/AES.Infrastructure.EntityFrameworkCore.PostgreSql/AES.Infrastructure.EntityFrameworkCore.PostgreSql.csproj",
         "projectName": "AES.Infrastructure.EntityFrameworkCore.PostgreSql",
-        "projectPath": "/home/timur/Yandex.Disk/Документы/GitHub/AES/AES.Infrastructure.EntityFrameworkCore.PostgreSql/AES.Infrastructure.EntityFrameworkCore.PostgreSql.csproj",
+        "projectPath": "/home/timur/Документы/GitHub/AES/AES.Infrastructure.EntityFrameworkCore.PostgreSql/AES.Infrastructure.EntityFrameworkCore.PostgreSql.csproj",
         "packagesPath": "/home/timur/.nuget/packages/",
-        "outputPath": "/home/timur/Yandex.Disk/Документы/GitHub/AES/AES.Infrastructure.EntityFrameworkCore.PostgreSql/obj/",
+        "outputPath": "/home/timur/Документы/GitHub/AES/AES.Infrastructure.EntityFrameworkCore.PostgreSql/obj/",
         "projectStyle": "PackageReference",
         "configFilePaths": [
           "/home/timur/.nuget/NuGet/NuGet.Config"
@@ -142,17 +142,17 @@
           "net8.0": {
             "targetAlias": "net8.0",
             "projectReferences": {
-              "/home/timur/Yandex.Disk/Документы/GitHub/AES/AES.Domain/AES.Domain.csproj": {
-                "projectPath": "/home/timur/Yandex.Disk/Документы/GitHub/AES/AES.Domain/AES.Domain.csproj"
+              "/home/timur/Документы/GitHub/AES/AES.Domain/AES.Domain.csproj": {
+                "projectPath": "/home/timur/Документы/GitHub/AES/AES.Domain/AES.Domain.csproj"
               },
-              "/home/timur/Yandex.Disk/Документы/GitHub/AES/AES.Infrastructure.EntityFrameworkCore/AES.Infrastructure.EntityFrameworkCore.csproj": {
-                "projectPath": "/home/timur/Yandex.Disk/Документы/GitHub/AES/AES.Infrastructure.EntityFrameworkCore/AES.Infrastructure.EntityFrameworkCore.csproj"
+              "/home/timur/Документы/GitHub/AES/AES.Infrastructure.EntityFrameworkCore/AES.Infrastructure.EntityFrameworkCore.csproj": {
+                "projectPath": "/home/timur/Документы/GitHub/AES/AES.Infrastructure.EntityFrameworkCore/AES.Infrastructure.EntityFrameworkCore.csproj"
               },
-              "/home/timur/Yandex.Disk/Документы/GitHub/AES/AES.Infrastructure/AES.Infrastructure.csproj": {
-                "projectPath": "/home/timur/Yandex.Disk/Документы/GitHub/AES/AES.Infrastructure/AES.Infrastructure.csproj"
+              "/home/timur/Документы/GitHub/AES/AES.Infrastructure/AES.Infrastructure.csproj": {
+                "projectPath": "/home/timur/Документы/GitHub/AES/AES.Infrastructure/AES.Infrastructure.csproj"
               },
-              "/home/timur/Yandex.Disk/Документы/GitHub/AES/AES.Story/AES.Story.csproj": {
-                "projectPath": "/home/timur/Yandex.Disk/Документы/GitHub/AES/AES.Story/AES.Story.csproj"
+              "/home/timur/Документы/GitHub/AES/AES.Story/AES.Story.csproj": {
+                "projectPath": "/home/timur/Документы/GitHub/AES/AES.Story/AES.Story.csproj"
               }
             }
           }
@@ -214,14 +214,14 @@
         }
       }
     },
-    "/home/timur/Yandex.Disk/Документы/GitHub/AES/AES.Infrastructure.EntityFrameworkCore/AES.Infrastructure.EntityFrameworkCore.csproj": {
+    "/home/timur/Документы/GitHub/AES/AES.Infrastructure.EntityFrameworkCore/AES.Infrastructure.EntityFrameworkCore.csproj": {
       "version": "1.0.0",
       "restore": {
-        "projectUniqueName": "/home/timur/Yandex.Disk/Документы/GitHub/AES/AES.Infrastructure.EntityFrameworkCore/AES.Infrastructure.EntityFrameworkCore.csproj",
+        "projectUniqueName": "/home/timur/Документы/GitHub/AES/AES.Infrastructure.EntityFrameworkCore/AES.Infrastructure.EntityFrameworkCore.csproj",
         "projectName": "AES.Infrastructure.EntityFrameworkCore",
-        "projectPath": "/home/timur/Yandex.Disk/Документы/GitHub/AES/AES.Infrastructure.EntityFrameworkCore/AES.Infrastructure.EntityFrameworkCore.csproj",
+        "projectPath": "/home/timur/Документы/GitHub/AES/AES.Infrastructure.EntityFrameworkCore/AES.Infrastructure.EntityFrameworkCore.csproj",
         "packagesPath": "/home/timur/.nuget/packages/",
-        "outputPath": "/home/timur/Yandex.Disk/Документы/GitHub/AES/AES.Infrastructure.EntityFrameworkCore/obj/",
+        "outputPath": "/home/timur/Документы/GitHub/AES/AES.Infrastructure.EntityFrameworkCore/obj/",
         "projectStyle": "PackageReference",
         "configFilePaths": [
           "/home/timur/.nuget/NuGet/NuGet.Config"
@@ -236,14 +236,14 @@
           "net8.0": {
             "targetAlias": "net8.0",
             "projectReferences": {
-              "/home/timur/Yandex.Disk/Документы/GitHub/AES/AES.Domain/AES.Domain.csproj": {
-                "projectPath": "/home/timur/Yandex.Disk/Документы/GitHub/AES/AES.Domain/AES.Domain.csproj"
+              "/home/timur/Документы/GitHub/AES/AES.Domain/AES.Domain.csproj": {
+                "projectPath": "/home/timur/Документы/GitHub/AES/AES.Domain/AES.Domain.csproj"
               },
-              "/home/timur/Yandex.Disk/Документы/GitHub/AES/AES.Infrastructure/AES.Infrastructure.csproj": {
-                "projectPath": "/home/timur/Yandex.Disk/Документы/GitHub/AES/AES.Infrastructure/AES.Infrastructure.csproj"
+              "/home/timur/Документы/GitHub/AES/AES.Infrastructure/AES.Infrastructure.csproj": {
+                "projectPath": "/home/timur/Документы/GitHub/AES/AES.Infrastructure/AES.Infrastructure.csproj"
               },
-              "/home/timur/Yandex.Disk/Документы/GitHub/AES/AES.Story/AES.Story.csproj": {
-                "projectPath": "/home/timur/Yandex.Disk/Документы/GitHub/AES/AES.Story/AES.Story.csproj"
+              "/home/timur/Документы/GitHub/AES/AES.Story/AES.Story.csproj": {
+                "projectPath": "/home/timur/Документы/GitHub/AES/AES.Story/AES.Story.csproj"
               }
             }
           }
@@ -287,14 +287,14 @@
         }
       }
     },
-    "/home/timur/Yandex.Disk/Документы/GitHub/AES/AES.Infrastructure/AES.Infrastructure.csproj": {
+    "/home/timur/Документы/GitHub/AES/AES.Infrastructure/AES.Infrastructure.csproj": {
       "version": "1.0.0",
       "restore": {
-        "projectUniqueName": "/home/timur/Yandex.Disk/Документы/GitHub/AES/AES.Infrastructure/AES.Infrastructure.csproj",
+        "projectUniqueName": "/home/timur/Документы/GitHub/AES/AES.Infrastructure/AES.Infrastructure.csproj",
         "projectName": "AES.Infrastructure",
-        "projectPath": "/home/timur/Yandex.Disk/Документы/GitHub/AES/AES.Infrastructure/AES.Infrastructure.csproj",
+        "projectPath": "/home/timur/Документы/GitHub/AES/AES.Infrastructure/AES.Infrastructure.csproj",
         "packagesPath": "/home/timur/.nuget/packages/",
-        "outputPath": "/home/timur/Yandex.Disk/Документы/GitHub/AES/AES.Infrastructure/obj/",
+        "outputPath": "/home/timur/Документы/GitHub/AES/AES.Infrastructure/obj/",
         "projectStyle": "PackageReference",
         "configFilePaths": [
           "/home/timur/.nuget/NuGet/NuGet.Config"
@@ -309,11 +309,11 @@
           "net8.0": {
             "targetAlias": "net8.0",
             "projectReferences": {
-              "/home/timur/Yandex.Disk/Документы/GitHub/AES/AES.Domain/AES.Domain.csproj": {
-                "projectPath": "/home/timur/Yandex.Disk/Документы/GitHub/AES/AES.Domain/AES.Domain.csproj"
+              "/home/timur/Документы/GitHub/AES/AES.Domain/AES.Domain.csproj": {
+                "projectPath": "/home/timur/Документы/GitHub/AES/AES.Domain/AES.Domain.csproj"
               },
-              "/home/timur/Yandex.Disk/Документы/GitHub/AES/AES.Story/AES.Story.csproj": {
-                "projectPath": "/home/timur/Yandex.Disk/Документы/GitHub/AES/AES.Story/AES.Story.csproj"
+              "/home/timur/Документы/GitHub/AES/AES.Story/AES.Story.csproj": {
+                "projectPath": "/home/timur/Документы/GitHub/AES/AES.Story/AES.Story.csproj"
               }
             }
           }
@@ -353,14 +353,14 @@
         }
       }
     },
-    "/home/timur/Yandex.Disk/Документы/GitHub/AES/AES.Story/AES.Story.csproj": {
+    "/home/timur/Документы/GitHub/AES/AES.Story/AES.Story.csproj": {
       "version": "1.0.0",
       "restore": {
-        "projectUniqueName": "/home/timur/Yandex.Disk/Документы/GitHub/AES/AES.Story/AES.Story.csproj",
+        "projectUniqueName": "/home/timur/Документы/GitHub/AES/AES.Story/AES.Story.csproj",
         "projectName": "AES.Story",
-        "projectPath": "/home/timur/Yandex.Disk/Документы/GitHub/AES/AES.Story/AES.Story.csproj",
+        "projectPath": "/home/timur/Документы/GitHub/AES/AES.Story/AES.Story.csproj",
         "packagesPath": "/home/timur/.nuget/packages/",
-        "outputPath": "/home/timur/Yandex.Disk/Документы/GitHub/AES/AES.Story/obj/",
+        "outputPath": "/home/timur/Документы/GitHub/AES/AES.Story/obj/",
         "projectStyle": "PackageReference",
         "configFilePaths": [
           "/home/timur/.nuget/NuGet/NuGet.Config"
@@ -375,11 +375,11 @@
           "net8.0": {
             "targetAlias": "net8.0",
             "projectReferences": {
-              "/home/timur/Yandex.Disk/Документы/GitHub/AES/AES.Domain/AES.Domain.csproj": {
-                "projectPath": "/home/timur/Yandex.Disk/Документы/GitHub/AES/AES.Domain/AES.Domain.csproj"
+              "/home/timur/Документы/GitHub/AES/AES.Domain/AES.Domain.csproj": {
+                "projectPath": "/home/timur/Документы/GitHub/AES/AES.Domain/AES.Domain.csproj"
               },
-              "/home/timur/Yandex.Disk/Документы/GitHub/AES/AES.Exceptions/AES.Exceptions.csproj": {
-                "projectPath": "/home/timur/Yandex.Disk/Документы/GitHub/AES/AES.Exceptions/AES.Exceptions.csproj"
+              "/home/timur/Документы/GitHub/AES/AES.Exceptions/AES.Exceptions.csproj": {
+                "projectPath": "/home/timur/Документы/GitHub/AES/AES.Exceptions/AES.Exceptions.csproj"
               }
             }
           }

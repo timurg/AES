@@ -127,9 +127,9 @@ public class UserUtils
             newUser.Student.Curriculum = createCurriculum(newUser.Student, new[]
             {
                // new dymmuCurriculum() { Semester = 1, SubjectName = "Памятка поступившему", TypeTesting = "Зачёт" },
-                new dymmuCurriculum(){Semester = 1, SubjectName = "БПЛА и угрозы от них", TypeTesting = "Зачёт" },
-                new dymmuCurriculum(){Semester = 1, SubjectName = "Радиоэлектронное противодействие БПЛА", TypeTesting = "Зачёт" },
-                new dymmuCurriculum(){Semester = 1, SubjectName = "Существующие комплексные решения по РЭБ", TypeTesting = "Зачёт" },
+                new dymmuCurriculum("БПЛА и угрозы от них", "Зачёт", 1),
+                new dymmuCurriculum("Радиоэлектронное противодействие БПЛА", "Зачёт", 1),
+                new dymmuCurriculum("Существующие комплексные решения по РЭБ", "Зачёт", 1),
             }, unitOfWork);
         }
 
@@ -139,6 +139,13 @@ public class UserUtils
 
     private class dymmuCurriculum
     {
+        public dymmuCurriculum(string subjectName, string typeTesting, int semester)
+        {
+            SubjectName = subjectName;
+            TypeTesting = typeTesting;
+            Semester = semester;
+        }
+
         public string SubjectName { get; set; }
         public string TypeTesting { get; set; }
         public int Semester { get; set; }

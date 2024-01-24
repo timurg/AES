@@ -35,6 +35,7 @@
       <ProjectReference Include="..\AES.Infrastructure.EntityFrameworkCore.PostgreSql\AES.Infrastructure.EntityFrameworkCore.PostgreSql.csproj" />
       <ProjectReference Include="..\AES.Infrastructure.EntityFrameworkCore\AES.Infrastructure.EntityFrameworkCore.csproj" />
       <ProjectReference Include="..\AES.Infrastructure\AES.Infrastructure.csproj" />
+      <ProjectReference Include="..\AES.Story\AES.Story.csproj" />
     </ItemGroup>
 
 

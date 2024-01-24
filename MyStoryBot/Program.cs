@@ -28,7 +28,7 @@ var configuration = new ConfigurationBuilder()
 var serviceProvider = ConfigureServices(configuration) as AutofacServiceProvider ?? throw new ApplicationException();
 if (serviceProvider == null) throw new ArgumentNullException(paramName: "serviceProvider");
 
-var botClient = new BotClient(configuration["bot:id"]);
+var botClient = new BotClient(botToken: configuration["bot:id"] ?? throw new ApplicationException("Requared parametr bot:id"));
 
 var me = botClient.GetMe();
 _logger.Debug($"Start listening for @{me.Username}");
