@@ -1,8 +1,8 @@
 {
   "version": 2,
-  "dgSpecHash": "PxhZALlQAeEyfCWQsMi7WoBuWfpsmBRhB1hCreJHY6sAPZYeZguiYTfFFuRro+A70aHM0zCMvh81v9F+BN7dsg==",
+  "dgSpecHash": "XR/jc9KqzMfYO1MvQ9BRzueYI5KWAdNBvK2WGf7sKSIPqpBhcsXWYxmBiUUyNYZJ06zF/jDPufJop1yBJafYcQ==",
   "success": true,
-  "projectFilePath": "/home/timur/Документы/GitHub/AES/AES.Infrastructure.EntityFrameworkCore.PostgreSql/AES.Infrastructure.EntityFrameworkCore.PostgreSql.csproj",
+  "projectFilePath": "/home/timur/Yandex.Disk/Документы/GitHub/AES/AES.Infrastructure.EntityFrameworkCore.PostgreSql/AES.Infrastructure.EntityFrameworkCore.PostgreSql.csproj",
   "expectedPackageFiles": [
     "/home/timur/.nuget/packages/humanizer.core/2.14.1/humanizer.core.2.14.1.nupkg.sha512",
     "/home/timur/.nuget/packages/microsoft.bcl.asyncinterfaces/6.0.0/microsoft.bcl.asyncinterfaces.6.0.0.nupkg.sha512",
