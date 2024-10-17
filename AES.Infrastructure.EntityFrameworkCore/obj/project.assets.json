@@ -722,11 +722,11 @@
   "project": {
     "version": "1.0.0",
     "restore": {
-      "projectUniqueName": "/home/timur/Yandex.Disk/Документы/GitHub/AES/AES.Infrastructure.EntityFrameworkCore/AES.Infrastructure.EntityFrameworkCore.csproj",
+      "projectUniqueName": "/home/timur/Документы/GitHub/AES/AES.Infrastructure.EntityFrameworkCore/AES.Infrastructure.EntityFrameworkCore.csproj",
       "projectName": "AES.Infrastructure.EntityFrameworkCore",
-      "projectPath": "/home/timur/Yandex.Disk/Документы/GitHub/AES/AES.Infrastructure.EntityFrameworkCore/AES.Infrastructure.EntityFrameworkCore.csproj",
+      "projectPath": "/home/timur/Документы/GitHub/AES/AES.Infrastructure.EntityFrameworkCore/AES.Infrastructure.EntityFrameworkCore.csproj",
       "packagesPath": "/home/timur/.nuget/packages/",
-      "outputPath": "/home/timur/Yandex.Disk/Документы/GitHub/AES/AES.Infrastructure.EntityFrameworkCore/obj/",
+      "outputPath": "/home/timur/Документы/GitHub/AES/AES.Infrastructure.EntityFrameworkCore/obj/",
       "projectStyle": "PackageReference",
       "configFilePaths": [
         "/home/timur/.nuget/NuGet/NuGet.Config"
@@ -741,14 +741,14 @@
         "net8.0": {
           "targetAlias": "net8.0",
           "projectReferences": {
-            "/home/timur/Yandex.Disk/Документы/GitHub/AES/AES.Domain/AES.Domain.csproj": {
-              "projectPath": "/home/timur/Yandex.Disk/Документы/GitHub/AES/AES.Domain/AES.Domain.csproj"
+            "/home/timur/Документы/GitHub/AES/AES.Domain/AES.Domain.csproj": {
+              "projectPath": "/home/timur/Документы/GitHub/AES/AES.Domain/AES.Domain.csproj"
             },
-            "/home/timur/Yandex.Disk/Документы/GitHub/AES/AES.Infrastructure/AES.Infrastructure.csproj": {
-              "projectPath": "/home/timur/Yandex.Disk/Документы/GitHub/AES/AES.Infrastructure/AES.Infrastructure.csproj"
+            "/home/timur/Документы/GitHub/AES/AES.Infrastructure/AES.Infrastructure.csproj": {
+              "projectPath": "/home/timur/Документы/GitHub/AES/AES.Infrastructure/AES.Infrastructure.csproj"
             },
-            "/home/timur/Yandex.Disk/Документы/GitHub/AES/AES.Story/AES.Story.csproj": {
-              "projectPath": "/home/timur/Yandex.Disk/Документы/GitHub/AES/AES.Story/AES.Story.csproj"
+            "/home/timur/Документы/GitHub/AES/AES.Story/AES.Story.csproj": {
+              "projectPath": "/home/timur/Документы/GitHub/AES/AES.Story/AES.Story.csproj"
             }
           }
         }
@@ -788,7 +788,7 @@
             "privateAssets": "all"
           }
         },
-        "runtimeIdentifierGraphPath": "/usr/lib64/dotnet/sdk/8.0.101/PortableRuntimeIdentifierGraph.json"
+        "runtimeIdentifierGraphPath": "/usr/lib64/dotnet/sdk/8.0.108/PortableRuntimeIdentifierGraph.json"
       }
     }
   }

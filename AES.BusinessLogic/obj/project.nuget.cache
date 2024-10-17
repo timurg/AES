@@ -1,8 +1,8 @@
 {
   "version": 2,
-  "dgSpecHash": "E7rDQ/wSHxLgR/W8Bfxn7Ausg71/7GgLghAwBtWPKjgor4IMrsrPJSsz+FUH9dzB7zkVM8GGNX9lYag1Fk++9g==",
+  "dgSpecHash": "qbWF96RGoSMc//2HYVJfvI9PMWiqVnL5w8C4KV5Rmnw1QWGifc1FVktukqOASsuW0+zbgZz/6/gO5cdps3NlAA==",
   "success": true,
-  "projectFilePath": "/home/timur/Yandex.Disk/Документы/GitHub/AES/AES.BusinessLogic/AES.BusinessLogic.csproj",
+  "projectFilePath": "/home/timur/Документы/GitHub/AES/AES.BusinessLogic/AES.BusinessLogic.csproj",
   "expectedPackageFiles": [
     "/home/timur/.nuget/packages/microsoft.entityframeworkcore/8.0.1/microsoft.entityframeworkcore.8.0.1.nupkg.sha512",
     "/home/timur/.nuget/packages/microsoft.entityframeworkcore.abstractions/8.0.1/microsoft.entityframeworkcore.abstractions.8.0.1.nupkg.sha512",

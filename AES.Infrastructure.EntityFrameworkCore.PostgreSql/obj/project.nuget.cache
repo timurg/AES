@@ -1,6 +1,6 @@
 {
   "version": 2,
-  "dgSpecHash": "XR/jc9KqzMfYO1MvQ9BRzueYI5KWAdNBvK2WGf7sKSIPqpBhcsXWYxmBiUUyNYZJ06zF/jDPufJop1yBJafYcQ==",
+  "dgSpecHash": "cDs7F8wFEyCMykpnGF72UlxtnjCCumlK9c8+FuE645uugLZT9Aw1Cc6SVEaxV9Kd3uQgheD/mc8MkoZYO0OCig==",
   "success": true,
   "projectFilePath": "/home/timur/Yandex.Disk/Документы/GitHub/AES/AES.Infrastructure.EntityFrameworkCore.PostgreSql/AES.Infrastructure.EntityFrameworkCore.PostgreSql.csproj",
   "expectedPackageFiles": [
