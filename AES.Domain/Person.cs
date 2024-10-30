@@ -116,7 +116,7 @@ namespace AES.Domain
         /// Дата рождения
         /// </summary>
         [Required]
-        public DateTimeOffset Birthday
+        public DateTimeOffset? Birthday
         {
             get; set;
         }

@@ -661,11 +661,11 @@
   "project": {
     "version": "1.0.0",
     "restore": {
-      "projectUniqueName": "/home/timur/Документы/GitHub/AES/AES.BusinessLogic.Implementation/AES.BusinessLogic.Implementation.csproj",
+      "projectUniqueName": "/home/timur/Yandex.Disk/Документы/GitHub/AES/AES.BusinessLogic.Implementation/AES.BusinessLogic.Implementation.csproj",
       "projectName": "AES.BusinessLogic.Implementation",
-      "projectPath": "/home/timur/Документы/GitHub/AES/AES.BusinessLogic.Implementation/AES.BusinessLogic.Implementation.csproj",
+      "projectPath": "/home/timur/Yandex.Disk/Документы/GitHub/AES/AES.BusinessLogic.Implementation/AES.BusinessLogic.Implementation.csproj",
       "packagesPath": "/home/timur/.nuget/packages/",
-      "outputPath": "/home/timur/Документы/GitHub/AES/AES.BusinessLogic.Implementation/obj/",
+      "outputPath": "/home/timur/Yandex.Disk/Документы/GitHub/AES/AES.BusinessLogic.Implementation/obj/",
       "projectStyle": "PackageReference",
       "configFilePaths": [
         "/home/timur/.nuget/NuGet/NuGet.Config"
@@ -680,17 +680,17 @@
         "net8.0": {
           "targetAlias": "net8.0",
           "projectReferences": {
-            "/home/timur/Документы/GitHub/AES/AES.BusinessLogic/AES.BusinessLogic.csproj": {
-              "projectPath": "/home/timur/Документы/GitHub/AES/AES.BusinessLogic/AES.BusinessLogic.csproj"
+            "/home/timur/Yandex.Disk/Документы/GitHub/AES/AES.BusinessLogic/AES.BusinessLogic.csproj": {
+              "projectPath": "/home/timur/Yandex.Disk/Документы/GitHub/AES/AES.BusinessLogic/AES.BusinessLogic.csproj"
             },
-            "/home/timur/Документы/GitHub/AES/AES.Domain/AES.Domain.csproj": {
-              "projectPath": "/home/timur/Документы/GitHub/AES/AES.Domain/AES.Domain.csproj"
+            "/home/timur/Yandex.Disk/Документы/GitHub/AES/AES.Domain/AES.Domain.csproj": {
+              "projectPath": "/home/timur/Yandex.Disk/Документы/GitHub/AES/AES.Domain/AES.Domain.csproj"
             },
-            "/home/timur/Документы/GitHub/AES/AES.Infrastructure/AES.Infrastructure.csproj": {
-              "projectPath": "/home/timur/Документы/GitHub/AES/AES.Infrastructure/AES.Infrastructure.csproj"
+            "/home/timur/Yandex.Disk/Документы/GitHub/AES/AES.Infrastructure/AES.Infrastructure.csproj": {
+              "projectPath": "/home/timur/Yandex.Disk/Документы/GitHub/AES/AES.Infrastructure/AES.Infrastructure.csproj"
             },
-            "/home/timur/Документы/GitHub/AES/AES.Story/AES.Story.csproj": {
-              "projectPath": "/home/timur/Документы/GitHub/AES/AES.Story/AES.Story.csproj"
+            "/home/timur/Yandex.Disk/Документы/GitHub/AES/AES.Story/AES.Story.csproj": {
+              "projectPath": "/home/timur/Yandex.Disk/Документы/GitHub/AES/AES.Story/AES.Story.csproj"
             }
           }
         }
@@ -726,7 +726,7 @@
             "privateAssets": "all"
           }
         },
-        "runtimeIdentifierGraphPath": "/usr/lib64/dotnet/sdk/8.0.108/PortableRuntimeIdentifierGraph.json"
+        "runtimeIdentifierGraphPath": "/usr/lib64/dotnet/sdk/8.0.110/PortableRuntimeIdentifierGraph.json"
       }
     }
   }
