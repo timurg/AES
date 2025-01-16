@@ -1,28 +1,46 @@
 ﻿using System.Collections.Concurrent;
-using System.Net.Mime;
-using System.Text;
-using AES.BusinessLogic;
 using AES.BusinessLogic.Implementation;
-using AES.Domain;
 using AES.Infrastructure;
 using AES.Story;
 using Autofac;
 using Autofac.Configuration;
 using Autofac.Extensions.DependencyInjection;
 using Microsoft.Extensions.Configuration;
-using MyStoryBot;
 using MyStoryBot.Commands;
 using Telegram.BotAPI;
 using Telegram.BotAPI.AvailableMethods;
-using Telegram.BotAPI.AvailableMethods.FormattingOptions;
 using Telegram.BotAPI.AvailableTypes;
 using Telegram.BotAPI.GettingUpdates;
-using Telegram.BotAPI.UpdatingMessages;
-using Module = AES.Domain.Module;
+
 NLog.ILogger _logger = NLog.LogManager.GetCurrentClassLogger();
+_logger.Debug($"Currnet directory: {Environment.CurrentDirectory}");
+
+static void LogDirectoryStructure(string path, NLog.ILogger logger, string indent = "")
+{
+    logger.Debug($"{indent}Directory: {path}");
+    
+    // Вывод файлов
+    foreach (var file in Directory.GetFiles(path))
+    {
+        var fileInfo = new FileInfo(file);
+        logger.Debug($"{indent}├── {fileInfo.Name} ({fileInfo.Length:N0} bytes)");
+    }
+
+    // Рекурсивный обход поддиректорий
+    foreach (var dir in Directory.GetDirectories(path))
+    {
+        LogDirectoryStructure(dir, logger, indent + "│   ");
+    }
+}
+
+// В методе Main после получения logger:
+_logger.Debug("=== Directory Structure ===");
+LogDirectoryStructure(Environment.CurrentDirectory, _logger);
+_logger.Debug("=========================");
+
 
 var configuration = new ConfigurationBuilder()
-    .AddJsonFile("appsettings.json", optional: true)
+    .AddJsonFile("./config/appsettings.json", optional: true)
     .AddUserSecrets<Program>()
     .Build();
 var serviceProvider = ConfigureServices(configuration) as AutofacServiceProvider ?? throw new ApplicationException();
@@ -33,21 +51,22 @@ var botClient = new BotClient(botToken: configuration["bot:id"] ?? throw new App
 var me = botClient.GetMe();
 _logger.Debug($"Start listening for @{me.Username}");
 
+
 var updates = await botClient.GetUpdatesAsync();
 _logger.Debug("Enter to cycle");
 botClient.SetMyCommands(new BotCommand("info", "Информация"), new BotCommand("/next", "Далее"));
 var unitOfWorkFactory = serviceProvider.GetService(typeof(IUnitOfWorkFactory)) as IUnitOfWorkFactory;
 
-var namedCommands = new BlockingCollection<NamedCommand>();
-namedCommands.Add(new StartCommand(botClient));
-namedCommands.Add(new InfoCommand(botClient));
-namedCommands.Add(new NextCommand(botClient));
-namedCommands.Add(new AllResultsCommand(botClient));
-
-namedCommands.Add(new ShowCommand(botClient));
-namedCommands.Add(new StartLearningCommand(botClient));
-
-namedCommands.Add(new PollAnswerCommand(botClient));
+var namedCommands = new BlockingCollection<NamedCommand>
+{
+    new StartCommand(botClient),
+    new InfoCommand(botClient),
+    new NextCommand(botClient),
+    new AllResultsCommand(botClient),
+    new ShowCommand(botClient),
+    new StartLearningCommand(botClient),
+    new PollAnswerCommand(botClient)
+};
 
 while (true)
 {

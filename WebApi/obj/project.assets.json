@@ -1104,11 +1104,11 @@
   "project": {
     "version": "1.0.0",
     "restore": {
-      "projectUniqueName": "/home/timur/Документы/GitHub/AES/WebApi/WebApi.csproj",
+      "projectUniqueName": "/home/timur/Work/AES/WebApi/WebApi.csproj",
       "projectName": "WebApi",
-      "projectPath": "/home/timur/Документы/GitHub/AES/WebApi/WebApi.csproj",
+      "projectPath": "/home/timur/Work/AES/WebApi/WebApi.csproj",
       "packagesPath": "/home/timur/.nuget/packages/",
-      "outputPath": "/home/timur/Документы/GitHub/AES/WebApi/obj/",
+      "outputPath": "/home/timur/Work/AES/WebApi/obj/",
       "projectStyle": "PackageReference",
       "configFilePaths": [
         "/home/timur/.nuget/NuGet/NuGet.Config"
@@ -1171,7 +1171,7 @@
             "privateAssets": "all"
           }
         },
-        "runtimeIdentifierGraphPath": "/usr/lib64/dotnet/sdk/8.0.110/PortableRuntimeIdentifierGraph.json"
+        "runtimeIdentifierGraphPath": "/usr/lib64/dotnet/sdk/8.0.111/PortableRuntimeIdentifierGraph.json"
       }
     }
   }

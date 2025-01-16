@@ -4005,11 +4005,11 @@
   "project": {
     "version": "1.0.0",
     "restore": {
-      "projectUniqueName": "/home/timur/Документы/GitHub/AES/AES.IdentityServer4/AES.IdentityServer4.csproj",
+      "projectUniqueName": "/home/timur/Work/AES/AES.IdentityServer4/AES.IdentityServer4.csproj",
       "projectName": "AES.IdentityServer4",
-      "projectPath": "/home/timur/Документы/GitHub/AES/AES.IdentityServer4/AES.IdentityServer4.csproj",
+      "projectPath": "/home/timur/Work/AES/AES.IdentityServer4/AES.IdentityServer4.csproj",
       "packagesPath": "/home/timur/.nuget/packages/",
-      "outputPath": "/home/timur/Документы/GitHub/AES/AES.IdentityServer4/obj/",
+      "outputPath": "/home/timur/Work/AES/AES.IdentityServer4/obj/",
       "projectStyle": "PackageReference",
       "configFilePaths": [
         "/home/timur/.nuget/NuGet/NuGet.Config"
@@ -4082,7 +4082,7 @@
             "privateAssets": "all"
           }
         },
-        "runtimeIdentifierGraphPath": "/usr/lib64/dotnet/sdk/8.0.110/PortableRuntimeIdentifierGraph.json"
+        "runtimeIdentifierGraphPath": "/usr/lib64/dotnet/sdk/8.0.111/PortableRuntimeIdentifierGraph.json"
       }
     }
   }

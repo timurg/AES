@@ -4,7 +4,7 @@ using Microsoft.Extensions.Configuration;
 
 namespace AES.Infrastructure.EntityFrameworkCore.Sqlite;
 
-public class PostgreSqlConnectionFactory : IDesignTimeDbContextFactory<AESEntityFrameworkCoreSqliteContext>
+public class SqliteConnectionFactory : IDesignTimeDbContextFactory<AESEntityFrameworkCoreSqliteContext>
 {
     public AESEntityFrameworkCoreSqliteContext CreateDbContext(string[] args)
     {
@@ -13,11 +13,15 @@ public class PostgreSqlConnectionFactory : IDesignTimeDbContextFactory<AESEntity
             .AddJsonFile("appsettings.json", optional: true)
             .AddUserSecrets(assembly).Build();
         var connectionString = configuration.GetConnectionString("aes");
+        Console.WriteLine(Environment.CurrentDirectory);
+        Console.WriteLine($"Connection string: {connectionString}");
         if (string.IsNullOrEmpty(connectionString))
         {
             throw new System.Exception("Nya!");
         }
-        return new AESEntityFrameworkCoreSqliteContext(connectionString);
+        var context = new AESEntityFrameworkCoreSqliteContext(connectionString);
+        //context.EnsureDatabaseCreated();
+        return context;
     }
     
 }

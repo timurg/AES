@@ -22,6 +22,9 @@ namespace AES.Init
 
     public class Initializer
     {
+
+        private static readonly string basePath = "/home/timur/Изображения/";
+
         public static IDictionary<string, TypeTesting> CreateDictionaryByName(ITypeTestingRepository repository)
         {
             IDictionary<string, TypeTesting> dic = new Dictionary<string, TypeTesting>();
@@ -508,14 +511,14 @@ namespace AES.Init
                     /*
 
                     MyStoryTemplateFileBased tempItem = MyStoryTemplateVideo.CreateFromFile(
-                        "D:\\yandex\\YandexDisk\\Изображения\\slides\\abi\\00.mp4", "Обращение ректора О.А. Баулина к первокурсникам",
+                        $"{basePath}slides{Path.DirectorySeparatorChar}abi{Path.DirectorySeparatorChar}00.mp4", "Обращение ректора О.А. Баулина к первокурсникам",
                         new Guid("89ECCD37-FB7D-43EF-82EC-1EF55F876CF6"), template.Items.Count);
                     template.Items.Add(tempItem);
                     unitOfWork.BinaryDataRepository.Save(BinaryData.CreateFromFile(
-                        tempItem.Id,"D:\\yandex\\YandexDisk\\Изображения\\slides\\abi\\00.mp4"));
+                        tempItem.Id,$"{basePath}slides{Path.DirectorySeparatorChar}abi{Path.DirectorySeparatorChar}00.mp4"));
                     
                     var tmpId = new Guid("33D598AC-FFCE-405A-8F7F-8EDF1FBC7D6C");
-                    var filePath = "D:\\yandex\\YandexDisk\\Изображения\\slides\\abi\\01.png";
+                    var filePath = $"{basePath}slides{Path.DirectorySeparatorChar}abi{Path.DirectorySeparatorChar}01.png";
                     tempItem = MyStoryTemplateImage.CreateFromFile(filePath
                         , "Памятка поступившему",
                         tmpId, template.Items.Count);
@@ -524,7 +527,7 @@ namespace AES.Init
                         tmpId,filePath));
                     
                     tmpId = new Guid("ACD466A9-00FF-4032-9472-F113C1654A03");
-                    filePath = "D:\\yandex\\YandexDisk\\Изображения\\slides\\abi\\02.png";
+                    filePath = $"{basePath}slides{Path.DirectorySeparatorChar}abi{Path.DirectorySeparatorChar}02.png";
                     tempItem = MyStoryTemplateImage.CreateFromFile(filePath
                         , "Памятка поступившему",
                         tmpId, template.Items.Count);
@@ -533,7 +536,7 @@ namespace AES.Init
                         tmpId,filePath));
                     
                     tmpId = new Guid("4039AC29-7182-4270-B32F-C2EF56FF312E");
-                    filePath = "D:\\yandex\\YandexDisk\\Изображения\\slides\\abi\\03.png";
+                    filePath = $"{basePath}slides{Path.DirectorySeparatorChar}abi{Path.DirectorySeparatorChar}03.png";
                     tempItem = MyStoryTemplateImage.CreateFromFile(filePath
                         , "Памятка поступившему",
                         tmpId, template.Items.Count);
@@ -542,7 +545,7 @@ namespace AES.Init
                         tmpId,filePath));
                     
                     tmpId = new Guid("F6FE2B1A-6635-4826-A3D6-61510F52307F");
-                    filePath = "D:\\yandex\\YandexDisk\\Изображения\\slides\\abi\\04.png";
+                    filePath = $"{basePath}slides{Path.DirectorySeparatorChar}abi{Path.DirectorySeparatorChar}04.png";
                     tempItem = MyStoryTemplateImage.CreateFromFile(filePath
                         , "Памятка поступившему",
                         tmpId, template.Items.Count);
@@ -551,7 +554,7 @@ namespace AES.Init
                         tmpId,filePath));
                     
                     tmpId = new Guid("847FEF0C-690F-471A-8B02-823F559DD885");
-                    filePath = "D:\\yandex\\YandexDisk\\Изображения\\slides\\abi\\05.png";
+                    filePath = $"{basePath}slides{Path.DirectorySeparatorChar}abi{Path.DirectorySeparatorChar}05.png";
                     tempItem = MyStoryTemplateImage.CreateFromFile(filePath
                         , "Памятка поступившему",
                         tmpId, template.Items.Count);
@@ -560,7 +563,7 @@ namespace AES.Init
                         tmpId,filePath));
                     
                     tmpId = new Guid("CD148916-32BC-4AF5-8766-B6E050B93431");
-                    filePath = "D:\\yandex\\YandexDisk\\Изображения\\slides\\abi\\06.png";
+                    filePath = $"{basePath}slides{Path.DirectorySeparatorChar}abi{Path.DirectorySeparatorChar}06.png";
                     tempItem = MyStoryTemplateImage.CreateFromFile(filePath
                         , "Памятка поступившему",
                         tmpId, template.Items.Count);
@@ -569,7 +572,7 @@ namespace AES.Init
                         tmpId,filePath));
 
                     tmpId = new Guid("868F96A3-6F17-4EDC-8663-C77CBF909EB3");
-                    filePath = "D:\\yandex\\YandexDisk\\Изображения\\slides\\abi\\07.png";
+                    filePath = $"{basePath}slides{Path.DirectorySeparatorChar}abi{Path.DirectorySeparatorChar}07.png";
                     tempItem = MyStoryTemplateImage.CreateFromFile(filePath
                         , "Памятка поступившему",
                         tmpId, template.Items.Count);
@@ -578,7 +581,7 @@ namespace AES.Init
                         tmpId,filePath));
                     
                     tmpId = new Guid("82D9A232-F903-4E3F-846F-7A87872948EB");
-                    filePath = "D:\\yandex\\YandexDisk\\Изображения\\slides\\abi\\08.png";
+                    filePath = $"{basePath}slides{Path.DirectorySeparatorChar}abi{Path.DirectorySeparatorChar}08.png";
                     tempItem = MyStoryTemplateImage.CreateFromFile(filePath
                         , "Памятка поступившему",
                         tmpId, template.Items.Count);
@@ -587,7 +590,7 @@ namespace AES.Init
                         tmpId,filePath));
                     
                     tmpId = new Guid("C317779E-F181-4638-94EA-FE48EB066518");
-                    filePath = "D:\\yandex\\YandexDisk\\Изображения\\slides\\abi\\09.png";
+                    filePath = $"{basePath}slides{Path.DirectorySeparatorChar}abi{Path.DirectorySeparatorChar}09.png";
                     tempItem = MyStoryTemplateImage.CreateFromFile(filePath
                         , "Памятка поступившему",
                         tmpId, template.Items.Count);
@@ -596,7 +599,7 @@ namespace AES.Init
                         tmpId,filePath));
                     
                     tmpId = new Guid("89CDF587-D2FD-4553-85AC-7BD61AF7D889");
-                    filePath = "D:\\yandex\\YandexDisk\\Изображения\\slides\\abi\\10.png";
+                    filePath = $"{basePath}slides{Path.DirectorySeparatorChar}abi{Path.DirectorySeparatorChar}10.png";
                     tempItem = MyStoryTemplateImage.CreateFromFile(filePath
                         , "Памятка поступившему",
                         tmpId, template.Items.Count);
@@ -605,7 +608,7 @@ namespace AES.Init
                         tmpId,filePath));
                     
                     tmpId = new Guid("5A669B9C-55BE-41D7-92DD-63909E441FC3");
-                    filePath = "D:\\yandex\\YandexDisk\\Изображения\\slides\\abi\\11.png";
+                    filePath = $"{basePath}slides{Path.DirectorySeparatorChar}abi{Path.DirectorySeparatorChar}11.png";
                     tempItem = MyStoryTemplateImage.CreateFromFile(filePath
                         , "Памятка поступившему",
                         tmpId, template.Items.Count);
@@ -614,7 +617,7 @@ namespace AES.Init
                         tmpId,filePath));
                     
                     tmpId = new Guid("BC73DE27-14D4-4C44-BD28-C3E462996BE6");
-                    filePath = "D:\\yandex\\YandexDisk\\Изображения\\slides\\abi\\12.png";
+                    filePath = $"{basePath}slides{Path.DirectorySeparatorChar}abi{Path.DirectorySeparatorChar}12.png";
                     tempItem = MyStoryTemplateImage.CreateFromFile(filePath
                         , "Памятка поступившему",
                         tmpId, template.Items.Count);
@@ -665,6 +668,7 @@ namespace AES.Init
             using (var unitOfWork = unitOfWorkFactory.Create())
             {
                 var id = new Guid("9ed7be25-ed3f-4cf5-b1eb-baff9950e953");
+                
 
                 var template = unitOfWork.StoryTemplateRepository.Get(id);
                 if (template == null)
@@ -682,7 +686,7 @@ namespace AES.Init
                     };
 
                     var tmpId = new Guid("8c5f92e0-caf0-46a9-a759-527cede7534b");
-                    var filePath = "D:\\yandex\\YandexDisk\\Изображения\\Слайды Антидрон\\01\\02.png";
+                    var filePath = $"{basePath}Слайды Антидрон{Path.DirectorySeparatorChar}01{Path.DirectorySeparatorChar}02.png";
                     MyStoryTemplateFileBased tempItem = MyStoryTemplateImage.CreateFromFile(filePath
                         , "БПЛА и угрозы от них",
                         tmpId, template.Items.Count);
@@ -692,14 +696,14 @@ namespace AES.Init
 
 
                     tempItem = MyStoryTemplateVideo.CreateFromFile(
-                        "D:\\yandex\\YandexDisk\\Изображения\\Слайды Антидрон\\01\\03.mp4", "БПЛА и угрозы от них",
+                        $"{basePath}Слайды Антидрон{Path.DirectorySeparatorChar}01{Path.DirectorySeparatorChar}03.mp4", "БПЛА и угрозы от них",
                         new Guid("ffb6f296-e43e-411b-9c18-fba65043105d"), template.Items.Count);
                     template.Items.Add(tempItem);
                     unitOfWork.BinaryDataRepository.Save(BinaryData.CreateFromFile(
-                        tempItem.Id, "D:\\yandex\\YandexDisk\\Изображения\\Слайды Антидрон\\01\\03.mp4"));
+                        tempItem.Id, $"{basePath}Слайды Антидрон{Path.DirectorySeparatorChar}01{Path.DirectorySeparatorChar}03.mp4"));
 
                     tmpId = new Guid("15b436ef-008b-4877-989b-5c9cc7baa383");
-                    filePath = "D:\\yandex\\YandexDisk\\Изображения\\Слайды Антидрон\\01\\10.png";
+                    filePath = $"{basePath}Слайды Антидрон{Path.DirectorySeparatorChar}01{Path.DirectorySeparatorChar}10.png";
                     tempItem = MyStoryTemplateImage.CreateFromFile(filePath
                         , "БПЛА и угрозы от них",
                         tmpId, template.Items.Count);
@@ -708,7 +712,7 @@ namespace AES.Init
                         tmpId, filePath));
 
                     tmpId = new Guid("a34f65c7-521e-48e4-8585-8b6bb6f1cb48");
-                    filePath = "D:\\yandex\\YandexDisk\\Изображения\\Слайды Антидрон\\01\\11.png";
+                    filePath = $"{basePath}Слайды Антидрон{Path.DirectorySeparatorChar}01{Path.DirectorySeparatorChar}11.png";
                     tempItem = MyStoryTemplateImage.CreateFromFile(filePath
                         , "БПЛА и угрозы от них",
                         tmpId, template.Items.Count);
@@ -718,7 +722,7 @@ namespace AES.Init
 
 
                     tmpId = new Guid("19604D8B-2D68-4669-A821-07700525D1E3");
-                    filePath = "D:\\yandex\\YandexDisk\\Изображения\\Слайды Антидрон\\01\\12.png";
+                    filePath = $"{basePath}Слайды Антидрон{Path.DirectorySeparatorChar}01{Path.DirectorySeparatorChar}12.png";
                     tempItem = MyStoryTemplateImage.CreateFromFile(filePath
                         , "БПЛА и угрозы от них",
                         tmpId, template.Items.Count);
@@ -727,7 +731,7 @@ namespace AES.Init
                         tmpId, filePath));
 
                     tmpId = new Guid("CFE18B29-B246-4E01-9772-94A7BA6BB63C");
-                    filePath = "D:\\yandex\\YandexDisk\\Изображения\\Слайды Антидрон\\01\\13.png";
+                    filePath = $"{basePath}Слайды Антидрон{Path.DirectorySeparatorChar}01{Path.DirectorySeparatorChar}13.png";
                     tempItem = MyStoryTemplateImage.CreateFromFile(filePath
                         , "БПЛА и угрозы от них",
                         tmpId, template.Items.Count);
@@ -736,7 +740,7 @@ namespace AES.Init
                         tmpId, filePath));
 
                     tmpId = new Guid("4D51E617-FFD9-493C-BA1C-26DDF7F5B460");
-                    filePath = "D:\\yandex\\YandexDisk\\Изображения\\Слайды Антидрон\\01\\14.png";
+                    filePath = $"{basePath}Слайды Антидрон{Path.DirectorySeparatorChar}01{Path.DirectorySeparatorChar}14.png";
                     tempItem = MyStoryTemplateImage.CreateFromFile(filePath
                         , "БПЛА и угрозы от них",
                         tmpId, template.Items.Count);
@@ -746,29 +750,29 @@ namespace AES.Init
 
 
                     tempItem = MyStoryTemplateVideo.CreateFromFile(
-                        "D:\\yandex\\YandexDisk\\Изображения\\Слайды Антидрон\\01\\15.mp4", "БПЛА и угрозы от них",
+                        $"{basePath}Слайды Антидрон{Path.DirectorySeparatorChar}01{Path.DirectorySeparatorChar}15.mp4", "БПЛА и угрозы от них",
                         new Guid("e05c3c33-e736-4958-be31-c149381e4e67"), template.Items.Count);
                     template.Items.Add(tempItem);
                     unitOfWork.BinaryDataRepository.Save(BinaryData.CreateFromFile(
-                        tempItem.Id, "D:\\yandex\\YandexDisk\\Изображения\\Слайды Антидрон\\01\\15.mp4"));
+                        tempItem.Id, $"{basePath}Слайды Антидрон{Path.DirectorySeparatorChar}01{Path.DirectorySeparatorChar}15.mp4"));
 
 
                     tempItem = MyStoryTemplateVideo.CreateFromFile(
-                        "D:\\yandex\\YandexDisk\\Изображения\\Слайды Антидрон\\01\\16.mp4", "БПЛА и угрозы от них",
+                        $"{basePath}Слайды Антидрон{Path.DirectorySeparatorChar}01{Path.DirectorySeparatorChar}16.mp4", "БПЛА и угрозы от них",
                         new Guid("24365760-d602-4c34-b0a7-6b9b0bd30d71"), template.Items.Count);
                     template.Items.Add(tempItem);
                     unitOfWork.BinaryDataRepository.Save(BinaryData.CreateFromFile(
-                        tempItem.Id, "D:\\yandex\\YandexDisk\\Изображения\\Слайды Антидрон\\01\\16.mp4"));
+                        tempItem.Id, $"{basePath}Слайды Антидрон{Path.DirectorySeparatorChar}01{Path.DirectorySeparatorChar}16.mp4"));
 
                     tempItem = MyStoryTemplateVideo.CreateFromFile(
-                        "D:\\yandex\\YandexDisk\\Изображения\\Слайды Антидрон\\01\\17.mp4", "БПЛА и угрозы от них",
+                        $"{basePath}Слайды Антидрон{Path.DirectorySeparatorChar}01{Path.DirectorySeparatorChar}17.mp4", "БПЛА и угрозы от них",
                         new Guid("e5428792-f891-4cfa-8cb2-a740d157415c"), template.Items.Count);
                     template.Items.Add(tempItem);
                     unitOfWork.BinaryDataRepository.Save(BinaryData.CreateFromFile(
-                        tempItem.Id, "D:\\yandex\\YandexDisk\\Изображения\\Слайды Антидрон\\01\\17.mp4"));
+                        tempItem.Id, $"{basePath}Слайды Антидрон{Path.DirectorySeparatorChar}01{Path.DirectorySeparatorChar}17.mp4"));
 
                     tmpId = new Guid("3C72D3F3-8482-4125-9580-019CBC1D4C32");
-                    filePath = "D:\\yandex\\YandexDisk\\Изображения\\Слайды Антидрон\\01\\18.png";
+                    filePath = $"{basePath}Слайды Антидрон{Path.DirectorySeparatorChar}01{Path.DirectorySeparatorChar}18.png";
                     tempItem = MyStoryTemplateImage.CreateFromFile(filePath
                         , "БПЛА и угрозы от них",
                         tmpId, template.Items.Count);
@@ -777,7 +781,7 @@ namespace AES.Init
                         tmpId, filePath));
 
                     tmpId = new Guid("189013F2-4657-40C6-A8B4-7E7056D33868");
-                    filePath = "D:\\yandex\\YandexDisk\\Изображения\\Слайды Антидрон\\01\\19.png";
+                    filePath = $"{basePath}Слайды Антидрон{Path.DirectorySeparatorChar}01{Path.DirectorySeparatorChar}19.png";
                     tempItem = MyStoryTemplateImage.CreateFromFile(filePath
                         , "БПЛА и угрозы от них",
                         tmpId, template.Items.Count);
@@ -787,7 +791,7 @@ namespace AES.Init
 
 
                     tmpId = new Guid("7d520868-98c3-4d40-896c-b89c263a8298");
-                    filePath = "D:\\yandex\\YandexDisk\\Изображения\\Слайды Антидрон\\01\\19_01.png";
+                    filePath = $"{basePath}Слайды Антидрон{Path.DirectorySeparatorChar}01{Path.DirectorySeparatorChar}19_01.png";
                     tempItem = MyStoryTemplateImage.CreateFromFile(filePath
                         , "БПЛА и угрозы от них",
                         tmpId, template.Items.Count);
@@ -797,7 +801,7 @@ namespace AES.Init
 
 
                     tmpId = new Guid("857d8394-0c5a-42e4-b124-7d9a05db22bb");
-                    filePath = "D:\\yandex\\YandexDisk\\Изображения\\Слайды Антидрон\\01\\19_02.png";
+                    filePath = $"{basePath}Слайды Антидрон{Path.DirectorySeparatorChar}01{Path.DirectorySeparatorChar}19_02.png";
                     tempItem = MyStoryTemplateImage.CreateFromFile(filePath
                         , "БПЛА и угрозы от них",
                         tmpId, template.Items.Count);
@@ -806,7 +810,7 @@ namespace AES.Init
                         tmpId, filePath));
 
                     tmpId = new Guid("8ec34b77-64ff-4cc5-a74a-5580befec4c5");
-                    filePath = "D:\\yandex\\YandexDisk\\Изображения\\Слайды Антидрон\\01\\19_03.png";
+                    filePath = $"{basePath}Слайды Антидрон{Path.DirectorySeparatorChar}01{Path.DirectorySeparatorChar}19_03.png";
                     tempItem = MyStoryTemplateImage.CreateFromFile(filePath
                         , "БПЛА и угрозы от них",
                         tmpId, template.Items.Count);
@@ -816,7 +820,7 @@ namespace AES.Init
 
 
                     tmpId = new Guid("A7BF8FE9-10E3-4380-AF7A-28838D2258D9");
-                    filePath = "D:\\yandex\\YandexDisk\\Изображения\\Слайды Антидрон\\01\\20.png";
+                    filePath = $"{basePath}Слайды Антидрон{Path.DirectorySeparatorChar}01{Path.DirectorySeparatorChar}20.png";
                     tempItem = MyStoryTemplateImage.CreateFromFile(filePath
                         , "БПЛА и угрозы от них",
                         tmpId, template.Items.Count);
@@ -825,7 +829,7 @@ namespace AES.Init
                         tmpId, filePath));
 
                     tmpId = new Guid("0B486FC3-D0A5-4AE0-AE79-B62400703CD3");
-                    filePath = "D:\\yandex\\YandexDisk\\Изображения\\Слайды Антидрон\\01\\21.png";
+                    filePath = $"{basePath}Слайды Антидрон{Path.DirectorySeparatorChar}01{Path.DirectorySeparatorChar}21.png";
                     tempItem = MyStoryTemplateImage.CreateFromFile(filePath
                         , "БПЛА и угрозы от них",
                         tmpId, template.Items.Count);
@@ -834,7 +838,7 @@ namespace AES.Init
                         tmpId, filePath));
 
                     tmpId = new Guid("BE0CBE7F-559C-4152-A445-30D052DC2DA6");
-                    filePath = "D:\\yandex\\YandexDisk\\Изображения\\Слайды Антидрон\\01\\22.png";
+                    filePath = $"{basePath}Слайды Антидрон{Path.DirectorySeparatorChar}01{Path.DirectorySeparatorChar}22.png";
                     tempItem = MyStoryTemplateImage.CreateFromFile(filePath
                         , "БПЛА и угрозы от них",
                         tmpId, template.Items.Count);
@@ -843,7 +847,7 @@ namespace AES.Init
                         tmpId, filePath));
 
                     tmpId = new Guid("BFEDD2FA-8E08-4FDF-99D6-CBFC0DED0ECE");
-                    filePath = "D:\\yandex\\YandexDisk\\Изображения\\Слайды Антидрон\\01\\23.png";
+                    filePath = $"{basePath}Слайды Антидрон{Path.DirectorySeparatorChar}01{Path.DirectorySeparatorChar}23.png";
                     tempItem = MyStoryTemplateImage.CreateFromFile(filePath
                         , "БПЛА и угрозы от них",
                         tmpId, template.Items.Count);
@@ -852,7 +856,7 @@ namespace AES.Init
                         tmpId, filePath));
 
                     tmpId = new Guid("391EB21C-B65D-4D56-978F-4F7AC4BFE8E7");
-                    filePath = "D:\\yandex\\YandexDisk\\Изображения\\Слайды Антидрон\\01\\24.png";
+                    filePath = $"{basePath}Слайды Антидрон{Path.DirectorySeparatorChar}01{Path.DirectorySeparatorChar}24.png";
                     tempItem = MyStoryTemplateImage.CreateFromFile(filePath
                         , "БПЛА и угрозы от них",
                         tmpId, template.Items.Count);
@@ -861,7 +865,7 @@ namespace AES.Init
                         tmpId, filePath));
 
                     tmpId = new Guid("49125CA6-63D8-489F-91B4-3FE003F8E7FB");
-                    filePath = "D:\\yandex\\YandexDisk\\Изображения\\Слайды Антидрон\\01\\25.png";
+                    filePath = $"{basePath}Слайды Антидрон{Path.DirectorySeparatorChar}01{Path.DirectorySeparatorChar}25.png";
                     tempItem = MyStoryTemplateImage.CreateFromFile(filePath
                         , "БПЛА и угрозы от них",
                         tmpId, template.Items.Count);
@@ -870,7 +874,7 @@ namespace AES.Init
                         tmpId, filePath));
 
                     tmpId = new Guid("170FC9BC-80FB-4D5F-A2CC-A3B5100D4E08");
-                    filePath = "D:\\yandex\\YandexDisk\\Изображения\\Слайды Антидрон\\01\\26.png";
+                    filePath = $"{basePath}Слайды Антидрон{Path.DirectorySeparatorChar}01{Path.DirectorySeparatorChar}26.png";
                     tempItem = MyStoryTemplateImage.CreateFromFile(filePath
                         , "БПЛА и угрозы от них",
                         tmpId, template.Items.Count);
@@ -879,14 +883,14 @@ namespace AES.Init
                         tmpId, filePath));
 
                     tempItem = MyStoryTemplateVideo.CreateFromFile(
-                        "D:\\yandex\\YandexDisk\\Изображения\\Слайды Антидрон\\01\\27.mp4", "БПЛА и угрозы от них",
+                        $"{basePath}Слайды Антидрон{Path.DirectorySeparatorChar}01{Path.DirectorySeparatorChar}27.mp4", "БПЛА и угрозы от них",
                         new Guid("4a3bc174-a5d3-43fa-ab5a-a3b5a4270110"), template.Items.Count);
                     template.Items.Add(tempItem);
                     unitOfWork.BinaryDataRepository.Save(BinaryData.CreateFromFile(
-                        tempItem.Id, "D:\\yandex\\YandexDisk\\Изображения\\Слайды Антидрон\\01\\27.mp4"));
+                        tempItem.Id, $"{basePath}Слайды Антидрон{Path.DirectorySeparatorChar}01{Path.DirectorySeparatorChar}27.mp4"));
 
                     tmpId = new Guid("702DB9CB-10C0-48D5-B00D-B59F067467B6");
-                    filePath = "D:\\yandex\\YandexDisk\\Изображения\\Слайды Антидрон\\01\\28.png";
+                    filePath = $"{basePath}Слайды Антидрон{Path.DirectorySeparatorChar}01{Path.DirectorySeparatorChar}28.png";
                     tempItem = MyStoryTemplateImage.CreateFromFile(filePath
                         , "БПЛА и угрозы от них",
                         tmpId, template.Items.Count);
@@ -895,7 +899,7 @@ namespace AES.Init
                         tmpId, filePath));
 
                     tmpId = new Guid("8e615271-8af0-4185-9381-e480f615e7df");
-                    filePath = "D:\\yandex\\YandexDisk\\Изображения\\Слайды Антидрон\\01\\29.png";
+                    filePath = $"{basePath}Слайды Антидрон{Path.DirectorySeparatorChar}01{Path.DirectorySeparatorChar}29.png";
                     tempItem = MyStoryTemplateImage.CreateFromFile(filePath
                         , "БПЛА и угрозы от них",
                         tmpId, template.Items.Count);
@@ -977,14 +981,14 @@ namespace AES.Init
 
                     
                     MyStoryTemplateFileBased tempItem = MyStoryTemplateVideo.CreateFromFile(
-                        "D:\\yandex\\YandexDisk\\Изображения\\Слайды Антидрон\\02\\24.mp4", "БПЛА и угрозы от них",
+                        $"{basePath}Слайды Антидрон{Path.DirectorySeparatorChar}02{Path.DirectorySeparatorChar}24.mp4", "БПЛА и угрозы от них",
                         new Guid("7d2cdd91-c5ab-4f19-8a51-42e241922d65"), template.Items.Count);
                     template.Items.Add(tempItem);
                     unitOfWork.BinaryDataRepository.Save(BinaryData.CreateFromFile(
-                        tempItem.Id,"D:\\yandex\\YandexDisk\\Изображения\\Слайды Антидрон\\02\\24.mp4"));
+                        tempItem.Id,$"{basePath}Слайды Антидрон{Path.DirectorySeparatorChar}02{Path.DirectorySeparatorChar}24.mp4"));
                     
                     var tmpId = new Guid("E7AAEE4C-19D3-4799-B7E5-4482019A7142");
-                    var filePath = "D:\\yandex\\YandexDisk\\Изображения\\Слайды Антидрон\\02\\25.png";
+                    var filePath = $"{basePath}Слайды Антидрон{Path.DirectorySeparatorChar}02{Path.DirectorySeparatorChar}25.png";
                     tempItem = MyStoryTemplateImage.CreateFromFile(filePath
                         , "Радиоэлектронное противодействие БПЛА",
                         tmpId, template.Items.Count);
@@ -994,7 +998,7 @@ namespace AES.Init
 
 
                     tmpId = new Guid("54333900-D64E-4578-89AE-7FD099DFC40F");
-                    filePath = "D:\\yandex\\YandexDisk\\Изображения\\Слайды Антидрон\\02\\26.png";
+                    filePath = $"{basePath}Слайды Антидрон{Path.DirectorySeparatorChar}02{Path.DirectorySeparatorChar}26.png";
                     tempItem = MyStoryTemplateImage.CreateFromFile(filePath
                         , "Радиоэлектронное противодействие БПЛА",
                         tmpId, template.Items.Count);
@@ -1003,7 +1007,7 @@ namespace AES.Init
                         tmpId,filePath));
                     
                     tmpId = new Guid("7C3BA51D-AA86-4ED3-98F1-F4451BCB7F6A");
-                    filePath = "D:\\yandex\\YandexDisk\\Изображения\\Слайды Антидрон\\02\\27.png";
+                    filePath = $"{basePath}Слайды Антидрон{Path.DirectorySeparatorChar}02{Path.DirectorySeparatorChar}27.png";
                     tempItem = MyStoryTemplateImage.CreateFromFile(filePath
                         , "Радиоэлектронное противодействие БПЛА",
                         tmpId, template.Items.Count);
@@ -1013,7 +1017,7 @@ namespace AES.Init
                     
                     
                     tmpId = new Guid("F2080B06-7360-47EF-AD7F-420AD34117AC");
-                    filePath = "D:\\yandex\\YandexDisk\\Изображения\\Слайды Антидрон\\02\\28.png";
+                    filePath = $"{basePath}Слайды Антидрон{Path.DirectorySeparatorChar}02{Path.DirectorySeparatorChar}28.png";
                     tempItem = MyStoryTemplateImage.CreateFromFile(filePath
                         , "Радиоэлектронное противодействие БПЛА",
                         tmpId, template.Items.Count);
@@ -1022,7 +1026,7 @@ namespace AES.Init
                         tmpId,filePath));
                     
                     tmpId = new Guid("60CE8FD0-BC88-4816-BE64-345BE6234765");
-                    filePath = "D:\\yandex\\YandexDisk\\Изображения\\Слайды Антидрон\\02\\29.png";
+                    filePath = $"{basePath}Слайды Антидрон{Path.DirectorySeparatorChar}02{Path.DirectorySeparatorChar}29.png";
                     tempItem = MyStoryTemplateImage.CreateFromFile(filePath
                         , "Радиоэлектронное противодействие БПЛА",
                         tmpId, template.Items.Count);
@@ -1031,7 +1035,7 @@ namespace AES.Init
                         tmpId,filePath));
                     
                     tmpId = new Guid("3D8962E2-BE7A-44DD-877B-481C4E141130");
-                    filePath = "D:\\yandex\\YandexDisk\\Изображения\\Слайды Антидрон\\02\\30.png";
+                    filePath = $"{basePath}Слайды Антидрон{Path.DirectorySeparatorChar}02{Path.DirectorySeparatorChar}30.png";
                     tempItem = MyStoryTemplateImage.CreateFromFile(filePath
                         , "Радиоэлектронное противодействие БПЛА",
                         tmpId, template.Items.Count);
@@ -1040,7 +1044,7 @@ namespace AES.Init
                         tmpId,filePath));
                    
                     tmpId = new Guid("C82F10B9-D921-4AE2-9C09-1F84100A6439");
-                    filePath = "D:\\yandex\\YandexDisk\\Изображения\\Слайды Антидрон\\02\\31.png";
+                    filePath = $"{basePath}Слайды Антидрон{Path.DirectorySeparatorChar}02{Path.DirectorySeparatorChar}31.png";
                     tempItem = MyStoryTemplateImage.CreateFromFile(filePath
                         , "Радиоэлектронное противодействие БПЛА",
                         tmpId, template.Items.Count);
@@ -1049,7 +1053,7 @@ namespace AES.Init
                         tmpId,filePath));
 
                     tmpId = new Guid("D3BCB082-D1FE-4E75-9AE0-27DCF63C00BE");
-                    filePath = "D:\\yandex\\YandexDisk\\Изображения\\Слайды Антидрон\\02\\32.png";
+                    filePath = $"{basePath}Слайды Антидрон{Path.DirectorySeparatorChar}02{Path.DirectorySeparatorChar}32.png";
                     tempItem = MyStoryTemplateImage.CreateFromFile(filePath
                         , "Радиоэлектронное противодействие БПЛА",
                         tmpId, template.Items.Count);
@@ -1058,7 +1062,7 @@ namespace AES.Init
                         tmpId,filePath));
                     
                     tmpId = new Guid("660F9EC6-514A-4CB2-80A5-2A573F183C9F");
-                    filePath = "D:\\yandex\\YandexDisk\\Изображения\\Слайды Антидрон\\02\\33.png";
+                    filePath = $"{basePath}Слайды Антидрон{Path.DirectorySeparatorChar}02{Path.DirectorySeparatorChar}33.png";
                     tempItem = MyStoryTemplateImage.CreateFromFile(filePath
                         , "Радиоэлектронное противодействие БПЛА",
                         tmpId, template.Items.Count);
@@ -1067,7 +1071,7 @@ namespace AES.Init
                         tmpId,filePath));
                     
                     tmpId = new Guid("5160CEEA-825E-42D6-913C-0612B0722375");
-                    filePath = "D:\\yandex\\YandexDisk\\Изображения\\Слайды Антидрон\\02\\34.png";
+                    filePath = $"{basePath}Слайды Антидрон{Path.DirectorySeparatorChar}02{Path.DirectorySeparatorChar}34.png";
                     tempItem = MyStoryTemplateImage.CreateFromFile(filePath
                         , "Радиоэлектронное противодействие БПЛА",
                         tmpId, template.Items.Count);
@@ -1076,7 +1080,7 @@ namespace AES.Init
                         tmpId,filePath));
                     
                     tmpId = new Guid("8FA87A8F-CD8C-4C8C-BDE0-5A02717B4A3B");
-                    filePath = "D:\\yandex\\YandexDisk\\Изображения\\Слайды Антидрон\\02\\35.png";
+                    filePath = $"{basePath}Слайды Антидрон{Path.DirectorySeparatorChar}02{Path.DirectorySeparatorChar}35.png";
                     tempItem = MyStoryTemplateImage.CreateFromFile(filePath
                         , "Радиоэлектронное противодействие БПЛА",
                         tmpId, template.Items.Count);
@@ -1085,7 +1089,7 @@ namespace AES.Init
                         tmpId,filePath));
                     
                     tmpId = new Guid("D69A240F-FF9B-4C39-9D8E-83BF09774F0F");
-                    filePath = "D:\\yandex\\YandexDisk\\Изображения\\Слайды Антидрон\\02\\36.png";
+                    filePath = $"{basePath}Слайды Антидрон{Path.DirectorySeparatorChar}02{Path.DirectorySeparatorChar}36.png";
                     tempItem = MyStoryTemplateImage.CreateFromFile(filePath
                         , "Радиоэлектронное противодействие БПЛА",
                         tmpId, template.Items.Count);
@@ -1094,7 +1098,7 @@ namespace AES.Init
                         tmpId,filePath));
                     
                     tmpId = new Guid("BDEF9D6F-8A8A-49FD-BA95-46A9F625D8A1");
-                    filePath = "D:\\yandex\\YandexDisk\\Изображения\\Слайды Антидрон\\02\\37.png";
+                    filePath = $"{basePath}Слайды Антидрон{Path.DirectorySeparatorChar}02{Path.DirectorySeparatorChar}37.png";
                     tempItem = MyStoryTemplateImage.CreateFromFile(filePath
                         , "Радиоэлектронное противодействие БПЛА",
                         tmpId, template.Items.Count);
@@ -1103,7 +1107,7 @@ namespace AES.Init
                         tmpId,filePath));
                     
                     tmpId = new Guid("C7835C8C-5D90-44DF-94C4-EC2CBB735A65");
-                    filePath = "D:\\yandex\\YandexDisk\\Изображения\\Слайды Антидрон\\02\\38.png";
+                    filePath = $"{basePath}Слайды Антидрон{Path.DirectorySeparatorChar}02{Path.DirectorySeparatorChar}38.png";
                     tempItem = MyStoryTemplateImage.CreateFromFile(filePath
                         , "Радиоэлектронное противодействие БПЛА",
                         tmpId, template.Items.Count);
@@ -1112,7 +1116,7 @@ namespace AES.Init
                         tmpId,filePath));
                     
                     tmpId = new Guid("D3F1622B-C10C-4AE5-8E88-0A2F939CE898");
-                    filePath = "D:\\yandex\\YandexDisk\\Изображения\\Слайды Антидрон\\02\\39.png";
+                    filePath = $"{basePath}Слайды Антидрон{Path.DirectorySeparatorChar}02{Path.DirectorySeparatorChar}39.png";
                     tempItem = MyStoryTemplateImage.CreateFromFile(filePath
                         , "Радиоэлектронное противодействие БПЛА",
                         tmpId, template.Items.Count);
@@ -1122,7 +1126,7 @@ namespace AES.Init
                     
                     
                     tmpId = new Guid("F4577F4C-0476-4D31-AA98-B9B685227C32");
-                    filePath = "D:\\yandex\\YandexDisk\\Изображения\\Слайды Антидрон\\02\\40.png";
+                    filePath = $"{basePath}Слайды Антидрон{Path.DirectorySeparatorChar}02{Path.DirectorySeparatorChar}40.png";
                     tempItem = MyStoryTemplateImage.CreateFromFile(filePath
                         , "Радиоэлектронное противодействие БПЛА",
                         tmpId, template.Items.Count);
@@ -1131,7 +1135,7 @@ namespace AES.Init
                         tmpId,filePath));
                     
                     tmpId = new Guid("3092F1DB-A6C1-4C3E-9BE3-E4602BA133BB");
-                    filePath = "D:\\yandex\\YandexDisk\\Изображения\\Слайды Антидрон\\02\\41.png";
+                    filePath = $"{basePath}Слайды Антидрон{Path.DirectorySeparatorChar}02{Path.DirectorySeparatorChar}41.png";
                     tempItem = MyStoryTemplateImage.CreateFromFile(filePath
                         , "Радиоэлектронное противодействие БПЛА",
                         tmpId, template.Items.Count);
@@ -1140,7 +1144,7 @@ namespace AES.Init
                         tmpId,filePath));
                     
                     tmpId = new Guid("6E721154-F773-4EA9-AF05-9DC53DF1D5FB");
-                    filePath = "D:\\yandex\\YandexDisk\\Изображения\\Слайды Антидрон\\02\\42.png";
+                    filePath = $"{basePath}Слайды Антидрон{Path.DirectorySeparatorChar}02{Path.DirectorySeparatorChar}42.png";
                     tempItem = MyStoryTemplateImage.CreateFromFile(filePath
                         , "Радиоэлектронное противодействие БПЛА",
                         tmpId, template.Items.Count);
@@ -1149,7 +1153,7 @@ namespace AES.Init
                         tmpId,filePath));
                     
                     tmpId = new Guid("55973E1A-95B8-40BA-A78F-B3C509B4A749");
-                    filePath = "D:\\yandex\\YandexDisk\\Изображения\\Слайды Антидрон\\02\\43.png";
+                    filePath = $"{basePath}Слайды Антидрон{Path.DirectorySeparatorChar}02{Path.DirectorySeparatorChar}43.png";
                     tempItem = MyStoryTemplateImage.CreateFromFile(filePath
                         , "Радиоэлектронное противодействие БПЛА",
                         tmpId, template.Items.Count);
@@ -1158,7 +1162,7 @@ namespace AES.Init
                         tmpId,filePath));
                     
                     tmpId = new Guid("16101F75-7FC9-4A7B-A4A2-01CCE522C95F");
-                    filePath = "D:\\yandex\\YandexDisk\\Изображения\\Слайды Антидрон\\02\\44.png";
+                    filePath = $"{basePath}Слайды Антидрон{Path.DirectorySeparatorChar}02{Path.DirectorySeparatorChar}44.png";
                     tempItem = MyStoryTemplateImage.CreateFromFile(filePath
                         , "Радиоэлектронное противодействие БПЛА",
                         tmpId, template.Items.Count);
@@ -1167,7 +1171,7 @@ namespace AES.Init
                         tmpId,filePath));
                     
                     tmpId = new Guid("968A84C9-58D7-4D7A-B7C1-7F7B8D3A428B");
-                    filePath = "D:\\yandex\\YandexDisk\\Изображения\\Слайды Антидрон\\02\\45.png";
+                    filePath = $"{basePath}Слайды Антидрон{Path.DirectorySeparatorChar}02{Path.DirectorySeparatorChar}45.png";
                     tempItem = MyStoryTemplateImage.CreateFromFile(filePath
                         , "Радиоэлектронное противодействие БПЛА",
                         tmpId, template.Items.Count);
@@ -1252,7 +1256,7 @@ namespace AES.Init
                     };
 
                     var tmpId = new Guid("0C96F496-4844-4F5B-BBEB-3CE138672B9F");
-                    var filePath = "D:\\yandex\\YandexDisk\\Изображения\\Слайды Антидрон\\03\\01.png";
+                    var filePath = $"{basePath}Слайды Антидрон{Path.DirectorySeparatorChar}03{Path.DirectorySeparatorChar}01.png";
                     MyStoryTemplateFileBased tempItem = MyStoryTemplateImage.CreateFromFile(filePath
                         , "Существующие комплексные решения по РЭБ",
                         tmpId, template.Items.Count);
@@ -1262,7 +1266,7 @@ namespace AES.Init
 
 
                     tmpId = new Guid("AA0CA0E8-A285-45E5-9443-2AB2E5A87242");
-                    filePath = "D:\\yandex\\YandexDisk\\Изображения\\Слайды Антидрон\\03\\02.png";
+                    filePath = $"{basePath}Слайды Антидрон{Path.DirectorySeparatorChar}03{Path.DirectorySeparatorChar}02.png";
                     tempItem = MyStoryTemplateImage.CreateFromFile(filePath
                         , "Существующие комплексные решения по РЭБ",
                         tmpId, template.Items.Count);
@@ -1271,7 +1275,7 @@ namespace AES.Init
                         tmpId,filePath));
                     
                     tmpId = new Guid("BCE534E6-8EF8-46AA-B87D-81B06AC4E5F9");
-                    filePath = "D:\\yandex\\YandexDisk\\Изображения\\Слайды Антидрон\\03\\03.png";
+                    filePath = $"{basePath}Слайды Антидрон{Path.DirectorySeparatorChar}03{Path.DirectorySeparatorChar}03.png";
                     tempItem = MyStoryTemplateImage.CreateFromFile(filePath
                         , "Существующие комплексные решения по РЭБ",
                         tmpId, template.Items.Count);
@@ -1281,28 +1285,28 @@ namespace AES.Init
 
 
                     tempItem = MyStoryTemplateVideo.CreateFromFile(
-                        "D:\\yandex\\YandexDisk\\Изображения\\Слайды Антидрон\\03\\03_01 Тест ружей 1.mp4", "Существующие комплексные решения по РЭБ",
+                        $"{basePath}Слайды Антидрон{Path.DirectorySeparatorChar}03{Path.DirectorySeparatorChar}03_01 Тест ружей 1.mp4", "Существующие комплексные решения по РЭБ",
                         new Guid("57901D6B-B052-4487-A4AB-4510907434B4"), template.Items.Count);
                     template.Items.Add(tempItem);
                     unitOfWork.BinaryDataRepository.Save(BinaryData.CreateFromFile(
-                        tempItem.Id, "D:\\yandex\\YandexDisk\\Изображения\\Слайды Антидрон\\03\\03_01 Тест ружей 1.mp4"));
+                        tempItem.Id, $"{basePath}Слайды Антидрон{Path.DirectorySeparatorChar}03{Path.DirectorySeparatorChar}03_01 Тест ружей 1.mp4"));
 
                     tempItem = MyStoryTemplateVideo.CreateFromFile(
-                        "D:\\yandex\\YandexDisk\\Изображения\\Слайды Антидрон\\03\\03_01 Тест ружей 2.mp4", "Существующие комплексные решения по РЭБ",
+                        $"{basePath}Слайды Антидрон{Path.DirectorySeparatorChar}03{Path.DirectorySeparatorChar}03_01 Тест ружей 2.mp4", "Существующие комплексные решения по РЭБ",
                         new Guid("B8A430C6-27F4-4AF2-A4FB-E34EA710C332"), template.Items.Count);
                     template.Items.Add(tempItem);
                     unitOfWork.BinaryDataRepository.Save(BinaryData.CreateFromFile(
-                        tempItem.Id, "D:\\yandex\\YandexDisk\\Изображения\\Слайды Антидрон\\03\\03_01 Тест ружей 2.mp4"));
+                        tempItem.Id, $"{basePath}Слайды Антидрон{Path.DirectorySeparatorChar}03{Path.DirectorySeparatorChar}03_01 Тест ружей 2.mp4"));
 
                     tempItem = MyStoryTemplateVideo.CreateFromFile(
-                        "D:\\yandex\\YandexDisk\\Изображения\\Слайды Антидрон\\03\\03_01 Тест ружей 3.mp4", "Существующие комплексные решения по РЭБ",
+                        $"{basePath}Слайды Антидрон{Path.DirectorySeparatorChar}03{Path.DirectorySeparatorChar}03_01 Тест ружей 3.mp4", "Существующие комплексные решения по РЭБ",
                         new Guid("D0C8E8F1-0F3F-4F23-9551-A25EAF77CEE4"), template.Items.Count);
                     template.Items.Add(tempItem);
                     unitOfWork.BinaryDataRepository.Save(BinaryData.CreateFromFile(
-                        tempItem.Id, "D:\\yandex\\YandexDisk\\Изображения\\Слайды Антидрон\\03\\03_01 Тест ружей 3.mp4"));
+                        tempItem.Id, $"{basePath}Слайды Антидрон{Path.DirectorySeparatorChar}03{Path.DirectorySeparatorChar}03_01 Тест ружей 3.mp4"));
 
                     tmpId = new Guid("85C46B78-DCC7-4301-8FA8-34B77BC1DE36");
-                    filePath = "D:\\yandex\\YandexDisk\\Изображения\\Слайды Антидрон\\03\\04.png";
+                    filePath = $"{basePath}Слайды Антидрон{Path.DirectorySeparatorChar}03{Path.DirectorySeparatorChar}04.png";
                     tempItem = MyStoryTemplateImage.CreateFromFile(filePath
                         , "Существующие комплексные решения по РЭБ",
                         tmpId, template.Items.Count);
@@ -1311,18 +1315,18 @@ namespace AES.Init
                         tmpId, filePath));
 
                     tempItem = MyStoryTemplateVideo.CreateFromFile(
-                        "D:\\yandex\\YandexDisk\\Изображения\\Слайды Антидрон\\03\\05.mp4", "Существующие комплексные решения по РЭБ",
+                        $"{basePath}Слайды Антидрон{Path.DirectorySeparatorChar}03{Path.DirectorySeparatorChar}05.mp4", "Существующие комплексные решения по РЭБ",
                         new Guid("C25FA2FF-AF07-460F-83CC-E409A28B76B0"), template.Items.Count);
                     template.Items.Add(tempItem);
                     unitOfWork.BinaryDataRepository.Save(BinaryData.CreateFromFile(
-                        tempItem.Id, "D:\\yandex\\YandexDisk\\Изображения\\Слайды Антидрон\\03\\05.mp4"));
+                        tempItem.Id, $"{basePath}Слайды Антидрон{Path.DirectorySeparatorChar}03{Path.DirectorySeparatorChar}05.mp4"));
 
                     tempItem = MyStoryTemplateVideo.CreateFromFile(
-                        "D:\\yandex\\YandexDisk\\Изображения\\Слайды Антидрон\\03\\06.mp4", "Существующие комплексные решения по РЭБ",
+                        $"{basePath}Слайды Антидрон{Path.DirectorySeparatorChar}03{Path.DirectorySeparatorChar}06.mp4", "Существующие комплексные решения по РЭБ",
                         new Guid("8F70AF0F-E7E1-4AB6-BB06-ECC50A90EAAD"), template.Items.Count);
                     template.Items.Add(tempItem);
                     unitOfWork.BinaryDataRepository.Save(BinaryData.CreateFromFile(
-                        tempItem.Id, "D:\\yandex\\YandexDisk\\Изображения\\Слайды Антидрон\\03\\06.mp4"));
+                        tempItem.Id, $"{basePath}Слайды Антидрон{Path.DirectorySeparatorChar}03{Path.DirectorySeparatorChar}06.mp4"));
 
                                        
                     

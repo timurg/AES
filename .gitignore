@@ -1,7 +1,7 @@
 
 *.cache
-Data/Data05_09_2023.7z
-Data/Data05_09_2023.7z
+Data/*
+Config/appsettings.json
 *data.sqlite
 *.sqlite
 *.sqlite-shm

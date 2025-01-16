@@ -16,4 +16,8 @@ public class AESEntityFrameworkCoreSqliteContext: AESEntityFrameworkCoreContext
         optionsBuilder.UseSqlite(connectionString);
        // optionsBuilder.LogTo(System.Console.WriteLine);
     }
+    public void EnsureDatabaseCreated()
+    {
+        Database.EnsureCreated();
+    }
 }

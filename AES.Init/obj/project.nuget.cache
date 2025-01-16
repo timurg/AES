@@ -1,8 +1,8 @@
 {
   "version": 2,
-  "dgSpecHash": "jEdZY1YyHVZ0wYRegPmEJfqnyJRmh4cp0ObKTMjhLsD4iEBeMpAJ7XfaSD2H87bNETeILftv5hUvJu1+OBDUXQ==",
+  "dgSpecHash": "7zPFwnu5OrTDqlvN1+AKk0n2CuWX0iQDIdBhMbPldiPnDQXKHSY208udauB5I4ixhtvIV9ATFeNcQBjP3D6PrQ==",
   "success": true,
-  "projectFilePath": "/home/timur/Документы/GitHub/AES/AES.Init/AES.Init.csproj",
+  "projectFilePath": "/home/timur/Work/AES/AES.Init/AES.Init.csproj",
   "expectedPackageFiles": [
     "/home/timur/.nuget/packages/autofac/7.1.0/autofac.7.1.0.nupkg.sha512",
     "/home/timur/.nuget/packages/autofac.configuration/6.0.0/autofac.configuration.6.0.0.nupkg.sha512",

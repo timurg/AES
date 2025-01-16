@@ -1,8 +1,8 @@
 {
   "version": 2,
-  "dgSpecHash": "qX/KRtHo2ExS6zKFjXWokq2+u0sX4Q4eRWm+jVFsn4kDWdIwHs7ryJqzldm7n4MSt3fWzWttBJfWnKK/vuVx4A==",
+  "dgSpecHash": "1l2RgXvPxiBAatKOg05Cd89wKXwQObjHPlQdBXxF6ZjxUAZnJ4FHF5EG/WLLriOQq/4yRJZn6V8Rzd9Ys4JfTQ==",
   "success": true,
-  "projectFilePath": "/home/timur/Документы/GitHub/AES/AES.Domain/AES.Domain.csproj",
+  "projectFilePath": "/home/timur/Work/AES/AES.Domain/AES.Domain.csproj",
   "expectedPackageFiles": [
     "/home/timur/.nuget/packages/microsoft.entityframeworkcore/8.0.1/microsoft.entityframeworkcore.8.0.1.nupkg.sha512",
     "/home/timur/.nuget/packages/microsoft.entityframeworkcore.abstractions/8.0.1/microsoft.entityframeworkcore.abstractions.8.0.1.nupkg.sha512",

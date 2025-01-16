@@ -40,8 +40,9 @@ namespace AES.Init
         private static void Main(string[] args)
         {
             Console.OutputEncoding = System.Text.Encoding.UTF8;
+            Console.WriteLine("Current directory: " + Environment.CurrentDirectory);
             Console.WriteLine("Start");
-            var configuration = new ConfigurationBuilder().AddJsonFile("appsettings.json", optional: false).Build();
+            var configuration = new ConfigurationBuilder().AddJsonFile("appsettings.json", optional: false).AddUserSecrets<Program>().Build();
 
             var serviceProvider = ConfigureServices(configuration);
             Console.WriteLine("ServiceProvider created");
