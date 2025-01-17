@@ -8,7 +8,7 @@ namespace MyStoryBot.Commands;
 
 public class StartLearningCommand : CallbackQueryCommand
 {
-    public StartLearningCommand(BotClient botClient) : base(botClient, "startlearning", true, 
+    public StartLearningCommand(TelegramBotClient botClient) : base(botClient, "startlearning", true, 
         "Используйте кнопку \"Далее\" рядом с клавиатурой, для навигации.")
     {
     }

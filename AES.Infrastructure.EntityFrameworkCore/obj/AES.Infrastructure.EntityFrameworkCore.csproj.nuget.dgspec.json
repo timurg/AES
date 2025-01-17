@@ -40,7 +40,7 @@
           "dependencies": {
             "Microsoft.EntityFrameworkCore": {
               "target": "Package",
-              "version": "[8.0.1, )"
+              "version": "[9.0.1, )"
             }
           },
           "imports": [
@@ -166,11 +166,11 @@
           "dependencies": {
             "Microsoft.EntityFrameworkCore": {
               "target": "Package",
-              "version": "[8.0.1, )"
+              "version": "[9.0.1, )"
             },
             "Microsoft.EntityFrameworkCore.Relational": {
               "target": "Package",
-              "version": "[8.0.1, )"
+              "version": "[9.0.1, )"
             }
           },
           "imports": [
@@ -236,7 +236,7 @@
           "dependencies": {
             "Microsoft.EntityFrameworkCore": {
               "target": "Package",
-              "version": "[8.0.1, )"
+              "version": "[9.0.1, )"
             }
           },
           "imports": [

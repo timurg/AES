@@ -9,7 +9,7 @@ namespace MyStoryBot.Commands;
 
 public class NextCommand : NamedCommand
 {
-    public NextCommand(BotClient botClient) : base(botClient, "next")
+    public NextCommand(TelegramBotClient botClient) : base(botClient, "next")
     {
     }
 

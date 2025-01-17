@@ -3,7 +3,6 @@ using AES.Domain;
 using AES.Story;
 using Telegram.BotAPI;
 using Telegram.BotAPI.AvailableMethods;
-using Telegram.BotAPI.AvailableMethods.FormattingOptions;
 using Telegram.BotAPI.AvailableTypes;
 
 namespace MyStoryBot.Commands;
@@ -12,7 +11,7 @@ public abstract class NamedCommand : BaseCommand
 {
     public string CommandName { get; }
 
-    public NamedCommand(BotClient botClient, string commandName) : base(botClient)
+    public NamedCommand(TelegramBotClient botClient, string commandName) : base(botClient)
     {
         CommandName = commandName;
     }
@@ -27,9 +26,8 @@ public abstract class NamedCommand : BaseCommand
             {
                 new("Далее"),
             };
-            var keyboard = new ReplyKeyboardMarkup
+            var keyboard = new ReplyKeyboardMarkup(new[] { buttons })
             {
-                Keyboard = new[] { buttons },
                 ResizeKeyboard = true
             };
             Message message = null;
@@ -84,7 +82,7 @@ public abstract class NamedCommand : BaseCommand
 
             var arg = new SendPollArgs(chatId: commandContext.ChatId.Value,
                 question: storyItemPool.Content,
-                options: orderedPoolItems.Select(p => p.Content))
+                options: orderedPoolItems.Select( p => new InputPollOption(p.Content)))
             {
                 Type = "quiz",
                 CorrectOptionId = orderedPoolItems.First(p => p.IsCorrect).Order,
@@ -108,7 +106,7 @@ public abstract class NamedCommand : BaseCommand
         else if (storyItem is StoryHtml storyHtml)
         {
             var sendMessage = BotClient.SendMessage(commandContext.ChatId.Value, storyHtml.Content,
-                protectContent: true, disableNotification: true, parseMode: ParseMode.HTML);
+                protectContent: true, disableNotification: true, parseMode: "HTML");
             storyHtml.ChatId = sendMessage.Chat.Id;
             storyHtml.TelegramId = sendMessage.MessageId;
             storyHtml.IsPassed = true;

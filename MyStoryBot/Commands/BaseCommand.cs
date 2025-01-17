@@ -7,9 +7,9 @@ namespace MyStoryBot.Commands;
 
 public abstract class BaseCommand
 {
-    protected readonly BotClient BotClient;
+    protected readonly TelegramBotClient BotClient;
 
-    protected BaseCommand(BotClient botClient)
+    protected BaseCommand(TelegramBotClient botClient)
     {
         BotClient = botClient ?? throw new ArgumentNullException(nameof(botClient));
     }

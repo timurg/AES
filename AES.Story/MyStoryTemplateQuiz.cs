@@ -14,7 +14,7 @@ public class MyStoryTemplateQuiz : MyStoryTemplateItem
             ItemIndex = indexOrder,
             Title = "Выберите ваш вариант ответа"
         };
-        uint inx = 0;
+        int inx = 0;
         foreach (var option in options)
         {
             

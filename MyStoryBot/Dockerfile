@@ -1,15 +1,21 @@
 ﻿FROM mcr.microsoft.com/dotnet/runtime:8.0
 
-WORKDIR /app
-
-# Копируем собранное приложение
-COPY /bin/Release/net8.0/publish/ .
-
 # Создаем директории
-RUN mkdir -p /app/config /app/data
+WORKDIR /home/app
 
-# Монтируем конфиг
-VOLUME ["/app/config", "/app/data"]
+# Настраиваем директории и права
+RUN mkdir -p /home/app/config /home/app/data && \
+    chown -R app:app /home/app && \
+    chmod 755 /home/app && \
+    chmod 775 /home/app/data
 
-# Задаем точку входа с указанием конфига
-ENTRYPOINT ["dotnet", "MyStoryBot.dll", "--config", "/app/config/appsettings.json"]
+# Копируем приложение
+COPY --chown=app:app /bin/Release/net8.0/publish/ .
+
+# Настраиваем тома
+VOLUME ["/home/app/config", "/home/app/data"]
+
+# Переключаемся на пользователя app
+USER app
+
+ENTRYPOINT ["dotnet", "MyStoryBot.dll"]

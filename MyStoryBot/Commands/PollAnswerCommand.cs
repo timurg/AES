@@ -7,7 +7,7 @@ namespace MyStoryBot.Commands;
 
 public class PollAnswerCommand : NamedCommand
 {
-    public PollAnswerCommand(BotClient botClient) : base(botClient, "pollanswer")
+    public PollAnswerCommand(TelegramBotClient botClient) : base(botClient, "pollanswer")
     {
     }
 

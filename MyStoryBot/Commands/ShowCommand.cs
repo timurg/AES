@@ -1,13 +1,12 @@
 ﻿using System.Text;
 using Telegram.BotAPI;
 using Telegram.BotAPI.AvailableMethods;
-using Telegram.BotAPI.AvailableMethods.FormattingOptions;
 
 namespace MyStoryBot.Commands;
 
 public class ShowCommand : CallbackQueryCommand
 {
-    public ShowCommand(BotClient botClient) : base(botClient, "show", false)
+    public ShowCommand(TelegramBotClient botClient) : base(botClient, "show", false)
     {
     }
 
@@ -40,6 +39,6 @@ public class ShowCommand : CallbackQueryCommand
                                         
         }
         BotClient.SendMessage(context.ChatId.Value, textMessage.ToString(),
-            parseMode: ParseMode.HTML, disableNotification: true);
+            parseMode: "HTML", disableNotification: true);
     }
 }

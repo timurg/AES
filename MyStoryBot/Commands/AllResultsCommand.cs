@@ -1,13 +1,12 @@
 ﻿using Telegram.BotAPI;
 using Telegram.BotAPI.AvailableMethods;
-using Telegram.BotAPI.AvailableMethods.FormattingOptions;
 using Telegram.BotAPI.AvailableTypes;
 
 namespace MyStoryBot.Commands;
 
 public class AllResultsCommand : NamedCommand
 {
-    public AllResultsCommand(BotClient botClient) : base(botClient, "allresults")
+    public AllResultsCommand(TelegramBotClient botClient) : base(botClient, "allresults")
     {
     }
 
@@ -18,19 +17,16 @@ public class AllResultsCommand : NamedCommand
             foreach (var student in context.UnitOfWork.StudentRepository.GetQuery().ToArray())
             {
                 var btn = new InlineKeyboardButton[1];
-                btn[0] = new InlineKeyboardButton();
-                var rm = new InlineKeyboardMarkup
-                {
-                    InlineKeyboard = new[]
+                btn[0] = new InlineKeyboardButton("Показать");
+                var rm = new InlineKeyboardMarkup(new[]
                     {
                         btn
                     }
-                };
-                btn[0].Text = "Показать";
+                );
                 btn[0].CallbackData = "show " + student.Id;
                 if (context.ChatId != null && student.Person != null)
                     BotClient.SendMessage(context.ChatId.Value, $"{student.Person.Login}: {student.Person.FullName}",
-                        parseMode: ParseMode.HTML, replyMarkup: rm, disableNotification: true);
+                        parseMode: "HTML", replyMarkup: rm, disableNotification: true);
             }
         }
         else

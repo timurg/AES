@@ -4,7 +4,7 @@ namespace MyStoryBot.Commands;
 
 public class StartCommand: NamedCommand
 {
-    public StartCommand(BotClient botClient) : base(botClient, "start")
+    public StartCommand(TelegramBotClient botClient) : base(botClient, "start")
     {
     }
 

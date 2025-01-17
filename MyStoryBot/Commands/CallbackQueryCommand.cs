@@ -8,7 +8,7 @@ public abstract class CallbackQueryCommand : NamedCommand
     private readonly bool _showAlert;
     private readonly string _alertMessage;
 
-    protected CallbackQueryCommand(BotClient botClient, string commandName, bool showAlert = false,
+    protected CallbackQueryCommand(TelegramBotClient botClient, string commandName, bool showAlert = false,
         string alertMessage = "") : base(botClient, commandName)
     {
         _showAlert = showAlert;

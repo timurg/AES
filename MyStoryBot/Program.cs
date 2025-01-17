@@ -33,11 +33,12 @@ static void LogDirectoryStructure(string path, NLog.ILogger logger, string inden
     }
 }
 
+/*
 // В методе Main после получения logger:
 _logger.Debug("=== Directory Structure ===");
 LogDirectoryStructure(Environment.CurrentDirectory, _logger);
 _logger.Debug("=========================");
-
+*/
 
 var configuration = new ConfigurationBuilder()
     .AddJsonFile("./config/appsettings.json", optional: true)
@@ -46,7 +47,7 @@ var configuration = new ConfigurationBuilder()
 var serviceProvider = ConfigureServices(configuration) as AutofacServiceProvider ?? throw new ApplicationException();
 if (serviceProvider == null) throw new ArgumentNullException(paramName: "serviceProvider");
 
-var botClient = new BotClient(botToken: configuration["bot:id"] ?? throw new ApplicationException("Requared parametr bot:id"));
+var botClient = new TelegramBotClient(botToken: configuration["bot:id"] ?? throw new ApplicationException("Requared parametr bot:id"));
 
 var me = botClient.GetMe();
 _logger.Debug($"Start listening for @{me.Username}");
@@ -54,7 +55,13 @@ _logger.Debug($"Start listening for @{me.Username}");
 
 var updates = await botClient.GetUpdatesAsync();
 _logger.Debug("Enter to cycle");
-botClient.SetMyCommands(new BotCommand("info", "Информация"), new BotCommand("/next", "Далее"));
+SetMyCommandsArgs botCommands = new SetMyCommandsArgs(
+new BotCommand[]
+{
+    new BotCommand("info", "Информация"),
+    new BotCommand("/next", "Далее")
+});
+botClient.SetMyCommands(botCommands);
 var unitOfWorkFactory = serviceProvider.GetService(typeof(IUnitOfWorkFactory)) as IUnitOfWorkFactory;
 
 var namedCommands = new BlockingCollection<NamedCommand>

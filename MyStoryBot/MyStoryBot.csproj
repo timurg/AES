@@ -1,4 +1,4 @@
-﻿<Project Sdk="Microsoft.NET.Sdk">
+<Project Sdk="Microsoft.NET.Sdk">
 
     <PropertyGroup>
         <OutputType>Exe</OutputType>
@@ -19,13 +19,15 @@
     </PropertyGroup>
 
     <ItemGroup>
-      <PackageReference Include="Autofac" Version="7.1.0" />
-      <PackageReference Include="Autofac.Configuration" Version="6.0.0" />
-      <PackageReference Include="Autofac.Extensions.DependencyInjection" Version="8.0.0" />
-      <PackageReference Include="Microsoft.Extensions.Configuration" Version="8.0.0" />
-      <PackageReference Include="Microsoft.Extensions.Configuration.UserSecrets" Version="8.0.0" />
+      <PackageReference Include="Autofac" Version="8.2.0" />
+      <PackageReference Include="Autofac.Configuration" Version="7.0.0" />
+      <PackageReference Include="Autofac.Extensions.DependencyInjection" Version="10.0.0" />
+      <PackageReference Include="Microsoft.Extensions.Configuration" Version="9.0.1" />
+      <PackageReference Include="Microsoft.Extensions.Configuration.UserSecrets" Version="9.0.1" />
       <PackageReference Include="NLog.Config" Version="4.7.15" />
-      <PackageReference Include="Telegram.BotAPI" Version="6.9.2" />
+      <PackageReference Include="Telegram.BotAPI" Version="8.2.0" />
+      <PackageReference Include="WorkflowCore" Version="3.13.0" />
+      <PackageReference Include="WorkflowCore.Persistence.Sqlite" Version="3.13.0" />
     </ItemGroup>
 
     <ItemGroup>

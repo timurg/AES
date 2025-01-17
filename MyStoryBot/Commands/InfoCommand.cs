@@ -1,15 +1,13 @@
 using System.Text;
-using AES.Domain;
 using Telegram.BotAPI;
 using Telegram.BotAPI.AvailableMethods;
-using Telegram.BotAPI.AvailableMethods.FormattingOptions;
 using Telegram.BotAPI.AvailableTypes;
 
 namespace MyStoryBot.Commands;
 
 public class InfoCommand : NamedCommand
 {
-    public InfoCommand(BotClient botClient) : base(botClient, "info")
+    public InfoCommand(TelegramBotClient botClient) : base(botClient, "info")
     {
     }
 
@@ -26,15 +24,8 @@ public class InfoCommand : NamedCommand
             var beginInfo = isStarted ? "стартовал" : "не стартовал";
 
             var btn = new InlineKeyboardButton[1];
-            btn[0] = new InlineKeyboardButton();
-            var rm = new InlineKeyboardMarkup
-            {
-                InlineKeyboard = new[]
-                {
-                    btn
-                }
-            };
-            btn[0].Text = "Начать";
+            btn[0] = new InlineKeyboardButton("Начать");
+            var rm = new InlineKeyboardMarkup(new[] {btn});
             btn[0].CallbackData = "startlearning " + moduleItem.Id;
             var textMessage = new StringBuilder();
             if (isStarted)
@@ -58,13 +49,13 @@ public class InfoCommand : NamedCommand
             {
                 if (context.ChatId != null)
                     BotClient.SendMessage(context.ChatId.Value, textMessage.ToString(),
-                        parseMode: ParseMode.HTML, disableNotification: true);
+                        parseMode: "HTML", disableNotification: true);
             }
             else
             {
                 if (context.ChatId != null)
                     BotClient.SendMessage(context.ChatId.Value, textMessage.ToString(),
-                        parseMode: ParseMode.HTML, replyMarkup: rm, disableNotification: true);
+                        parseMode: "HTML", replyMarkup: rm, disableNotification: true);
             }
         }
     }
