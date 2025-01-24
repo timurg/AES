@@ -10,6 +10,11 @@ public class AllResultsCommand : NamedCommand
     {
     }
 
+    public override Task ExecuteAsync(CommandContext context)
+    {
+        throw new NotImplementedException();
+    }
+
     public override void ExecutionContext(CommandContext context)
     {
         if (context.User.Roles.Any(r => r.Name == "admin"))

@@ -10,6 +10,11 @@ public class ShowCommand : CallbackQueryCommand
     {
     }
 
+    public override Task ExecuteAsync(CommandContext context)
+    {
+        throw new NotImplementedException();
+    }
+
     protected override void ExecutionCallBackContext(CommandContext context)
     {
         var id = new Guid(context.Parameters[1]);

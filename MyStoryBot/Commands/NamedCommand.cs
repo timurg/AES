@@ -18,6 +18,8 @@ public abstract class NamedCommand : BaseCommand
 
     public abstract void ExecutionContext(CommandContext context);
 
+    public abstract Task ExecuteAsync(CommandContext context);
+
     protected void RenderItemStory(CommandContext commandContext, MyStory story, StoryItem storyItem)
     {
         if (storyItem is StoryFileBasedItem storyFileBasedItem)

@@ -11,6 +11,11 @@ public class InfoCommand : NamedCommand
     {
     }
 
+    public override Task ExecuteAsync(CommandContext context)
+    {
+        throw new NotImplementedException();
+    }
+
     public override void ExecutionContext(CommandContext context)
     {
         var anyStarted = context.User.Student.Curriculum.Modules.First().Items.Any(i =>

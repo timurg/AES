@@ -62,7 +62,7 @@ new BotCommand[]
     new BotCommand("/next", "Далее")
 });
 botClient.SetMyCommands(botCommands);
-var unitOfWorkFactory = serviceProvider.GetService(typeof(IUnitOfWorkFactory)) as IUnitOfWorkFactory;
+var unitOfWorkFactory = serviceProvider.GetService(typeof(IUnitOfWorkFactory)) as IUnitOfWorkFactory ?? throw new ArgumentNullException(paramName: "unitOfWorkFactory");
 
 var namedCommands = new BlockingCollection<NamedCommand>
 {

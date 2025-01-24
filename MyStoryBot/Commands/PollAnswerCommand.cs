@@ -11,6 +11,11 @@ public class PollAnswerCommand : NamedCommand
     {
     }
 
+    public override Task ExecuteAsync(CommandContext context)
+    {
+        throw new NotImplementedException();
+    }
+
     public override void ExecutionContext(CommandContext context)
     {
         var poolId = context.Parameters[0];

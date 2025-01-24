@@ -34,10 +34,10 @@ public static class CommandExtensions
 
         if (update.Message != null)
         {
-            telegramUser = update.Message.From;
+            telegramUser = update.commandContext.From;
 
-            commandContext.FromId = update.Message.From.Id;
-            commandContext.ChatId = update.Message.Chat.Id;
+            commandContext.FromId = update.Message?.From?.Id;
+            commandContext.ChatId = update.Message?.Chat.Id;
         }
         else if (update.CallbackQuery != null)
         {

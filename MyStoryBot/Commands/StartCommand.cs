@@ -8,6 +8,11 @@ public class StartCommand: NamedCommand
     {
     }
 
+    public override Task ExecuteAsync(CommandContext context)
+    {
+        throw new NotImplementedException();
+    }
+
     public override void ExecutionContext(CommandContext context)
     {
         SendTextMessage(context,

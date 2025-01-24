@@ -13,6 +13,11 @@ public class NextCommand : NamedCommand
     {
     }
 
+    public override Task ExecuteAsync(CommandContext context)
+    {
+        throw new NotImplementedException();
+    }
+
     public override void ExecutionContext(CommandContext context)
     {
         var eduItem = context.User.Student.Curriculum.Modules.First().Items.FirstOrDefault(i =>
