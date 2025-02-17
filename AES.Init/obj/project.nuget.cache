@@ -1,6 +1,6 @@
 {
   "version": 2,
-  "dgSpecHash": "8bc+ewderUeU4SI0Ard96kH49r6BSvhn/sM2ZBloGUGe2G0t7+H0upekJ9HVDFNaEGxWKt34nzQl1vr1v5CS/Q==",
+  "dgSpecHash": "Q9PQ3HY193Y=",
   "success": true,
   "projectFilePath": "/home/timur/Work/AES/AES.Init/AES.Init.csproj",
   "expectedPackageFiles": [
@@ -42,7 +42,10 @@
     "/home/timur/.nuget/packages/system.io.pipelines/9.0.1/system.io.pipelines.9.0.1.nupkg.sha512",
     "/home/timur/.nuget/packages/system.memory/4.5.3/system.memory.4.5.3.nupkg.sha512",
     "/home/timur/.nuget/packages/system.text.encodings.web/9.0.1/system.text.encodings.web.9.0.1.nupkg.sha512",
-    "/home/timur/.nuget/packages/system.text.json/9.0.1/system.text.json.9.0.1.nupkg.sha512"
+    "/home/timur/.nuget/packages/system.text.json/9.0.1/system.text.json.9.0.1.nupkg.sha512",
+    "/home/timur/.nuget/packages/microsoft.netcore.app.ref/8.0.13/microsoft.netcore.app.ref.8.0.13.nupkg.sha512",
+    "/home/timur/.nuget/packages/microsoft.aspnetcore.app.ref/8.0.13/microsoft.aspnetcore.app.ref.8.0.13.nupkg.sha512",
+    "/home/timur/.nuget/packages/microsoft.netcore.app.host.linux-x64/8.0.13/microsoft.netcore.app.host.linux-x64.8.0.13.nupkg.sha512"
   ],
   "logs": []
 }

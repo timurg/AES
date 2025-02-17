@@ -1,6 +1,6 @@
 {
   "version": 2,
-  "dgSpecHash": "PYPWdMnf9xelx4CfRq+Gvw1I7l+IHRxiU32ZZj0+z3nfh6Eq0bF7wV4JoFUq84RQrnD7NHD/b1i2mC4YLzhffg==",
+  "dgSpecHash": "HUUc6OZl7Hw=",
   "success": true,
   "projectFilePath": "/home/timur/Work/AES/AES.Infrastructure/AES.Infrastructure.csproj",
   "expectedPackageFiles": [
@@ -15,7 +15,9 @@
     "/home/timur/.nuget/packages/microsoft.extensions.logging.abstractions/9.0.1/microsoft.extensions.logging.abstractions.9.0.1.nupkg.sha512",
     "/home/timur/.nuget/packages/microsoft.extensions.options/9.0.1/microsoft.extensions.options.9.0.1.nupkg.sha512",
     "/home/timur/.nuget/packages/microsoft.extensions.primitives/9.0.1/microsoft.extensions.primitives.9.0.1.nupkg.sha512",
-    "/home/timur/.nuget/packages/system.diagnostics.diagnosticsource/9.0.1/system.diagnostics.diagnosticsource.9.0.1.nupkg.sha512"
+    "/home/timur/.nuget/packages/system.diagnostics.diagnosticsource/9.0.1/system.diagnostics.diagnosticsource.9.0.1.nupkg.sha512",
+    "/home/timur/.nuget/packages/microsoft.netcore.app.ref/8.0.13/microsoft.netcore.app.ref.8.0.13.nupkg.sha512",
+    "/home/timur/.nuget/packages/microsoft.aspnetcore.app.ref/8.0.13/microsoft.aspnetcore.app.ref.8.0.13.nupkg.sha512"
   ],
   "logs": []
 }
